@@ -1,0 +1,25 @@
+[ru]
+CMD_DISABLE = Команда не работает, когда меньше 3 человек!
+BAN = Бан
+MENU = Меню
+YOU_ERROR = Вы не можете забанить себя
+ERROR_NOMINATE = Вы уже номинировали игрока на бан
+ERROR_PLAYER_BAN = Этого игрока нельзя забанить!
+PLAYER = ИГРОК
+VOTEBAN = ПРОГОЛОСОВАЛ ЗА БАН
+OF = из
+BANNED = БЫЛ ЗАБАНЕН НА
+BANNED_2 = МИНУТ ИГРОКАМИ СЕРВЕРА
+
+[en]
+CMD_DISABLE = Command does not work, when at least 3 people!
+BAN = Ban
+MENU = Menu
+YOU_ERROR = You can not ban yourself
+ERROR_NOMINATE = You have already nominated a player at the Ban
+ERROR_PLAYER_BAN = This player can not be banned!
+PLAYER = PLAYER
+VOTEBAN = VOTED FOR BAN
+OF = of
+BANNED = WAS BANNED FOR
+BANNED_2 = MINUTES, PLAYER SERVER
