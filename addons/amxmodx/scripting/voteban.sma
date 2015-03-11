@@ -43,6 +43,10 @@ public plugin_init() {
 	register_dictionary("voteban.txt")
 	register_dictionary("common.txt")
 	register_saycmd("voteban", "Cmd_VoteBan", -1, "");
+	register_saycmd("/voteban", "Cmd_VoteBan", -1, "");
+	register_saycmd("мщеуифт", "Cmd_VoteBan", -1, "");
+	register_saycmd("бан", "Cmd_VoteBan", -1, "");
+	register_saycmd("вотебан", "Cmd_VoteBan", -1, "");
 	
 	register_menucmd(register_menuid("Ban Menu"), MENU_KEYS, "Menu_VoteBan");
 	
