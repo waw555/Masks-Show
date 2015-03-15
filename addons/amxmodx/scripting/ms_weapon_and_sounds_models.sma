@@ -95,7 +95,7 @@ public plugin_precache()
 	}
 	else //если не существует, то загружаем настройки из файла по умолчанию
 	{
-		format(configfile,199,"%s/deafult_weapons.ini",configsdir) //Задаем название файла с настройками по умолчанию
+		format(configfile,199,"%s/default_weapons.ini",configsdir) //Задаем название файла с настройками по умолчанию
 		load_models(configfile) //Загрузка данных из файла настроек по умолчанию
 	}
 }
