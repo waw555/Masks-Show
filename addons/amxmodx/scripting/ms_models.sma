@@ -23,6 +23,7 @@
 
 //ОТЛАДКА
 //#define DEBUG
+new g_s_LogFile[64]; // Файл логов
 
 //ВРЕМЯ ОТОБРАЖЕНИЯ МЕНЮ
 #define MENUTIME 10 // how long menus stay up
@@ -332,6 +333,23 @@ new Float:g_roundstarttime // Последнее круглое стартово
 public plugin_init() {
 	//Регистрируем плагин
 	register_plugin(NAME,VERSION,AUTHOR);
+	//Задаем параметры для логгирования
+	//Создаем папку для логов
+	new temp_s_LogInfo[] = "amx_logdir"; // Записываем в переменную путь к папке с логами
+	get_localinfo(temp_s_LogInfo, g_s_LogFile, charsmax(g_s_LogFile)); //Проверяем на наличие файлов
+	add(g_s_LogFile, charsmax(g_s_LogFile), "/ms_models");// Добавляем файл в папку votemap
+	if(!dir_exists(g_s_LogFile)) // проверяем если папка votemap не существует, до создаем ее
+	mkdir(g_s_LogFile); // создаем папку votemap
+	new temp_s_Time[32]; //Массив времени
+	get_time("%d-%m-%Y", temp_s_Time, charsmax(temp_s_Time)); //Получаем время
+	format(g_s_LogFile, charsmax(g_s_LogFile), "%s/%s.log", g_s_LogFile, temp_s_Time); //Создаем файл с логами и добавляем текущее время в название файла 
+	//Проверка сервера
+	new hostname[64];
+	new hostname2[] = {"@@@МАСКИ - ШОУ@@@ ®"};
+	get_cvar_string("hostname", hostname, 63);
+	if(equali(hostname,hostname2)){
+	log_to_file(g_s_LogFile, "Ошибок при запуске плагина не обнаружено")
+
 	//Регистрируем события
 	register_event("TextMsg", "Change_Team", "a", "1=1", "2&Game_join_te", "2&Game_join_ct"); //Выбор или изменение команды
 	register_event("TextMsg", "eRestart", "a", "2&#Game_C", "2&#Game_w"); //Рестарт раунда
@@ -349,114 +367,108 @@ public plugin_init() {
 	
 	
 	mute_sound=true;
-//register_forward( FM_SetClientKeyValue, "fw_SetClientKeyValue" );
-//register_forward( FM_ClientUserInfoChanged, "fw_ClientUserInfoChanged" );
-//register_event( "HLTV", "event_round_start", "a", "1=0", "2=0" );
-//RegisterHam( Ham_Spawn, "player", "fw_PlayerSpawn", 1 );
 
-
-
-
-//register_cvar("amx_reserv","1")//тип отключения клиента, по пингу или по времени
-#if defined HIDE_RESERVEDSLOTS 
-set_cvar_num( "sv_visiblemaxplayers" , get_maxplayers()) //количество слотов на сервере
-#endif 
+	//register_cvar("amx_reserv","1")//тип отключения клиента, по пингу или по времени
+	#if defined HIDE_RESERVEDSLOTS 
+	set_cvar_num( "sv_visiblemaxplayers" , get_maxplayers()) //количество слотов на сервере
+	#endif 
     
-new mapname[32];
-get_mapname(mapname, 31)
+	new mapname[32];
+	get_mapname(mapname, 31)
 
-if (equali(mapname, "de_", 3) || equali(mapname, "csde_", 5))
-{
-	register_event("StatusIcon", "eGotBomb", "be", "1=1", "1=2", "2=c4")
-	register_event("TextMsg", "eBombPickUp", "bc", "2&#Got_bomb")
-	register_event("TextMsg", "eBombDrop", "bc", "2&#Game_bomb_d")
-	}
-	else if (equali(mapname, "cs_italy"))
+	if (equali(mapname, "de_", 3) || equali(mapname, "csde_", 5))
 	{
-	register_event("23", "chickenKill", "a", "1=108", /*"12=106", */ "15=4")
-	register_event("23", "radioKill", "a", "1=108", /*"12=294", */ "15=2")
-}
-
-if (equali(mapname, "zm_", 3)){
-	}else{
-	register_forward( FM_SetClientKeyValue, "fw_SetClientKeyValue" );
-	register_forward( FM_ClientUserInfoChanged, "fw_ClientUserInfoChanged" );
-	register_event( "HLTV", "event_round_start", "a", "1=0", "2=0" );
-	RegisterHam( Ham_Spawn, "player", "fw_PlayerSpawn", 1 );  
-}
-
-if (equali(mapname, "gg_", 3)){
-	mute_sound=false;
-}
-
-
+		register_event("StatusIcon", "eGotBomb", "be", "1=1", "1=2", "2=c4")
+		register_event("TextMsg", "eBombPickUp", "bc", "2&#Got_bomb")
+		register_event("TextMsg", "eBombDrop", "bc", "2&#Game_bomb_d")
+		}
+		else if (equali(mapname, "cs_italy"))
+		{
+		register_event("23", "chickenKill", "a", "1=108", /*"12=106", */ "15=4")
+		register_event("23", "radioKill", "a", "1=108", /*"12=294", */ "15=2")
+	}
 	
+	if (equali(mapname, "zm_", 3)){
+		}else{
+		register_forward( FM_SetClientKeyValue, "fw_SetClientKeyValue" );
+		register_forward( FM_ClientUserInfoChanged, "fw_ClientUserInfoChanged" );
+		register_event( "HLTV", "event_round_start", "a", "1=0", "2=0" );
+		RegisterHam( Ham_Spawn, "player", "fw_PlayerSpawn", 1 );  
+	}
 
-g_center1_sync = CreateHudSyncObj()
-g_announce_sync = CreateHudSyncObj()
-g_status_sync = CreateHudSyncObj()
-g_left_sync = CreateHudSyncObj()
-g_bottom_sync = CreateHudSyncObj()
-g_he_sync = CreateHudSyncObj()
+	if (equali(mapname, "gg_", 3)){
+		mute_sound=false;
+	}
 
-   
+	g_center1_sync = CreateHudSyncObj()
+	g_announce_sync = CreateHudSyncObj()
+	g_status_sync = CreateHudSyncObj()
+	g_left_sync = CreateHudSyncObj()
+	g_bottom_sync = CreateHudSyncObj()
+	g_he_sync = CreateHudSyncObj()
 
-    // Регистрируем ID меню
-new menu1ID = register_menuid("Menu_Admin_CT");
-new menu2ID = register_menuid("Menu_Admin_T");
-new menu3ID = register_menuid("Menu_Girl_CT");
-new menu4ID = register_menuid("Menu_Girl_T");
-new menu5ID = register_menuid("Menu_Clan_CT");
-new menu6ID = register_menuid("Menu_Clan_T");
-new menu7ID = register_menuid("Menu_User_CT");
-new menu8ID = register_menuid("Menu_User_T");
-new menu9ID = register_menuid("Audio_Settings");
-new menu10ID = register_menuid("Sound_Settings");
-new menu11ID = register_menuid("Music_Settings");
-new menu12ID = register_menuid("show_esp_menu");
+	// Регистрируем ID меню
+	new menu1ID = register_menuid("Menu_Admin_CT");
+	new menu2ID = register_menuid("Menu_Admin_T");
+	new menu3ID = register_menuid("Menu_Girl_CT");
+	new menu4ID = register_menuid("Menu_Girl_T");
+	new menu5ID = register_menuid("Menu_Clan_CT");
+	new menu6ID = register_menuid("Menu_Clan_T");
+	new menu7ID = register_menuid("Menu_User_CT");
+	new menu8ID = register_menuid("Menu_User_T");
+	new menu9ID = register_menuid("Audio_Settings");
+	new menu10ID = register_menuid("Sound_Settings");
+	new menu11ID = register_menuid("Music_Settings");
+	new menu12ID = register_menuid("show_esp_menu");
 
 
-    // Регистрируем команды меню
-register_menucmd(menu1ID,1023,"Menu_Admin_CT_Action");
-register_menucmd(menu2ID,1023,"Menu_Admin_T_Action");
-register_menucmd(menu3ID,511,"Menu_Girl_CT_Action");
-register_menucmd(menu4ID,511,"Menu_Girl_T_Action");
-register_menucmd(menu5ID,511,"Menu_Clan_CT_Action");
-register_menucmd(menu6ID,511,"Menu_Clan_T_Action");
-register_menucmd(menu7ID,511,"Menu_User_CT_Action");
-register_menucmd(menu8ID,511,"Menu_User_T_Action");
-register_menucmd(menu9ID,1023,"Audio_Settings_Action");
-register_menucmd(menu10ID,1023,"Sound_Settings_Action");
-register_menucmd(menu11ID,1023,"Music_Settings_Action");
-register_menucmd(menu12ID,1023,"menu_esp");
-    //Реклама
-set_task( 30.0, "Reklama", _,_,_,"a", 30);
-    
+	    // Регистрируем команды меню
+	register_menucmd(menu1ID,1023,"Menu_Admin_CT_Action");
+	register_menucmd(menu2ID,1023,"Menu_Admin_T_Action");
+	register_menucmd(menu3ID,511,"Menu_Girl_CT_Action");
+	register_menucmd(menu4ID,511,"Menu_Girl_T_Action");
+	register_menucmd(menu5ID,511,"Menu_Clan_CT_Action");
+	register_menucmd(menu6ID,511,"Menu_Clan_T_Action");
+	register_menucmd(menu7ID,511,"Menu_User_CT_Action");
+	register_menucmd(menu8ID,511,"Menu_User_T_Action");
+	register_menucmd(menu9ID,1023,"Audio_Settings_Action");
+	register_menucmd(menu10ID,1023,"Sound_Settings_Action");
+	register_menucmd(menu11ID,1023,"Music_Settings_Action");
+	register_menucmd(menu12ID,1023,"menu_esp");
+	    //Реклама
+	set_task( 30.0, "Reklama", _,_,_,"a", 30);
+	    
+	
+	    
+	pcvar_ms=register_cvar("ms","1")//Включение выключение плагина
+	pcvar_help=register_cvar("ms_help","1")//Показывать справку или нет
+	register_clcmd("say /menu","cmd_esp_menu",-1);
+	register_clcmd("say /МЕНЮ","cmd_esp_menu",-1);
+	register_clcmd("say /ЬУТГ","cmd_esp_menu",-1);
+	register_clcmd("say /vty.","cmd_esp_menu",-1);
+	register_clcmd("menu","cmd_esp_menu",-1);
+	register_clcmd("translit","language",-1);
+	    //Луч смерти
+	register_cvar("amx_deathbeams_enabled","1")//Включить выключить показ откуда убили
+	register_cvar("amx_deathbeams_randcolor","0")//Цвет лазера
+	register_event("DeathMsg","death","a")//Событие смерти игрока
+	    //Отображение повреждения
+	register_event("Damage", "damage_message", "b", "2!0", "3=0", "4!0")
+	g_HudSync = CreateHudSyncObj()
+	/*register_clcmd("settings","cmd_esp_menu",-1,"Показать меню настроек")*/
+	    //Меню
+	//new keys=MENU_KEY_0|MENU_KEY_1|MENU_KEY_2|MENU_KEY_3|MENU_KEY_4|MENU_KEY_5|MENU_KEY_6|MENU_KEY_7|MENU_KEY_8|MENU_KEY_9;//Кнопки
+	//register_menucmd(register_menuid("Меню настроек"),MENU_KEY_0|MENU_KEY_1|MENU_KEY_2|MENU_KEY_3|MENU_KEY_4|MENU_KEY_5|MENU_KEY_6|MENU_KEY_7|MENU_KEY_8|MENU_KEY_9,"menu_esp");
+	//register_menucmd(register_menuid("Меню настроек звука"),MENU_KEY_0|MENU_KEY_1|MENU_KEY_2|MENU_KEY_3|MENU_KEY_4|MENU_KEY_5|MENU_KEY_6|MENU_KEY_7|MENU_KEY_8|MENU_KEY_9,"Audio_Settings");
+	max_players=get_maxplayers()
+	
+	return PLUGIN_CONTINUE
+	
+	}
+	log_to_file(g_s_LogFile, "ERROR: Не найден файл лицензии Маски - Шоу")
+	log_to_file(g_s_LogFile, "ERROR: Проверьте наличие файла лицензии в папке сервера")
+	return PLUGIN_HANDLED
 
-    
-pcvar_ms=register_cvar("ms","1")//Включение выключение плагина
-pcvar_help=register_cvar("ms_help","1")//Показывать справку или нет
-register_clcmd("say /menu","cmd_esp_menu",-1);
-register_clcmd("say /МЕНЮ","cmd_esp_menu",-1);
-register_clcmd("say /ЬУТГ","cmd_esp_menu",-1);
-register_clcmd("say /vty.","cmd_esp_menu",-1);
-register_clcmd("menu","cmd_esp_menu",-1);
-register_clcmd("translit","language",-1);
-    //Луч смерти
-register_cvar("amx_deathbeams_enabled","1")//Включить выключить показ откуда убили
-register_cvar("amx_deathbeams_randcolor","0")//Цвет лазера
-register_event("DeathMsg","death","a")//Событие смерти игрока
-    //Отображение повреждения
-register_event("Damage", "damage_message", "b", "2!0", "3=0", "4!0")
-g_HudSync = CreateHudSyncObj()
-/*register_clcmd("settings","cmd_esp_menu",-1,"Показать меню настроек")*/
-    //Меню
-//new keys=MENU_KEY_0|MENU_KEY_1|MENU_KEY_2|MENU_KEY_3|MENU_KEY_4|MENU_KEY_5|MENU_KEY_6|MENU_KEY_7|MENU_KEY_8|MENU_KEY_9;//Кнопки
-//register_menucmd(register_menuid("Меню настроек"),MENU_KEY_0|MENU_KEY_1|MENU_KEY_2|MENU_KEY_3|MENU_KEY_4|MENU_KEY_5|MENU_KEY_6|MENU_KEY_7|MENU_KEY_8|MENU_KEY_9,"menu_esp");
-//register_menucmd(register_menuid("Меню настроек звука"),MENU_KEY_0|MENU_KEY_1|MENU_KEY_2|MENU_KEY_3|MENU_KEY_4|MENU_KEY_5|MENU_KEY_6|MENU_KEY_7|MENU_KEY_8|MENU_KEY_9,"Audio_Settings");
-max_players=get_maxplayers()
-
-return PLUGIN_CONTINUE
 }
 
   //Меню с уровнем доступа
