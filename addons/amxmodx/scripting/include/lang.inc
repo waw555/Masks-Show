@@ -1,9 +1,15 @@
-/* Language functions
-*
-* by the AMX Mod X Development Team
-*
-* This file is provided as is (no warranties).
-*/
+// vim: set ts=4 sw=4 tw=99 noet:
+//
+// AMX Mod X, based on AMX Mod by Aleksander Naszko ("OLO").
+// Copyright (C) The AMX Mod X Development Team.
+//
+// This software is licensed under the GNU General Public License, version 3 or higher.
+// Additional exceptions apply. For full license details, see LICENSE.txt or visit:
+//     https://alliedmods.net/amxmodx-license
+
+//
+// Language Functions
+//
 
 #if defined _lang_included
   #endinput
@@ -53,4 +59,17 @@ native AddTranslation(const lang[3], TransKey:key, const phrase[]);
  * NOTE: LANG_PLAYER is invalid in this, use a player index
  *       or LANG_SERVER
  */
-native LookupLangKey(Output[], OutputSize, const Key[], const &id);
+native LookupLangKey(Output[], OutputSize, const Key[], &id);
+
+/**
+ * Sets the global language target.  
+ *
+ * @note This is useful for creating functions
+ *       that will be compatible with the %l format specifier.  Note that invalid
+ *       indexes can be specified but the error will occur during translation,
+ *       not during this function call.
+ *
+ * @param client    Client index or LANG_SERVER
+ * @noreturn
+ */
+native SetGlobalTransTarget(client);

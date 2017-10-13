@@ -63,11 +63,6 @@ MIN_FREQ = Minimitaajuus talle viestille on %d sekuntia
 MSG_FREQ = Vierivan tekstin taajuus on: %d:%02d minuuttia
 MSG_DISABLED = Vieriva teksti poissa kaytosta
 
-[ls]
-MIN_FREQ = M!n!m4| fr3qu3ncy f0r th!s m3ss4ge !s %d s3c0ndz
-MSG_FREQ = $cr0||!ng m3ss4g3 d!spl4y!ng fr3qu3ncy: %d:%02d m!nut3z
-MSG_DISABLED = |N0T 3NUFF M4N4!| - $cr0||!ng m3ss4g3 d!s4bl3d
-
 [bg]
 MIN_FREQ = Minimalnoto povtarq6to vreme za tova saob6tenie e %d secundi
 MSG_FREQ = Scrolling saob6tenieto se pokazva vseki: %d:%02d minuti
@@ -97,3 +92,23 @@ MSG_DISABLED = Skrolovacie zpravy vypnute
 MIN_FREQ = Minimalnoto vreme na prikazuvanje na ovaa poraka e %d sekundi
 MSG_FREQ = Vreme za prikazuvanje na leteckite poraki: %d:%02d minuti
 MSG_DISABLED = Leteckata poraka e isklucena
+
+[hr]
+MIN_FREQ = Minimalno vrijeme prikazivanja za ovu poruku je %d sekundi
+MSG_FREQ = Vrijeme prikazivanja prolazece poruke: %d:%02d minut(a)
+MSG_DISABLED = Prolazeca poruka iskljucena
+
+[bs]
+MIN_FREQ = Minimalno vrijeme prikazivanja za ovu poruku je %d sekundi
+MSG_FREQ = Vrijeme prikazivanja prolazece poruke: %d:%02d minut(a)
+MSG_DISABLED = Prolazeca poruka iskljucena
+
+[ru]
+MIN_FREQ = Частота появления этого сообщения %d секунд
+MSG_FREQ = Частота появления бегущей строки: %d:%02d минут
+MSG_DISABLED = Бегущая строка заблокирована
+
+[cn]
+MIN_FREQ = 此消息的最小频率为 %d 秒
+MSG_FREQ = 滚动信息的显示频率为每 ％d：％02d 分钟显示一次
+MSG_DISABLED = 滚动消息已禁用

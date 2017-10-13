@@ -1,22 +1,24 @@
-/* nVault functions
-*
-* by the AMX Mod X Development Team
-*
-* This file is provided as is (no warranties).
-*/
+// vim: set ts=4 sw=4 tw=99 noet:
+//
+// AMX Mod X, based on AMX Mod by Aleksander Naszko ("OLO").
+// Copyright (C) The AMX Mod X Development Team.
+//
+// This software is licensed under the GNU General Public License, version 3 or higher.
+// Additional exceptions apply. For full license details, see LICENSE.txt or visit:
+//     https://alliedmods.net/amxmodx-license
+
+//
+// NVault Functions
+//
 
 #if defined _nvault_included
-  #endinput
+	#endinput
 #endif
 #define _nvault_included
 
-#if AMXX_VERSION_NUM >= 175
- #pragma reqlib nvault
- #if !defined AMXMODX_NOAUTOLOAD
-  #pragma loadlib nvault
- #endif
-#else
- #pragma library nvault
+#pragma reqlib nvault
+#if !defined AMXMODX_NOAUTOLOAD
+	#pragma loadlib nvault
 #endif
 
 /* All timestamps are in UNIX epoch form. */
@@ -29,7 +31,7 @@ native nvault_open(const name[]);
 /* Gets a vault value by returning an int
  * setting a byref float or setting a string + maxlength
  */
-native nvault_get(vault, const key[], {Float,_}:...);
+native nvault_get(vault, const key[], any:...);
 
 /* Looks up a vault value for full information
  * Returns 0 if the entry is not found

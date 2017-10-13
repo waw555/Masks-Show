@@ -59,12 +59,12 @@ NO_T_LIMIT = Ingen tidsbegraensning
 MINUTE = minut
 MINUTES = minutter
 SECOND = sekund
-SECONDs = sekunder
+SECONDS = sekunder
 
 [pl]
 THE_TIME = Czas
 TIME_LEFT = Pozostalo czasu
-NO_T_LIMIT = Bez limitu czasu
+NO_T_LIMIT = Brak limitu czasu
 MINUTE = minuta
 MINUTES = minut
 SECOND = sekunda
@@ -114,15 +114,6 @@ MINUTE = minuutti
 MINUTES = minuuttia
 SECOND = sekunti
 SECONDS = sekuntia
-
-[ls]
-THE_TIME = T3h t!m3
-TIME_LEFT = T!m3 L3ft
-NO_T_LIMIT = N0 T!m3 L!m!t
-MINUTE = m!nut3
-MINUTES = m!nut3z
-SECOND = s3c0nd
-SECONDS = s3c0ndz
 
 [bg]
 THE_TIME = 4asa
@@ -177,3 +168,39 @@ MINUTE = minuta
 MINUTES = minuti
 SECOND = sekunda
 SECONDS = sekundi
+
+[hr]
+THE_TIME = Vrijeme
+TIME_LEFT = Preostalo vrijeme
+NO_T_LIMIT = Bez vremenskog ogranicenja
+MINUTE = minuta
+MINUTES = minute
+SECOND = sekunda
+SECONDS = sekundi
+
+[bs]
+THE_TIME = Vrijeme
+TIME_LEFT = Preostalo Vrijeme
+NO_T_LIMIT = Nema Ogranicenja Vremena
+MINUTE = minut
+MINUTES = minute
+SECOND = sekund
+SECONDS = sekunde
+
+[ru]
+THE_TIME = Время
+TIME_LEFT = Осталось
+NO_T_LIMIT = Неограниченно
+MINUTE = минута
+MINUTES = минут
+SECOND = секунда
+SECONDS = секунд
+
+[cn]
+THE_TIME = 当前时间
+TIME_LEFT = 剩余时间
+NO_T_LIMIT = 无时间限制
+MINUTE = 分钟
+MINUTES = 分钟
+SECOND = 秒
+SECONDS = 秒
