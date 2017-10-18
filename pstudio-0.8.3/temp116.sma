@@ -1783,7 +1783,7 @@ public client_connect(id) {
 	return 1;
 }
 
-public client_disconnected(id) {
+public client_disconnect(id) {
 	save2vault(id);
 }
 
