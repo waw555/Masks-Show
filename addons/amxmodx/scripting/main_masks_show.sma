@@ -8,7 +8,7 @@
 #define NAME "МОДЕЛИ МАСКИ ШОУ"
 
 //ВЕРСИЯ ПЛАГИНА
-#define VERSION	"1.0/30.03.2015"
+#define VERSION	"1.1/18.10.2017"
 
 //АВТОР ПЛАГИНА
 #define AUTHOR	"WAW555"
@@ -52,6 +52,7 @@ new bool:mute_sound //Звук вкл. выкл.
 //Смена моделей
 #define MODELCHANGE_DELAY 0.5 // Задержка перед сменой модели
 #define MODELSET_TASK 100 // Компенсация для смены модели 
+
   //Голосовая озвучка
 public MultiKill
 public MultiKillSound
@@ -360,6 +361,7 @@ public plugin_init() {
 	register_event("StatusValue", "hideStatus", "be", "1=1", "2=0");
 	//Регистрируем словари
 	register_dictionary("miscstats.txt");
+	register_dictionary("main.txt");
 	//Регистрируем консольные команды
 	register_clcmd("ms_model","usermodel",-1,"Меню моделей");
 	//Регистрируем команды чата
@@ -436,8 +438,7 @@ public plugin_init() {
 	register_menucmd(menu11ID,1023,"Music_Settings_Action");
 	register_menucmd(menu12ID,1023,"menu_esp");
 	    //Реклама
-	set_task( 30.0, "Reklama", _,_,_,"a", 30);
-	    
+	set_task( 30.0, "Reklama", _,_,_,"a", 30);   
 	
 	    
 	pcvar_ms=register_cvar("ms","1")//Включение выключение плагина
@@ -1783,7 +1784,7 @@ public client_connect(id) {
 	return 1;
 }
 
-public client_disconnect(id) {
+public client_disconnected(id) {
 	save2vault(id);
 }
 
