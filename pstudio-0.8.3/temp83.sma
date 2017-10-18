@@ -5,7 +5,7 @@
 #define VERSION "1.0"
 #define AUTHOR "WAW555"
 
-#define MAXPLAYERS 33
+//#define MAX_PLAYERS 33
 
 #define MENU_KEYS (1<<0 | 1<<1 | 1<<2 | 1<<3 | 1<<4 | 1<<5 | 1<<6 | 1<<7 | 1<<8 | 1<<9)
 #define MENU_SLOTS 8
@@ -14,7 +14,7 @@ new g_iMenuPage[MAX_PLAYERS];
 new g_iVotedPlayers[MAX_PLAYERS];
 new g_iVotes[MAX_PLAYERS];
 
-new g_iPlayers[MAXPLAYERS - 1];
+new g_iPlayers[MAX_PLAYERS - 1];
 new g_iNum;
 
 new g_iMsgidSayText;
@@ -44,6 +44,9 @@ public plugin_init() {
 	register_dictionary("common.txt")
 	register_saycmd("voteban", "Cmd_VoteBan", -1, "");
 	register_saycmd("/voteban", "Cmd_VoteBan", -1, "");
+	register_saycmd("לשוףטפע", "Cmd_VoteBan", -1, "");
+	register_saycmd("באם", "Cmd_VoteBan", -1, "");
+	register_saycmd("גמעובאם", "Cmd_VoteBan", -1, "");
 	
 	register_menucmd(register_menuid("Ban Menu"), MENU_KEYS, "Menu_VoteBan");
 	
