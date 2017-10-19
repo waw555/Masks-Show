@@ -2,10 +2,10 @@
 #include <amxmisc>
 
 #define PLUGIN "Voteban"
-#define VERSION "1.0"
+#define VERSION "5.0"
 #define AUTHOR "WAW555"
 
-#define MAXPLAYERS 33
+#define MAX_PLAYERS 33
 
 #define MENU_KEYS (1<<0 | 1<<1 | 1<<2 | 1<<3 | 1<<4 | 1<<5 | 1<<6 | 1<<7 | 1<<8 | 1<<9)
 #define MENU_SLOTS 8
@@ -14,7 +14,7 @@ new g_iMenuPage[MAX_PLAYERS];
 new g_iVotedPlayers[MAX_PLAYERS];
 new g_iVotes[MAX_PLAYERS];
 
-new g_iPlayers[MAXPLAYERS - 1];
+new g_iPlayers[MAX_PLAYERS - 1];
 new g_iNum;
 
 new g_iMsgidSayText;
@@ -44,6 +44,9 @@ public plugin_init() {
 	register_dictionary("common.txt")
 	register_saycmd("voteban", "Cmd_VoteBan", -1, "");
 	register_saycmd("/voteban", "Cmd_VoteBan", -1, "");
+	register_saycmd("Ð¼Ñ‰ÐµÑƒÐ¸Ñ„Ñ‚", "Cmd_VoteBan", -1, "");
+	register_saycmd("Ð±Ð°Ð½", "Cmd_VoteBan", -1, "");
+	register_saycmd("Ð²Ð¾Ñ‚ÐµÐ±Ð°Ð½", "Cmd_VoteBan", -1, "");
 	
 	register_menucmd(register_menuid("Ban Menu"), MENU_KEYS, "Menu_VoteBan");
 	
@@ -65,7 +68,7 @@ public plugin_init() {
 	format(g_szLogFile, charsmax(g_szLogFile), "%s/%s.log", g_szLogFile, szTime);
 }
 
-public client_disconnected(id)
+/*public client_disconnect(id)
 {
 	if(g_iVotedPlayers[id])
 	{
@@ -80,7 +83,7 @@ public client_disconnected(id)
 		}
 		g_iVotedPlayers[id] = 0;
 	}
-}
+}*/
 
 public Cmd_VoteBan(id)
 {
@@ -238,11 +241,11 @@ public CheckVotes(id, voter)
 		|| equal(stim, "STEAM_666:88:666")
 		|| equal(stim, "STEAM_ID_PENDING")
 		|| equal(stim, "STEAM_ID_LAN") ){
-			server_cmd( "amx_ban %s %i ^"Çàáàíåí èãðîêàìè ñåðâåðà^"", szIp, get_pcvar_num(g_iPcvar[CVAR_BANTIME]))
+			server_cmd( "amx_ban %s %i ^"Ð—Ð°Ð±Ð°Ð½ÐµÐ½ Ð¸Ð³Ñ€Ð¾ÐºÐ°Ð¼Ð¸ ÑÐµÑ€Ð²ÐµÑ€Ð°^"", szIp, get_pcvar_num(g_iPcvar[CVAR_BANTIME]))
 			g_iVotes[id] = 0;
 			
 		} else {
-			server_cmd("amx_ban %s %i ^"Çàáàíåí èãðîêàìè ñåðâåðà^"", stim, get_pcvar_num(g_iPcvar[CVAR_BANTIME]))
+			server_cmd("amx_ban %s %i ^"Ð—Ð°Ð±Ð°Ð½ÐµÐ½ Ð¸Ð³Ñ€Ð¾ÐºÐ°Ð¼Ð¸ ÑÐµÑ€Ð²ÐµÑ€Ð°^"", stim, get_pcvar_num(g_iPcvar[CVAR_BANTIME]))
 			g_iVotes[id] = 0;
 		}
 		
