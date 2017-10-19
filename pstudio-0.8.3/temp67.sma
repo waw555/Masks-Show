@@ -1,19 +1,19 @@
 //
-// РћРџРРЎРђРќРР• РџР›РђР“РРќРђ
+// ОПИСАНИЕ ПЛАГИНА
 //
 
 
 
-//РќРђР—Р’РђРќРР• РџР›РђР“РРќРђ
-#define NAME "РњРћР”Р•Р›Р РњРђРЎРљР РЁРћРЈ"
+//НАЗВАНИЕ ПЛАГИНА
+#define NAME "МОДЕЛИ МАСКИ ШОУ"
 
-//Р’Р•Р РЎРРЇ РџР›РђР“РРќРђ
-#define VERSION	"1.0/30.03.2015"
+//ВЕРСИЯ ПЛАГИНА
+#define VERSION	"1.1/18.10.2017"
 
-//РђР’РўРћР  РџР›РђР“РРќРђ
+//АВТОР ПЛАГИНА
 #define AUTHOR	"WAW555"
 
-//РџРћР”РљР›Р®Р§РђР•РњР«Р• РњРћР”РЈР›Р
+//ПОДКЛЮЧАЕМЫЕ МОДУЛИ
 #include <amxmodx>
 #include <amxmisc>
 #include <fakemeta>
@@ -21,17 +21,17 @@
 #include <cstrike>
 #include <csx>
 
-//РћРўР›РђР”РљРђ
+//ОТЛАДКА
 //#define DEBUG
-new g_s_LogFile[64]; // Р¤Р°Р№Р» Р»РѕРіРѕРІ
+new g_s_LogFile[64]; // Файл логов
 
-//Р’Р Р•РњРЇ РћРўРћР‘Р РђР–Р•РќРРЇ РњР•РќР®
+//ВРЕМЯ ОТОБРАЖЕНИЯ МЕНЮ
 #define MENUTIME 10 // how long menus stay up
 
-//РћРўРћР‘Р РђР–Р•РќРР• РљРћР›РР§Р•РЎРўР’Рђ РЎР›РћРўРћР’ Р”Р›РЇ Р Р•Р—Р•Р Р’РР РћР’РђРќРРЇ
-#define HIDE_RESERVEDSLOTS//РћС‚РѕР±СЂР°Р¶РµРЅРёРµ СЃР»РѕС‚РѕРІ РґР»СЏ СЂРµР·РµСЂРІРёСЂРѕРІР°РЅРёСЏ
+//ОТОБРАЖЕНИЕ КОЛИЧЕСТВА СЛОТОВ ДЛЯ РЕЗЕРВИРОВАНИЯ
+#define HIDE_RESERVEDSLOTS//Отображение слотов для резервирования
 
-//Р Р•Р“РРЎРўР РђР¦РРЇ РљРќРћРџРћРљ РњР•РќР®
+//РЕГИСТРАЦИЯ КНОПОК МЕНЮ
 #define KEY1 (1<<0)
 #define KEY2 (1<<1)
 #define KEY3 (1<<2)
@@ -43,16 +43,17 @@ new g_s_LogFile[64]; // Р¤Р°Р№Р» Р»РѕРіРѕРІ
 #define KEY9 (1<<8)
 #define KEY0 (1<<9)
 
-//Р›РЈР§ РЎРњР•Р РўР
-#define TE_BEAMPOINTS 0//Р›СѓС‡ СЃРјРµСЂС‚Рё
+//ЛУЧ СМЕРТИ
+#define TE_BEAMPOINTS 0//Луч смерти
 
-//РџР•Р Р•РњР•РќРќР«Р•
-new bool:mute_sound //Р—РІСѓРє РІРєР». РІС‹РєР».
+//ПЕРЕМЕННЫЕ
+new bool:mute_sound //Звук вкл. выкл.
 
-//РЎРјРµРЅР° РјРѕРґРµР»РµР№
-#define MODELCHANGE_DELAY 0.5 // Р—Р°РґРµСЂР¶РєР° РїРµСЂРµРґ СЃРјРµРЅРѕР№ РјРѕРґРµР»Рё
-#define MODELSET_TASK 100 // РљРѕРјРїРµРЅСЃР°С†РёСЏ РґР»СЏ СЃРјРµРЅС‹ РјРѕРґРµР»Рё 
-  //Р“РѕР»РѕСЃРѕРІР°СЏ РѕР·РІСѓС‡РєР°
+//Смена моделей
+#define MODELCHANGE_DELAY 0.5 // Задержка перед сменой модели
+#define MODELSET_TASK 100 // Компенсация для смены модели 
+
+  //Голосовая озвучка
 public MultiKill
 public MultiKillSound
 public BombPlanting
@@ -104,13 +105,13 @@ new g_he_sync
 
 new g_MultiKillMsg[7][] =
 {
-	"РћРўР›РР§РќР«Р™ Р’Р«РЎРўР Р•Р›! %s^n%L %d %L (%d %L)", 
-	"РљР РЈРўРћ!!! %s^n%L %d %L (%d %L)", 
-	"%s РЎР”РћРҐРќР РњР РђР—Р¬!!!^n%L %d %L (%d %L)", 
-	"РЈРњРћР›РљРќР!!! %s^n%L %d %L (%d hs)", 
-	"%s, РљРђРљ РћРќ Р’РђРЎ РџРћРРњР•Р›!!!^n%L %d %L (%d %L)", 
-	"%s Р’ РЇР РћРЎРўР!^n%L %d %L (%d %L)", 
-	"%s РћР§Р•РќР¬ РљР РЈРўРћР™!!!!^n%L %d %L (%d %L)"
+	"ОТЛИЧНЫЙ ВЫСТРЕЛ! %s^n%L %d %L (%d %L)", 
+	"КРУТО!!! %s^n%L %d %L (%d %L)", 
+	"%s СДОХНИ МРАЗЬ!!!^n%L %d %L (%d %L)", 
+	"УМОЛКНИ!!! %s^n%L %d %L (%d hs)", 
+	"%s, КАК ОН ВАС ПОИМЕЛ!!!^n%L %d %L (%d %L)", 
+	"%s В ЯРОСТИ!^n%L %d %L (%d %L)", 
+	"%s ОЧЕНЬ КРУТОЙ!!!!^n%L %d %L (%d %L)"
 }
 
 new g_Sounds[11][] =
@@ -145,17 +146,17 @@ new g_Sounds_Girl[11][] =
 
 new g_KillingMsg[11][] =
 {
-	"%s: РќРРЁРЈРўРЇ!", 
-	"%s: Р”Р•Р Р—РљРР™!!!", 
-	"%s: Р‘РћР Р—Р«Р™!!!", 
-	"%s: Р‘Р•РЎРЎРњР•Р РўРќР«Р™!!!", 
-	"%s: РћР§Р•РќР¬ РљР РЈРўРћР™!!!",
-	"%s: РќРРЁРЈРўРЇ!", 
-	"%s: Р”Р•Р Р—РљРР™!!!", 
-	"%s: Р‘РћР Р—Р«Р™!!!", 
-	"%s: Р‘Р•РЎРЎРњР•Р РўРќР«Р™!!!",
-	"%s: Р‘Р•РЎРЎРњР•Р РўРќР«Р™!!!", 
-	"%s: РћР§Р•РќР¬ РљР РЈРўРћР™!!!"
+	"%s: НИШУТЯ!", 
+	"%s: ДЕРЗКИЙ!!!", 
+	"%s: БОРЗЫЙ!!!", 
+	"%s: БЕССМЕРТНЫЙ!!!", 
+	"%s: ОЧЕНЬ КРУТОЙ!!!",
+	"%s: НИШУТЯ!", 
+	"%s: ДЕРЗКИЙ!!!", 
+	"%s: БОРЗЫЙ!!!", 
+	"%s: БЕССМЕРТНЫЙ!!!",
+	"%s: БЕССМЕРТНЫЙ!!!", 
+	"%s: ОЧЕНЬ КРУТОЙ!!!"
 }
 
 new g_KinfeMsg[4][] =
@@ -203,174 +204,175 @@ new g_HeadShots[7][] =
 
 new g_teamsNames[4][] =
 {
-	"РўР•Р Р РћР РРЎРў", 
-	"РњР•РќРў", 
-	"РўР•Р Р РћР РРЎРўРћР’", 
-	"РњР•РќРўРћР’"
+	"ТЕРРОРИСТ", 
+	"МЕНТ", 
+	"ТЕРРОРИСТОВ", 
+	"МЕНТОВ"
 }
 
 
 new m_spriteTexture
-  //РћС‚РѕР±СЂР°Р¶РµРЅРёРµ РїРѕРІСЂРµР¶РґРµРЅРёСЏ
+  //Отображение повреждения
 new g_HudSync
 new max_players 
-enum {//Р‘Р°Р·Р° РґР°РЅРЅС‹С… РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ
-MS_DEATH_LINE,//Р»РёРЅРёСЏ СЃРјРµСЂС‚Рё
-MS_DAMAGE_MSG,//РїРѕРєР°Р·С‹РІР°С‚СЊ СѓСЂРѕРЅ
-MS_MODEL,//РїРѕРєР°Р·С‹РІР°С‚СЊ РјРѕРґРµР»Рё СЃРµСЂРІРµСЂР°
-MS_AUTO_MENU,//Р°РІС‚РѕРїРѕРєР°Р· РЅР°СЃС‚СЂРѕРµРє РјРµРЅСЋ
-MS_AUDIO_CONNECT,//РјСѓР·С‹РєР° РїСЂРё РІС…РѕРґРµ РІ РёРіСЂСѓ
-MS_AUDIO_ALL,//РІСЃРµ Р·РІСѓРєРё РІРєР». РІС‹РєР»
-MS_AUDIO_FIRSTBLOOD,//Р·РІСѓРє РїРµСЂРІРѕРіРѕ СѓР±РёР№СЃС‚РІР°
-MS_AUDIO_STEPS,//Р·РІСѓРє РїРѕС€Р°РіРѕРІС‹С… СѓР±РёР№СЃС‚РІ Р°РґРјРёРЅР°
-MS_AUDIO_ONE_VS_ONE,//Р·РІСѓРє 1 РЅР° 1
-MS_AUDIO_ONE_VS_ALL,//Р·РІСѓРє 1 РїСЂРѕС‚РёРІ РІСЃРµС…
-MS_AUDIO_GIRL_KNIFE,//Р·РІСѓРє СѓР±РёСЃС‚РІР° СЃ РЅРѕР¶Р° Р°РґРјРёРЅРѕРј
-MS_AUDIO_USER_KNIFE,//Р·РІСѓРє СѓР±РёР№СЃС‚РІР° СЃ РЅРѕР¶Р° РёРіСЂРѕРєРѕРј
-MS_AUDIO_GRENADE,//Р·РІСѓРє СѓР±РёР№СЃС‚РІР° СЃ РіСЂР°РЅР°С‚С‹
-MS_AUDIO_GRENADE_SUICIDE,//Р·РІСѓРє СЃР°РјРѕСѓР±РёР№СЃС‚РІР° СЃ РіСЂР°РЅР°С‚С‹
-MS_AUDIO_HEADSHOOT_KILLER,//Р·РІСѓРє РґР»СЏ СѓР±РёР№С†С‹ РІ РіРѕР»РѕРІСѓ
-MS_AUDIO_HEADSHOOT_VICTIM,//Р·РІСѓРє РґР»СЏ Р¶РµСЂС‚РІС‹ СѓР±РёС‚РѕР№ РІ РіРѕР»РѕРІСѓ
-MS_AUDIO_DOUBLE_KILL,//Р·РІСѓРє РґРІРѕР№РЅРѕРіРѕ СѓР±РёР№СЃС‚РІР°
-MS_AUDIO_PREPARE,//Р·РІСѓРє РЅРѕРІРѕРіРѕ СЂР°СѓРЅРґР°
-MS_AUDIO_MULTI_KILL,//Р·РІСѓРє РјРѕР¶РµСЃС‚РІРµРЅРЅРѕРіРѕ СѓР±РёР№СЃС‚РІР°
-MS_AUDIO_PICKED_BOMB,//Р·РІСѓРє РїРѕРґРЅСЏС‚РѕР№ Р±РѕРјР±С‹
-MS_AUDIO_BOMB_TIMER,//Р·РІСѓРєРё С‚Р°Р№РјРµСЂР° Р±РѕРјР±С‹
-MS_AUDIO_ROUND_END,//Р·РІСѓРєРё РєРѕРЅС†Р° СЂР°СѓРЅРґР°
-MS_DEFAULT_LANGUAGE,//СЏР·С‹Рє С‡Р°С‚Р° РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
-MS_AUDIO_VOTE,//СЏР·С‹Рє С‡Р°С‚Р° РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
+enum {//База данных для сохранения
+MS_DEATH_LINE,//линия смерти
+MS_DAMAGE_MSG,//показывать урон
+MS_MODEL,//показывать модели сервера
+MS_AUTO_MENU,//автопоказ настроек меню
+MS_AUDIO_CONNECT,//музыка при входе в игру
+MS_AUDIO_ALL,//все звуки вкл. выкл
+MS_AUDIO_FIRSTBLOOD,//звук первого убийства
+MS_AUDIO_STEPS,//звук пошаговых убийств админа
+MS_AUDIO_ONE_VS_ONE,//звук 1 на 1
+MS_AUDIO_ONE_VS_ALL,//звук 1 против всех
+MS_AUDIO_GIRL_KNIFE,//звук убиства с ножа админом
+MS_AUDIO_USER_KNIFE,//звук убийства с ножа игроком
+MS_AUDIO_GRENADE,//звук убийства с гранаты
+MS_AUDIO_GRENADE_SUICIDE,//звук самоубийства с гранаты
+MS_AUDIO_HEADSHOOT_KILLER,//звук для убийцы в голову
+MS_AUDIO_HEADSHOOT_VICTIM,//звук для жертвы убитой в голову
+MS_AUDIO_DOUBLE_KILL,//звук двойного убийства
+MS_AUDIO_PREPARE,//звук нового раунда
+MS_AUDIO_MULTI_KILL,//звук можественного убийства
+MS_AUDIO_PICKED_BOMB,//звук поднятой бомбы
+MS_AUDIO_BOMB_TIMER,//звуки таймера бомбы
+MS_AUDIO_ROUND_END,//звуки конца раунда
+MS_DEFAULT_LANGUAGE,//язык чата по умолчанию
+MS_AUDIO_VOTE,//язык чата по умолчанию
 }
-new bool:admin_options[33][30] // РРЅРґРёРІРёРґСѓР°Р»СЊРЅС‹Рµ РѕРїС†РёРё
-//new bool:is_in_menu[33] // РћС‚РєСЂС‹С‚РѕРµ РјРµРЅСЋ Сѓ РёРіСЂРѕРєР°
-//new bool:is_in_menu_audio[33] // РћС‚РєСЂС‹С‚РѕРµ РјРµРЅСЋ Сѓ РёРіСЂРѕРєР°
-//new bool:is_in_menu_audio1[33] // РћС‚РєСЂС‹С‚РѕРµ РјРµРЅСЋ Сѓ РёРіСЂРѕРєР°
-//new bool:is_in_menu_audio2[33] // РћС‚РєСЂС‹С‚РѕРµ РјРµРЅСЋ Сѓ РёРіСЂРѕРєР°
-new pcvar_ms//Р’РєР»СЋС‡РµРЅРёРµ РІС‹РєР»СЋС‡РµРЅРёРµ РїР»Р°РіРёРЅР°
-new pcvar_help//РЎРїСЂР°РІРєР° РїРѕ РїР»Р°РіРёРЅСѓ
+new bool:admin_options[33][30] // Индивидуальные опции
+//new bool:is_in_menu[33] // Открытое меню у игрока
+//new bool:is_in_menu_audio[33] // Открытое меню у игрока
+//new bool:is_in_menu_audio1[33] // Открытое меню у игрока
+//new bool:is_in_menu_audio2[33] // Открытое меню у игрока
+new pcvar_ms//Включение выключение плагина
+new pcvar_help//Справка по плагину
 
 new bool:admin[33];
 new bool:girl[33];
 new bool:clan[33];
 new bool:user[33];
   
-new const ADMIN_MODEL_CT_1[] = "cat" // РњРѕРґРµР»Рё Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂР° РљРћРў
-new const ADMIN_MODEL_CT_2[] = "cheburashka" // РњРѕРґРµР»Рё Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂР° Р§Р•Р‘РЈР РђРЁРљРђ
-new const ADMIN_MODEL_CT_3[] = "ms_admin_ct_2" // РњРѕРґРµР»Рё Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂР° РЎРљР•Р›Р•Рў
-new const ADMIN_MODEL_CT_4[] = "telepuz_ct" // РњРѕРґРµР»Рё Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂР° РўР•Р›Р•РџРЈР—
-new const ADMIN_MODEL_CT_5[] = "ms_clan_ct_1" // РњРѕРґРµР»Рё Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂР° РњРР›РР¦РРћРќР•Р 
-new const ADMIN_MODEL_CT_6[] = "ms_girl_ct_8" // РњРѕРґРµР»Рё Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂР° Р”Р•Р’РЈРЁРљРђ
-new const ADMIN_MODEL_T_1[] = "chucky" // РњРѕРґРµР»Рё Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂР° Р§РђРљРљР
-new const ADMIN_MODEL_T_2[] = "gena" // РњРѕРґРµР»Рё Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂР° Р“Р•РќРђ
-new const ADMIN_MODEL_T_3[] = "ms_admin_t_2" // РњРѕРґРµР»Рё Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂР° РЎРљР•Р›Р•Рў
-new const ADMIN_MODEL_T_4[] = "telepuz_te" // РњРѕРґРµР»Рё Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂР° РўР•Р›Р•РџРЈР—
-new const ADMIN_MODEL_T_5[] = "ms_clan_t_1" // РњРѕРґРµР»Рё Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂР° РўР•Р Р РћР РРЎРў
-new const ADMIN_MODEL_T_6[] = "ms_girl_t_1" // РњРѕРґРµР»Рё Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂР° Р”Р•Р’РЈРЁРљРђ
-new const GIRL_MODEL_CT_1[] = "ms_girl_ct_8" // Р–РµРЅСЃРєРёРµ РјРѕРґРµР»Рё
-/*new const GIRL_MODEL_CT_2[] = "ms_girl_ct_7" // Р–РµРЅСЃРєРёРµ РјРѕРґРµР»Рё
-new const GIRL_MODEL_CT_3[] = "ms_girl_ct_8" // Р–РµРЅСЃРєРёРµ РјРѕРґРµР»Рё
-new const GIRL_MODEL_CT_4[] = "ms_girl_ct_6" // Р–РµРЅСЃРєРёРµ РјРѕРґРµР»Рё
-new const GIRL_MODEL_CT_5[] = "" // Р–РµРЅСЃРєРёРµ РјРѕРґРµР»Рё
-new const GIRL_MODEL_CT_6[] = "" // Р–РµРЅСЃРєРёРµ РјРѕРґРµР»Рё
-new const GIRL_MODEL_CT_7[] = "" // Р–РµРЅСЃРєРёРµ РјРѕРґРµР»Рё
-new const GIRL_MODEL_CT_8[] = "" // Р–РµРЅСЃРєРёРµ РјРѕРґРµР»Рё
-new const GIRL_MODEL_CT_9[] = "" // Р–РµРЅСЃРєРёРµ РјРѕРґРµР»Рё*/
-new const GIRL_MODEL_T_1[] = "ms_girl_t_1" // Р–РµРЅСЃРєРёРµ РјРѕРґРµР»Рё
-/*new const GIRL_MODEL_T_2[] = "ms_girl_t_6" // Р–РµРЅСЃРєРёРµ РјРѕРґРµР»Рё
-new const GIRL_MODEL_T_3[] = "ms_girl_t_7" // Р–РµРЅСЃРєРёРµ РјРѕРґРµР»Рё
-new const GIRL_MODEL_T_4[] = "ms_girl_t_2" // Р–РµРЅСЃРєРёРµ РјРѕРґРµР»Рё
-new const GIRL_MODEL_T_5[] = "ms_girl_t_3" // Р–РµРЅСЃРєРёРµ РјРѕРґРµР»Рё
-new const GIRL_MODEL_T_6[] = "" // Р–РµРЅСЃРєРёРµ РјРѕРґРµР»Рё
-new const GIRL_MODEL_T_7[] = "" // Р–РµРЅСЃРєРёРµ РјРѕРґРµР»Рё
-new const GIRL_MODEL_T_8[] = "" // Р–РµРЅСЃРєРёРµ РјРѕРґРµР»Рё
-new const GIRL_MODEL_T_9[] = "" // Р–РµРЅСЃРєРёРµ РјРѕРґРµР»Рё*/
-new const CLAN_MODEL_CT_1[] = "ms_clan_ct_1" // РњРѕРґРµР»Рё РєР»Р°РЅР°
-/*new const CLAN_MODEL_CT_2[] = "ms_admin_ct_2" // РњРѕРґРµР»Рё РєР»Р°РЅР°
-new const CLAN_MODEL_CT_3[] = "ms_clan_ct_1" // РњРѕРґРµР»Рё РєР»Р°РЅР°
-new const CLAN_MODEL_CT_4[] = "telepuz_ct" // РњРѕРґРµР»Рё РєР»Р°РЅР°
-new const CLAN_MODEL_CT_5[] = "ms_clan_ct_5" // РњРѕРґРµР»Рё РєР»Р°РЅР°
-new const CLAN_MODEL_CT_6[] = "ms_girl_ct_7" // РњРѕРґРµР»Рё РєР»Р°РЅР°
-new const CLAN_MODEL_CT_7[] = "" // РњРѕРґРµР»Рё РєР»Р°РЅР°
-new const CLAN_MODEL_CT_8[] = "" // РњРѕРґРµР»Рё РєР»Р°РЅР°
-new const CLAN_MODEL_CT_9[] = "" // РњРѕРґРµР»Рё РєР»Р°РЅР°*/
-new const CLAN_MODEL_T_1[] = "ms_clan_t_1" // РњРѕРґРµР»Рё РєР»Р°РЅР°
-/*new const CLAN_MODEL_T_2[] = "ms_admin_t_4" // РњРѕРґРµР»Рё РєР»Р°РЅР°
-new const CLAN_MODEL_T_3[] = "ms_clan_t_1" // РњРѕРґРµР»Рё РєР»Р°РЅР°
-new const CLAN_MODEL_T_4[] = "ms_clan_t_4" // РњРѕРґРµР»Рё РєР»Р°РЅР°
-new const CLAN_MODEL_T_5[] = "telepuz_te" // РњРѕРґРµР»Рё РєР»Р°РЅР°
-new const CLAN_MODEL_T_6[] = "ms_girl_t_7" // РњРѕРґРµР»Рё РєР»Р°РЅР°
-new const CLAN_MODEL_T_7[] = "" // РњРѕРґРµР»Рё РєР»Р°РЅР°
-new const CLAN_MODEL_T_8[] = "" // РњРѕРґРµР»Рё РєР»Р°РЅР°
-new const CLAN_MODEL_T_9[] = "" // РњРѕРґРµР»Рё РєР»Р°РЅР°*/
-new const USER_MODEL_CT_1[] = "cheburashka" // РњРѕРґРµР»Рё РїСЂРѕСЃС‚С‹С… РёРіСЂРѕРєРѕРІ
-/*new const USER_MODEL_CT_2[] = "" // РњРѕРґРµР»Рё РїСЂРѕСЃС‚С‹С… РёРіСЂРѕРєРѕРІ
-new const USER_MODEL_CT_3[] = "" // РњРѕРґРµР»Рё РїСЂРѕСЃС‚С‹С… РёРіСЂРѕРєРѕРІ
-new const USER_MODEL_CT_4[] = "" // РњРѕРґРµР»Рё РїСЂРѕСЃС‚С‹С… РёРіСЂРѕРєРѕРІ
-new const USER_MODEL_CT_5[] = "" // РњРѕРґРµР»Рё РїСЂРѕСЃС‚С‹С… РёРіСЂРѕРєРѕРІ
-new const USER_MODEL_CT_6[] = "" // РњРѕРґРµР»Рё РїСЂРѕСЃС‚С‹С… РёРіСЂРѕРєРѕРІ
-new const USER_MODEL_CT_7[] = "" // РњРѕРґРµР»Рё РїСЂРѕСЃС‚С‹С… РёРіСЂРѕРєРѕРІ
-new const USER_MODEL_CT_8[] = "" // РњРѕРґРµР»Рё РїСЂРѕСЃС‚С‹С… РёРіСЂРѕРєРѕРІ
-new const USER_MODEL_CT_9[] = "" // РњРѕРґРµР»Рё РїСЂРѕСЃС‚С‹С… РёРіСЂРѕРєРѕРІ*/
-new const USER_MODEL_T_1[] = "gena" // РњРѕРґРµР»Рё РїСЂРѕСЃС‚С‹С… РёРіСЂРѕРєРѕРІ
-/*new const USER_MODEL_T_2[] = "" // РњРѕРґРµР»Рё РїСЂРѕСЃС‚С‹С… РёРіСЂРѕРєРѕРІ
-new const USER_MODEL_T_3[] = "" // РњРѕРґРµР»Рё РїСЂРѕСЃС‚С‹С… РёРіСЂРѕРєРѕРІ
-new const USER_MODEL_T_4[] = "" // РњРѕРґРµР»Рё РїСЂРѕСЃС‚С‹С… РёРіСЂРѕРєРѕРІ
-new const USER_MODEL_T_5[] = "" // РњРѕРґРµР»Рё РїСЂРѕСЃС‚С‹С… РёРіСЂРѕРєРѕРІ
-new const USER_MODEL_T_6[] = "" // РњРѕРґРµР»Рё РїСЂРѕСЃС‚С‹С… РёРіСЂРѕРєРѕРІ
-new const USER_MODEL_T_7[] = "" // РњРѕРґРµР»Рё РїСЂРѕСЃС‚С‹С… РёРіСЂРѕРєРѕРІ
-new const USER_MODEL_T_8[] = "" // РњРѕРґРµР»Рё РїСЂРѕСЃС‚С‹С… РёРіСЂРѕРєРѕРІ
-new const USER_MODEL_T_9[] = "" // РњРѕРґРµР»Рё РїСЂРѕСЃС‚С‹С… РёРіСЂРѕРєРѕРІ*/
+new const ADMIN_MODEL_CT_1[] = "cat" // Модели администратора КОТ
+new const ADMIN_MODEL_CT_2[] = "cheburashka" // Модели администратора ЧЕБУРАШКА
+new const ADMIN_MODEL_CT_3[] = "ms_admin_ct_2" // Модели администратора СКЕЛЕТ
+new const ADMIN_MODEL_CT_4[] = "telepuz_ct" // Модели администратора ТЕЛЕПУЗ
+new const ADMIN_MODEL_CT_5[] = "ms_clan_ct_1" // Модели администратора МИЛИЦИОНЕР
+new const ADMIN_MODEL_CT_6[] = "ms_girl_ct_8" // Модели администратора ДЕВУШКА
+new const ADMIN_MODEL_T_1[] = "chucky" // Модели администратора ЧАККИ
+new const ADMIN_MODEL_T_2[] = "gena" // Модели администратора ГЕНА
+new const ADMIN_MODEL_T_3[] = "ms_admin_t_2" // Модели администратора СКЕЛЕТ
+new const ADMIN_MODEL_T_4[] = "telepuz_te" // Модели администратора ТЕЛЕПУЗ
+new const ADMIN_MODEL_T_5[] = "ms_clan_t_1" // Модели администратора ТЕРРОРИСТ
+new const ADMIN_MODEL_T_6[] = "ms_girl_t_1" // Модели администратора ДЕВУШКА
+new const GIRL_MODEL_CT_1[] = "ms_girl_ct_8" // Женские модели
+/*new const GIRL_MODEL_CT_2[] = "ms_girl_ct_7" // Женские модели
+new const GIRL_MODEL_CT_3[] = "ms_girl_ct_8" // Женские модели
+new const GIRL_MODEL_CT_4[] = "ms_girl_ct_6" // Женские модели
+new const GIRL_MODEL_CT_5[] = "" // Женские модели
+new const GIRL_MODEL_CT_6[] = "" // Женские модели
+new const GIRL_MODEL_CT_7[] = "" // Женские модели
+new const GIRL_MODEL_CT_8[] = "" // Женские модели
+new const GIRL_MODEL_CT_9[] = "" // Женские модели*/
+new const GIRL_MODEL_T_1[] = "ms_girl_t_1" // Женские модели
+/*new const GIRL_MODEL_T_2[] = "ms_girl_t_6" // Женские модели
+new const GIRL_MODEL_T_3[] = "ms_girl_t_7" // Женские модели
+new const GIRL_MODEL_T_4[] = "ms_girl_t_2" // Женские модели
+new const GIRL_MODEL_T_5[] = "ms_girl_t_3" // Женские модели
+new const GIRL_MODEL_T_6[] = "" // Женские модели
+new const GIRL_MODEL_T_7[] = "" // Женские модели
+new const GIRL_MODEL_T_8[] = "" // Женские модели
+new const GIRL_MODEL_T_9[] = "" // Женские модели*/
+new const CLAN_MODEL_CT_1[] = "ms_clan_ct_1" // Модели клана
+/*new const CLAN_MODEL_CT_2[] = "ms_admin_ct_2" // Модели клана
+new const CLAN_MODEL_CT_3[] = "ms_clan_ct_1" // Модели клана
+new const CLAN_MODEL_CT_4[] = "telepuz_ct" // Модели клана
+new const CLAN_MODEL_CT_5[] = "ms_clan_ct_5" // Модели клана
+new const CLAN_MODEL_CT_6[] = "ms_girl_ct_7" // Модели клана
+new const CLAN_MODEL_CT_7[] = "" // Модели клана
+new const CLAN_MODEL_CT_8[] = "" // Модели клана
+new const CLAN_MODEL_CT_9[] = "" // Модели клана*/
+new const CLAN_MODEL_T_1[] = "ms_clan_t_1" // Модели клана
+/*new const CLAN_MODEL_T_2[] = "ms_admin_t_4" // Модели клана
+new const CLAN_MODEL_T_3[] = "ms_clan_t_1" // Модели клана
+new const CLAN_MODEL_T_4[] = "ms_clan_t_4" // Модели клана
+new const CLAN_MODEL_T_5[] = "telepuz_te" // Модели клана
+new const CLAN_MODEL_T_6[] = "ms_girl_t_7" // Модели клана
+new const CLAN_MODEL_T_7[] = "" // Модели клана
+new const CLAN_MODEL_T_8[] = "" // Модели клана
+new const CLAN_MODEL_T_9[] = "" // Модели клана*/
+new const USER_MODEL_CT_1[] = "cheburashka" // Модели простых игроков
+/*new const USER_MODEL_CT_2[] = "" // Модели простых игроков
+new const USER_MODEL_CT_3[] = "" // Модели простых игроков
+new const USER_MODEL_CT_4[] = "" // Модели простых игроков
+new const USER_MODEL_CT_5[] = "" // Модели простых игроков
+new const USER_MODEL_CT_6[] = "" // Модели простых игроков
+new const USER_MODEL_CT_7[] = "" // Модели простых игроков
+new const USER_MODEL_CT_8[] = "" // Модели простых игроков
+new const USER_MODEL_CT_9[] = "" // Модели простых игроков*/
+new const USER_MODEL_T_1[] = "gena" // Модели простых игроков
+/*new const USER_MODEL_T_2[] = "" // Модели простых игроков
+new const USER_MODEL_T_3[] = "" // Модели простых игроков
+new const USER_MODEL_T_4[] = "" // Модели простых игроков
+new const USER_MODEL_T_5[] = "" // Модели простых игроков
+new const USER_MODEL_T_6[] = "" // Модели простых игроков
+new const USER_MODEL_T_7[] = "" // Модели простых игроков
+new const USER_MODEL_T_8[] = "" // Модели простых игроков
+new const USER_MODEL_T_9[] = "" // Модели простых игроков*/
   
   
 
   
-new g_has_custom_model[33]//РСЃРїРѕР»СЊР·СѓРµС‚ РёРіСЂРѕРє РјРѕРґРµР»СЊ РёР»Рё РЅРµС‚
-new g_player_model[33][32]//РўРµРєСѓС‰Р°СЏ РјРѕРґРµР»СЊ РёРіСЂРѕРєР°
-new Float:g_models_targettime // Р¦РµР»Р°СЏ РµРґРёРЅРёС†Р° РІСЂРµРјРµРЅРё РґР»СЏ РїРѕСЃР»РµРґРЅРµРіРѕ РёР·РјРµРЅРµРЅРёСЏ РјРѕРґРµР»Рё
-new Float:g_roundstarttime // РџРѕСЃР»РµРґРЅРµРµ РєСЂСѓРіР»РѕРµ СЃС‚Р°СЂС‚РѕРІРѕРµ РІСЂРµРјСЏ
+new g_has_custom_model[33]//Использует игрок модель или нет
+new g_player_model[33][32]//Текущая модель игрока
+new Float:g_models_targettime // Целая единица времени для последнего изменения модели
+new Float:g_roundstarttime // Последнее круглое стартовое время
 
 
-//РРќРР¦РРђР›РР—РђР¦РРЇ РџР›РђР“РРќРђ
+//ИНИЦИАЛИЗАЦИЯ ПЛАГИНА
 public plugin_init() {
-	//Р РµРіРёСЃС‚СЂРёСЂСѓРµРј РїР»Р°РіРёРЅ
+	//Регистрируем плагин
 	register_plugin(NAME,VERSION,AUTHOR);
-	//Р—Р°РґР°РµРј РїР°СЂР°РјРµС‚СЂС‹ РґР»СЏ Р»РѕРіРіРёСЂРѕРІР°РЅРёСЏ
-	//РЎРѕР·РґР°РµРј РїР°РїРєСѓ РґР»СЏ Р»РѕРіРѕРІ
-	new temp_s_LogInfo[] = "amx_logdir"; // Р—Р°РїРёСЃС‹РІР°РµРј РІ РїРµСЂРµРјРµРЅРЅСѓСЋ РїСѓС‚СЊ Рє РїР°РїРєРµ СЃ Р»РѕРіР°РјРё
-	get_localinfo(temp_s_LogInfo, g_s_LogFile, charsmax(g_s_LogFile)); //РџСЂРѕРІРµСЂСЏРµРј РЅР° РЅР°Р»РёС‡РёРµ С„Р°Р№Р»РѕРІ
-	add(g_s_LogFile, charsmax(g_s_LogFile), "/ms_models");// Р”РѕР±Р°РІР»СЏРµРј С„Р°Р№Р» РІ РїР°РїРєСѓ votemap
-	if(!dir_exists(g_s_LogFile)) // РїСЂРѕРІРµСЂСЏРµРј РµСЃР»Рё РїР°РїРєР° votemap РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚, РґРѕ СЃРѕР·РґР°РµРј РµРµ
-	mkdir(g_s_LogFile); // СЃРѕР·РґР°РµРј РїР°РїРєСѓ votemap
-	new temp_s_Time[32]; //РњР°СЃСЃРёРІ РІСЂРµРјРµРЅРё
-	get_time("%d-%m-%Y", temp_s_Time, charsmax(temp_s_Time)); //РџРѕР»СѓС‡Р°РµРј РІСЂРµРјСЏ
-	format(g_s_LogFile, charsmax(g_s_LogFile), "%s/%s.log", g_s_LogFile, temp_s_Time); //РЎРѕР·РґР°РµРј С„Р°Р№Р» СЃ Р»РѕРіР°РјРё Рё РґРѕР±Р°РІР»СЏРµРј С‚РµРєСѓС‰РµРµ РІСЂРµРјСЏ РІ РЅР°Р·РІР°РЅРёРµ С„Р°Р№Р»Р° 
-	//РџСЂРѕРІРµСЂРєР° СЃРµСЂРІРµСЂР°
+	//Задаем параметры для логгирования
+	//Создаем папку для логов
+	new temp_s_LogInfo[] = "amx_logdir"; // Записываем в переменную путь к папке с логами
+	get_localinfo(temp_s_LogInfo, g_s_LogFile, charsmax(g_s_LogFile)); //Проверяем на наличие файлов
+	add(g_s_LogFile, charsmax(g_s_LogFile), "/ms_models");// Добавляем файл в папку votemap
+	if(!dir_exists(g_s_LogFile)) // проверяем если папка votemap не существует, до создаем ее
+	mkdir(g_s_LogFile); // создаем папку votemap
+	new temp_s_Time[32]; //Массив времени
+	get_time("%d-%m-%Y", temp_s_Time, charsmax(temp_s_Time)); //Получаем время
+	format(g_s_LogFile, charsmax(g_s_LogFile), "%s/%s.log", g_s_LogFile, temp_s_Time); //Создаем файл с логами и добавляем текущее время в название файла 
+	//Проверка сервера
 	new hostname[64];
-	new hostname2[] = {"@@@РњРђРЎРљР - РЁРћРЈ@@@ В®"};
+	new hostname2[] = {"@@@МАСКИ - ШОУ@@@ ®"};
 	get_cvar_string("hostname", hostname, 63);
 	if(equali(hostname,hostname2)){
-	log_to_file(g_s_LogFile, "РћС€РёР±РѕРє РїСЂРё Р·Р°РїСѓСЃРєРµ РїР»Р°РіРёРЅР° РЅРµ РѕР±РЅР°СЂСѓР¶РµРЅРѕ")
+	log_to_file(g_s_LogFile, "Ошибок при запуске плагина не обнаружено")
 
-	//Р РµРіРёСЃС‚СЂРёСЂСѓРµРј СЃРѕР±С‹С‚РёСЏ
-	register_event("TextMsg", "Change_Team", "a", "1=1", "2&Game_join_te", "2&Game_join_ct"); //Р’С‹Р±РѕСЂ РёР»Рё РёР·РјРµРЅРµРЅРёРµ РєРѕРјР°РЅРґС‹
-	register_event("TextMsg", "eRestart", "a", "2&#Game_C", "2&#Game_w"); //Р РµСЃС‚Р°СЂС‚ СЂР°СѓРЅРґР°
-	register_event("SendAudio", "eEndRound", "a", "2&%!MRAD_terwin", "2&%!MRAD_ctwin", "2&%!MRAD_rounddraw"); //РћРєРѕРЅС‡Р°РЅРёРµ СЂР°СѓРЅРґР°
-	register_event("RoundTime", "eNewRound", "bc"); //РќРѕРІС‹Р№ СЂР°СѓРЅРґ
+	//Регистрируем события
+	register_event("TextMsg", "Change_Team", "a", "1=1", "2&Game_join_te", "2&Game_join_ct"); //Выбор или изменение команды
+	register_event("TextMsg", "eRestart", "a", "2&#Game_C", "2&#Game_w"); //Рестарт раунда
+	register_event("SendAudio", "eEndRound", "a", "2&%!MRAD_terwin", "2&%!MRAD_ctwin", "2&%!MRAD_rounddraw"); //Окончание раунда
+	register_event("RoundTime", "eNewRound", "bc"); //Новый раунд
 	register_event("StatusValue", "setTeam", "be", "1=1"); 
 	register_event("StatusValue", "showStatus", "be", "1=2", "2!0");
 	register_event("StatusValue", "hideStatus", "be", "1=1", "2=0");
-	//Р РµРіРёСЃС‚СЂРёСЂСѓРµРј СЃР»РѕРІР°СЂРё
+	//Регистрируем словари
 	register_dictionary("miscstats.txt");
-	//Р РµРіРёСЃС‚СЂРёСЂСѓРµРј РєРѕРЅСЃРѕР»СЊРЅС‹Рµ РєРѕРјР°РЅРґС‹
-	register_clcmd("ms_model","usermodel",-1,"РњРµРЅСЋ РјРѕРґРµР»РµР№");
-	//Р РµРіРёСЃС‚СЂРёСЂСѓРµРј РєРѕРјР°РЅРґС‹ С‡Р°С‚Р°
+	register_dictionary("main.txt");
+	//Регистрируем консольные команды
+	register_clcmd("ms_model","usermodel",-1,"Меню моделей");
+	//Регистрируем команды чата
 	register_clcmd("say /model","currmodel",-1);
 	
 	
 	mute_sound=true;
 
-	//register_cvar("amx_reserv","1")//С‚РёРї РѕС‚РєР»СЋС‡РµРЅРёСЏ РєР»РёРµРЅС‚Р°, РїРѕ РїРёРЅРіСѓ РёР»Рё РїРѕ РІСЂРµРјРµРЅРё
+	//register_cvar("amx_reserv","1")//тип отключения клиента, по пингу или по времени
 	#if defined HIDE_RESERVEDSLOTS 
-	set_cvar_num( "sv_visiblemaxplayers" , get_maxplayers()) //РєРѕР»РёС‡РµСЃС‚РІРѕ СЃР»РѕС‚РѕРІ РЅР° СЃРµСЂРІРµСЂРµ
+	set_cvar_num( "sv_visiblemaxplayers" , get_maxplayers()) //количество слотов на сервере
 	#endif 
     
 	new mapname[32];
@@ -407,7 +409,7 @@ public plugin_init() {
 	g_bottom_sync = CreateHudSyncObj()
 	g_he_sync = CreateHudSyncObj()
 
-	// Р РµРіРёСЃС‚СЂРёСЂСѓРµРј ID РјРµРЅСЋ
+	// Регистрируем ID меню
 	new menu1ID = register_menuid("Menu_Admin_CT");
 	new menu2ID = register_menuid("Menu_Admin_T");
 	new menu3ID = register_menuid("Menu_Girl_CT");
@@ -422,7 +424,7 @@ public plugin_init() {
 	new menu12ID = register_menuid("show_esp_menu");
 
 
-	    // Р РµРіРёСЃС‚СЂРёСЂСѓРµРј РєРѕРјР°РЅРґС‹ РјРµРЅСЋ
+	    // Регистрируем команды меню
 	register_menucmd(menu1ID,1023,"Menu_Admin_CT_Action");
 	register_menucmd(menu2ID,1023,"Menu_Admin_T_Action");
 	register_menucmd(menu3ID,511,"Menu_Girl_CT_Action");
@@ -435,43 +437,43 @@ public plugin_init() {
 	register_menucmd(menu10ID,1023,"Sound_Settings_Action");
 	register_menucmd(menu11ID,1023,"Music_Settings_Action");
 	register_menucmd(menu12ID,1023,"menu_esp");
-	    //Р РµРєР»Р°РјР°
+	    //Реклама
 	set_task( 30.0, "Reklama", _,_,_,"a", 30);
 	    
 	
 	    
-	pcvar_ms=register_cvar("ms","1")//Р’РєР»СЋС‡РµРЅРёРµ РІС‹РєР»СЋС‡РµРЅРёРµ РїР»Р°РіРёРЅР°
-	pcvar_help=register_cvar("ms_help","1")//РџРѕРєР°Р·С‹РІР°С‚СЊ СЃРїСЂР°РІРєСѓ РёР»Рё РЅРµС‚
+	pcvar_ms=register_cvar("ms","1")//Включение выключение плагина
+	pcvar_help=register_cvar("ms_help","1")//Показывать справку или нет
 	register_clcmd("say /menu","cmd_esp_menu",-1);
-	register_clcmd("say /РњР•РќР®","cmd_esp_menu",-1);
-	register_clcmd("say /Р¬РЈРўР“","cmd_esp_menu",-1);
+	register_clcmd("say /МЕНЮ","cmd_esp_menu",-1);
+	register_clcmd("say /ЬУТГ","cmd_esp_menu",-1);
 	register_clcmd("say /vty.","cmd_esp_menu",-1);
 	register_clcmd("menu","cmd_esp_menu",-1);
 	register_clcmd("translit","language",-1);
-	    //Р›СѓС‡ СЃРјРµСЂС‚Рё
-	register_cvar("amx_deathbeams_enabled","1")//Р’РєР»СЋС‡РёС‚СЊ РІС‹РєР»СЋС‡РёС‚СЊ РїРѕРєР°Р· РѕС‚РєСѓРґР° СѓР±РёР»Рё
-	register_cvar("amx_deathbeams_randcolor","0")//Р¦РІРµС‚ Р»Р°Р·РµСЂР°
-	register_event("DeathMsg","death","a")//РЎРѕР±С‹С‚РёРµ СЃРјРµСЂС‚Рё РёРіСЂРѕРєР°
-	    //РћС‚РѕР±СЂР°Р¶РµРЅРёРµ РїРѕРІСЂРµР¶РґРµРЅРёСЏ
+	    //Луч смерти
+	register_cvar("amx_deathbeams_enabled","1")//Включить выключить показ откуда убили
+	register_cvar("amx_deathbeams_randcolor","0")//Цвет лазера
+	register_event("DeathMsg","death","a")//Событие смерти игрока
+	    //Отображение повреждения
 	register_event("Damage", "damage_message", "b", "2!0", "3=0", "4!0")
 	g_HudSync = CreateHudSyncObj()
-	/*register_clcmd("settings","cmd_esp_menu",-1,"РџРѕРєР°Р·Р°С‚СЊ РјРµРЅСЋ РЅР°СЃС‚СЂРѕРµРє")*/
-	    //РњРµРЅСЋ
-	//new keys=MENU_KEY_0|MENU_KEY_1|MENU_KEY_2|MENU_KEY_3|MENU_KEY_4|MENU_KEY_5|MENU_KEY_6|MENU_KEY_7|MENU_KEY_8|MENU_KEY_9;//РљРЅРѕРїРєРё
-	//register_menucmd(register_menuid("РњРµРЅСЋ РЅР°СЃС‚СЂРѕРµРє"),MENU_KEY_0|MENU_KEY_1|MENU_KEY_2|MENU_KEY_3|MENU_KEY_4|MENU_KEY_5|MENU_KEY_6|MENU_KEY_7|MENU_KEY_8|MENU_KEY_9,"menu_esp");
-	//register_menucmd(register_menuid("РњРµРЅСЋ РЅР°СЃС‚СЂРѕРµРє Р·РІСѓРєР°"),MENU_KEY_0|MENU_KEY_1|MENU_KEY_2|MENU_KEY_3|MENU_KEY_4|MENU_KEY_5|MENU_KEY_6|MENU_KEY_7|MENU_KEY_8|MENU_KEY_9,"Audio_Settings");
+	/*register_clcmd("settings","cmd_esp_menu",-1,"Показать меню настроек")*/
+	    //Меню
+	//new keys=MENU_KEY_0|MENU_KEY_1|MENU_KEY_2|MENU_KEY_3|MENU_KEY_4|MENU_KEY_5|MENU_KEY_6|MENU_KEY_7|MENU_KEY_8|MENU_KEY_9;//Кнопки
+	//register_menucmd(register_menuid("Меню настроек"),MENU_KEY_0|MENU_KEY_1|MENU_KEY_2|MENU_KEY_3|MENU_KEY_4|MENU_KEY_5|MENU_KEY_6|MENU_KEY_7|MENU_KEY_8|MENU_KEY_9,"menu_esp");
+	//register_menucmd(register_menuid("Меню настроек звука"),MENU_KEY_0|MENU_KEY_1|MENU_KEY_2|MENU_KEY_3|MENU_KEY_4|MENU_KEY_5|MENU_KEY_6|MENU_KEY_7|MENU_KEY_8|MENU_KEY_9,"Audio_Settings");
 	max_players=get_maxplayers()
 	
 	return PLUGIN_CONTINUE
 	
 	}
-	log_to_file(g_s_LogFile, "ERROR: РќРµ РЅР°Р№РґРµРЅ С„Р°Р№Р» Р»РёС†РµРЅР·РёРё РњР°СЃРєРё - РЁРѕСѓ")
-	log_to_file(g_s_LogFile, "ERROR: РџСЂРѕРІРµСЂСЊС‚Рµ РЅР°Р»РёС‡РёРµ С„Р°Р№Р»Р° Р»РёС†РµРЅР·РёРё РІ РїР°РїРєРµ СЃРµСЂРІРµСЂР°")
+	log_to_file(g_s_LogFile, "ERROR: Не найден файл лицензии Маски - Шоу")
+	log_to_file(g_s_LogFile, "ERROR: Проверьте наличие файла лицензии в папке сервера")
 	return PLUGIN_HANDLED
 
 }
 
-  //РњРµРЅСЋ СЃ СѓСЂРѕРІРЅРµРј РґРѕСЃС‚СѓРїР°
+  //Меню с уровнем доступа
 public Show_Menu_Level(player) {
 	if (is_user_connected(player))
 	if ((cs_get_user_team(player) == CS_TEAM_CT)&& admin[player]){
@@ -496,161 +498,161 @@ public Show_Menu_Level(player) {
 }
 
   // ------------------------------------------------------------------------------------------
-  // --РџРћРљРђР—Р«Р’РђР•Рњ РњР•РќР®--------------------------------------------------------------------------
+  // --ПОКАЗЫВАЕМ МЕНЮ--------------------------------------------------------------------------
   // ------------------------------------------------------------------------------------------
 
-//РњРµРЅСЋ Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂР° РєРѕРЅС‚СЂ С‚РµСЂСЂРѕСЂРёСЃС‚Р°
+//Меню администратора контр террориста
 
 public Menu_Admin_CT(player) {
 
-  //РњРѕРґРµР»Рё РєРѕРЅС‚СЂ С‚РµСЂСЂРѕСЂРёСЃС‚РѕРІ
+  //Модели контр террористов
   
     new menubody[1024];
-    format(menubody,1023,"\rРњРѕРґРµР»Рё РђРґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂР°:^n^n^n");
-    add(menubody,1023,"\y1. РљРћРў ^n");
-    add(menubody,1023,"\y2. Р§Р•Р‘РЈР РђРЁРљРђ ^n");
-    add(menubody,1023,"\y3. РЎРљР•Р›Р•Рў ^n");
-    add(menubody,1023,"\y4. РўР•Р›Р•РџРЈР— ^n");
-    add(menubody,1023,"\y5. РњРР›РР¦РРћРќР•Р  ^n");
-    add(menubody,1023,"\y6. Р”Р•Р’РЈРЁРљРђ ^n");
-    add(menubody,1023,"\y^n7. Р–РµРЅСЃРєРёРµ РјРѕРґРµР»Рё^n");
-    add(menubody,1023,"\y^n8. РњРѕРґРµР»Рё СЃРѕРѕР±С‰РµСЃС‚РІР°^n");
-    add(menubody,1023,"\r^n^n9. РЎР±СЂРѕСЃРёС‚СЊ РјРѕРґРµР»СЊ^n");
+    format(menubody,1023,"\rМодели Администратора:^n^n^n");
+    add(menubody,1023,"\y1. КОТ ^n");
+    add(menubody,1023,"\y2. ЧЕБУРАШКА ^n");
+    add(menubody,1023,"\y3. СКЕЛЕТ ^n");
+    add(menubody,1023,"\y4. ТЕЛЕПУЗ ^n");
+    add(menubody,1023,"\y5. МИЛИЦИОНЕР ^n");
+    add(menubody,1023,"\y6. ДЕВУШКА ^n");
+    add(menubody,1023,"\y^n7. Женские модели^n");
+    add(menubody,1023,"\y^n8. Модели сообщества^n");
+    add(menubody,1023,"\r^n^n9. Сбросить модель^n");
 
     show_menu(player,KEY1|KEY2|KEY3|KEY4|KEY5|KEY6|KEY7|KEY8|KEY9|KEY0,menubody,MENUTIME,"Menu_Admin_CT");
 
     return PLUGIN_HANDLED;
 }
   
-  //РњРµРЅСЋ Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂР° С‚РµСЂСЂРѕСЂРёСЃС‚Р°
+  //Меню администратора террориста
   
 public Menu_Admin_T(player) {
 
-  //РњРѕРґРµР»Рё С‚РµСЂСЂРѕСЂРёСЃС‚РѕРІ
+  //Модели террористов
   
     new menubody[1024];
-    format(menubody,1023,"\rРњРѕРґРµР»Рё РђРґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂР°:^n^n^n");
-    add(menubody,1023,"\y1. Р§РђРљРљР ^n");
-    add(menubody,1023,"\y2. Р“Р•РќРђ ^n");
-    add(menubody,1023,"\y3. РЎРљР•Р›Р•Рў ^n");
-    add(menubody,1023,"\y4. РўР•Р›Р•РџРЈР— ^n");
-    add(menubody,1023,"\y5. РўР•Р Р РћР РРЎРў ^n");
-    add(menubody,1023,"\y6. Р”Р•Р’РЈРЁРљРђ ^n");
-    add(menubody,1023,"\y^n7. Р–РµРЅСЃРєРёРµ РјРѕРґРµР»Рё^n");
-    add(menubody,1023,"\y^n8. РњРѕРґРµР»Рё СЃРѕРѕР±С‰РµСЃС‚РІР°^n");
-    add(menubody,1023,"\r^n^n9. РЎР±СЂРѕСЃРёС‚СЊ РјРѕРґРµР»СЊ^n");
+    format(menubody,1023,"\rМодели Администратора:^n^n^n");
+    add(menubody,1023,"\y1. ЧАККИ ^n");
+    add(menubody,1023,"\y2. ГЕНА ^n");
+    add(menubody,1023,"\y3. СКЕЛЕТ ^n");
+    add(menubody,1023,"\y4. ТЕЛЕПУЗ ^n");
+    add(menubody,1023,"\y5. ТЕРРОРИСТ ^n");
+    add(menubody,1023,"\y6. ДЕВУШКА ^n");
+    add(menubody,1023,"\y^n7. Женские модели^n");
+    add(menubody,1023,"\y^n8. Модели сообщества^n");
+    add(menubody,1023,"\r^n^n9. Сбросить модель^n");
 
     show_menu(player,KEY1|KEY2|KEY3|KEY4|KEY5|KEY6|KEY7|KEY8|KEY9|KEY0,menubody,MENUTIME,"Menu_Admin_T");
 
     return PLUGIN_HANDLED;
 }
   
-  //РњРµРЅСЋ РґРµРІСѓС€РєРё РєРѕРЅС‚СЂ С‚РµСЂСЂРѕСЂРёСЃС‚Р°
+  //Меню девушки контр террориста
 
 public Menu_Girl_CT(player) {
 
-  //РњРѕРґРµР»Рё РєРѕРЅС‚СЂ С‚РµСЂСЂРѕСЂРёСЃС‚РѕРІ
+  //Модели контр террористов
   
     new menubody[512];
-    format(menubody,511,"\rР–РµРЅСЃРєРёРµ РјРѕРґРµР»Рё:^n^n^n");
-    add(menubody,511,"\y1. Р”РµРІСѓС€РєР° ^n");
-    /*add(menubody,511,"\y2. РЎРїРµС†РЅР°Р·^n");
-    add(menubody,511,"\y3. РњРµРґСЃРµСЃС‚СЂР°^n");
-    add(menubody,511,"\y4. Р‘Р»РѕРЅРґРёРЅРєР°^n");*/
-    add(menubody,511,"\r^n^n9. РЎР±СЂРѕСЃРёС‚СЊ РјРѕРґРµР»СЊ^n");
+    format(menubody,511,"\rЖенские модели:^n^n^n");
+    add(menubody,511,"\y1. Девушка ^n");
+    /*add(menubody,511,"\y2. Спецназ^n");
+    add(menubody,511,"\y3. Медсестра^n");
+    add(menubody,511,"\y4. Блондинка^n");*/
+    add(menubody,511,"\r^n^n9. Сбросить модель^n");
 
     show_menu(player,KEY1|KEY2|KEY3|KEY4|KEY5|KEY6|KEY7|KEY8|KEY9|KEY0,menubody,MENUTIME,"Menu_Girl_CT");
 
     return PLUGIN_HANDLED;
 }
   
-  //РњРµРЅСЋ РґРµРІСѓС€РєРё С‚РµСЂСЂРѕСЂРёСЃС‚Р°
+  //Меню девушки террориста
   
 public Menu_Girl_T(player) {
 
-  //РњРѕРґРµР»Рё С‚РµСЂСЂРѕСЂРёСЃС‚РѕРІ
+  //Модели террористов
   
     new menubody[512];
-    format(menubody,511,"\rР–РµРЅСЃРєРёРµ РјРѕРґРµР»Рё:^n^n^n");
-    add(menubody,511,"\y1. Р”РµРІСѓС€РєР° ^n");
-    /*add(menubody,511,"\y2. РЎРѕР»РґР°С‚^n");
-    add(menubody,511,"\y3. РЎРїРµС†РЅР°Р·^n");
-    add(menubody,511,"\y4. Р‘РѕРµРІР°СЏ РґРµРІРѕС‡РєР°^n");
-    add(menubody,511,"\y5. РќРµРІРµСЃС‚Р°^n");*/
-    add(menubody,511,"\r^n^n9. РЎР±СЂРѕСЃРёС‚СЊ РјРѕРґРµР»СЊ^n");
+    format(menubody,511,"\rЖенские модели:^n^n^n");
+    add(menubody,511,"\y1. Девушка ^n");
+    /*add(menubody,511,"\y2. Солдат^n");
+    add(menubody,511,"\y3. Спецназ^n");
+    add(menubody,511,"\y4. Боевая девочка^n");
+    add(menubody,511,"\y5. Невеста^n");*/
+    add(menubody,511,"\r^n^n9. Сбросить модель^n");
 
     show_menu(player,KEY1|KEY2|KEY3|KEY4|KEY5|KEY6|KEY7|KEY8|KEY9|KEY0,menubody,MENUTIME,"Menu_Girl_T");
 
     return PLUGIN_HANDLED;
 }
-  //РњРµРЅСЋ СѓС‡Р°СЃС‚РЅРёРєР° СЃРѕРѕР±С‰РµСЃС‚РІР° РєРѕРЅС‚СЂ С‚РµСЂСЂРѕСЂРёСЃС‚Р°
+  //Меню участника сообщества контр террориста
 
 public Menu_Clan_CT(player) {
 
-  //РњРѕРґРµР»Рё РєРѕРЅС‚СЂ С‚РµСЂСЂРѕСЂРёСЃС‚РѕРІ
+  //Модели контр террористов
   
     new menubody[512];
-    format(menubody,511,"\rРњРѕРґРµР»Рё СЃРѕРѕР±С‰РµСЃС‚РІР°:^n^n^n");
-    add(menubody,511,"\y1. РњРёР»РёС†РёРѕРЅРµСЂ ^n");
-    /*add(menubody,511,"\y2. РЎРєРµР»РµС‚^n");
-    add(menubody,511,"\y3. РњРёР»РёС†РёРѕРЅРµСЂ^n");
-    add(menubody,511,"\y4. РўРµР»РµРїСѓР·^n");
-    add(menubody,511,"\y5. Р РѕР±РѕРєРѕРї^n");
-    add(menubody,511,"\y6. Р”РµРІСѓС€РєР° РёР· СЃРїРµС†РЅР°Р·Р°^n");*/
-    add(menubody,511,"\r^n^n9. РЎР±СЂРѕСЃРёС‚СЊ РјРѕРґРµР»СЊ^n");
+    format(menubody,511,"\rМодели сообщества:^n^n^n");
+    add(menubody,511,"\y1. Милиционер ^n");
+    /*add(menubody,511,"\y2. Скелет^n");
+    add(menubody,511,"\y3. Милиционер^n");
+    add(menubody,511,"\y4. Телепуз^n");
+    add(menubody,511,"\y5. Робокоп^n");
+    add(menubody,511,"\y6. Девушка из спецназа^n");*/
+    add(menubody,511,"\r^n^n9. Сбросить модель^n");
 
     show_menu(player,KEY1|KEY2|KEY3|KEY4|KEY5|KEY6|KEY7|KEY8|KEY9|KEY0,menubody,MENUTIME,"Menu_Clan_CT");
 
     return PLUGIN_HANDLED;
 }
   
-  //РњРµРЅСЋ СѓС‡Р°СЃС‚РЅРёРєР° СЃРѕРѕР±С‰РµСЃС‚РІР° С‚РµСЂСЂРѕСЂРёСЃС‚Р°
+  //Меню участника сообщества террориста
   
 public Menu_Clan_T(player) {
 
-  //РњРѕРґРµР»Рё С‚РµСЂСЂРѕСЂРёСЃС‚РѕРІ
+  //Модели террористов
   
     new menubody[512];
-    format(menubody,511,"\rРњРѕРґРµР»Рё СЃРѕРѕР±С‰РµСЃС‚РІР°:^n^n^n");
-    add(menubody,511,"\y1. РўРµСЂСЂРѕСЂРёСЃС‚ ^n");
-    /*add(menubody,511,"\y2. Р‘РµРЅРґРµСЂ^n");
-    add(menubody,511,"\y3. РџР°СЂРµРЅСЊ РІ РЅР°РєРѕР»РєР°С…^n");
-    add(menubody,511,"\y4. Р СѓСЃСЃРєРёР№ СЃРїРµС†РЅР°Р·^n");
-    add(menubody,511,"\y5. РўРµР»РµРїСѓР·^n");
-    add(menubody,511,"\y6. Р”РµРІСѓС€РєР° РёР· СЃРїРµС†РЅР°Р·Р°^n");*/
-    add(menubody,511,"\r^n^n9. РЎР±СЂРѕСЃРёС‚СЊ РјРѕРґРµР»СЊ^n");
+    format(menubody,511,"\rМодели сообщества:^n^n^n");
+    add(menubody,511,"\y1. Террорист ^n");
+    /*add(menubody,511,"\y2. Бендер^n");
+    add(menubody,511,"\y3. Парень в наколках^n");
+    add(menubody,511,"\y4. Русский спецназ^n");
+    add(menubody,511,"\y5. Телепуз^n");
+    add(menubody,511,"\y6. Девушка из спецназа^n");*/
+    add(menubody,511,"\r^n^n9. Сбросить модель^n");
 
     show_menu(player,KEY1|KEY2|KEY3|KEY4|KEY5|KEY6|KEY7|KEY8|KEY9|KEY0,menubody,MENUTIME,"Menu_Clan_T");
 
     return PLUGIN_HANDLED;
 }
   
-  //РњРµРЅСЋ РёРіСЂРѕРєР° РєРѕРЅС‚СЂ С‚РµСЂСЂРѕСЂРёСЃС‚Р°
+  //Меню игрока контр террориста
 
 public Menu_User_CT(player) {
 
-  //РњРѕРґРµР»Рё РєРѕРЅС‚СЂ С‚РµСЂСЂРѕСЂРёСЃС‚РѕРІ
+  //Модели контр террористов
   
     new menubody[512];
-    format(menubody,511,"\rРњРѕРґРµР»Рё РёРіСЂРѕРєР°:^n^n^n");
-    add(menubody,511,"\y1. Р§РµР±СѓСЂР°С€РєР° ^n");
-    add(menubody,511,"\r^n^n9. РЎР±СЂРѕСЃРёС‚СЊ РјРѕРґРµР»СЊ^n");
+    format(menubody,511,"\rМодели игрока:^n^n^n");
+    add(menubody,511,"\y1. Чебурашка ^n");
+    add(menubody,511,"\r^n^n9. Сбросить модель^n");
 
     show_menu(player,KEY1|KEY2|KEY3|KEY4|KEY5|KEY6|KEY7|KEY8|KEY9|KEY0,menubody,MENUTIME,"Menu_User_CT");
 
     return PLUGIN_HANDLED;
 }
   
-  //РњРµРЅСЋ РёРіСЂРѕРєР° С‚РµСЂСЂРѕСЂРёСЃС‚Р°
+  //Меню игрока террориста
   
 public Menu_User_T(player) {
 
-  //РњРѕРґРµР»Рё С‚РµСЂСЂРѕСЂРёСЃС‚РѕРІ
+  //Модели террористов
   
     new menubody[512];
-    format(menubody,511,"\rРњРѕРґРµР»Рё РёРіСЂРѕРєР°:^n^n^n");
-    add(menubody,511,"\y1. Р“РµРЅР° ^n");
-    add(menubody,511,"\r^n^n9. РЎР±СЂРѕСЃРёС‚СЊ РјРѕРґРµР»СЊ^n");
+    format(menubody,511,"\rМодели игрока:^n^n^n");
+    add(menubody,511,"\y1. Гена ^n");
+    add(menubody,511,"\r^n^n9. Сбросить модель^n");
 
     show_menu(player,KEY1|KEY2|KEY3|KEY4|KEY5|KEY6|KEY7|KEY8|KEY9|KEY0,menubody,MENUTIME,"Menu_User_T");
 
@@ -662,8 +664,8 @@ public Audio_Settings(id){
 	//is_in_menu_audio[id] = true
 	new audio_menu[1024];
 	//new keys=MENU_KEY_0|MENU_KEY_1|MENU_KEY_2|MENU_KEY_3|MENU_KEY_4|MENU_KEY_5|MENU_KEY_6|MENU_KEY_7|MENU_KEY_8|MENU_KEY_9;
-	new onoff[2][]={{"\rРІС‹РєР»\w"},{"\yРІРєР»\w"}} // \r=red \y=yellow \w white
-	format(audio_menu, 1023, "\yРњРµРЅСЋ РЅР°СЃС‚СЂРѕРµРє Р·РІСѓРєР°\w^n ^n1. Р’СЃРµ Р·РІСѓРєРё %s^n2. РњСѓР·С‹РєР° РїСЂРё РІС…РѕРґРµ РІ РёРіСЂСѓ %s^n3. РЈР±РёР№СЃС‚РІРѕ РїРµСЂРІРѕРіРѕ РёРіСЂРѕРєР° %s^n4. РџРѕС€Р°РіРѕРІРѕРµ СѓР±РёР№СЃС‚РІРѕ %s^n5. Р—РІСѓРє РІ РєРѕРЅС†Рµ СЂР°СѓРЅРґР° %s^n6. РўР°Р№РјРµСЂ Р±РѕРјР±С‹ %s^n7. Р—РІСѓРє РєРѕРіРґР° 1 РЅР° 1 %s^n^n8. РЎРѕС…СЂР°РЅРёС‚СЊ Рё РІС‹Р№С‚Рё^n^n9. Р”Р°Р»РµРµ^n0. РќР°Р·Р°Рґ",
+	new onoff[2][]={{"\rвыкл\w"},{"\yвкл\w"}} // \r=red \y=yellow \w white
+	format(audio_menu, 1023, "\yМеню настроек звука\w^n ^n1. Все звуки %s^n2. Музыка при входе в игру %s^n3. Убийство первого игрока %s^n4. Пошаговое убийство %s^n5. Звук в конце раунда %s^n6. Таймер бомбы %s^n7. Звук когда 1 на 1 %s^n^n8. Сохранить и выйти^n^n9. Далее^n0. Назад",
 	onoff[admin_options[id][MS_AUDIO_ALL]],
 	onoff[admin_options[id][MS_AUDIO_CONNECT]],
 	onoff[admin_options[id][MS_AUDIO_FIRSTBLOOD]],
@@ -679,8 +681,8 @@ public Audio_Settings(id){
 public Sound_Settings(id){
 	//is_in_menu_audio1[id] = true
 	new sound_menu[1024];
-	new onoff[2][]={{"\rРІС‹РєР»\w"},{"\yРІРєР»\w"}} // \r=red \y=yellow \w white
-	format(sound_menu, 1023, "\yРњРµРЅСЋ РЅР°СЃС‚СЂРѕРµРє Р·РІСѓРєР°\w^n ^n1. РћРґРёРЅ РїСЂРѕС‚РёРІ С‚РѕР»РїС‹ %s^n2. РЈР±РёР№СЃС‚РІРѕ СЃ РЅРѕР¶Р° РґРµРІСѓС€РєРѕР№ %s^n3. РЈР±РёР№СЃС‚РІРѕ СЃ РЅРѕР¶Р° РёРіСЂРѕРєРѕРј %s^n4. РЈР±РёР№СЃС‚РІРѕ СЃ РіСЂР°РЅР°С‚С‹ %s^n5. РЎР°РјРѕСѓР±РёР№СЃС‚РІРѕ СЃ РіСЂР°РЅР°С‚С‹ %s^n6. Р—РІСѓРє СѓР±РёР№С†С‹ РІ РіРѕР»РѕРІСѓ %s^n7. Р—РІСѓРє РґР»СЏ СѓР±РёС‚РѕРіРѕ РІ РіРѕР»РѕРІСѓ %s^n^n8. РЎРѕС…СЂР°РЅРёС‚СЊ Рё РІС‹Р№С‚Рё^n^n9. РґР°Р»РµРµ^n0. РќР°Р·Р°Рґ",
+	new onoff[2][]={{"\rвыкл\w"},{"\yвкл\w"}} // \r=red \y=yellow \w white
+	format(sound_menu, 1023, "\yМеню настроек звука\w^n ^n1. Один против толпы %s^n2. Убийство с ножа девушкой %s^n3. Убийство с ножа игроком %s^n4. Убийство с гранаты %s^n5. Самоубийство с гранаты %s^n6. Звук убийцы в голову %s^n7. Звук для убитого в голову %s^n^n8. Сохранить и выйти^n^n9. далее^n0. Назад",
 	onoff[admin_options[id][MS_AUDIO_ONE_VS_ALL]],
 	onoff[admin_options[id][MS_AUDIO_GIRL_KNIFE]],
 	onoff[admin_options[id][MS_AUDIO_USER_KNIFE]],
@@ -696,8 +698,8 @@ public Sound_Settings(id){
 public Music_Settings(id){
 	//is_in_menu_audio2[id] = true
 	new music_menu[1024];
-	new onoff[2][]={{"\rРІС‹РєР»\w"},{"\yРІРєР»\w"}} // \r=red \y=yellow \w white
-	format(music_menu, 1023, "\yРњРµРЅСЋ РЅР°СЃС‚СЂРѕРµРє Р·РІСѓРєР°\w^n ^n1. Р”РІРѕР№РЅРѕРµ СѓР±РёР№СЃС‚РІРѕ %s^n2. РќРѕРІС‹Р№ СЂР°СѓРЅРґ %s^n3. РњРЅРѕР¶РµСЃС‚РІРµРЅРЅРѕРµ СѓР±РёР№СЃС‚РІРѕ %s^n4. Р—РІСѓРє РїРѕРґРЅСЏС‚РѕР№ Р±РѕРјР±С‹ %s^n5. Р—РІСѓРєРё РіРѕР»РѕСЃРѕРІР°РЅРёСЏ %s^n^n8. РЎРѕС…СЂР°РЅРёС‚СЊ Рё РІС‹Р№С‚Рё^n^n0. РќР°Р·Р°Рґ",
+	new onoff[2][]={{"\rвыкл\w"},{"\yвкл\w"}} // \r=red \y=yellow \w white
+	format(music_menu, 1023, "\yМеню настроек звука\w^n ^n1. Двойное убийство %s^n2. Новый раунд %s^n3. Множественное убийство %s^n4. Звук поднятой бомбы %s^n5. Звуки голосования %s^n^n8. Сохранить и выйти^n^n0. Назад",
 	onoff[admin_options[id][MS_AUDIO_DOUBLE_KILL]],
 	onoff[admin_options[id][MS_AUDIO_PREPARE]],
 	onoff[admin_options[id][MS_AUDIO_MULTI_KILL]],
@@ -709,18 +711,18 @@ public Music_Settings(id){
 }
 
 /*================================================================================
- РЎРѕР·РґР°РЅРёРµ РјРµРЅСЋ РЅР°СЃС‚СЂРѕРµРє
+ Создание меню настроек
 =================================================================================*/
 public show_esp_menu(id){
 	//is_in_menu[id] = true
 	new menu[1024];
 	//new keys=MENU_KEY_0|MENU_KEY_1|MENU_KEY_2|MENU_KEY_3|MENU_KEY_4|MENU_KEY_5|MENU_KEY_6|MENU_KEY_7|MENU_KEY_8|MENU_KEY_9;
-	new onoff[2][]={{"\rРІС‹РєР»\w"},{"\yРІРєР»\w"}} // \r=red \y=yellow \w white
-	new lang[2][]={{"\yР РЈРЎРЎРљРР™\w"},{"\yРђРќР“Р›РР™РЎРљРР™\w"}} // \r=red \y=yellow \w white
-	new text[2][]={{"(РёСЃРїРѕР»СЊР·СѓР№С‚Рµ С†С‹С„СЂС‹)"},{"РР·РјРµРЅРёС‚СЊ РЅР°СЃС‚СЂРѕР№РєРё^n F3\w"}} // \r=red \y=yellow \w white
+	new onoff[2][]={{"\rвыкл\w"},{"\yвкл\w"}} // \r=red \y=yellow \w white
+	new lang[2][]={{"\yРУССКИЙ\w"},{"\yАНГЛИЙСКИЙ\w"}} // \r=red \y=yellow \w white
+	new text[2][]={{"(используйте цыфры)"},{"Изменить настройки^n F3\w"}} // \r=red \y=yellow \w white
 	new text_index=get_pcvar_num(pcvar_help)
 	if (text_index!=1) text_index=0
-	format(menu, 1023, "\yРњРµРЅСЋ РЅР°СЃС‚СЂРѕРµРє\w^n^n %s ^n^n1. Р›СѓС‡ СЃРјРµСЂС‚Рё %s^n2. РћС‚РѕР±СЂР°Р¶Р°С‚СЊ РїРѕРІСЂРµР¶РґРµРЅРёСЏ %s^n3. РџРѕРєР°Р·С‹РІР°С‚СЊ РјРѕРґРµР»Рё СЃРµСЂРІРµСЂР° %s^n4. РџРѕРєР°Р·С‹РІР°С‚СЊ РјРµРЅСЋ РїСЂРё СЃС‚Р°СЂС‚Рµ %s^n5. РЇР·С‹Рє С‡Р°С‚Р° РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ %s^n\yРЎРњР•РќРђ РЇР—Р«РљРђ F4\w^n6. РќР°СЃС‚СЂРѕР№РєР° Р·РІСѓРєРѕРІ^n8. РЎРѕС…СЂР°РЅРёС‚СЊ Рё РІС‹Р№С‚Рё",
+	format(menu, 1023, "\yМеню настроек\w^n^n %s ^n^n1. Луч смерти %s^n2. Отображать повреждения %s^n3. Показывать модели сервера %s^n4. Показывать меню при старте %s^n5. Язык чата по умолчанию %s^n\yСМЕНА ЯЗЫКА F4\w^n6. Настройка звуков^n8. Сохранить и выйти",
 	text[text_index],
 	onoff[admin_options[id][MS_DEATH_LINE]],
 	onoff[admin_options[id][MS_DAMAGE_MSG]],
@@ -733,13 +735,13 @@ public show_esp_menu(id){
 }
 
   // ------------------------------------------------------------------------------------------
-  // --Р”Р•Р™РЎРўР’РР• РњР•РќР®---------------------------------------------------------------------------
+  // --ДЕЙСТВИЕ МЕНЮ---------------------------------------------------------------------------
   // ------------------------------------------------------------------------------------------
 
-  // --РњР•РќР® РђР”РњРРќРРЎРўР РђРўРћР Рђ РљРћРќРўР  РўР•Р Р РћР РРЎРўРђ---------------------------------------------------------------------------
+  // --МЕНЮ АДМИНИСТРАТОРА КОНТР ТЕРРОРИСТА---------------------------------------------------------------------------
 public Menu_Admin_CT_Action(player,key) {
 
-    // 1. РљРЅРѕРїРєР° 1
+    // 1. Кнопка 1
     if(key == 0) {
       copy( g_player_model[player], charsmax( g_player_model[] ), ADMIN_MODEL_CT_1 );
       g_has_custom_model[player] = true;
@@ -747,7 +749,7 @@ public Menu_Admin_CT_Action(player,key) {
       return 1;
     }
 
-    // 2. РљРЅРѕРїРєР° 2
+    // 2. Кнопка 2
     if(key == 1) {
       copy( g_player_model[player], charsmax( g_player_model[] ), ADMIN_MODEL_CT_2 );
       g_has_custom_model[player] = true;
@@ -755,7 +757,7 @@ public Menu_Admin_CT_Action(player,key) {
       return 1;
     }
 
-    // 3. РљРЅРѕРїРєР° 3
+    // 3. Кнопка 3
     if(key == 2) {
       copy( g_player_model[player], charsmax( g_player_model[] ), ADMIN_MODEL_CT_3 );
       g_has_custom_model[player] = true;
@@ -763,7 +765,7 @@ public Menu_Admin_CT_Action(player,key) {
       return 1;
     }
 
-    // 4. РљРЅРѕРїРєР° 4
+    // 4. Кнопка 4
     if(key == 3) {
       copy( g_player_model[player], charsmax( g_player_model[] ), ADMIN_MODEL_CT_4 );
       g_has_custom_model[player] = true;
@@ -771,7 +773,7 @@ public Menu_Admin_CT_Action(player,key) {
       return 1;
     }
     
-       // 5. РљРЅРѕРїРєР° 5
+       // 5. Кнопка 5
     if(key == 4) {
       copy( g_player_model[player], charsmax( g_player_model[] ), ADMIN_MODEL_CT_5 );
       g_has_custom_model[player] = true;
@@ -779,7 +781,7 @@ public Menu_Admin_CT_Action(player,key) {
       return 1;
     }
     
-       // 6. РљРЅРѕРїРєР° 6
+       // 6. Кнопка 6
     if(key == 5) {
       copy( g_player_model[player], charsmax( g_player_model[] ), ADMIN_MODEL_CT_6 );
       g_has_custom_model[player] = true;
@@ -787,25 +789,25 @@ public Menu_Admin_CT_Action(player,key) {
       return 1;
     }
 
-       // РљРЅРѕРїРєР° 7 //Р–РµРЅСЃРєРёРµ РјРѕРґРµР»Рё
+       // Кнопка 7 //Женские модели
     if(key == 6) {
       Menu_Girl_CT(player);
       return 1;
     }
     
-      // РљРЅРѕРїРєР° 8 //РњРѕРґРµР»Рё СЃРѕРѕР±С‰РµСЃС‚РІР°
+      // Кнопка 8 //Модели сообщества
     if(key == 7) {
       Menu_Clan_CT(player);
       return 1;
     }
     
-     /* //РљРЅРѕРїРєР° 9 //РњРѕРґРµР»Рё РёРіСЂРѕРєРѕРІ
+     /* //Кнопка 9 //Модели игроков
     if(key == 7) {
       Menu_User_CT(player);
       return 1;
     }*/
     
-     //РљРЅРѕРїРєР° 0 //РЎР±СЂРѕСЃРёС‚СЊ РјРѕРґРµР»СЊ
+     //Кнопка 0 //Сбросить модель
     if(key == 8) {
 	fm_reset_user_model(player);
 	return 1;
@@ -814,10 +816,10 @@ public Menu_Admin_CT_Action(player,key) {
     return 1;
 }
   
-    // --РњР•РќР® РђР”РњРРќРРЎРўР РђРўРћР Рђ РўР•Р Р РћР РРЎРўРђ---------------------------------------------------------------------------
+    // --МЕНЮ АДМИНИСТРАТОРА ТЕРРОРИСТА---------------------------------------------------------------------------
 public Menu_Admin_T_Action(player,key) {
 
-    // 1. РљРЅРѕРїРєР° 1
+    // 1. Кнопка 1
     if(key == 0) {
       copy( g_player_model[player], charsmax( g_player_model[] ), ADMIN_MODEL_T_1 );
       g_has_custom_model[player] = true;
@@ -825,7 +827,7 @@ public Menu_Admin_T_Action(player,key) {
       return 1;
     }
 
-    // 2. РљРЅРѕРїРєР° 2
+    // 2. Кнопка 2
     if(key == 1) {
       copy( g_player_model[player], charsmax( g_player_model[] ), ADMIN_MODEL_T_2 );
       g_has_custom_model[player] = true;
@@ -833,7 +835,7 @@ public Menu_Admin_T_Action(player,key) {
       return 1;
     }
 
-    // 3. РљРЅРѕРїРєР° 3
+    // 3. Кнопка 3
     if(key == 2) {
       copy( g_player_model[player], charsmax( g_player_model[] ), ADMIN_MODEL_T_3 );
       g_has_custom_model[player] = true;
@@ -841,7 +843,7 @@ public Menu_Admin_T_Action(player,key) {
       return 1;
     }
 
-    // 4. РљРЅРѕРїРєР° 4
+    // 4. Кнопка 4
     if(key == 3) {
       copy( g_player_model[player], charsmax( g_player_model[] ), ADMIN_MODEL_T_4 );
       g_has_custom_model[player] = true;
@@ -849,7 +851,7 @@ public Menu_Admin_T_Action(player,key) {
       return 1;
     }
     
-       // 5. РљРЅРѕРїРєР° 5
+       // 5. Кнопка 5
     if(key == 4) {
       copy( g_player_model[player], charsmax( g_player_model[] ), ADMIN_MODEL_T_5 );
       g_has_custom_model[player] = true;
@@ -857,7 +859,7 @@ public Menu_Admin_T_Action(player,key) {
       return 1;
     }
     
-       // 6. РљРЅРѕРїРєР° 6
+       // 6. Кнопка 6
     if(key == 5) {
       copy( g_player_model[player], charsmax( g_player_model[] ), ADMIN_MODEL_T_6 );
       g_has_custom_model[player] = true;
@@ -865,25 +867,25 @@ public Menu_Admin_T_Action(player,key) {
       return 1;
     }
 
-       //РљРЅРѕРїРєР° 7 //Р–РµРЅСЃРєРёРµ РјРѕРґРµР»Рё
+       //Кнопка 7 //Женские модели
     if(key == 6) {
       Menu_Girl_T(player);
       return 1;
     }
     
-      //РљРЅРѕРїРєР° 8 //РњРѕРґРµР»Рё СЃРѕРѕР±С‰РµСЃС‚РІР°
+      //Кнопка 8 //Модели сообщества
     if(key == 7) {
       Menu_Clan_T(player);
       return 1;
     }
     
-     /* //РљРЅРѕРїРєР° 8 //РњРѕРґРµР»Рё РёРіСЂРѕРєРѕРІ
+     /* //Кнопка 8 //Модели игроков
     if(key == 7) {
       Menu_User_T(player);
       return 1;
     }*/
    
-      // РљРЅРѕРїРєР° 9 //РЎР±СЂРѕСЃРёС‚СЊ РјРѕРґРµР»СЊ
+      // Кнопка 9 //Сбросить модель
     if(key == 8) {
 	fm_reset_user_model(player);
 	return 1;
@@ -892,10 +894,10 @@ public Menu_Admin_T_Action(player,key) {
     return 1;
 }
   
-    // --РњР•РќР® Р–Р•РќР©РРќР« РљРћРќРўР  РўР•Р Р РћР РРЎРўРђ---------------------------------------------------------------------------
+    // --МЕНЮ ЖЕНЩИНЫ КОНТР ТЕРРОРИСТА---------------------------------------------------------------------------
 public Menu_Girl_CT_Action(player,key) {
 
-    // 1. РљРЅРѕРїРєР° 1
+    // 1. Кнопка 1
     if(key == 0) {
       copy( g_player_model[player], charsmax( g_player_model[] ), GIRL_MODEL_CT_1 );
       g_has_custom_model[player] = true;
@@ -903,7 +905,7 @@ public Menu_Girl_CT_Action(player,key) {
       return 1;
     }
 
-    /*// 2. РљРЅРѕРїРєР° 2
+    /*// 2. Кнопка 2
     if(key == 1) {
       copy( g_player_model[player], charsmax( g_player_model[] ), GIRL_MODEL_CT_2 );
       g_has_custom_model[player] = true;
@@ -911,7 +913,7 @@ public Menu_Girl_CT_Action(player,key) {
       return 1;
     }
 
-    // 3. РљРЅРѕРїРєР° 3
+    // 3. Кнопка 3
     if(key == 2) {
       copy( g_player_model[player], charsmax( g_player_model[] ), GIRL_MODEL_CT_3 );
       g_has_custom_model[player] = true;
@@ -919,7 +921,7 @@ public Menu_Girl_CT_Action(player,key) {
       return 1;
     }
 
-    // 4. РљРЅРѕРїРєР° 4
+    // 4. Кнопка 4
     if(key == 3) {
       copy( g_player_model[player], charsmax( g_player_model[] ), GIRL_MODEL_CT_4 );
       g_has_custom_model[player] = true;
@@ -927,7 +929,7 @@ public Menu_Girl_CT_Action(player,key) {
       return 1;
     }
     
-    // 5. РљРЅРѕРїРєР° 5
+    // 5. Кнопка 5
     if(key == 4) {
       copy( g_player_model[player], charsmax( g_player_model[] ), GIRL_MODEL_CT_5 );
       g_has_custom_model[player] = true;
@@ -935,7 +937,7 @@ public Menu_Girl_CT_Action(player,key) {
       return 1;
     }
     
-       // 6. РљРЅРѕРїРєР° 6
+       // 6. Кнопка 6
     if(key == 5) {
       copy( g_player_model[player], charsmax( g_player_model[] ), GIRL_MODEL_CT_6 );
       g_has_custom_model[player] = true;
@@ -943,7 +945,7 @@ public Menu_Girl_CT_Action(player,key) {
       return 1;
     }
     
-      // 7. РљРЅРѕРїРєР° 7
+      // 7. Кнопка 7
     if(key == 6) {
       copy( g_player_model[player], charsmax( g_player_model[] ), GIRL_MODEL_CT_7 );
       g_has_custom_model[player] = true;
@@ -951,7 +953,7 @@ public Menu_Girl_CT_Action(player,key) {
       return 1;
     }
     
-      // 8. РљРЅРѕРїРєР° 8
+      // 8. Кнопка 8
     if(key == 7) {
       copy( g_player_model[player], charsmax( g_player_model[] ), GIRL_MODEL_CT_8 );
       g_has_custom_model[player] = true;
@@ -959,7 +961,7 @@ public Menu_Girl_CT_Action(player,key) {
       return 1;
     }*/
     
-      // 9. РљРЅРѕРїРєР° 9
+      // 9. Кнопка 9
     if(key == 8) {
 	fm_reset_user_model(player);
 	return 1;
@@ -969,10 +971,10 @@ public Menu_Girl_CT_Action(player,key) {
 }
 
   
-      // --РњР•РќР® Р–Р•РќР©РРќР« РўР•Р Р РћР РРЎРўРђ---------------------------------------------------------------------------
+      // --МЕНЮ ЖЕНЩИНЫ ТЕРРОРИСТА---------------------------------------------------------------------------
 public Menu_Girl_T_Action(player,key) {
 
-    // 1. РљРЅРѕРїРєР° 1
+    // 1. Кнопка 1
     if(key == 0) {
       copy( g_player_model[player], charsmax( g_player_model[] ), GIRL_MODEL_T_1 );
       g_has_custom_model[player] = true;
@@ -980,7 +982,7 @@ public Menu_Girl_T_Action(player,key) {
       return 1;
     }
 
-    /*// 2. РљРЅРѕРїРєР° 2
+    /*// 2. Кнопка 2
     if(key == 1) {
       copy( g_player_model[player], charsmax( g_player_model[] ), GIRL_MODEL_T_2 );
       g_has_custom_model[player] = true;
@@ -988,7 +990,7 @@ public Menu_Girl_T_Action(player,key) {
       return 1;
     }
 
-    // 3. РљРЅРѕРїРєР° 3
+    // 3. Кнопка 3
     if(key == 2) {
       copy( g_player_model[player], charsmax( g_player_model[] ), GIRL_MODEL_T_3 );
       g_has_custom_model[player] = true;
@@ -996,7 +998,7 @@ public Menu_Girl_T_Action(player,key) {
       return 1;
     }
     
-    // 4. РљРЅРѕРїРєР° 4
+    // 4. Кнопка 4
     if(key == 3) {
       copy( g_player_model[player], charsmax( g_player_model[] ), GIRL_MODEL_T_4 );
       g_has_custom_model[player] = true;
@@ -1004,7 +1006,7 @@ public Menu_Girl_T_Action(player,key) {
       return 1;
     }
     
-      // 5. РљРЅРѕРїРєР° 5
+      // 5. Кнопка 5
     if(key == 4) {
       copy( g_player_model[player], charsmax( g_player_model[] ), GIRL_MODEL_T_5 );
       g_has_custom_model[player] = true;
@@ -1012,7 +1014,7 @@ public Menu_Girl_T_Action(player,key) {
       return 1;
     }
     
-    // 6. РљРЅРѕРїРєР° 6
+    // 6. Кнопка 6
     if(key == 5) {
       copy( g_player_model[player], charsmax( g_player_model[] ), GIRL_MODEL_T_6 );
       g_has_custom_model[player] = true;
@@ -1020,7 +1022,7 @@ public Menu_Girl_T_Action(player,key) {
       return 1;
     }
     
-      // 7. РљРЅРѕРїРєР° 7
+      // 7. Кнопка 7
     if(key == 6) {
       copy( g_player_model[player], charsmax( g_player_model[] ), GIRL_MODEL_T_7 );
       g_has_custom_model[player] = true;
@@ -1028,7 +1030,7 @@ public Menu_Girl_T_Action(player,key) {
       return 1;
     }
     
-      // 8. РљРЅРѕРїРєР° 8
+      // 8. Кнопка 8
     if(key == 7) {
       copy( g_player_model[player], charsmax( g_player_model[] ), GIRL_MODEL_T_8 );
       g_has_custom_model[player] = true;
@@ -1036,7 +1038,7 @@ public Menu_Girl_T_Action(player,key) {
       return 1;
     }*/
     
-      // 9. РљРЅРѕРїРєР° 9
+      // 9. Кнопка 9
     if(key == 8) {
 	fm_reset_user_model(player);
 	return 1;
@@ -1045,10 +1047,10 @@ public Menu_Girl_T_Action(player,key) {
     return 1;
 }
   
-     // --РњР•РќР® РЎРћРћР‘Р©Р•РЎРўР’Рђ РљРћРќРўР  РўР•Р Р РћР РРЎРўРђ---------------------------------------------------------------------------
+     // --МЕНЮ СООБЩЕСТВА КОНТР ТЕРРОРИСТА---------------------------------------------------------------------------
 public Menu_Clan_CT_Action(player,key) {
 
-    // 1. РљРЅРѕРїРєР° 1
+    // 1. Кнопка 1
     if(key == 0) {
       copy( g_player_model[player], charsmax( g_player_model[] ), CLAN_MODEL_CT_1 );
       g_has_custom_model[player] = true;
@@ -1056,7 +1058,7 @@ public Menu_Clan_CT_Action(player,key) {
       return 1;
     }
 
-   /* // 2. РљРЅРѕРїРєР° 2
+   /* // 2. Кнопка 2
     if(key == 1) {
       copy( g_player_model[player], charsmax( g_player_model[] ), CLAN_MODEL_CT_2 );
       g_has_custom_model[player] = true;
@@ -1064,7 +1066,7 @@ public Menu_Clan_CT_Action(player,key) {
       return 1;
     }
 
-    // 3. РљРЅРѕРїРєР° 3
+    // 3. Кнопка 3
     if(key == 2) {
       copy( g_player_model[player], charsmax( g_player_model[] ), CLAN_MODEL_CT_3 );
       g_has_custom_model[player] = true;
@@ -1072,7 +1074,7 @@ public Menu_Clan_CT_Action(player,key) {
       return 1;
     }
 
-    // 4. РљРЅРѕРїРєР° 4
+    // 4. Кнопка 4
     if(key == 3) {
       copy( g_player_model[player], charsmax( g_player_model[] ), CLAN_MODEL_CT_4 );
       g_has_custom_model[player] = true;
@@ -1080,7 +1082,7 @@ public Menu_Clan_CT_Action(player,key) {
       return 1;
     }
     
-       // 5. РљРЅРѕРїРєР° 5
+       // 5. Кнопка 5
     if(key == 4) {
       copy( g_player_model[player], charsmax( g_player_model[] ), CLAN_MODEL_CT_5 );
       g_has_custom_model[player] = true;
@@ -1088,7 +1090,7 @@ public Menu_Clan_CT_Action(player,key) {
       return 1;
     }
     
-       // 6. РљРЅРѕРїРєР° 6
+       // 6. Кнопка 6
     if(key == 5) {
       copy( g_player_model[player], charsmax( g_player_model[] ), CLAN_MODEL_CT_6 );
       g_has_custom_model[player] = true;
@@ -1096,7 +1098,7 @@ public Menu_Clan_CT_Action(player,key) {
       return 1;
     }
     
-    // 7. РљРЅРѕРїРєР° 7
+    // 7. Кнопка 7
     if(key == 6) {
       copy( g_player_model[player], charsmax( g_player_model[] ), CLAN_MODEL_CT_7 );
       g_has_custom_model[player] = true;
@@ -1104,7 +1106,7 @@ public Menu_Clan_CT_Action(player,key) {
       return 1;
     }
     
-      // 8. РљРЅРѕРїРєР° 8
+      // 8. Кнопка 8
     if(key == 7) {
       copy( g_player_model[player], charsmax( g_player_model[] ), CLAN_MODEL_CT_8 );
       g_has_custom_model[player] = true;
@@ -1112,7 +1114,7 @@ public Menu_Clan_CT_Action(player,key) {
       return 1;
     }*/
     
-      // 9. РљРЅРѕРїРєР° 9
+      // 9. Кнопка 9
     if(key == 8) {
 	fm_reset_user_model(player);
 	return 1;
@@ -1121,10 +1123,10 @@ public Menu_Clan_CT_Action(player,key) {
     return 1;
 }
   
-       // --РњР•РќР® РЎРћРћР‘Р©Р•РЎРўР’Рђ РўР•Р Р РћР РРЎРўРђ---------------------------------------------------------------------------
+       // --МЕНЮ СООБЩЕСТВА ТЕРРОРИСТА---------------------------------------------------------------------------
 public Menu_Clan_T_Action(player,key) {
 
-    // 1. РљРЅРѕРїРєР° 1
+    // 1. Кнопка 1
     if(key == 0) {
       copy( g_player_model[player], charsmax( g_player_model[] ), CLAN_MODEL_T_1 );
       g_has_custom_model[player] = true;
@@ -1132,7 +1134,7 @@ public Menu_Clan_T_Action(player,key) {
       return 1;
     }
 
-    /*// 2. РљРЅРѕРїРєР° 2
+    /*// 2. Кнопка 2
     if(key == 1) {
       copy( g_player_model[player], charsmax( g_player_model[] ), CLAN_MODEL_T_2 );
       g_has_custom_model[player] = true;
@@ -1140,7 +1142,7 @@ public Menu_Clan_T_Action(player,key) {
       return 1;
     }
 
-    // 3. РљРЅРѕРїРєР° 3
+    // 3. Кнопка 3
     if(key == 2) {
       copy( g_player_model[player], charsmax( g_player_model[] ), CLAN_MODEL_T_3 );
       g_has_custom_model[player] = true;
@@ -1148,7 +1150,7 @@ public Menu_Clan_T_Action(player,key) {
       return 1;
     }
 
-    // 4. РљРЅРѕРїРєР° 4
+    // 4. Кнопка 4
     if(key == 3) {
       copy( g_player_model[player], charsmax( g_player_model[] ), CLAN_MODEL_T_4 );
       g_has_custom_model[player] = true;
@@ -1156,7 +1158,7 @@ public Menu_Clan_T_Action(player,key) {
       return 1;
     }
     
-       // 5. РљРЅРѕРїРєР° 5
+       // 5. Кнопка 5
     if(key == 4) {
       copy( g_player_model[player], charsmax( g_player_model[] ), CLAN_MODEL_T_5 );
       g_has_custom_model[player] = true;
@@ -1164,7 +1166,7 @@ public Menu_Clan_T_Action(player,key) {
       return 1;
     }
     
-       // 6. РљРЅРѕРїРєР° 6
+       // 6. Кнопка 6
     if(key == 5) {
       copy( g_player_model[player], charsmax( g_player_model[] ), CLAN_MODEL_T_6 );
       g_has_custom_model[player] = true;
@@ -1172,7 +1174,7 @@ public Menu_Clan_T_Action(player,key) {
       return 1;
     }
     
-    // 7. РљРЅРѕРїРєР° 7
+    // 7. Кнопка 7
     if(key == 6) {
       copy( g_player_model[player], charsmax( g_player_model[] ), CLAN_MODEL_T_7 );
       g_has_custom_model[player] = true;
@@ -1180,7 +1182,7 @@ public Menu_Clan_T_Action(player,key) {
       return 1;
     }
     
-      // 8. РљРЅРѕРїРєР° 8
+      // 8. Кнопка 8
     if(key == 7) {
       copy( g_player_model[player], charsmax( g_player_model[] ), CLAN_MODEL_T_8 );
       g_has_custom_model[player] = true;
@@ -1188,7 +1190,7 @@ public Menu_Clan_T_Action(player,key) {
       return 1;
     }*/
     
-      // 9. РљРЅРѕРїРєР° 9
+      // 9. Кнопка 9
     if(key == 8) {
 	fm_reset_user_model(player);
 	return 1;
@@ -1197,10 +1199,10 @@ public Menu_Clan_T_Action(player,key) {
     return 1;
 }
   
-       // --РњР•РќР® РР“Р РћРљРђ РљРћРќРўР  РўР•Р Р РћР РРЎРўРђ---------------------------------------------------------------------------
+       // --МЕНЮ ИГРОКА КОНТР ТЕРРОРИСТА---------------------------------------------------------------------------
 public Menu_User_CT_Action(player,key) {
   	
-   // 1. РљРЅРѕРїРєР° 1
+   // 1. Кнопка 1
     if(key == 0) {
       copy( g_player_model[player], charsmax( g_player_model[] ), USER_MODEL_CT_1 );
       g_has_custom_model[player] = true;
@@ -1208,7 +1210,7 @@ public Menu_User_CT_Action(player,key) {
       return 1;
     }
 
-    /*// 2. РљРЅРѕРїРєР° 2
+    /*// 2. Кнопка 2
     if(key == 1) {
       copy( g_player_model[player], charsmax( g_player_model[] ), USER_MODEL_CT_2 );
       g_has_custom_model[player] = true;
@@ -1216,7 +1218,7 @@ public Menu_User_CT_Action(player,key) {
       return 1;
     }
 
-    // 3. РљРЅРѕРїРєР° 3
+    // 3. Кнопка 3
     if(key == 2) {
       copy( g_player_model[player], charsmax( g_player_model[] ), USER_MODEL_CT_3 );
       g_has_custom_model[player] = true;
@@ -1224,7 +1226,7 @@ public Menu_User_CT_Action(player,key) {
       return 1;
     }
 
-    // 4. РљРЅРѕРїРєР° 4
+    // 4. Кнопка 4
     if(key == 3) {
       copy( g_player_model[player], charsmax( g_player_model[] ), USER_MODEL_CT_4 );
       g_has_custom_model[player] = true;
@@ -1232,7 +1234,7 @@ public Menu_User_CT_Action(player,key) {
       return 1;
     }
     
-       // 5. РљРЅРѕРїРєР° 5
+       // 5. Кнопка 5
     if(key == 4) {
       copy( g_player_model[player], charsmax( g_player_model[] ), USER_MODEL_CT_5 );
       g_has_custom_model[player] = true;
@@ -1240,7 +1242,7 @@ public Menu_User_CT_Action(player,key) {
       return 1;
     }
     
-       // 6. РљРЅРѕРїРєР° 6
+       // 6. Кнопка 6
     if(key == 5) {
       copy( g_player_model[player], charsmax( g_player_model[] ), USER_MODEL_CT_6 );
       g_has_custom_model[player] = true;
@@ -1248,7 +1250,7 @@ public Menu_User_CT_Action(player,key) {
       return 1;
     }
     
-      // 7. РљРЅРѕРїРєР° 7
+      // 7. Кнопка 7
     if(key == 6) {
       copy( g_player_model[player], charsmax( g_player_model[] ), USER_MODEL_CT_7 );
       g_has_custom_model[player] = true;
@@ -1256,7 +1258,7 @@ public Menu_User_CT_Action(player,key) {
       return 1;
     }
     
-      // 8. РљРЅРѕРїРєР° 8
+      // 8. Кнопка 8
     if(key == 7) {
       copy( g_player_model[player], charsmax( g_player_model[] ), USER_MODEL_CT_8 );
       g_has_custom_model[player] = true;
@@ -1264,7 +1266,7 @@ public Menu_User_CT_Action(player,key) {
       return 1;
     }*/
     
-      // 9. РљРЅРѕРїРєР° 9
+      // 9. Кнопка 9
     if(key == 8) {
 	fm_reset_user_model(player);
 	return 1;
@@ -1274,10 +1276,10 @@ public Menu_User_CT_Action(player,key) {
 }
   
   
-         // --РњР•РќР® РР“Р РћРљРђ РўР•Р Р РћР РРЎРўРђ---------------------------------------------------------------------------
+         // --МЕНЮ ИГРОКА ТЕРРОРИСТА---------------------------------------------------------------------------
 public Menu_User_T_Action(player,key) {
 
-    // 1. РљРЅРѕРїРєР° 1
+    // 1. Кнопка 1
     if(key == 0) {
       copy( g_player_model[player], charsmax( g_player_model[] ), USER_MODEL_T_1 );
       g_has_custom_model[player] = true;
@@ -1285,7 +1287,7 @@ public Menu_User_T_Action(player,key) {
       return 1;
     }
 
-    /*// 2. РљРЅРѕРїРєР° 2
+    /*// 2. Кнопка 2
     if(key == 1) {
       copy( g_player_model[player], charsmax( g_player_model[] ), USER_MODEL_T_2 );
       g_has_custom_model[player] = true;
@@ -1293,7 +1295,7 @@ public Menu_User_T_Action(player,key) {
       return 1;
     }
 
-    // 3. РљРЅРѕРїРєР° 3
+    // 3. Кнопка 3
     if(key == 2) {
       copy( g_player_model[player], charsmax( g_player_model[] ), USER_MODEL_T_3 );
       g_has_custom_model[player] = true;
@@ -1301,7 +1303,7 @@ public Menu_User_T_Action(player,key) {
       return 1;
     }
 
-    // 4. РљРЅРѕРїРєР° 4
+    // 4. Кнопка 4
     if(key == 3) {
       copy( g_player_model[player], charsmax( g_player_model[] ), USER_MODEL_T_4 );
       g_has_custom_model[player] = true;
@@ -1309,7 +1311,7 @@ public Menu_User_T_Action(player,key) {
       return 1;
     }
     
-       // 5. РљРЅРѕРїРєР° 5
+       // 5. Кнопка 5
     if(key == 4) {
       copy( g_player_model[player], charsmax( g_player_model[] ), USER_MODEL_T_5 );
       g_has_custom_model[player] = true;
@@ -1317,7 +1319,7 @@ public Menu_User_T_Action(player,key) {
       return 1;
     }
     
-       // 6. РљРЅРѕРїРєР° 6
+       // 6. Кнопка 6
     if(key == 5) {
       copy( g_player_model[player], charsmax( g_player_model[] ), USER_MODEL_T_6 );
       g_has_custom_model[player] = true;
@@ -1325,7 +1327,7 @@ public Menu_User_T_Action(player,key) {
       return 1;
     }
     
-      // 7. РљРЅРѕРїРєР° 7
+      // 7. Кнопка 7
     if(key == 6) {
       copy( g_player_model[player], charsmax( g_player_model[] ), USER_MODEL_T_7 );
       g_has_custom_model[player] = true;
@@ -1333,7 +1335,7 @@ public Menu_User_T_Action(player,key) {
       return 1;
     }
     
-      // 8. РљРЅРѕРїРєР° 8
+      // 8. Кнопка 8
     if(key == 7) {
       copy( g_player_model[player], charsmax( g_player_model[] ), USER_MODEL_T_8 );
       g_has_custom_model[player] = true;
@@ -1341,7 +1343,7 @@ public Menu_User_T_Action(player,key) {
       return 1;
     }*/
     
-      // 9. РљРЅРѕРїРєР° 9
+      // 9. Кнопка 9
     if(key == 8) {
 	fm_reset_user_model(player);
 	return 1;
@@ -1637,7 +1639,7 @@ public Music_Settings_Action(id,key){
 
 
 /*================================================================================
- Р”РµР№СЃС‚РІРёРµ РјРµРЅСЋ
+ Действие меню
 =================================================================================*/
 public menu_esp(id,key){
 	
@@ -1699,10 +1701,10 @@ public menu_esp(id,key){
 	if (key==4){ // exit
 		if (admin_options[id][MS_DEFAULT_LANGUAGE]){
 		admin_options[id][MS_DEFAULT_LANGUAGE]=false;
-		client_print(id, print_chat, "Р§Р°С‚ РЅР° Р СѓСЃСЃРєРѕРј СЏР·С‹РєРµ");
+		client_print(id, print_chat, "Чат на Русском языке");
 		}else{
 		admin_options[id][MS_DEFAULT_LANGUAGE]=true;
-		client_print(id, print_chat, "Р§Р°С‚ РЅР° РђРЅРіР»РёР№СЃРєРѕРј СЏР·С‹РєРµ");
+		client_print(id, print_chat, "Чат на Английском языке");
 	}
 		show_esp_menu(id);
 		return 1;
@@ -1774,7 +1776,7 @@ public get_models(array[50][],len) {
 }
 
 /*================================================================================
- РџРѕРґРєР»СЋС‡РµРЅРёРµ РёРіСЂРѕРєР°
+ Подключение игрока
 =================================================================================*/
 public client_connect(id) {
 	client_cmd(id, "voice_inputfromfile 0");
@@ -1783,7 +1785,7 @@ public client_connect(id) {
 	return 1;
 }
 
-public client_disconnect(id) {
+public client_disconnected(id) {
 	save2vault(id);
 }
 
@@ -1807,7 +1809,7 @@ public client_authorized(id) {
 			if(who){
 			new name[32];
    			get_user_name( who, name , 31 );
-   			client_cmd(id,"echo ^"* %s Р’Р°СЃ СѓРґР°Р»РёР»Рё РёР· СЂРµР·РµСЂРІРЅРѕРіРѕ СЃР»РѕС‚Р°^"" ,name );
+   			client_cmd(id,"echo ^"* %s Вас удалили из резервного слота^"" ,name );
 			}
 			return PLUGIN_CONTINUE;
 		}else if (equal(stim, "STEAM_0:", 8))
@@ -1816,13 +1818,13 @@ public client_authorized(id) {
 			if(who){
 			new name[32];
    			get_user_name( who, name , 31 );
-   			client_cmd(id,"echo ^"* %s Р’Р°СЃ СѓРґР°Р»РёР»Рё РёР· СЂРµР·РµСЂРІРЅРѕРіРѕ СЃР»РѕС‚Р°^"" ,name );
+   			client_cmd(id,"echo ^"* %s Вас удалили из резервного слота^"" ,name );
 			}
 			return PLUGIN_CONTINUE;
 		}else if ( is_user_bot(id) ){
 			server_cmd("kick #%d", get_user_userid(id)  ) ;
 		}else{ 
-			client_cmd(id,"echo ^"РЎР•Р Р’Р•Р  РџРћР›РќР«Р™.^";disconnect")
+			client_cmd(id,"echo ^"СЕРВЕР ПОЛНЫЙ.^";disconnect")
 			return PLUGIN_HANDLED; // block connect in other plugins (especially in consgreet)
 		}
 	} 
@@ -1831,25 +1833,25 @@ public client_authorized(id) {
   
 public client_putinserver(id){
 
-	//Р—Р°РґР°РґРµРј РїСЂР°РІР° Р°РґРјРёРЅРёСЃСЂС‚Р°С‚РѕСЂР°
+	//Зададем права админисртатора
 	if (get_user_flags(id) & ADMIN_LEVEL_F){
 		admin[id]=true
 		}else{
 		admin[id]=false
 	}
-	//Р—Р°РґР°РµРј РїСЂР°РІР° РґР»СЏ РґРµРІСѓС€РµРє
+	//Задаем права для девушек
 	if (get_user_flags(id) & ADMIN_LEVEL_G){
 		girl[id]=true
 		}else{
 		girl[id]=false
 	}
-	//Р—Р°РґР°РµРј РїСЂР°РІР° РґР»СЏ СЃРѕРѕР±С‰РµСЃС‚РІР°
+	//Задаем права для сообщества
 	if (get_user_flags(id) & ADMIN_LEVEL_H){
 		clan[id]=true
 		}else{
 		clan[id]=false
 	}
-	//Р—Р°РґР°РµРј РїСЂР°РІР° РґР»СЏ РїСЂРѕСЃС‚С‹С… РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№
+	//Задаем права для простых пользователей
 	if (get_user_flags(id) & ADMIN_USER){
 		user[id]=true
 		}else{
@@ -1901,18 +1903,18 @@ public plugin_precache() {
       
       
       
-      //Р—РІСѓРє РїСЂРё РІС…РѕРґРµ РЅР° СЃРµСЂРІРµСЂ
-      precache_sound("ms/start_1.mp3");//РјСѓР·С‹РєР° РїСЂРё РІС…РѕРґРµ РІ РёРіСЂСѓ
-      precache_sound("ms/start_2.mp3");//РјСѓР·С‹РєР° РїСЂРё РІС…РѕРґРµ РІ РёРіСЂСѓ
-      precache_sound("ms/start_3.mp3");//РјСѓР·С‹РєР° РїСЂРё РІС…РѕРґРµ РІ РёРіСЂСѓ
-      precache_sound("ms/round_end_1.mp3");//РјСѓР·С‹РєР° Р’РєРѕРЅС†Рµ СЂР°СѓРЅРґР°
-      precache_sound("ms/round_end_2.mp3");//РјСѓР·С‹РєР° Р’РєРѕРЅС†Рµ СЂР°СѓРЅРґР°
-      precache_sound("ms/round_end_3.mp3");//РјСѓР·С‹РєР° Р’РєРѕРЅС†Рµ СЂР°СѓРЅРґР°
-      precache_sound("ms/round_end_4.mp3");//РјСѓР·С‹РєР° Р’РєРѕРЅС†Рµ СЂР°СѓРЅРґР°
-      precache_sound("ms/round_end_5.mp3");//РјСѓР·С‹РєР° Р’РєРѕРЅС†Рµ СЂР°СѓРЅРґР°
-      precache_sound("ms/round_end_6.mp3");//РјСѓР·С‹РєР° Р’РєРѕРЅС†Рµ СЂР°СѓРЅРґР°
-      precache_sound("ms/round_end_7.mp3");//РјСѓР·С‹РєР° Р’РєРѕРЅС†Рµ СЂР°СѓРЅРґР°
-      //РЎС‡РµС‚С‡РёРє РѕР±СЂР°С‚РЅРѕРіРѕ РѕС‚С‡РµС‚Р°
+      //Звук при входе на сервер
+      precache_sound("ms/start_1.mp3");//музыка при входе в игру
+      precache_sound("ms/start_2.mp3");//музыка при входе в игру
+      precache_sound("ms/start_3.mp3");//музыка при входе в игру
+      precache_sound("ms/round_end_1.mp3");//музыка Вконце раунда
+      precache_sound("ms/round_end_2.mp3");//музыка Вконце раунда
+      precache_sound("ms/round_end_3.mp3");//музыка Вконце раунда
+      precache_sound("ms/round_end_4.mp3");//музыка Вконце раунда
+      precache_sound("ms/round_end_5.mp3");//музыка Вконце раунда
+      precache_sound("ms/round_end_6.mp3");//музыка Вконце раунда
+      precache_sound("ms/round_end_7.mp3");//музыка Вконце раунда
+      //Счетчик обратного отчета
       precache_sound("ms/eight.wav");
       precache_sound("ms/five.wav");
       precache_sound("ms/four.wav");
@@ -1926,17 +1928,17 @@ public plugin_precache() {
       precache_sound("ms/nine.wav");
       precache_sound("ms/one.wav");
       
-      precache_sound("ms/suicide.wav");//РЎР°РјРѕР№Р±РёР№СЃС‚РІРѕ
-      precache_sound("ms/grenade.wav");//РЈР±РёР№СЃС‚РІРѕ СЃ РіСЂР°РЅР°С‚С‹
-      precache_sound("ms/prepare.wav");//РќР°С‡Р°Р»Рѕ СЂР°СѓРЅРґР°
-      precache_sound("ms/1_vs_all.wav");//РћРґРёРЅ РїСЂРѕС‚РёРІ РІСЃРµС…
-      precache_sound("ms/one_end_only.wav");//РћРґРёРЅ РЅР° РѕРґРёРЅ
-      precache_sound("ms/dropbomb.wav");//РџРѕС‚РµСЂСЏ Р±РѕРјР±С‹
-      precache_sound("ms/bomb_pick_up.wav");//РџРѕС‚РµСЂСЏ Р±РѕРјР±С‹
-      precache_sound("ms/user_killer_headshot.wav");//РЈР±РёР№С†Р° С…РµРґС€РѕС‚РѕРј
-      precache_sound("ms/user_victim_headshot.wav");//Р–РµСЂС‚РІР° РҐРµРґС€РѕС‚Р°
+      precache_sound("ms/suicide.wav");//Самойбийство
+      precache_sound("ms/grenade.wav");//Убийство с гранаты
+      precache_sound("ms/prepare.wav");//Начало раунда
+      precache_sound("ms/1_vs_all.wav");//Один против всех
+      precache_sound("ms/one_end_only.wav");//Один на один
+      precache_sound("ms/dropbomb.wav");//Потеря бомбы
+      precache_sound("ms/bomb_pick_up.wav");//Потеря бомбы
+      precache_sound("ms/user_killer_headshot.wav");//Убийца хедшотом
+      precache_sound("ms/user_victim_headshot.wav");//Жертва Хедшота
       
-      //Р—РІСѓРєРё СѓР±РёСЃС‚РІРѕРј РїРѕР»СЊР·РѕРІР°С‚РµР»РµРј
+      //Звуки убиством пользователем
       precache_sound("ms/user_1.wav");
       precache_sound("ms/user_2.wav");
       precache_sound("ms/user_3.wav");
@@ -1948,12 +1950,12 @@ public plugin_precache() {
       precache_sound("ms/user_9.wav");
       precache_sound("ms/user_10.wav");
       precache_sound("ms/user_11.wav");
-      precache_sound("ms/user_firstblood.wav");//РџРµСЂРІРѕРµ СѓР±РёР№СЃС‚РІРѕ РёРіСЂРѕРєРѕРј
-      precache_sound("ms/user_humiliation.wav");//РЈР±РёР№СЃС‚РІРѕ РїРѕР»СЊР·РѕРІР°С‚РµР»РµРј СЃ РЅРѕР¶Р°
-      precache_sound("ms/user_doublekill.wav");//Р”РІРѕР№РЅРѕРµ СѓР±РёР№СЃС‚РІРѕ
-      precache_sound("ms/user_multikill.wav");//РњСѓР»СЊС‚Рё СѓР±РёР№СЃС‚РІРѕ
+      precache_sound("ms/user_firstblood.wav");//Первое убийство игроком
+      precache_sound("ms/user_humiliation.wav");//Убийство пользователем с ножа
+      precache_sound("ms/user_doublekill.wav");//Двойное убийство
+      precache_sound("ms/user_multikill.wav");//Мульти убийство
       
-      //Р—РІСѓРєРё СѓР±РёР№СЃС‚РІРѕРј РґРµРІСѓС€РєРѕР№
+      //Звуки убийством девушкой
       precache_sound("ms/girl_1.wav");
       precache_sound("ms/girl_2.wav");
       precache_sound("ms/girl_3.wav");
@@ -1965,10 +1967,10 @@ public plugin_precache() {
       precache_sound("ms/girl_9.wav");
       precache_sound("ms/girl_10.wav");
       precache_sound("ms/girl_11.wav");
-      precache_sound("ms/girl_firstblood.wav");//РџРµСЂРІРѕРµ СѓР±РёР№СЃС‚РІРѕ РґРµРІСѓС€РєРѕР№
-      precache_sound("ms/girl_humiliation.wav");//РЈР±РёР№СЃС‚РІРѕ РґРµРІСѓС€РєРѕР№ СЃ РЅРѕР¶Р°
-      precache_sound("ms/girl_doublekill.wav");//Р”РІРѕР№РЅРѕРµ СѓР±РёР№СЃС‚РІРѕ
-      precache_sound("ms/girl_multikill.wav");//РњСѓР»СЊС‚Рё СѓР±РёР№СЃС‚РІРѕ
+      precache_sound("ms/girl_firstblood.wav");//Первое убийство девушкой
+      precache_sound("ms/girl_humiliation.wav");//Убийство девушкой с ножа
+      precache_sound("ms/girl_doublekill.wav");//Двойное убийство
+      precache_sound("ms/girl_multikill.wav");//Мульти убийство
       
       precache_sound("ms/chto_za.wav");
       precache_sound("ms/ironiya_sudby.wav");
@@ -1979,7 +1981,7 @@ public plugin_precache() {
       
       
       
-      //Р—Р°РіСЂСѓР·РєР° Р»РёРЅРёРё РґР»СЏ Р»СѓС‡Р° СЃРјРµСЂС‚Рё
+      //Загрузка линии для луча смерти
       m_spriteTexture = precache_model("sprites/laserbeam.spr");
    }
 }
@@ -1987,7 +1989,7 @@ public plugin_precache() {
 public currmodel(player) {
 	new model[65];
 	cs_get_user_model(player,model,64);
-	client_print(player,print_chat,"* Р’Р°С€Р° РјРѕРґРµР»СЊ %s",model);
+	client_print(player,print_chat,"* Ваша модель %s",model);
 	return PLUGIN_HANDLED;
 }
 
@@ -2014,14 +2016,14 @@ public usermodel(player) {
 	}else if ((get_user_flags(player) & ADMIN_LEVEL_F) || (get_user_flags(player) & ADMIN_LEVEL_G) || (get_user_flags(player) & ADMIN_LEVEL_H) || (get_user_flags(player) & ADMIN_USER)) {
 	return Show_Menu_Level(player);
 	}else{
-	client_print(player,print_chat,"Р’Р°С€ СЂР°РЅРі %d, РїРѕРїР°РґРёС‚Рµ РІ РўРћРџ10, С‡С‚РѕР±С‹ РїРѕР»СѓС‡РёС‚СЊ СЃРєРёРЅ",iRankPos);
+	client_print(player,print_chat,"Ваш ранг %d, попадите в ТОП10, чтобы получить скин",iRankPos);
 	}
 	}
 	return PLUGIN_HANDLED;
 }
 
 /*================================================================================
- [РќР°С‡Р°Р»Рѕ СЂР°СѓРЅРґР°]
+ [Начало раунда]
 =================================================================================*/
 
 public event_round_start()
@@ -2031,7 +2033,7 @@ public event_round_start()
 }
 
 /*================================================================================
- [Р’РѕР·СЂРѕР¶РґРµРЅРёРµ РёРіСЂРѕРєР°]
+ [Возрождение игрока]
 =================================================================================*/
 
 public fw_PlayerSpawn( player ){
@@ -2042,29 +2044,29 @@ public fw_PlayerSpawn( player ){
 	}
 	client_cmd(player, "voice_inputfromfile 0");
 	
-    // РЈРґР°Р»СЏРµРј РїСЂРµРґС€РµСЃС‚РІСѓСЋС‰РёРµ Р·Р°РґР°С‡Рё РµСЃР»Рё РёРјРµСЋС‚СЊСЃСЏ
+    // Удаляем предшествующие задачи если имеються
 	remove_task( player + MODELSET_TASK )
-	// РЎРІРµСЂСЏРµРј СЃРѕРІРїР°РґР°СЋС‚ Р»Рё РјРѕРґРµР»Рё
+	// Сверяем совпадают ли модели
 			
 
     // Check whether the player is a zombie
-    // РџСЂРѕРІРµСЂСЏРµРј РёРјРµРµС‚ Р»Рё РёРіСЂРѕРє Р·Р°РєР°Р·РЅСѓСЋ РјРѕРґРµР»СЊ
+    // Проверяем имеет ли игрок заказную модель
     //if ( g_zombie[id] )
 	if ( g_has_custom_model[player] ){   
-        // РџРѕР»СѓС‡Р°РµРј С‚РµРєСѓС‰СѓСЋ РјРѕРґРµР»СЊ
+        // Получаем текущую модель
 		new currentmodel[32]
 		fm_get_user_model( player, currentmodel, charsmax( currentmodel ) )
-			// РЎРІРµСЂСЏРµРј СЃРѕРІРїР°РґР°СЋС‚ Р»Рё РјРѕРґРµР»Рё
+			// Сверяем совпадают ли модели
 		if ( !equal( currentmodel, g_player_model[player] ) ){
-            // Р”Р°РїРѕР»РЅРёС‚РµР»СЊРЅР°СЏ Р·Р°РґРµСЂР¶РєР° РІ РЅР°С‡Р°Р»Рµ СЂР°СѓРЅРґР° РїРµСЂРµ РґСЃРјРµРЅРѕР№ РјРѕРґРµР»Рё
-            // РСЃРєР»СЋС‡Р°РµРј РѕС€РёР±РєСѓ SVC_BAD РєРѕС‚РѕСЂР°СЏ РІРµСЂРѕСЏС‚РЅРµРµ РІСЃРµРіРѕ РІРѕР·РЅРёРєРЅРµС‚
+            // Даполнительная задержка в начале раунда пере дсменой модели
+            // Исключаем ошибку SVC_BAD которая вероятнее всего возникнет
 		if ( get_gametime() - g_roundstarttime < 5.0 ){
 		set_task( 5.0 * MODELCHANGE_DELAY, "fm_user_model_update", player + MODELSET_TASK )
 		}else{
 		fm_user_model_update( player + MODELSET_TASK )
 		}
 		}
-				// Р•СЃР»Рё Р·Р°РєР°Р·РЅРѕР№ РјРѕРґРµР»Рё РЅРµС‚ С‚Рѕ СЃР±СЂР°СЃС‹РІР°РµРј РјРѕРґРµР»СЊ
+				// Если заказной модели нет то сбрасываем модель
 				}else{ 
 				fm_reset_user_model( player )
 				}
@@ -2072,12 +2074,12 @@ public fw_PlayerSpawn( player ){
 
 
 /*================================================================================
- [РґРѕРїРѕР»РЅРёС‚РµР»СЊРЅС‹Рµ РїР°СЂР°РјРµС‚СЂС‹]
+ [дополнительные параметры]
 =================================================================================*/
 
 public fw_SetClientKeyValue( player, const infobuffer[], const key[] )
 {   
-	// Р‘Р»РѕРєРёСЂСѓРµРј СЃРјРµРЅСѓ РјРѕРґРµР»Рё
+	// Блокируем смену модели
 	if ( g_has_custom_model[player] && equal( key, "model" ) )
 		return FMRES_SUPERCEDE;
 	return FMRES_IGNORED;
@@ -2085,7 +2087,7 @@ public fw_SetClientKeyValue( player, const infobuffer[], const key[] )
 
 public fw_ClientUserInfoChanged( player )
 {
-	// Р•СЃР»Рё РёРіСЂРѕРє РЅРµ РёРјРµРµС‚ Р·Р°РєР°Р·РЅСѓСЋ РјРѕРґР»РµСЊ
+	// Если игрок не имеет заказную модлеь
 	if ( !g_has_custom_model[player] )
 		return FMRES_IGNORED;
     
@@ -2093,7 +2095,7 @@ public fw_ClientUserInfoChanged( player )
 	static currentmodel[32]
 	fm_get_user_model( player, currentmodel, charsmax( currentmodel ) )
     
-	// РџСЂРѕРІРµСЂСЏРµРј РјРѕРґРµР»СЊ РёРіСЂРѕРєР° РµСЃР»Рё РѕРЅР° РЅРµ Р·Р°РєР°Р·РЅР°СЏ С‚Рѕ СѓСЃС‚Р°РЅР°РІР»РёРІР°РµРј Р·Р°РєР°Р·РЅСѓСЋ
+	// Проверяем модель игрока если она не заказная то устанавливаем заказную
 	if ( !equal( currentmodel, g_player_model[player] ) && !task_exists( player + MODELSET_TASK ) )
 		fm_set_user_model( player + MODELSET_TASK )
 
@@ -2101,7 +2103,7 @@ public fw_ClientUserInfoChanged( player )
 }
 
 /*================================================================================
- [Р—Р°РґР°С‡Рё]
+ [Задачи]
 =================================================================================*/
 
 public fm_user_model_update( taskid )
@@ -2110,7 +2112,7 @@ public fm_user_model_update( taskid )
 	static Float:current_time
 	current_time = get_gametime()
     
-	// РќСѓР¶РЅР° Р»Рё РѕС‚СЃСЂРѕС‡РєР° СѓСЃС‚Р°РЅРѕРІРєРё РјРѕРґРµР»Рё
+	// Нужна ли отсрочка установки модели
 	if ( current_time - g_models_targettime >= MODELCHANGE_DELAY )
 	{
 		fm_set_user_model( taskid )
@@ -2153,7 +2155,7 @@ stock fm_get_user_model( player, model[], len )
 stock fm_reset_user_model( player )
 {
 
-	client_print(player, print_chat, "РЈСЃС‚Р°РЅРѕРІР»РµРЅР° СЃС‚Р°РЅРґР°СЂС‚РЅР°СЏ РјРѕРґРµР»СЊ");
+	client_print(player, print_chat, "Установлена стандартная модель");
 	// Player doesn't have a custom model any longer
 	g_has_custom_model[player] = false
     
@@ -2161,31 +2163,31 @@ stock fm_reset_user_model( player )
 	
 }
 
-public Change_Team() //РџСЂРѕРІРµСЂСЏРµРј РёРіСЂРѕРєР° РЅР° СЃРјРµРЅСѓ РєРѕРјРјР°РЅРґС‹
+public Change_Team() //Проверяем игрока на смену комманды
 {
 
-		new s_Name[32], player //РќРёРє РёРіСЂРєРѕР° Рё ID РёРіСЂРѕРєР°
-		read_data(3, s_Name, charsmax(s_Name)) //РЎС‡РёС‚С‹РІР°РµРј РґР°РЅРЅС‹Рµ РёРіСЂРѕРєР°
-		player = get_user_index(s_Name) // РїРѕР»СѓС‡РёС€СЊ ID РёРіСЂРѕРєР°
-		fm_reset_user_model(player);//РЎР±СЂР°СЃС‹РІР°РµРј РјРѕРґРµР»СЊ РёРіСЂРѕРєР°
-		set_task( 5.0, "usermodel", player );//РћС‚РєСЂС‹РІР°РµРј РјРµРЅСЋ РґР»СЏ СЃРјРµРЅС‹ РјРѕРґРµР»Рё
+		new s_Name[32], player //Ник игркоа и ID игрока
+		read_data(3, s_Name, charsmax(s_Name)) //Считываем данные игрока
+		player = get_user_index(s_Name) // получишь ID игрока
+		fm_reset_user_model(player);//Сбрасываем модель игрока
+		set_task( 5.0, "usermodel", player );//Открываем меню для смены модели
 	
 }
 
-public Reklama()//Р РµРєР»Р°РјР° СЃРµСЂРІРµСЂР° Рё РїР»Р°РіРёРЅР°
+public Reklama()//Реклама сервера и плагина
 {
-	client_print(0, print_chat, "Р”РћР‘Р Рћ РџРћР–РђР›РћР’РђРўР¬ РќРђ РР“Р РћР’РћР™ РЎР•Р Р’Р•Р  @@@РњРђРЎРљР - РЁРћРЈ@@@");
+	client_print(0, print_chat, "ДОБРО ПОЖАЛОВАТЬ НА ИГРОВОЙ СЕРВЕР @@@МАСКИ - ШОУ@@@");
 }
 
 
 
-public Connect_Sound(id)//РњСѓР·С‹РєР° РїСЂРё РІС…РѕРґРµ РёРіСЂРѕРєР° РЅР° СЃРµСЂРІРµСЂ
+public Connect_Sound(id)//Музыка при входе игрока на сервер
 {
 	client_cmd(id, "mp3 play sound/ms/start_%d", random_num(1,3));
 }
 
 /*================================================================================
- РћС‚РѕР±СЂР°Р¶РµРЅРёРµ РїРѕРІСЂРµР¶РґРµРЅРёСЏ
+ Отображение повреждения
 =================================================================================*/
 public damage_message(player){
 	for (new i=1;i<=max_players;i++){
@@ -2201,7 +2203,7 @@ public damage_message(player){
 }
 
 /*================================================================================
- Р›СѓС‡ СЃРјРµСЂС‚Рё
+ Луч смерти
 =================================================================================*/
 public death(){
 	
@@ -2278,7 +2280,7 @@ public death(){
 
 
 /*================================================================================
- Р—Р°РіСЂСѓР·РєР° РЅР°СЃС‚СЂРѕРµРє
+ Загрузка настроек
 =================================================================================*/
 public load_vault_data(id){
 	new data[31]
@@ -2299,7 +2301,7 @@ public load_vault_data(id){
 }
 
 /*================================================================================
- РЎРѕС…Р°СЂРЅРµРЅРёРµ РЅР°СЃС‚СЂРѕРµРє
+ Сохарнение настроек
 =================================================================================*/
 public save2vault(id){
 		new authid[35]
@@ -2326,7 +2328,7 @@ public save2vault(id){
 }
 
 /*================================================================================
- Р’РєР»СЋС‡РµРЅРёРµ РЅР°СЃС‚СЂРѕРµРє РјРµРЅСЋ
+ Включение настроек меню
 =================================================================================*/
 public cmd_esp_menu(id){
 	if (get_pcvar_num(pcvar_ms)==1){
@@ -2517,9 +2519,9 @@ public client_death(killer, victim, wpnindex, hitplace, TK)
 				new _teamname[32]
 				if (team == CS_TEAM_T)
 				{
-					format(_teamname, 31, "РўР•Р Р РћР РРЎРў%s", (epplnum == 1) ? "" : "РћР’")
+					format(_teamname, 31, "ТЕРРОРИСТ%s", (epplnum == 1) ? "" : "ОВ")
 				} else if (team == CS_TEAM_CT) {
-					format(_teamname, 31, "РњР•РќРў%s", (epplnum == 1) ? "" : "РћР’")
+					format(_teamname, 31, "МЕНТ%s", (epplnum == 1) ? "" : "ОВ")
 				}
 
 				for (new a = 0; a < pplnum; ++a)
@@ -2561,7 +2563,7 @@ public client_death(killer, victim, wpnindex, hitplace, TK)
 			get_user_name(ts[0], tname, 31)
 			
 			set_hudmessage(0, 255, 255, 0.02, 0.60, 0, 6.0, 6.0, 0.5, 0.15, -1)
-			ShowSyncHudMsg(0, g_center1_sync, "%s РїСЂРѕС‚РёРІ %s", ctname, tname)
+			ShowSyncHudMsg(0, g_center1_sync, "%s против %s", ctname, tname)
 			
 			new players[32], pnum
 			get_players(players, pnum, "c")
@@ -2597,7 +2599,7 @@ public client_death(killer, victim, wpnindex, hitplace, TK)
 				get_user_name(g_LastAnnounce, name, 31)
 				
 				set_hudmessage(0, 255, 255, 0.02, 0.60, 0, 6.0, 6.0, 0.5, 0.15, -1)
-				ShowSyncHudMsg(0, g_center1_sync, "%s^nР–РР—РќР•Р™ %d^nРїСЂРѕС‚РёРІ^n%d %s%s^n%L", name, get_user_health(g_LastAnnounce), oposite, g_teamsNames[_team], (oposite == 1) ? "" : "РћР’", LANG_PLAYER, g_LastMessages[random_num(0, 3)])
+				ShowSyncHudMsg(0, g_center1_sync, "%s^nЖИЗНЕЙ %d^nпротив^n%d %s%s^n%L", name, get_user_health(g_LastAnnounce), oposite, g_teamsNames[_team], (oposite == 1) ? "" : "ОВ", LANG_PLAYER, g_LastMessages[random_num(0, 3)])
 				
 				if (!is_user_connecting(g_LastAnnounce))
 				{
@@ -2800,7 +2802,7 @@ public showStatus(id)
 				xmod_get_wpnname(wpnid, wpnname, 31)
 		
 			set_hudmessage(color1, 50, color2, 0.02, 0.50, 1, 0.01, 3.0, 0.01, 0.01, -1)
-			ShowSyncHudMsg(id, g_status_sync, "%s^nР–РР—РќР•Р™ %d^nР‘Р РћРќР %d^n%s", name, get_user_health(pid), get_user_armor(pid), wpnname)
+			ShowSyncHudMsg(id, g_status_sync, "%s^nЖИЗНЕЙ %d^nБРОНИ %d^n%s", name, get_user_health(pid), get_user_armor(pid), wpnname)
 		} else {
 			set_hudmessage(color1, 50, color2, 0.02, 0.70, 1, 0.01, 3.0, 0.01, 0.01, -1)
 			ShowSyncHudMsg(id, g_status_sync, "%s", name)
@@ -3071,10 +3073,10 @@ public bomb_explode(planter, defuser)
 public language(id){
 	if (admin_options[id][MS_DEFAULT_LANGUAGE]){
 	admin_options[id][MS_DEFAULT_LANGUAGE]=false;
-	client_print(id, print_chat, "Р§Р°С‚ РЅР° Р СѓСЃСЃРєРѕРј СЏР·С‹РєРµ");
+	client_print(id, print_chat, "Чат на Русском языке");
 	}else{
 	admin_options[id][MS_DEFAULT_LANGUAGE]=true;
-	client_print(id, print_chat, "Р§Р°С‚ РЅР° РђРЅРіР»РёР№СЃРєРѕРј СЏР·С‹РєРµ");
+	client_print(id, print_chat, "Чат на Английском языке");
 	}
 }
 public kickLag() {
@@ -3100,7 +3102,7 @@ public kickLag() {
 				client_cmd(who, "Connect 109.200.126.110:27015")
 			else
 				client_cmd(who, "Connect 109.200.126.110:27015")
-				/*client_cmd(who, "echo ^"РЎР•Р Р’Р•Р  РџРћР›РќР«Р™.^";disconnect")*/
+				/*client_cmd(who, "echo ^"СЕРВЕР ПОЛНЫЙ.^";disconnect")*/
 		}
 	return who
 }
@@ -3127,7 +3129,7 @@ public kickFresh() {
 				client_cmd(who, "Connect 109.200.126.110:27015")
 			else
 				client_cmd(who, "Connect 109.200.126.110:27015")
-				/*client_cmd(who, "echo ^"РЎР•Р Р’Р•Р  РџРћР›РќР«Р™.^";disconnect")*/	
+				/*client_cmd(who, "echo ^"СЕРВЕР ПОЛНЫЙ.^";disconnect")*/	
 		}
 	return who
 }
