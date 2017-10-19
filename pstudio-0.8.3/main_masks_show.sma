@@ -8,10 +8,10 @@
 #define NAME "МОДЕЛИ МАСКИ ШОУ"
 
 //ВЕРСИЯ ПЛАГИНА
-#define VERSION	"1.0/30.03.2015"
+#define VERSION	"1.0/19.10.2017"
 
 //АВТОР ПЛАГИНА
-#define AUTHOR	"WAW555"
+#define AUTHOR	"WAW555 and Other"
 
 //ПОДКЛЮЧАЕМЫЕ МОДУЛИ
 #include <amxmodx>
@@ -26,10 +26,10 @@
 new g_s_LogFile[64]; // Файл логов
 
 //ВРЕМЯ ОТОБРАЖЕНИЯ МЕНЮ
-#define MENUTIME 10 // how long menus stay up
+#define MENUTIME 10 // Время отображения меню
 
 //ОТОБРАЖЕНИЕ КОЛИЧЕСТВА СЛОТОВ ДЛЯ РЕЗЕРВИРОВАНИЯ
-#define HIDE_RESERVEDSLOTS//Отображение слотов для резервирования
+#define HIDE_RESERVEDSLOTS	//Отображение слотов для резервирования
 
 //РЕГИСТРАЦИЯ КНОПОК МЕНЮ
 #define KEY1 (1<<0)
@@ -44,7 +44,7 @@ new g_s_LogFile[64]; // Файл логов
 #define KEY0 (1<<9)
 
 //ЛУЧ СМЕРТИ
-#define TE_BEAMPOINTS 0//Луч смерти
+#define TE_BEAMPOINTS 0	//Луч смерти
 
 //ПЕРЕМЕННЫЕ
 new bool:mute_sound //Звук вкл. выкл.
