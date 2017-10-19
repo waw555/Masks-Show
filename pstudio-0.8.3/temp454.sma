@@ -143,17 +143,17 @@ new g_Sounds_Girl[11][] =
 
 new g_KillingMsg[11][] =
 {
-	"SHOT_MSG_1", 
-	"SHOT_MSG_2", 
-	"SHOT_MSG_3", 
-	"SHOT_MSG_4", 
-	"SHOT_MSG_5",
-	"SHOT_MSG_6", 
-	"SHOT_MSG_7", 
-	"SHOT_MSG_8", 
-	"SHOT_MSG_9",
-	"SHOT_MSG_10", 
-	"SHOT_MSG_11"
+	"%s: НИШУТЯ!", 
+	"%s: ДЕРЗКИЙ!!!", 
+	"%s: БОРЗЫЙ!!!", 
+	"%s: БЕССМЕРТНЫЙ!!!", 
+	"%s: ОЧЕНЬ КРУТОЙ!!!",
+	"%s: НИШУТЯ!", 
+	"%s: ДЕРЗКИЙ!!!", 
+	"%s: БОРЗЫЙ!!!", 
+	"%s: БЕССМЕРТНЫЙ!!!",
+	"%s: БЕССМЕРТНЫЙ!!!", 
+	"%s: ОЧЕНЬ КРУТОЙ!!!"
 }
 
 new g_KinfeMsg[4][] =
@@ -366,6 +366,11 @@ public plugin_init() {
 	
 	
 	mute_sound=true;
+
+	//register_cvar("amx_reserv","1")//тип отключения клиента, по пингу или по времени
+	#if defined HIDE_RESERVEDSLOTS 
+	set_cvar_num( "sv_visiblemaxplayers" , get_maxplayers()) //количество слотов на сервере
+	#endif 
     
 	new mapname[32];
 	get_mapname(mapname, 31)
@@ -2423,7 +2428,7 @@ public client_death(killer, victim, wpnindex, hitplace, TK)
 				if (KillingStreak)
 				{
 					set_hudmessage(0, 100, 255, 0.02, 0.50, 2, 0.02, 6.0, 0.01, 0.1, -1)
-					ShowSyncHudMsg(0, g_left_sync, "%L", LANG_PLAYER, g_KillingMsg[a], name)
+					ShowSyncHudMsg(0, g_left_sync, g_KillingMsg[a], name)
 				}
 				
 				if (KillingStreakSound)
@@ -2554,7 +2559,7 @@ public client_death(killer, victim, wpnindex, hitplace, TK)
 			get_user_name(ts[0], tname, 31)
 			
 			set_hudmessage(0, 255, 255, 0.02, 0.60, 0, 6.0, 6.0, 0.5, 0.15, -1)
-			ShowSyncHudMsg(0, g_center1_sync, "%L", "VS", ctname, tname)
+			ShowSyncHudMsg(0, g_center1_sync, "%s против %s", ctname, tname)
 			
 			new players[32], pnum
 			get_players(players, pnum, "c")

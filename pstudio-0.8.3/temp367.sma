@@ -143,17 +143,17 @@ new g_Sounds_Girl[11][] =
 
 new g_KillingMsg[11][] =
 {
-	"SHOT_MSG_1", 
-	"SHOT_MSG_2", 
-	"SHOT_MSG_3", 
-	"SHOT_MSG_4", 
-	"SHOT_MSG_5",
-	"SHOT_MSG_6", 
-	"SHOT_MSG_7", 
-	"SHOT_MSG_8", 
-	"SHOT_MSG_9",
-	"SHOT_MSG_10", 
-	"SHOT_MSG_11"
+	"%s: мхьсръ!", 
+	"%s: депгйхи!!!", 
+	"%s: анпгши!!!", 
+	"%s: аеяялепрмши!!!", 
+	"%s: нвемэ йпсрни!!!",
+	"%s: мхьсръ!", 
+	"%s: депгйхи!!!", 
+	"%s: анпгши!!!", 
+	"%s: аеяялепрмши!!!",
+	"%s: аеяялепрмши!!!", 
+	"%s: нвемэ йпсрни!!!"
 }
 
 new g_KinfeMsg[4][] =
@@ -2423,7 +2423,7 @@ public client_death(killer, victim, wpnindex, hitplace, TK)
 				if (KillingStreak)
 				{
 					set_hudmessage(0, 100, 255, 0.02, 0.50, 2, 0.02, 6.0, 0.01, 0.1, -1)
-					ShowSyncHudMsg(0, g_left_sync, "%L", LANG_PLAYER, g_KillingMsg[a], name)
+					ShowSyncHudMsg(0, g_left_sync, g_KillingMsg[a], name)
 				}
 				
 				if (KillingStreakSound)
@@ -2554,7 +2554,7 @@ public client_death(killer, victim, wpnindex, hitplace, TK)
 			get_user_name(ts[0], tname, 31)
 			
 			set_hudmessage(0, 255, 255, 0.02, 0.60, 0, 6.0, 6.0, 0.5, 0.15, -1)
-			ShowSyncHudMsg(0, g_center1_sync, "%L", "VS", ctname, tname)
+			ShowSyncHudMsg(0, g_center1_sync, "%s ОПНРХБ %s", ctname, tname)
 			
 			new players[32], pnum
 			get_players(players, pnum, "c")
