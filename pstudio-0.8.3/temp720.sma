@@ -44,6 +44,9 @@ public plugin_init() {
 	register_dictionary("common.txt")
 	register_saycmd("voteban", "Cmd_VoteBan", -1, "");
 	register_saycmd("/voteban", "Cmd_VoteBan", -1, "");
+	register_saycmd("לשוףטפע", "Cmd_VoteBan", -1, "");
+	register_saycmd("באם", "Cmd_VoteBan", -1, "");
+	register_saycmd("גמעובאם", "Cmd_VoteBan", -1, "");
 	
 	register_menucmd(register_menuid("Ban Menu"), MENU_KEYS, "Menu_VoteBan");
 	

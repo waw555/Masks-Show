@@ -8,14 +8,10 @@
 #define NAME "МОДЕЛИ МАСКИ ШОУ"
 
 //ВЕРСИЯ ПЛАГИНА
-<<<<<<< HEAD
-#define VERSION	"1.0/19.10.2017"
-=======
 #define VERSION	"1.1/18.10.2017"
->>>>>>> 64ddad6cc6bee105006dae03511fd7ef11bffb7e
 
 //АВТОР ПЛАГИНА
-#define AUTHOR	"WAW555 and Other"
+#define AUTHOR	"WAW555"
 
 //ПОДКЛЮЧАЕМЫЕ МОДУЛИ
 #include <amxmodx>
@@ -30,10 +26,10 @@
 new g_s_LogFile[64]; // Файл логов
 
 //ВРЕМЯ ОТОБРАЖЕНИЯ МЕНЮ
-#define MENUTIME 10 // Время отображения меню
+#define MENUTIME 10 // how long menus stay up
 
 //ОТОБРАЖЕНИЕ КОЛИЧЕСТВА СЛОТОВ ДЛЯ РЕЗЕРВИРОВАНИЯ
-#define HIDE_RESERVEDSLOTS	//Отображение слотов для резервирования
+#define HIDE_RESERVEDSLOTS//Отображение слотов для резервирования
 
 //РЕГИСТРАЦИЯ КНОПОК МЕНЮ
 #define KEY1 (1<<0)
@@ -48,7 +44,7 @@ new g_s_LogFile[64]; // Файл логов
 #define KEY0 (1<<9)
 
 //ЛУЧ СМЕРТИ
-#define TE_BEAMPOINTS 0	//Луч смерти
+#define TE_BEAMPOINTS 0//Луч смерти
 
 //ПЕРЕМЕННЫЕ
 new bool:mute_sound //Звук вкл. выкл.
@@ -56,7 +52,6 @@ new bool:mute_sound //Звук вкл. выкл.
 //Смена моделей
 #define MODELCHANGE_DELAY 0.5 // Задержка перед сменой модели
 #define MODELSET_TASK 100 // Компенсация для смены модели 
-
   //Голосовая озвучка
 public MultiKill
 public MultiKillSound
@@ -365,7 +360,6 @@ public plugin_init() {
 	register_event("StatusValue", "hideStatus", "be", "1=1", "2=0");
 	//Регистрируем словари
 	register_dictionary("miscstats.txt");
-	register_dictionary("main.txt");
 	//Регистрируем консольные команды
 	register_clcmd("ms_model","usermodel",-1,"Меню моделей");
 	//Регистрируем команды чата
@@ -442,7 +436,8 @@ public plugin_init() {
 	register_menucmd(menu11ID,1023,"Music_Settings_Action");
 	register_menucmd(menu12ID,1023,"menu_esp");
 	    //Реклама
-	set_task( 30.0, "Reklama", _,_,_,"a", 30);   
+	set_task( 30.0, "Reklama", _,_,_,"a", 30);
+	    
 	
 	    
 	pcvar_ms=register_cvar("ms","1")//Включение выключение плагина
@@ -1788,7 +1783,7 @@ public client_connect(id) {
 	return 1;
 }
 
-public client_disconnected(id) {
+public client_disconnect(id) {
 	save2vault(id);
 }
 
