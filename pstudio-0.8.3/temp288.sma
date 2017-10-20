@@ -147,7 +147,7 @@ new g_doublekillsound[SOUND_SHORTPATH_MAXLEN] = "ms/user_doublekill"
 new g_girldoublekillsound[SOUND_SHORTPATH_MAXLEN] = "ms/girl_doublekill"
 new g_roundcountersound[SOUND_SHORTPATH_MAXLEN] = "ms/prepare"
 new g_grenadekillsound[SOUND_SHORTPATH_MAXLEN] = "ms/grenade"
-new g_grenadesuicidesound[SOUND_SHORTPATH_MAXLEN] = "ms/grenade"
+new g_grenadesuicidesound[SOUND_SHORTPATH_MAXLEN] = "djeyl/witch"
 new g_bombplantedsound[SOUND_SHORTPATH_MAXLEN] = "djeyl/c4powa"
 new g_bombdefusedsound[SOUND_SHORTPATH_MAXLEN] = "djeyl/laugh"
 new g_bombfailedsound[SOUND_SHORTPATH_MAXLEN] = "djeyl/witch"
@@ -581,10 +581,31 @@ public client_death(killer, victim, wpnindex, hitplace, TK)
 				if (KillingStreakSound)
 				{
 					if (get_user_flags(killer) & ADMIN_LEVEL_C){
+												
+						/*new players[32], pnum
+						get_players(players, pnum, "c")
+						new i
+	
+						for (i = 0; i < pnum; i++)
+						{
+						if (admin_options[players[i]][MS_AUDIO_STEPS])
+						client_cmd(players[i], "spk sound/ms/%s.wav",g_Sounds_Girl[a])
+						}*/
 						play_sound(0, g_Sounds_Girl[a])
 					}else{
+						
+						/*new players[32], pnum
+						get_players(players, pnum, "c")
+						new i
+	
+						for (i = 0; i < pnum; i++)
+						{
+						if (admin_options[players[i]][MS_AUDIO_STEPS])
+						client_cmd(players[i], "spk sound/ms/%s.wav",g_Sounds[a])
+						}*/
 						play_sound(0, g_Sounds[a])
 					}
+					//play_sound(0, g_Sounds[a])
 				}
 			}
 		}
@@ -1077,7 +1098,7 @@ public bombTimer()
 				new temp[64]
 				
 				num_to_word(g_C4Timer, temp, charsmax(temp))
-				format(temp, charsmax(temp), "^"sound/ms/%s^"", temp)
+				format(temp, charsmax(temp), "^"vox/%s seconds until explosion^"", temp)
 				play_sound(0, temp)
 			}
 			else if (g_C4Timer < 11)
@@ -1085,7 +1106,7 @@ public bombTimer()
 				new temp[64]
 				
 				num_to_word(g_C4Timer, temp, charsmax(temp))
-				format(temp, charsmax(temp), "^"sound/ms/%s^"", temp)
+				format(temp, charsmax(temp), "^"vox/%s^"", temp)
 				play_sound(0, temp)
 			}
 		}

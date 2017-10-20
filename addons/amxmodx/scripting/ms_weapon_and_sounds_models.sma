@@ -110,11 +110,11 @@ public load_models(configfile[])
 			read_file(configfile,i,read,95,trash) //Исходя из цикла: Считываем каждую строку в файле
 			if(containi(read,";")!=0 && containi(read," ")!=-1)
 			{
-				strbreak(read,left,47,right,47)
+				argbreak(read,left,47,right,47)
 				team=0
 				if(containi(right," ")!=-1)
 				{
-					strbreak(right,right,47,right2,31)
+					argbreak(right,right,47,right2,31)
 					replace_all(right2,31,"^"","")
 					if(
 					equali(right2,"T") ||
