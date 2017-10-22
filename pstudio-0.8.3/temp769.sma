@@ -67,7 +67,7 @@ public BombCountHUD //amx 1.8.3
 public GrenadeKillSound //amx 1.8.3
 public GrenadeSuicideSound //amx 1.8.3
 
-const SOUNDFILE_PATH_MAXLEN = 254
+const SOUNDFILE_PATH_MAXLEN = 128
 const SOUND_SHORTPATH_MAXLEN = SOUNDFILE_PATH_MAXLEN - 10 // 64 (sound/ [ 54 ] .wav) critical value for fast dl
 
 new g_streakKills[MAX_PLAYERS + 1][2]
@@ -88,7 +88,6 @@ new g_status_sync
 new g_left_sync
 new g_bottom_sync
 new g_he_sync
-new PlayCommand[128]
 
 new g_pcvar_mp_c4timer, g_c4timer_value
 
@@ -686,12 +685,9 @@ precache_sound_custom( const sound[] )
 copy_sound(dest[], len, src[])
 {
 	new n = copy(dest, len, src[ 6 * equali(src, "sound/", 6) ])
-	if( n > 4 && equal(dest[n-4], ".wav"))
+	if( n > 4 && equal(dest[n-4], ".wav") || equal(dest[n-4], ".mp3"))
 	{
-		//dest[n-4] = EOS
-	} else if ( n > 4 && equal(dest[n-4], ".mp3"))
-	{
-		//dest[n-4] = EOS
+		dest[n-4] = EOS
 	}
 }
 
@@ -822,8 +818,8 @@ public client_death(killer, victim, wpnindex, hitplace, TK)
 				new name[MAX_NAME_LENGTH]
 				get_user_name(killer, name, charsmax(name))
 				
-				if ((a >>= 1) > 10)
-					a = 10
+				if ((a >>= 1) > 6)
+					a = 6
 				
 				if (KillingStreak)
 				{
@@ -1245,9 +1241,9 @@ public checkKills(param[])
 		
 		if (a > -1)
 		{
-			if (a > 10)
+			if (a > 12)
 			{
-				a = 10
+				a = 12
 			}
 			
 			if (MultiKill)
@@ -1426,25 +1422,13 @@ play_sound(id, sound[])
 	{
 		if( g_msounds[id] )
 		{
-			if(containi(sound, ".wav") != -1)
-			{
-				formatex(PlayCommand, 127, "spk %s", sound)
-				log_amx("spk <%s>", sound)
-				//client_cmd(id, "stopsound")
-				client_cmd(id, "%s", PlayCommand)
-			}
-			else if(containi(sound, ".mp3") != -1)
-			{
-				formatex(PlayCommand, 127, "mp3 play sound/%s", sound)
-				log_amx("mp3 play /sound <%s>", sound)
-				//client_cmd(id, "stopsound")
-				client_cmd(id, "%s", PlayCommand)
-			}
-			else
-			{
+			if(containi(sound, ".wav")){
+				client_cmd(id, "spk %s", sound)
+			}else if (containi(sound, ".mp3")){
+				client_cmd(id, "mp3 play %s", sound)
+			}else{
 				log_amx("Unsupported file type <%s>", sound)
 			}
-
 		}
 	}
 	else
@@ -1456,22 +1440,11 @@ play_sound(id, sound[])
 		{
 			id = players[pnum]
 			if ( g_connected[id] && g_msounds[id] )
-				if(containi(sound, ".wav") != -1)
-				{
-					log_amx("spk <%s>", sound)
-					formatex(PlayCommand, 127, "spk %s", sound)
-					//client_cmd(id, "stopsound")
-					client_cmd(id, "%s", PlayCommand)
-				}
-				else if(containi(sound, ".mp3") != -1)
-				{
-					formatex(PlayCommand, 127, "mp3 play %s", sound)
-					log_amx("mp3 play <%s>", sound)
-					//client_cmd(id, "stopsound")
-					client_cmd(id, "%s", PlayCommand)
-				}
-				else
-				{
+				if(containi(sound, ".wav")){
+					client_cmd(id, "spk %s", sound)
+				}else if (containi(sound, ".mp3")){
+					client_cmd(id, "mp3 play %s", sound)
+				}else{
 					log_amx("Unsupported file type <%s>", sound)
 				}
 		}

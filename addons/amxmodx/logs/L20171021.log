@@ -1,0 +1,658 @@
+L 10/21/2017 - 00:27:00: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/21/2017 - 00:27:15: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be de_airstrip
+L 10/21/2017 - 00:29:09: -------- Mapchange to de_airstrip --------
+L 10/21/2017 - 00:29:09: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 00:29:09: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/21/2017 - 00:29:09: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/21/2017 - 00:29:09: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 00:29:09: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/21/2017 - 00:29:09: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/21/2017 - 00:29:09: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/21/2017 - 00:29:09: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/21/2017 - 00:29:09: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/21/2017 - 00:29:09: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/21/2017 - 00:29:09: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/21/2017 - 00:57:09: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/21/2017 - 00:57:24: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be cs_havana
+L 10/21/2017 - 00:59:18: -------- Mapchange to cs_havana --------
+L 10/21/2017 - 00:59:18: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 00:59:18: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/21/2017 - 00:59:18: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/21/2017 - 00:59:18: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 00:59:18: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/21/2017 - 00:59:18: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/21/2017 - 00:59:18: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/21/2017 - 00:59:18: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/21/2017 - 00:59:18: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/21/2017 - 00:59:18: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/21/2017 - 00:59:18: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/21/2017 - 01:27:18: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/21/2017 - 01:27:33: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be de_chateau
+L 10/21/2017 - 01:29:27: -------- Mapchange to de_chateau --------
+L 10/21/2017 - 01:29:27: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 01:29:27: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/21/2017 - 01:29:27: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/21/2017 - 01:29:27: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 01:29:27: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/21/2017 - 01:29:27: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/21/2017 - 01:29:27: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/21/2017 - 01:29:27: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/21/2017 - 01:29:27: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/21/2017 - 01:29:27: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/21/2017 - 01:29:27: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/21/2017 - 01:57:27: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/21/2017 - 01:57:42: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be de_aztec
+L 10/21/2017 - 01:59:36: -------- Mapchange to de_aztec --------
+L 10/21/2017 - 01:59:36: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 01:59:36: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/21/2017 - 01:59:36: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/21/2017 - 01:59:36: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 01:59:36: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/21/2017 - 01:59:36: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/21/2017 - 01:59:36: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/21/2017 - 01:59:36: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/21/2017 - 01:59:36: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/21/2017 - 01:59:36: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/21/2017 - 01:59:36: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/21/2017 - 02:27:36: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/21/2017 - 02:27:51: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be as_oilrig
+L 10/21/2017 - 02:29:45: -------- Mapchange to as_oilrig --------
+L 10/21/2017 - 02:29:45: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 02:29:45: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/21/2017 - 02:29:45: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/21/2017 - 02:29:45: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 02:29:45: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/21/2017 - 02:29:45: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/21/2017 - 02:29:45: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/21/2017 - 02:29:45: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/21/2017 - 02:29:45: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/21/2017 - 02:29:45: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/21/2017 - 02:29:45: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/21/2017 - 02:57:44: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/21/2017 - 02:57:59: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be cs_siege
+L 10/21/2017 - 02:59:53: -------- Mapchange to cs_siege --------
+L 10/21/2017 - 02:59:54: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 02:59:54: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/21/2017 - 02:59:54: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/21/2017 - 02:59:54: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 02:59:54: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/21/2017 - 02:59:54: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/21/2017 - 02:59:54: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/21/2017 - 02:59:54: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/21/2017 - 02:59:54: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/21/2017 - 02:59:54: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/21/2017 - 02:59:54: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/21/2017 - 03:27:51: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/21/2017 - 03:28:06: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be de_cbble
+L 10/21/2017 - 03:30:00: -------- Mapchange to de_cbble --------
+L 10/21/2017 - 03:30:00: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 03:30:00: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/21/2017 - 03:30:00: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/21/2017 - 03:30:00: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 03:30:00: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/21/2017 - 03:30:00: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/21/2017 - 03:30:00: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/21/2017 - 03:30:00: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/21/2017 - 03:30:00: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/21/2017 - 03:30:00: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/21/2017 - 03:30:00: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/21/2017 - 03:57:59: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/21/2017 - 03:58:14: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be de_dust
+L 10/21/2017 - 04:00:08: -------- Mapchange to de_dust --------
+L 10/21/2017 - 04:00:08: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 04:00:08: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/21/2017 - 04:00:08: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/21/2017 - 04:00:08: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 04:00:08: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/21/2017 - 04:00:08: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/21/2017 - 04:00:08: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/21/2017 - 04:00:08: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/21/2017 - 04:00:08: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/21/2017 - 04:00:08: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/21/2017 - 04:00:08: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/21/2017 - 04:28:08: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/21/2017 - 04:28:23: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be cs_747
+L 10/21/2017 - 04:30:17: -------- Mapchange to cs_747 --------
+L 10/21/2017 - 04:30:17: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 04:30:17: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/21/2017 - 04:30:17: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/21/2017 - 04:30:17: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 04:30:17: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/21/2017 - 04:30:17: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/21/2017 - 04:30:17: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/21/2017 - 04:30:17: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/21/2017 - 04:30:17: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/21/2017 - 04:30:17: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/21/2017 - 04:30:17: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/21/2017 - 04:58:17: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/21/2017 - 04:58:32: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be de_prodigy
+L 10/21/2017 - 05:00:26: -------- Mapchange to de_prodigy --------
+L 10/21/2017 - 05:00:26: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 05:00:26: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/21/2017 - 05:00:26: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/21/2017 - 05:00:26: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 05:00:26: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/21/2017 - 05:00:26: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/21/2017 - 05:00:26: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/21/2017 - 05:00:26: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/21/2017 - 05:00:26: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/21/2017 - 05:00:26: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/21/2017 - 05:00:26: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/21/2017 - 05:28:26: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/21/2017 - 05:28:41: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be cs_assault
+L 10/21/2017 - 05:30:35: -------- Mapchange to cs_assault --------
+L 10/21/2017 - 05:30:35: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 05:30:35: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/21/2017 - 05:30:35: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/21/2017 - 05:30:35: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 05:30:35: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/21/2017 - 05:30:35: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/21/2017 - 05:30:35: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/21/2017 - 05:30:35: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/21/2017 - 05:30:35: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/21/2017 - 05:30:35: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/21/2017 - 05:30:35: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/21/2017 - 05:58:35: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/21/2017 - 05:58:50: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be cs_office
+L 10/21/2017 - 06:00:44: -------- Mapchange to cs_office --------
+L 10/21/2017 - 06:00:44: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 06:00:44: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/21/2017 - 06:00:44: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/21/2017 - 06:00:44: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 06:00:44: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/21/2017 - 06:00:44: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/21/2017 - 06:00:44: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/21/2017 - 06:00:44: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/21/2017 - 06:00:44: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/21/2017 - 06:00:44: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/21/2017 - 06:00:44: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/21/2017 - 06:28:44: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/21/2017 - 06:28:59: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be cs_italy
+L 10/21/2017 - 06:30:53: -------- Mapchange to cs_italy --------
+L 10/21/2017 - 06:30:53: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 06:30:53: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/21/2017 - 06:30:53: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/21/2017 - 06:30:53: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 06:30:53: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/21/2017 - 06:30:53: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/21/2017 - 06:30:53: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/21/2017 - 06:30:53: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/21/2017 - 06:30:53: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/21/2017 - 06:30:53: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/21/2017 - 06:30:53: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/21/2017 - 06:58:53: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/21/2017 - 06:59:08: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be cs_backalley
+L 10/21/2017 - 07:01:02: -------- Mapchange to cs_backalley --------
+L 10/21/2017 - 07:01:02: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 07:01:02: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/21/2017 - 07:01:02: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/21/2017 - 07:01:02: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 07:01:02: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/21/2017 - 07:01:02: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/21/2017 - 07:01:02: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/21/2017 - 07:01:02: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/21/2017 - 07:01:02: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/21/2017 - 07:01:02: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/21/2017 - 07:01:02: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/21/2017 - 07:29:02: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/21/2017 - 07:29:17: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be cs_militia
+L 10/21/2017 - 07:31:11: -------- Mapchange to cs_militia --------
+L 10/21/2017 - 07:31:11: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 07:31:11: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/21/2017 - 07:31:11: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/21/2017 - 07:31:11: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 07:31:11: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/21/2017 - 07:31:11: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/21/2017 - 07:31:11: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/21/2017 - 07:31:11: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/21/2017 - 07:31:11: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/21/2017 - 07:31:11: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/21/2017 - 07:31:11: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/21/2017 - 07:59:11: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/21/2017 - 07:59:26: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be de_train
+L 10/21/2017 - 08:01:20: -------- Mapchange to de_train --------
+L 10/21/2017 - 08:01:20: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 08:01:20: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/21/2017 - 08:01:20: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/21/2017 - 08:01:20: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 08:01:20: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/21/2017 - 08:01:20: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/21/2017 - 08:01:20: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/21/2017 - 08:01:20: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/21/2017 - 08:01:20: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/21/2017 - 08:01:20: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/21/2017 - 08:01:20: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/21/2017 - 08:29:19: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/21/2017 - 08:29:34: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be de_airstrip
+L 10/21/2017 - 08:31:28: -------- Mapchange to de_airstrip --------
+L 10/21/2017 - 08:31:28: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 08:31:28: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/21/2017 - 08:31:28: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/21/2017 - 08:31:28: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 08:31:28: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/21/2017 - 08:31:28: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/21/2017 - 08:31:28: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/21/2017 - 08:31:28: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/21/2017 - 08:31:28: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/21/2017 - 08:31:28: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/21/2017 - 08:31:28: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/21/2017 - 08:59:28: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/21/2017 - 08:59:43: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be cs_havana
+L 10/21/2017 - 09:01:37: -------- Mapchange to cs_havana --------
+L 10/21/2017 - 09:01:37: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 09:01:37: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/21/2017 - 09:01:37: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/21/2017 - 09:01:37: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 09:01:37: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/21/2017 - 09:01:37: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/21/2017 - 09:01:37: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/21/2017 - 09:01:37: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/21/2017 - 09:01:37: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/21/2017 - 09:01:37: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/21/2017 - 09:01:37: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/21/2017 - 09:29:37: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/21/2017 - 09:29:52: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be de_chateau
+L 10/21/2017 - 09:31:46: -------- Mapchange to de_chateau --------
+L 10/21/2017 - 09:31:46: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 09:31:46: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/21/2017 - 09:31:46: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/21/2017 - 09:31:46: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 09:31:46: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/21/2017 - 09:31:46: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/21/2017 - 09:31:46: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/21/2017 - 09:31:46: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/21/2017 - 09:31:46: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/21/2017 - 09:31:46: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/21/2017 - 09:31:46: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/21/2017 - 09:59:46: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/21/2017 - 10:00:01: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be de_aztec
+L 10/21/2017 - 10:01:55: -------- Mapchange to de_aztec --------
+L 10/21/2017 - 10:01:55: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 10:01:55: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/21/2017 - 10:01:55: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/21/2017 - 10:01:55: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 10:01:55: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/21/2017 - 10:01:55: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/21/2017 - 10:01:55: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/21/2017 - 10:01:55: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/21/2017 - 10:01:55: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/21/2017 - 10:01:55: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/21/2017 - 10:01:55: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/21/2017 - 10:29:55: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/21/2017 - 10:30:10: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be as_oilrig
+L 10/21/2017 - 10:32:04: -------- Mapchange to as_oilrig --------
+L 10/21/2017 - 10:32:04: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 10:32:04: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/21/2017 - 10:32:04: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/21/2017 - 10:32:04: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 10:32:04: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/21/2017 - 10:32:04: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/21/2017 - 10:32:04: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/21/2017 - 10:32:04: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/21/2017 - 10:32:04: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/21/2017 - 10:32:04: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/21/2017 - 10:32:04: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/21/2017 - 11:00:04: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/21/2017 - 11:00:19: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be cs_siege
+L 10/21/2017 - 11:02:13: -------- Mapchange to cs_siege --------
+L 10/21/2017 - 11:02:13: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 11:02:13: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/21/2017 - 11:02:13: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/21/2017 - 11:02:13: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 11:02:13: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/21/2017 - 11:02:13: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/21/2017 - 11:02:13: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/21/2017 - 11:02:13: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/21/2017 - 11:02:13: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/21/2017 - 11:02:13: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/21/2017 - 11:02:13: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/21/2017 - 11:30:13: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/21/2017 - 11:30:28: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be de_cbble
+L 10/21/2017 - 11:32:22: -------- Mapchange to de_cbble --------
+L 10/21/2017 - 11:32:22: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 11:32:22: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/21/2017 - 11:32:22: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/21/2017 - 11:32:22: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 11:32:22: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/21/2017 - 11:32:22: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/21/2017 - 11:32:22: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/21/2017 - 11:32:22: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/21/2017 - 11:32:22: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/21/2017 - 11:32:22: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/21/2017 - 11:32:22: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/21/2017 - 12:00:22: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/21/2017 - 12:00:37: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be de_dust
+L 10/21/2017 - 12:02:31: -------- Mapchange to de_dust --------
+L 10/21/2017 - 12:02:31: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 12:02:31: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/21/2017 - 12:02:31: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/21/2017 - 12:02:31: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 12:02:31: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/21/2017 - 12:02:31: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/21/2017 - 12:02:31: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/21/2017 - 12:02:31: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/21/2017 - 12:02:31: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/21/2017 - 12:02:31: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/21/2017 - 12:02:31: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/21/2017 - 12:30:31: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/21/2017 - 12:30:46: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be cs_747
+L 10/21/2017 - 12:32:40: -------- Mapchange to cs_747 --------
+L 10/21/2017 - 12:32:40: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 12:32:40: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/21/2017 - 12:32:40: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/21/2017 - 12:32:40: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 12:32:40: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/21/2017 - 12:32:40: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/21/2017 - 12:32:40: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/21/2017 - 12:32:40: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/21/2017 - 12:32:40: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/21/2017 - 12:32:40: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/21/2017 - 12:32:40: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/21/2017 - 13:00:40: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/21/2017 - 13:00:55: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be de_prodigy
+L 10/21/2017 - 13:02:49: -------- Mapchange to de_prodigy --------
+L 10/21/2017 - 13:02:49: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 13:02:49: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/21/2017 - 13:02:49: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/21/2017 - 13:02:49: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 13:02:49: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/21/2017 - 13:02:49: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/21/2017 - 13:02:49: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/21/2017 - 13:02:49: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/21/2017 - 13:02:49: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/21/2017 - 13:02:49: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/21/2017 - 13:02:49: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/21/2017 - 13:30:49: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/21/2017 - 13:31:04: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be cs_assault
+L 10/21/2017 - 13:32:58: -------- Mapchange to cs_assault --------
+L 10/21/2017 - 13:32:58: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 13:32:58: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/21/2017 - 13:32:58: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/21/2017 - 13:32:58: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 13:32:58: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/21/2017 - 13:32:58: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/21/2017 - 13:32:58: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/21/2017 - 13:32:58: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/21/2017 - 13:32:58: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/21/2017 - 13:32:58: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/21/2017 - 13:32:58: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/21/2017 - 14:00:57: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/21/2017 - 14:01:12: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be cs_office
+L 10/21/2017 - 14:03:06: -------- Mapchange to cs_office --------
+L 10/21/2017 - 14:03:06: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 14:03:06: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/21/2017 - 14:03:06: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/21/2017 - 14:03:06: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 14:03:06: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/21/2017 - 14:03:06: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/21/2017 - 14:03:06: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/21/2017 - 14:03:06: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/21/2017 - 14:03:06: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/21/2017 - 14:03:06: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/21/2017 - 14:03:06: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/21/2017 - 14:31:06: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/21/2017 - 14:31:21: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be cs_italy
+L 10/21/2017 - 14:33:15: -------- Mapchange to cs_italy --------
+L 10/21/2017 - 14:33:15: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 14:33:15: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/21/2017 - 14:33:15: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/21/2017 - 14:33:15: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 14:33:15: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/21/2017 - 14:33:15: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/21/2017 - 14:33:15: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/21/2017 - 14:33:15: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/21/2017 - 14:33:15: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/21/2017 - 14:33:15: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/21/2017 - 14:33:15: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/21/2017 - 15:01:15: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/21/2017 - 15:01:30: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be cs_backalley
+L 10/21/2017 - 15:03:24: -------- Mapchange to cs_backalley --------
+L 10/21/2017 - 15:03:24: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 15:03:24: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/21/2017 - 15:03:24: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/21/2017 - 15:03:24: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 15:03:24: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/21/2017 - 15:03:24: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/21/2017 - 15:03:24: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/21/2017 - 15:03:24: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/21/2017 - 15:03:24: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/21/2017 - 15:03:24: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/21/2017 - 15:03:24: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/21/2017 - 15:31:24: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/21/2017 - 15:31:39: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be cs_militia
+L 10/21/2017 - 15:33:33: -------- Mapchange to cs_militia --------
+L 10/21/2017 - 15:33:33: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 15:33:33: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/21/2017 - 15:33:33: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/21/2017 - 15:33:33: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 15:33:33: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/21/2017 - 15:33:33: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/21/2017 - 15:33:33: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/21/2017 - 15:33:33: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/21/2017 - 15:33:33: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/21/2017 - 15:33:33: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/21/2017 - 15:33:33: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/21/2017 - 16:01:33: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/21/2017 - 16:01:48: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be de_train
+L 10/21/2017 - 16:03:42: -------- Mapchange to de_train --------
+L 10/21/2017 - 16:03:42: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 16:03:42: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/21/2017 - 16:03:42: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/21/2017 - 16:03:42: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 16:03:42: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/21/2017 - 16:03:42: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/21/2017 - 16:03:42: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/21/2017 - 16:03:42: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/21/2017 - 16:03:42: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/21/2017 - 16:03:42: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/21/2017 - 16:03:42: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/21/2017 - 16:31:42: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/21/2017 - 16:31:57: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be de_airstrip
+L 10/21/2017 - 16:33:51: -------- Mapchange to de_airstrip --------
+L 10/21/2017 - 16:33:51: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 16:33:51: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/21/2017 - 16:33:51: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/21/2017 - 16:33:51: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 16:33:51: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/21/2017 - 16:33:51: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/21/2017 - 16:33:51: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/21/2017 - 16:33:51: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/21/2017 - 16:33:51: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/21/2017 - 16:33:51: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/21/2017 - 16:33:51: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/21/2017 - 17:01:51: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/21/2017 - 17:02:06: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be cs_havana
+L 10/21/2017 - 17:04:00: -------- Mapchange to cs_havana --------
+L 10/21/2017 - 17:04:00: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 17:04:00: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/21/2017 - 17:04:00: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/21/2017 - 17:04:00: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 17:04:00: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/21/2017 - 17:04:00: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/21/2017 - 17:04:00: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/21/2017 - 17:04:00: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/21/2017 - 17:04:00: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/21/2017 - 17:04:00: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/21/2017 - 17:04:00: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/21/2017 - 17:32:00: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/21/2017 - 17:32:15: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be de_chateau
+L 10/21/2017 - 17:34:09: -------- Mapchange to de_chateau --------
+L 10/21/2017 - 17:34:09: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 17:34:09: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/21/2017 - 17:34:09: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/21/2017 - 17:34:09: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 17:34:09: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/21/2017 - 17:34:09: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/21/2017 - 17:34:09: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/21/2017 - 17:34:09: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/21/2017 - 17:34:09: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/21/2017 - 17:34:09: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/21/2017 - 17:34:09: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/21/2017 - 18:02:09: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/21/2017 - 18:02:24: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be de_aztec
+L 10/21/2017 - 18:04:18: -------- Mapchange to de_aztec --------
+L 10/21/2017 - 18:04:18: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 18:04:18: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/21/2017 - 18:04:18: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/21/2017 - 18:04:18: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 18:04:18: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/21/2017 - 18:04:18: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/21/2017 - 18:04:18: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/21/2017 - 18:04:18: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/21/2017 - 18:04:18: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/21/2017 - 18:04:18: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/21/2017 - 18:04:18: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/21/2017 - 18:32:18: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/21/2017 - 18:32:33: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be as_oilrig
+L 10/21/2017 - 18:34:27: -------- Mapchange to as_oilrig --------
+L 10/21/2017 - 18:34:27: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 18:34:27: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/21/2017 - 18:34:27: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/21/2017 - 18:34:27: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 18:34:27: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/21/2017 - 18:34:27: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/21/2017 - 18:34:27: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/21/2017 - 18:34:27: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/21/2017 - 18:34:27: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/21/2017 - 18:34:27: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/21/2017 - 18:34:27: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/21/2017 - 19:02:27: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/21/2017 - 19:02:42: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be cs_siege
+L 10/21/2017 - 19:04:36: -------- Mapchange to cs_siege --------
+L 10/21/2017 - 19:04:36: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 19:04:36: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/21/2017 - 19:04:36: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/21/2017 - 19:04:36: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 19:04:36: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/21/2017 - 19:04:36: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/21/2017 - 19:04:36: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/21/2017 - 19:04:36: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/21/2017 - 19:04:36: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/21/2017 - 19:04:36: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/21/2017 - 19:04:36: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/21/2017 - 19:32:36: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/21/2017 - 19:32:51: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be de_cbble
+L 10/21/2017 - 19:34:45: -------- Mapchange to de_cbble --------
+L 10/21/2017 - 19:34:45: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 19:34:45: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/21/2017 - 19:34:45: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/21/2017 - 19:34:45: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 19:34:45: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/21/2017 - 19:34:45: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/21/2017 - 19:34:45: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/21/2017 - 19:34:45: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/21/2017 - 19:34:45: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/21/2017 - 19:34:45: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/21/2017 - 19:34:45: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/21/2017 - 20:02:44: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/21/2017 - 20:03:00: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be de_dust
+L 10/21/2017 - 20:04:53: -------- Mapchange to de_dust --------
+L 10/21/2017 - 20:04:53: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 20:04:53: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/21/2017 - 20:04:53: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/21/2017 - 20:04:53: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 20:04:53: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/21/2017 - 20:04:53: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/21/2017 - 20:04:53: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/21/2017 - 20:04:53: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/21/2017 - 20:04:53: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/21/2017 - 20:04:53: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/21/2017 - 20:04:53: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/21/2017 - 20:32:53: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/21/2017 - 20:33:08: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be cs_747
+L 10/21/2017 - 20:35:02: -------- Mapchange to cs_747 --------
+L 10/21/2017 - 20:35:02: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 20:35:02: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/21/2017 - 20:35:02: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/21/2017 - 20:35:02: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 20:35:02: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/21/2017 - 20:35:02: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/21/2017 - 20:35:02: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/21/2017 - 20:35:02: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/21/2017 - 20:35:02: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/21/2017 - 20:35:02: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/21/2017 - 20:35:02: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/21/2017 - 21:03:02: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/21/2017 - 21:03:17: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be de_prodigy
+L 10/21/2017 - 21:05:11: -------- Mapchange to de_prodigy --------
+L 10/21/2017 - 21:05:11: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 21:05:11: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/21/2017 - 21:05:11: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/21/2017 - 21:05:11: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 21:05:11: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/21/2017 - 21:05:11: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/21/2017 - 21:05:11: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/21/2017 - 21:05:11: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/21/2017 - 21:05:11: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/21/2017 - 21:05:11: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/21/2017 - 21:05:11: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/21/2017 - 21:33:11: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/21/2017 - 21:33:26: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be cs_assault
+L 10/21/2017 - 21:35:20: -------- Mapchange to cs_assault --------
+L 10/21/2017 - 21:35:20: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 21:35:20: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/21/2017 - 21:35:20: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/21/2017 - 21:35:20: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 21:35:20: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/21/2017 - 21:35:20: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/21/2017 - 21:35:20: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/21/2017 - 21:35:20: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/21/2017 - 21:35:20: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/21/2017 - 21:35:20: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/21/2017 - 21:35:20: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/21/2017 - 22:03:20: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/21/2017 - 22:03:35: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be cs_office
+L 10/21/2017 - 22:05:29: -------- Mapchange to cs_office --------
+L 10/21/2017 - 22:05:29: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 22:05:29: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/21/2017 - 22:05:29: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/21/2017 - 22:05:29: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 22:05:29: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/21/2017 - 22:05:29: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/21/2017 - 22:05:29: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/21/2017 - 22:05:29: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/21/2017 - 22:05:29: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/21/2017 - 22:05:29: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/21/2017 - 22:05:29: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/21/2017 - 22:33:29: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/21/2017 - 22:33:44: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be cs_italy
+L 10/21/2017 - 22:35:38: -------- Mapchange to cs_italy --------
+L 10/21/2017 - 22:35:38: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 22:35:38: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/21/2017 - 22:35:38: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/21/2017 - 22:35:38: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 22:35:38: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/21/2017 - 22:35:38: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/21/2017 - 22:35:38: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/21/2017 - 22:35:38: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/21/2017 - 22:35:38: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/21/2017 - 22:35:38: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/21/2017 - 22:35:38: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/21/2017 - 23:03:38: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/21/2017 - 23:03:53: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be cs_backalley
+L 10/21/2017 - 23:05:47: -------- Mapchange to cs_backalley --------
+L 10/21/2017 - 23:05:47: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 23:05:47: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/21/2017 - 23:05:47: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/21/2017 - 23:05:47: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 23:05:47: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/21/2017 - 23:05:47: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/21/2017 - 23:05:47: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/21/2017 - 23:05:47: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/21/2017 - 23:05:47: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/21/2017 - 23:05:47: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/21/2017 - 23:05:47: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/21/2017 - 23:33:47: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/21/2017 - 23:34:02: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be cs_militia
+L 10/21/2017 - 23:35:56: -------- Mapchange to cs_militia --------
+L 10/21/2017 - 23:35:56: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 23:35:56: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/21/2017 - 23:35:56: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/21/2017 - 23:35:56: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/21/2017 - 23:35:56: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/21/2017 - 23:35:56: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/21/2017 - 23:35:56: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/21/2017 - 23:35:56: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/21/2017 - 23:35:56: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/21/2017 - 23:35:56: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/21/2017 - 23:35:56: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file

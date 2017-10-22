@@ -88,7 +88,6 @@ new g_status_sync
 new g_left_sync
 new g_bottom_sync
 new g_he_sync
-new PlayCommand[128]
 
 new g_pcvar_mp_c4timer, g_c4timer_value
 
@@ -1426,25 +1425,13 @@ play_sound(id, sound[])
 	{
 		if( g_msounds[id] )
 		{
-			if(containi(sound, ".wav") != -1)
-			{
-				formatex(PlayCommand, 127, "spk %s", sound)
-				log_amx("spk <%s>", sound)
-				//client_cmd(id, "stopsound")
-				client_cmd(id, "%s", PlayCommand)
-			}
-			else if(containi(sound, ".mp3") != -1)
-			{
-				formatex(PlayCommand, 127, "mp3 play sound/%s", sound)
-				log_amx("mp3 play /sound <%s>", sound)
-				//client_cmd(id, "stopsound")
-				client_cmd(id, "%s", PlayCommand)
-			}
-			else
-			{
+			if(containi(sound, ".wav")){
+				client_cmd(id, "spk %s", sound)
+			}else if (containi(sound, ".mp3")){
+				client_cmd(id, "mp3 play %s", sound)
+			}else{
 				log_amx("Unsupported file type <%s>", sound)
 			}
-
 		}
 	}
 	else
@@ -1456,22 +1443,11 @@ play_sound(id, sound[])
 		{
 			id = players[pnum]
 			if ( g_connected[id] && g_msounds[id] )
-				if(containi(sound, ".wav") != -1)
-				{
-					log_amx("spk <%s>", sound)
-					formatex(PlayCommand, 127, "spk %s", sound)
-					//client_cmd(id, "stopsound")
-					client_cmd(id, "%s", PlayCommand)
-				}
-				else if(containi(sound, ".mp3") != -1)
-				{
-					formatex(PlayCommand, 127, "mp3 play %s", sound)
-					log_amx("mp3 play <%s>", sound)
-					//client_cmd(id, "stopsound")
-					client_cmd(id, "%s", PlayCommand)
-				}
-				else
-				{
+				if(containi(sound, ".wav") != -1){
+					client_cmd(id, "spk %s", sound)
+				}else if(containi(sound, ".mp3") != -1){
+					client_cmd(id, "mp3 play %s", sound)
+				}else{
 					log_amx("Unsupported file type <%s>", sound)
 				}
 		}

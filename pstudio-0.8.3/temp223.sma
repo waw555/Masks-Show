@@ -1429,15 +1429,13 @@ play_sound(id, sound[])
 			if(containi(sound, ".wav") != -1)
 			{
 				formatex(PlayCommand, 127, "spk %s", sound)
-				log_amx("spk <%s>", sound)
-				//client_cmd(id, "stopsound")
+				client_cmd(id, "stopsound")
 				client_cmd(id, "%s", PlayCommand)
 			}
 			else if(containi(sound, ".mp3") != -1)
 			{
 				formatex(PlayCommand, 127, "mp3 play sound/%s", sound)
-				log_amx("mp3 play /sound <%s>", sound)
-				//client_cmd(id, "stopsound")
+				client_cmd(id, "stopsound")
 				client_cmd(id, "%s", PlayCommand)
 			}
 			else
@@ -1458,16 +1456,14 @@ play_sound(id, sound[])
 			if ( g_connected[id] && g_msounds[id] )
 				if(containi(sound, ".wav") != -1)
 				{
-					log_amx("spk <%s>", sound)
 					formatex(PlayCommand, 127, "spk %s", sound)
-					//client_cmd(id, "stopsound")
+					client_cmd(id, "stopsound")
 					client_cmd(id, "%s", PlayCommand)
 				}
 				else if(containi(sound, ".mp3") != -1)
 				{
-					formatex(PlayCommand, 127, "mp3 play %s", sound)
-					log_amx("mp3 play <%s>", sound)
-					//client_cmd(id, "stopsound")
+					formatex(PlayCommand, 127, "mp3 play sound/%s", sound)
+					client_cmd(id, "stopsound")
 					client_cmd(id, "%s", PlayCommand)
 				}
 				else

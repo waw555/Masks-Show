@@ -16,7 +16,7 @@
 #include <csx>
 
 public FirstBloodSound
-public LastManSound
+public LastManSound //amx 1.8.3
 public MultiKill
 public MultiKillSound
 public BombPlanting
@@ -33,7 +33,7 @@ public BombReached
 public ItalyBonusKill
 public EnemyRemaining
 public LastMan
-public LastManHealth
+public LastManHealth   //amx 1.8.3
 public KnifeKill
 public KnifeKillSound
 public GrenadeKill
@@ -48,15 +48,12 @@ public DoubleKill
 public DoubleKillSound
 public PlayerName
 public C4TimerSound
-public EndRoundSound
-public PlayerJoinServerSound
 
 
 //Girl Sounds
-public GirlFirstBloodSound
-public LastGirlSound
 public GirlMultiKillSound
 public GirlSound
+public GirlFirstBloodSound
 public GirlKnifeKillSound
 public GirlDoubleKillSound
 
@@ -67,7 +64,7 @@ public BombCountHUD //amx 1.8.3
 public GrenadeKillSound //amx 1.8.3
 public GrenadeSuicideSound //amx 1.8.3
 
-const SOUNDFILE_PATH_MAXLEN = 254
+const SOUNDFILE_PATH_MAXLEN = 128
 const SOUND_SHORTPATH_MAXLEN = SOUNDFILE_PATH_MAXLEN - 10 // 64 (sound/ [ 54 ] .wav) critical value for fast dl
 
 new g_streakKills[MAX_PLAYERS + 1][2]
@@ -88,7 +85,6 @@ new g_status_sync
 new g_left_sync
 new g_bottom_sync
 new g_he_sync
-new PlayCommand[128]
 
 new g_pcvar_mp_c4timer, g_c4timer_value
 
@@ -117,84 +113,72 @@ new g_MultiKillMsg[7][] =
 
 new g_Sounds[11][SOUND_SHORTPATH_MAXLEN] = 
 {
-	"ms/user_1.wav",
-	"ms/user_2.wav",
-	"ms/user_3.wav",
-	"ms/user_4.wav",
-	"ms/user_5.wav",
-	"ms/user_6.wav",
-	"ms/user_7.wav",
-	"ms/user_8.wav",
-	"ms/user_9.wav",
-	"ms/user_10.wav",
-	"ms/user_11.wav"
+	"ms/user_1",
+	"ms/user_2",
+	"ms/user_3",
+	"ms/user_4",
+	"ms/user_5",
+	"ms/user_6",
+	"ms/user_7",
+	"ms/user_8",
+	"ms/user_9",
+	"ms/user_10",
+	"ms/user_11"
 }
 
 new g_Girl_Sounds[11][SOUND_SHORTPATH_MAXLEN] =
 {
-	"ms/girl_1.wav", 
-	"ms/girl_2.wav", 
-	"ms/girl_3.wav", 
-	"ms/girl_4.wav", 
-	"ms/girl_5.wav", 
-	"ms/girl_6.wav", 
-	"ms/girl_7.wav",
-	"ms/girl_8.wav",
-	"ms/girl_9.wav",
-	"ms/girl_10.wav",
-	"ms/girl_11.wav"
+	"ms/girl_1", 
+	"ms/girl_2", 
+	"ms/girl_3", 
+	"ms/girl_4", 
+	"ms/girl_5", 
+	"ms/girl_6", 
+	"ms/girl_7",
+	"ms/girl_8",
+	"ms/girl_9",
+	"ms/girl_10",
+	"ms/girl_11"
 }
 
 new g_C4Timer_Sounds[13][SOUND_SHORTPATH_MAXLEN] = 
 {
-	"ms/zero.wav",
-	"ms/one.wav",
-	"ms/two.wav",
-	"ms/three.wav",
-	"ms/four.wav",
-	"ms/five.wav",
-	"ms/six.wav",
-	"ms/seven.wav",
-	"ms/eight.wav",
-	"ms/nine.wav",
-	"ms/ten.wav",
-	"ms/twenty.wav",
-	"ms/thirty.wav"
-}
-
-new g_End_Round_Sounds[5][SOUND_SHORTPATH_MAXLEN] = 
-{
-	"ms/roundend_1.mp3",
-	"ms/roundend_2.mp3",
-	"ms/roundend_3.mp3",
-	"ms/roundend_4.mp3",
-	"ms/roundend_5.mp3"
+	"ms/zero",
+	"ms/one",
+	"ms/two",
+	"ms/three",
+	"ms/four",
+	"ms/five",
+	"ms/six",
+	"ms/seven",
+	"ms/eight",
+	"ms/nine",
+	"ms/ten",
+	"ms/twenty",
+	"ms/thirty"
 }
 	
 
-new g_firstbloodsound[SOUND_SHORTPATH_MAXLEN] = "ms/user_firstblood.wav"
-new g_lastmansound_1vsothers[SOUND_SHORTPATH_MAXLEN] = "ms/1_vs_all.wav"
-new g_lastmansound_duel[SOUND_SHORTPATH_MAXLEN] = "ms/one_and_only.wav"
-new g_hssound_killer[SOUND_SHORTPATH_MAXLEN] = "ms/user_killer_headshot.wav"
-new g_hssound_victim[SOUND_SHORTPATH_MAXLEN] = "ms/user_victim_headshot.wav"
-new g_knifekillsound[SOUND_SHORTPATH_MAXLEN] = "ms/user_humiliation.wav"
-new g_doublekillsound[SOUND_SHORTPATH_MAXLEN] = "ms/user_doublekill.wav"
-new g_roundcountersound[SOUND_SHORTPATH_MAXLEN] = "ms/prepare.wav"
-new g_grenadekillsound[SOUND_SHORTPATH_MAXLEN] = "ms/grenade.wav"
-new g_grenadesuicidesound[SOUND_SHORTPATH_MAXLEN] = "ms/grenade.wav"
-new g_bombplantedsound[SOUND_SHORTPATH_MAXLEN] = "djeyl/c4powa.wav"
-new g_bombdefusedsound[SOUND_SHORTPATH_MAXLEN] = "djeyl/laugh.wav"
-new g_bombfailedsound[SOUND_SHORTPATH_MAXLEN] = "djeyl/witch.wav"
-new g_bombpickupsound[SOUND_SHORTPATH_MAXLEN] = "ms/bomb_pick_up.wav"
+new g_firstbloodsound[SOUND_SHORTPATH_MAXLEN] = "ms/user_firstblood"
+new g_lastmansound_1vsothers[SOUND_SHORTPATH_MAXLEN] = "ms/1_vs_all"
+new g_lastmansound_duel[SOUND_SHORTPATH_MAXLEN] = "ms/one_and_only"
+new g_hssound_killer[SOUND_SHORTPATH_MAXLEN] = "ms/user_killer_headshot"
+new g_hssound_victim[SOUND_SHORTPATH_MAXLEN] = "ms/user_victim_headshot"
+new g_knifekillsound[SOUND_SHORTPATH_MAXLEN] = "ms/user_humiliation"
+new g_doublekillsound[SOUND_SHORTPATH_MAXLEN] = "ms/user_doublekill"
+new g_roundcountersound[SOUND_SHORTPATH_MAXLEN] = "ms/prepare"
+new g_grenadekillsound[SOUND_SHORTPATH_MAXLEN] = "ms/grenade"
+new g_grenadesuicidesound[SOUND_SHORTPATH_MAXLEN] = "ms/grenade"
+new g_bombplantedsound[SOUND_SHORTPATH_MAXLEN] = "djeyl/c4powa"
+new g_bombdefusedsound[SOUND_SHORTPATH_MAXLEN] = "djeyl/laugh"
+new g_bombfailedsound[SOUND_SHORTPATH_MAXLEN] = "djeyl/witch"
+new g_bombpickupsound[SOUND_SHORTPATH_MAXLEN] = "ms/bomb_pick_up"
 
 //Girl Sound
-new g_girlfirstbloodsound[SOUND_SHORTPATH_MAXLEN] = "ms/girl_firstblood.wav"
-new g_lastgirlsound_1vsothers[SOUND_SHORTPATH_MAXLEN] = "ms/girl_one_vs_others.wav"
-new g_lastgirlsound_duel[SOUND_SHORTPATH_MAXLEN] = "ms/girl_one_and_only.wav"
-new g_girlknifekillsound[SOUND_SHORTPATH_MAXLEN] = "ms/girl_humiliation.wav"
-new g_girldoublekillsound[SOUND_SHORTPATH_MAXLEN] = "ms/girl_doublekill.wav"
-
-new g_playerjoinserver[SOUND_SHORTPATH_MAXLEN] = "ms/playerjoinserver.mp3"
+new g_girlfirstbloodsound[SOUND_SHORTPATH_MAXLEN] = "ms/girl_firstblood"
+new g_lastgirlsound_1vsothers[SOUND_SHORTPATH_MAXLEN] = "ms/girl_one_vs_others"
+new g_girlknifekillsound[SOUND_SHORTPATH_MAXLEN] = "ms/girl_humiliation"
+new g_girldoublekillsound[SOUND_SHORTPATH_MAXLEN] = "ms/girl_doublekill"
 
 
 new g_KillingMsg[7][] =
@@ -362,17 +346,12 @@ public plugin_precache()
 				else if( equal(szSoundKey, "LastGirlVsOthersSound") )
 				{
 					copy_sound(g_lastgirlsound_1vsothers, charsmax(g_lastgirlsound_1vsothers), szSoundFile)
-					if( LastGirlSound ) precache_sound_custom(g_lastgirlsound_1vsothers)
+					if( GirlSound ) precache_sound_custom(g_lastgirlsound_1vsothers)
 				}
 				else if( equal(szSoundKey, "LastManDuelSound") )
 				{
 					copy_sound(g_lastmansound_duel, charsmax(g_lastmansound_duel), szSoundFile)
 					if( LastManSound ) precache_sound_custom(g_lastmansound_duel)
-				}
-				else if( equal(szSoundKey, "LastGirlDuelSound") )
-				{
-					copy_sound(g_lastgirlsound_duel, charsmax(g_lastgirlsound_duel), szSoundFile)
-					if( LastGirlSound ) precache_sound_custom(g_lastgirlsound_duel)
 				}
 				else if( equal(szSoundKey, "HeadShotKillSoundKiller") )
 				{
@@ -504,36 +483,6 @@ public plugin_precache()
 					copy_sound(g_C4Timer_Sounds[12], charsmax(g_C4Timer_Sounds[]), szSoundFile)
 					if( C4TimerSound ) precache_sound_custom(g_C4Timer_Sounds[12])
 				}
-				else if( equal(szSoundKey, "EndRoundSoundOne") )
-				{
-					copy_sound(g_End_Round_Sounds[0], charsmax(g_End_Round_Sounds[]), szSoundFile)
-					if( EndRoundSound ) precache_sound_custom(g_End_Round_Sounds[0])
-				}
-				else if( equal(szSoundKey, "EndRoundSoundTwo") )
-				{
-					copy_sound(g_End_Round_Sounds[1], charsmax(g_End_Round_Sounds[]), szSoundFile)
-					if( EndRoundSound ) precache_sound_custom(g_End_Round_Sounds[1])
-				}
-				else if( equal(szSoundKey, "EndRoundSoundThree") )
-				{
-					copy_sound(g_End_Round_Sounds[2], charsmax(g_End_Round_Sounds[]), szSoundFile)
-					if( EndRoundSound ) precache_sound_custom(g_End_Round_Sounds[2])
-				}
-				else if( equal(szSoundKey, "EndRoundSoundFour") )
-				{
-					copy_sound(g_End_Round_Sounds[3], charsmax(g_End_Round_Sounds[]), szSoundFile)
-					if( EndRoundSound ) precache_sound_custom(g_End_Round_Sounds[3])
-				}
-				else if( equal(szSoundKey, "EndRoundSoundFive") )
-				{
-					copy_sound(g_End_Round_Sounds[4], charsmax(g_End_Round_Sounds[]), szSoundFile)
-					if( EndRoundSound ) precache_sound_custom(g_End_Round_Sounds[4])
-				}
-				else if( equal(szSoundKey, "PlayerJoinServerSound") )
-				{
-					copy_sound(g_playerjoinserver, charsmax(g_playerjoinserver), szSoundFile)
-					if( PlayerJoinServerSound ) precache_sound_custom(g_playerjoinserver)
-				}
 				else
 				{
 					// KillingStreakSound and MultiKillSound
@@ -655,24 +604,10 @@ public plugin_precache()
 	}
 }
 
-/*precache_sound_custom( const sound[] )
-{
-	new fullpathsound[SOUNDFILE_PATH_MAXLEN]
-	formatex(fullpathsound, charsmax(fullpathsound), "sound/%s.wav", sound)
-	if( file_exists(fullpathsound) )
-	{
-		precache_sound(fullpathsound[6])
-	}
-	else
-	{
-		log_amx("Could not locate <%s> file", fullpathsound)
-	}
-}*/
-
 precache_sound_custom( const sound[] )
 {
 	new fullpathsound[SOUNDFILE_PATH_MAXLEN]
-	formatex(fullpathsound, charsmax(fullpathsound), "sound/%s", sound)
+	formatex(fullpathsound, charsmax(fullpathsound), "sound/%s.wav", sound)
 	if( file_exists(fullpathsound) )
 	{
 		precache_sound(fullpathsound[6])
@@ -686,12 +621,9 @@ precache_sound_custom( const sound[] )
 copy_sound(dest[], len, src[])
 {
 	new n = copy(dest, len, src[ 6 * equali(src, "sound/", 6) ])
-	if( n > 4 && equal(dest[n-4], ".wav"))
+	if( n > 4 && equal(dest[n-4], ".wav") )
 	{
-		//dest[n-4] = EOS
-	} else if ( n > 4 && equal(dest[n-4], ".mp3"))
-	{
-		//dest[n-4] = EOS
+		dest[n-4] = EOS
 	}
 }
 
@@ -701,7 +633,7 @@ public plugin_cfg()
 	
 	server_cmd(g_addStast, "ST_MULTI_KILL", "MultiKill")
 	server_cmd(g_addStast, "ST_MULTI_KILL_SOUND", "MultiKillSound")
-	server_cmd(g_addStast, "ST_GIRL_MULTI_KILL_SOUND", "GirlMultiKillSound")
+	server_cmd(g_addStast, "ST_GIRL_MULTI_KILL_SOUND", "GirlMultiKillSound")  //Girl MultiKill Sound
 	server_cmd(g_addStast, "ST_BOMB_PLANTING", "BombPlanting")
 	server_cmd(g_addStast, "ST_BOMB_DEFUSING", "BombDefusing")
 	server_cmd(g_addStast, "ST_BOMB_PLANTED", "BombPlanted")
@@ -721,7 +653,6 @@ public plugin_cfg()
 	server_cmd(g_addStast, "ST_LAST_MAN", "LastMan")
 	server_cmd(g_addStast, "ST_LAST_MAN_HEALTH", "LastManHealth")
 	server_cmd(g_addStast, "ST_LAST_MAN_SOUND", "LastManSound")
-	server_cmd(g_addStast, "ST_LAST_GIRL_SOUND", "LastGirlSound")
 	server_cmd(g_addStast, "ST_KNIFE_KILL", "KnifeKill")
 	server_cmd(g_addStast, "ST_KNIFE_KILL_SOUND", "KnifeKillSound")
 	server_cmd(g_addStast, "ST_GIRL_KNIFE_KILL_SOUND", "GirlKnifeKillSound")
@@ -744,15 +675,10 @@ public plugin_cfg()
 	server_cmd(g_addStast, "ST_GIRL_FIRST_BLOOD_SOUND", "GirlFirstBloodSound")
 	server_cmd(g_addStast, "ST_C4_TIMER_SOUND", "C4TimerSound")
 	server_cmd(g_addStast, "ST_GIRL_SOUND", "GirlSound")
-	server_cmd(g_addStast, "ST_END_ROUND_SOUND", "EndRoundSound")
-	server_cmd(g_addStast, "ST_PLAYER_JOIN_SERVER_SOUND", "PlayerJoinServerSound")
 }
 
 public client_connect(id)
 {
-	if (PlayerJoinServerSound){
-		play_sound(id, g_playerjoinserver)
-	}
 	if( is_user_bot(id) )
 	{
 		g_msounds[id] = 0
@@ -767,8 +693,6 @@ public client_connect(id)
 	{
 		g_msounds[id] = 0
 	}
-	
-	
 }
 
 public client_putinserver(id)
@@ -799,6 +723,7 @@ public client_death(killer, victim, wpnindex, hitplace, TK)
 		if (FirstBloodSound || GirlFirstBloodSound){
 			if (get_user_flags(killer) & ADMIN_LEVEL_C && GirlFirstBloodSound) {
 				play_sound(0, g_girlfirstbloodsound)
+			}
 			} else if (FirstBloodSound) {
 				play_sound(0, g_firstbloodsound)
 			}
@@ -822,8 +747,8 @@ public client_death(killer, victim, wpnindex, hitplace, TK)
 				new name[MAX_NAME_LENGTH]
 				get_user_name(killer, name, charsmax(name))
 				
-				if ((a >>= 1) > 10)
-					a = 10
+				if ((a >>= 1) > 6)
+					a = 6
 				
 				if (KillingStreak)
 				{
@@ -905,7 +830,7 @@ public client_death(killer, victim, wpnindex, hitplace, TK)
 		}
 	}
 
-	if (LastMan || LastManSound || LastGirlSound)
+	if (LastMan || LastManSound)
 	{
 		new cts[MAX_PLAYERS], ts[MAX_PLAYERS], ctsnum, tsnum, b
 		get_players(cts, ctsnum, "ae", "CT")
@@ -961,14 +886,9 @@ public client_death(killer, victim, wpnindex, hitplace, TK)
 				}
 			}
 			
-			if( LastManSound || LastGirlSound)
+			if( LastManSound )
 			{
-				if( get_user_flags(killer) & ADMIN_LEVEL_C && LastGirlSound )
-				{
-					play_sound(0, g_lastgirlsound_duel)
-				} else if ( LastManSound ) {
-					play_sound(0, g_lastmansound_duel)
-				}
+				play_sound(0, g_lastmansound_duel)
 			}
 		}
 		else if (!g_LastAnnounce)
@@ -1008,11 +928,11 @@ public client_death(killer, victim, wpnindex, hitplace, TK)
 					}
 				}
 				
-				if ( LastManSound && g_connected[g_LastAnnounce] || LastGirlSound && g_connected[g_LastAnnounce])
+				if ( LastManSound && g_connected[g_LastAnnounce] )
 				{
-					if (get_user_flags(killer) & ADMIN_LEVEL_C && LastGirlSound){
+					if (get_user_flags(killer) & ADMIN_LEVEL_C && GirlSound){
 						play_sound(g_LastAnnounce, g_lastgirlsound_1vsothers)
-					}else if ( LastManSound ) {
+					}else{
 						play_sound(g_LastAnnounce, g_lastmansound_1vsothers)
 					}
 					
@@ -1035,9 +955,9 @@ public client_death(killer, victim, wpnindex, hitplace, TK)
 		}
 		
 		if (KnifeKillSound || GirlKnifeKillSound)
-			if (get_user_flags(killer) & ADMIN_LEVEL_C && GirlKnifeKillSound){
+			if (get_user_flags(killer) & ADMIN_LEVEL_C){
 				play_sound(0, g_girlknifekillsound)
-			}else if ( KnifeKillSound ) {
+			}else{
 				play_sound(0, g_knifekillsound)
 			}
 	}
@@ -1094,7 +1014,7 @@ public client_death(killer, victim, wpnindex, hitplace, TK)
 			}
 		}
 		
-		if (HeadShotKillSound && g_firstBlood && wpnindex != CSW_KNIFE)
+		if (HeadShotKillSound && g_firstBlood && wpnindex != CSW_KNIFE && (KnifeKill || KnifeKillSound) )
 		{
 			play_sound(victim, g_hssound_victim)
 			if( victim != killer )
@@ -1227,11 +1147,6 @@ public eEndRound()
 	g_LastOmg = 0.0
 	remove_task(TASK_BOMB_TIMER)
 	g_LastAnnounce = 0
-	
-	new i = random_num(0,4)
-	
-	if ( EndRoundSound )
-	play_sound(0, g_End_Round_Sounds[i])
 }
 
 public checkKills(param[])
@@ -1245,9 +1160,9 @@ public checkKills(param[])
 		
 		if (a > -1)
 		{
-			if (a > 10)
+			if (a > 12)
 			{
-				a = 10
+				a = 12
 			}
 			
 			if (MultiKill)
@@ -1264,7 +1179,7 @@ public checkKills(param[])
 			{
 				if (get_user_flags(id) & ADMIN_LEVEL_C && GirlMultiKillSound){
 					play_sound(0, g_Girl_Sounds[a])
-				} else if ( MultiKillSound ) {
+				}else{
 					play_sound(0, g_Sounds[a])
 				}
 			}
@@ -1426,25 +1341,7 @@ play_sound(id, sound[])
 	{
 		if( g_msounds[id] )
 		{
-			if(containi(sound, ".wav") != -1)
-			{
-				formatex(PlayCommand, 127, "spk %s", sound)
-				log_amx("spk <%s>", sound)
-				//client_cmd(id, "stopsound")
-				client_cmd(id, "%s", PlayCommand)
-			}
-			else if(containi(sound, ".mp3") != -1)
-			{
-				formatex(PlayCommand, 127, "mp3 play sound/%s", sound)
-				log_amx("mp3 play /sound <%s>", sound)
-				//client_cmd(id, "stopsound")
-				client_cmd(id, "%s", PlayCommand)
-			}
-			else
-			{
-				log_amx("Unsupported file type <%s>", sound)
-			}
-
+			client_cmd(id, "spk %s", sound)
 		}
 	}
 	else
@@ -1456,24 +1353,7 @@ play_sound(id, sound[])
 		{
 			id = players[pnum]
 			if ( g_connected[id] && g_msounds[id] )
-				if(containi(sound, ".wav") != -1)
-				{
-					log_amx("spk <%s>", sound)
-					formatex(PlayCommand, 127, "spk %s", sound)
-					//client_cmd(id, "stopsound")
-					client_cmd(id, "%s", PlayCommand)
-				}
-				else if(containi(sound, ".mp3") != -1)
-				{
-					formatex(PlayCommand, 127, "mp3 play %s", sound)
-					log_amx("mp3 play <%s>", sound)
-					//client_cmd(id, "stopsound")
-					client_cmd(id, "%s", PlayCommand)
-				}
-				else
-				{
-					log_amx("Unsupported file type <%s>", sound)
-				}
+				client_cmd(id, "spk %s", sound)
 		}
 	}
 }

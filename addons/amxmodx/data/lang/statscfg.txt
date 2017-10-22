@@ -80,6 +80,14 @@ ST_LAST_MAN_SOUND = Last Man Sound
 ST_LAST_MAN_HEALTH = Last Man Health
 ST_HE_KILL_SOUND = Grenade Kill Sound
 ST_HE_SUICIDE_SOUND = Grenade Suicide Sound
+ST_C4_TIMER_SOUND = Звуки таймера C4
+ST_GIRL_FIRST_BLOOD_SOUND = Женская озвучка первого убитого
+ST_GIRL_DOUBLE_KILL_SOUND = Женская озвучка двойное убийство
+ST_GIRL_KNIFE_KILL_SOUND = Женская озвучка убийства ножом
+ST_GIRL_SOUND = Женская озвучка
+ST_GIRL_MULTI_KILL_SOUND = Женская озвучка убийств
+ST_LAST_GIRL_SOUND = Last Girl Sound
+
 
 [en]
 NO_OPTION = Couldn't find option(s) with such variable (name "%s")
@@ -163,3 +171,6 @@ ST_LAST_MAN_SOUND = Last Man Sound
 ST_LAST_MAN_HEALTH = Last Man Health
 ST_HE_KILL_SOUND = Grenade Kill Sound
 ST_HE_SUICIDE_SOUND = Grenade Suicide Sound
+ST_C4_TIMER_SOUND = C4 Timer Sound
+ST_GIRL_SOUND = Girl Sound
+ST_LAST_GIRL_SOUND = Last Girl Sound

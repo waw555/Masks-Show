@@ -1,0 +1,709 @@
+L 10/20/2017 - 00:38:52: -------- Mapchange to de_dust --------
+L 10/20/2017 - 01:21:52: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/20/2017 - 01:22:07: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be cs_747
+L 10/20/2017 - 02:18:40: -------- Mapchange to cs_747 --------
+L 10/20/2017 - 03:01:37: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/20/2017 - 03:01:52: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be de_prodigy
+L 10/20/2017 - 03:58:25: -------- Mapchange to de_prodigy --------
+L 10/20/2017 - 04:41:25: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/20/2017 - 04:41:40: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be cs_assault
+L 10/20/2017 - 05:38:13: -------- Mapchange to cs_assault --------
+L 10/20/2017 - 06:21:13: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/20/2017 - 06:21:28: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be cs_office
+L 10/20/2017 - 07:18:02: -------- Mapchange to cs_office --------
+L 10/20/2017 - 08:01:01: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/20/2017 - 08:01:16: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be cs_italy
+L 10/20/2017 - 08:57:50: -------- Mapchange to cs_italy --------
+L 10/20/2017 - 09:40:49: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/20/2017 - 09:41:05: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be cs_backalley
+L 10/20/2017 - 10:37:38: -------- Mapchange to cs_backalley --------
+L 10/20/2017 - 11:20:38: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/20/2017 - 11:20:53: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be cs_militia
+L 10/20/2017 - 14:04:07: -------- Mapchange to de_dust2 --------
+L 10/20/2017 - 14:16:20: [admin.amxx] Login: "Player<1><STEAM_0:0:19404857><>" became an admin (account "STEAM_0:0:19404857") (access "abcdefghijklmnpqrstuvw") (address "46.163.168.94")
+L 10/20/2017 - 14:17:00: [admin.amxx] Login: "Player<2><STEAM_0:0:19404857><>" became an admin (account "STEAM_0:0:19404857") (access "abcdefghijklmnpqrstuvw") (address "46.163.168.94")
+L 10/20/2017 - 14:18:11: [admincmd.amxx] Kick: "Player<2><STEAM_0:0:19404857><>" kick "Player<2><STEAM_0:0:19404857><>" (reason "")
+L 10/20/2017 - 14:18:15: [admin.amxx] Login: "Player<3><STEAM_0:0:19404857><>" became an admin (account "STEAM_0:0:19404857") (access "abcdefghijklmnpqrstuvw") (address "46.163.168.94")
+L 10/20/2017 - 14:18:31: [admincmd.amxx] Cmd: "Player<3><STEAM_0:0:19404857><>" slay "Player<3><STEAM_0:0:19404857><>"
+L 10/20/2017 - 14:18:38: [admincmd.amxx] Cmd: "Player<3><STEAM_0:0:19404857><>" slap with 1 damage "Player<3><STEAM_0:0:19404857><>"
+L 10/20/2017 - 14:18:38: [admincmd.amxx] Cmd: "Player<3><STEAM_0:0:19404857><>" slap with 1 damage "Player<3><STEAM_0:0:19404857><>"
+L 10/20/2017 - 14:18:38: [admincmd.amxx] Cmd: "Player<3><STEAM_0:0:19404857><>" slap with 1 damage "Player<3><STEAM_0:0:19404857><>"
+L 10/20/2017 - 14:18:39: [admincmd.amxx] Cmd: "Player<3><STEAM_0:0:19404857><>" slap with 1 damage "Player<3><STEAM_0:0:19404857><>"
+L 10/20/2017 - 14:18:39: [admincmd.amxx] Cmd: "Player<3><STEAM_0:0:19404857><>" slap with 1 damage "Player<3><STEAM_0:0:19404857><>"
+L 10/20/2017 - 14:22:28: [mapsmenu.amxx] Vote: "Player<3><STEAM_0:0:19404857><>" vote maps (map#1 "de_dust") (map#2 "de_inferno") (map#3 "de_nuke") (map#4 "de_piranesi")
+L 10/20/2017 - 14:22:40: [mapsmenu.amxx] Vote: Voting successful. Map will be changed to de_inferno
+L 10/20/2017 - 14:22:42: [mapsmenu.amxx] Vote: Result accepted
+L 10/20/2017 - 14:22:44: -------- Mapchange to de_inferno --------
+L 10/20/2017 - 14:22:45: [admin.amxx] Login: "Player<3><STEAM_0:0:19404857><>" became an admin (account "STEAM_0:0:19404857") (access "abcdefghijklmnpqrstuvw") (address "46.163.168.94")
+L 10/20/2017 - 14:50:44: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/20/2017 - 14:50:59: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be cs_havana
+L 10/20/2017 - 15:08:08: -------- Mapchange to cs_havana --------
+L 10/20/2017 - 15:36:08: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/20/2017 - 15:36:23: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be de_chateau
+L 10/20/2017 - 15:53:31: -------- Mapchange to de_chateau --------
+L 10/20/2017 - 16:04:20: -------- Mapchange to de_dust2 --------
+L 10/20/2017 - 16:04:23: [admin.amxx] Login: "Player<1><STEAM_0:0:19404857><>" became an admin (account "STEAM_0:0:19404857") (access "abcdefghijklmnpqrstuvw") (address "46.163.168.94")
+L 10/20/2017 - 16:06:19: -------- Mapchange to de_dust2 --------
+L 10/20/2017 - 16:06:26: [admin.amxx] Login: "Player<1><STEAM_0:0:19404857><>" became an admin (account "STEAM_0:0:19404857") (access "abcdefghijklmnpqrstuvw") (address "46.163.168.94")
+L 10/20/2017 - 16:08:52: [admin.amxx] Login: "Player<3><STEAM_0:0:19404857><>" became an admin (account "STEAM_0:0:19404857") (access "abcdefghijklmnpqrstuvw") (address "46.163.168.94")
+L 10/20/2017 - 16:24:30: -------- Mapchange to de_dust2 --------
+L 10/20/2017 - 16:24:33: [admin.amxx] Login: "Player<1><STEAM_0:0:19404857><>" became an admin (account "STEAM_0:0:19404857") (access "abcdefghijklmnpqrstuvw") (address "46.163.168.94")
+L 10/20/2017 - 16:27:05: [mapsmenu.amxx] Cmd: "Player<1><STEAM_0:0:19404857><>" changelevel "de_dust"
+L 10/20/2017 - 16:27:07: -------- Mapchange to de_dust --------
+L 10/20/2017 - 16:27:07: [miscstats.amxx] Could not locate <sound/misc/oneandonly.wav> file
+L 10/20/2017 - 16:27:07: [miscstats.amxx] Could not locate <sound/misc/maytheforce.wav> file
+L 10/20/2017 - 16:27:07: [miscstats.amxx] Could not locate <sound/misc/headshot.wav> file
+L 10/20/2017 - 16:27:07: [miscstats.amxx] Could not locate <sound/fvox/flatline.wav> file
+L 10/20/2017 - 16:27:07: [miscstats.amxx] Could not locate <sound/misc/doublekill.wav> file
+L 10/20/2017 - 16:27:07: [miscstats.amxx] Could not locate <sound/misc/prepare.wav> file
+L 10/20/2017 - 16:27:07: [miscstats.amxx] Could not locate <sound/djeyl/grenade.wav> file
+L 10/20/2017 - 16:27:07: [miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/20/2017 - 16:27:07: [miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/20/2017 - 16:27:07: [miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/20/2017 - 16:27:07: [miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/20/2017 - 16:27:07: [miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/20/2017 - 16:27:07: [miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/20/2017 - 16:27:07: [miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/20/2017 - 16:27:07: [miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/20/2017 - 16:27:07: [miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/20/2017 - 16:27:07: [miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/20/2017 - 16:27:07: [miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/20/2017 - 16:27:08: [admin.amxx] Login: "Player<1><STEAM_0:0:19404857><>" became an admin (account "STEAM_0:0:19404857") (access "abcdefghijklmnpqrstuvw") (address "46.163.168.94")
+L 10/20/2017 - 16:27:10: [admin.amxx] Login: "Player<3><STEAM_0:0:19404857><>" became an admin (account "STEAM_0:0:19404857") (access "abcdefghijklmnpqrstuvw") (address "46.163.168.94")
+L 10/20/2017 - 16:55:22: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/20/2017 - 16:55:37: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be cs_havana
+L 10/20/2017 - 16:57:28: -------- Mapchange to cs_havana --------
+L 10/20/2017 - 16:57:29: [miscstats.amxx] Could not locate <sound/misc/oneandonly.wav> file
+L 10/20/2017 - 16:57:29: [miscstats.amxx] Could not locate <sound/misc/maytheforce.wav> file
+L 10/20/2017 - 16:57:29: [miscstats.amxx] Could not locate <sound/misc/headshot.wav> file
+L 10/20/2017 - 16:57:29: [miscstats.amxx] Could not locate <sound/fvox/flatline.wav> file
+L 10/20/2017 - 16:57:29: [miscstats.amxx] Could not locate <sound/misc/doublekill.wav> file
+L 10/20/2017 - 16:57:29: [miscstats.amxx] Could not locate <sound/misc/prepare.wav> file
+L 10/20/2017 - 16:57:29: [miscstats.amxx] Could not locate <sound/djeyl/grenade.wav> file
+L 10/20/2017 - 16:57:29: [miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/20/2017 - 16:57:29: [miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/20/2017 - 16:57:29: [miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/20/2017 - 16:57:29: [miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/20/2017 - 16:57:29: [miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/20/2017 - 16:57:29: [miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/20/2017 - 16:57:29: [miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/20/2017 - 16:57:29: [miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/20/2017 - 16:57:29: [miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/20/2017 - 16:57:29: [miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/20/2017 - 16:57:29: [miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/20/2017 - 16:57:49: [admin.amxx] Login: "KerchNET<5><STEAM_0:0:57395618><>" became an admin (account "STEAM_0:0:57395618") (access "c") (address "94.19.82.22")
+L 10/20/2017 - 17:01:06: [admin.amxx] Login: "KerchNET<6><STEAM_0:0:57395618><>" became an admin (account "STEAM_0:0:57395618") (access "c") (address "94.19.82.22")
+L 10/20/2017 - 17:09:38: [admin.amxx] Login: "Player<7><STEAM_0:0:19404857><>" became an admin (account "STEAM_0:0:19404857") (access "abcdefghijklmnpqrstuvw") (address "46.163.168.94")
+L 10/20/2017 - 17:09:59: [mapsmenu.amxx] Cmd: "Player<7><STEAM_0:0:19404857><>" changelevel "de_dust2"
+L 10/20/2017 - 17:10:01: -------- Mapchange to de_dust2 --------
+L 10/20/2017 - 17:10:01: [ms_miscstats.amxx] Could not locate <sound/misc/oneandonly.wav> file
+L 10/20/2017 - 17:10:01: [ms_miscstats.amxx] Could not locate <sound/misc/maytheforce.wav> file
+L 10/20/2017 - 17:10:01: [ms_miscstats.amxx] Could not locate <sound/misc/headshot.wav> file
+L 10/20/2017 - 17:10:01: [ms_miscstats.amxx] Could not locate <sound/fvox/flatline.wav> file
+L 10/20/2017 - 17:10:01: [ms_miscstats.amxx] Could not locate <sound/misc/doublekill.wav> file
+L 10/20/2017 - 17:10:01: [ms_miscstats.amxx] Could not locate <sound/misc/prepare.wav> file
+L 10/20/2017 - 17:10:01: [ms_miscstats.amxx] Could not locate <sound/djeyl/grenade.wav> file
+L 10/20/2017 - 17:10:01: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/20/2017 - 17:10:01: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/20/2017 - 17:10:01: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/20/2017 - 17:10:01: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/20/2017 - 17:10:01: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/20/2017 - 17:10:01: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/20/2017 - 17:10:01: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/20/2017 - 17:10:01: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/20/2017 - 17:10:01: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/20/2017 - 17:10:01: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/20/2017 - 17:10:01: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/20/2017 - 17:10:02: [admin.amxx] Login: "Player<7><STEAM_0:0:19404857><>" became an admin (account "STEAM_0:0:19404857") (access "abcdefghijklmnpqrstuvw") (address "46.163.168.94")
+L 10/20/2017 - 17:15:58: [admin.amxx] Login: "KerchNET<8><STEAM_0:0:57395618><>" became an admin (account "STEAM_0:0:57395618") (access "c") (address "94.19.82.22")
+L 10/20/2017 - 17:24:43: [admin.amxx] Login: "KerchNET<9><STEAM_0:0:57395618><>" became an admin (account "STEAM_0:0:57395618") (access "c") (address "94.19.82.22")
+L 10/20/2017 - 17:52:46: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/20/2017 - 17:53:01: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be de_aztec
+L 10/20/2017 - 17:55:01: -------- Mapchange to de_aztec --------
+L 10/20/2017 - 17:55:01: [ms_miscstats.amxx] Could not locate <sound/misc/oneandonly.wav> file
+L 10/20/2017 - 17:55:01: [ms_miscstats.amxx] Could not locate <sound/misc/maytheforce.wav> file
+L 10/20/2017 - 17:55:01: [ms_miscstats.amxx] Could not locate <sound/misc/doublekill.wav> file
+L 10/20/2017 - 17:55:01: [ms_miscstats.amxx] Could not locate <sound/misc/prepare.wav> file
+L 10/20/2017 - 17:55:01: [ms_miscstats.amxx] Could not locate <sound/djeyl/grenade.wav> file
+L 10/20/2017 - 17:55:01: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/20/2017 - 17:55:01: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/20/2017 - 17:55:01: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/20/2017 - 17:55:01: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/20/2017 - 17:55:01: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/20/2017 - 17:55:01: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/20/2017 - 17:55:01: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/20/2017 - 17:55:01: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/20/2017 - 17:55:01: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/20/2017 - 17:55:01: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/20/2017 - 17:55:01: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/20/2017 - 18:23:01: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/20/2017 - 18:23:16: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be as_oilrig
+L 10/20/2017 - 18:40:01: -------- Mapchange to as_oilrig --------
+L 10/20/2017 - 18:40:01: [ms_miscstats.amxx] Could not locate <sound/misc/oneandonly.wav> file
+L 10/20/2017 - 18:40:01: [ms_miscstats.amxx] Could not locate <sound/misc/maytheforce.wav> file
+L 10/20/2017 - 18:40:01: [ms_miscstats.amxx] Could not locate <sound/misc/doublekill.wav> file
+L 10/20/2017 - 18:40:01: [ms_miscstats.amxx] Could not locate <sound/misc/prepare.wav> file
+L 10/20/2017 - 18:40:01: [ms_miscstats.amxx] Could not locate <sound/djeyl/grenade.wav> file
+L 10/20/2017 - 18:40:01: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/20/2017 - 18:40:01: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/20/2017 - 18:40:01: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/20/2017 - 18:40:01: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/20/2017 - 18:40:01: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/20/2017 - 18:40:01: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/20/2017 - 18:40:01: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/20/2017 - 18:40:01: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/20/2017 - 18:40:01: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/20/2017 - 18:40:01: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/20/2017 - 18:40:01: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/20/2017 - 19:08:01: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/20/2017 - 19:08:16: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be cs_siege
+L 10/20/2017 - 19:25:01: -------- Mapchange to cs_siege --------
+L 10/20/2017 - 19:25:01: [ms_miscstats.amxx] Could not locate <sound/misc/oneandonly.wav> file
+L 10/20/2017 - 19:25:01: [ms_miscstats.amxx] Could not locate <sound/misc/maytheforce.wav> file
+L 10/20/2017 - 19:25:01: [ms_miscstats.amxx] Could not locate <sound/misc/doublekill.wav> file
+L 10/20/2017 - 19:25:01: [ms_miscstats.amxx] Could not locate <sound/misc/prepare.wav> file
+L 10/20/2017 - 19:25:01: [ms_miscstats.amxx] Could not locate <sound/djeyl/grenade.wav> file
+L 10/20/2017 - 19:25:01: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/20/2017 - 19:25:01: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/20/2017 - 19:25:01: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/20/2017 - 19:25:01: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/20/2017 - 19:25:01: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/20/2017 - 19:25:01: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/20/2017 - 19:25:01: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/20/2017 - 19:25:01: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/20/2017 - 19:25:01: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/20/2017 - 19:25:01: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/20/2017 - 19:25:01: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/20/2017 - 20:02:16: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/20/2017 - 20:02:31: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be de_cbble
+L 10/20/2017 - 20:04:32: -------- Mapchange to de_cbble --------
+L 10/20/2017 - 20:04:32: [ms_miscstats.amxx] Could not locate <sound/misc/oneandonly.wav> file
+L 10/20/2017 - 20:04:32: [ms_miscstats.amxx] Could not locate <sound/misc/maytheforce.wav> file
+L 10/20/2017 - 20:04:32: [ms_miscstats.amxx] Could not locate <sound/misc/doublekill.wav> file
+L 10/20/2017 - 20:04:32: [ms_miscstats.amxx] Could not locate <sound/misc/prepare.wav> file
+L 10/20/2017 - 20:04:32: [ms_miscstats.amxx] Could not locate <sound/djeyl/grenade.wav> file
+L 10/20/2017 - 20:04:32: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/20/2017 - 20:04:32: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/20/2017 - 20:04:32: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/20/2017 - 20:04:32: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/20/2017 - 20:04:32: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/20/2017 - 20:04:32: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/20/2017 - 20:04:32: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/20/2017 - 20:04:32: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/20/2017 - 20:04:32: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/20/2017 - 20:04:32: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/20/2017 - 20:04:32: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/20/2017 - 20:32:32: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/20/2017 - 20:32:47: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be de_dust
+L 10/20/2017 - 20:44:02: -------- Mapchange to de_dust --------
+L 10/20/2017 - 20:44:03: [ms_miscstats.amxx] Could not locate <sound/misc/oneandonly.wav> file
+L 10/20/2017 - 20:44:03: [ms_miscstats.amxx] Could not locate <sound/misc/maytheforce.wav> file
+L 10/20/2017 - 20:44:03: [ms_miscstats.amxx] Could not locate <sound/misc/doublekill.wav> file
+L 10/20/2017 - 20:44:03: [ms_miscstats.amxx] Could not locate <sound/misc/prepare.wav> file
+L 10/20/2017 - 20:44:03: [ms_miscstats.amxx] Could not locate <sound/djeyl/grenade.wav> file
+L 10/20/2017 - 20:44:03: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/20/2017 - 20:44:03: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/20/2017 - 20:44:03: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/20/2017 - 20:44:03: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/20/2017 - 20:44:03: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/20/2017 - 20:44:03: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/20/2017 - 20:44:03: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/20/2017 - 20:44:03: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/20/2017 - 20:44:03: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/20/2017 - 20:44:03: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/20/2017 - 20:44:03: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/20/2017 - 21:12:02: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/20/2017 - 21:12:17: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be cs_747
+L 10/20/2017 - 21:23:33: -------- Mapchange to cs_747 --------
+L 10/20/2017 - 21:23:33: [ms_miscstats.amxx] Could not locate <sound/misc/oneandonly.wav> file
+L 10/20/2017 - 21:23:33: [ms_miscstats.amxx] Could not locate <sound/misc/maytheforce.wav> file
+L 10/20/2017 - 21:23:33: [ms_miscstats.amxx] Could not locate <sound/misc/doublekill.wav> file
+L 10/20/2017 - 21:23:33: [ms_miscstats.amxx] Could not locate <sound/misc/prepare.wav> file
+L 10/20/2017 - 21:23:33: [ms_miscstats.amxx] Could not locate <sound/djeyl/grenade.wav> file
+L 10/20/2017 - 21:23:33: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/20/2017 - 21:23:33: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/20/2017 - 21:23:33: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/20/2017 - 21:23:33: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/20/2017 - 21:23:33: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/20/2017 - 21:23:33: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/20/2017 - 21:23:33: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/20/2017 - 21:23:33: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/20/2017 - 21:23:33: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/20/2017 - 21:23:33: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/20/2017 - 21:23:33: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/20/2017 - 21:33:24: [admin.amxx] Login: "KerchNET<31><STEAM_0:0:57395618><>" became an admin (account "STEAM_0:0:57395618") (access "c") (address "94.19.82.22")
+L 10/20/2017 - 21:33:39: [admin.amxx] Login: "DeWolt<32><STEAM_0:0:19404857><>" became an admin (account "STEAM_0:0:19404857") (access "abcdefghijklmnpqrstuvw") (address "212.104.90.17")
+L 10/20/2017 - 21:33:41: [admin.amxx] Login: "DeWolt<33><STEAM_0:0:19404857><>" became an admin (account "STEAM_0:0:19404857") (access "abcdefghijklmnpqrstuvw") (address "212.104.90.17")
+L 10/20/2017 - 21:34:00: [mapsmenu.amxx] Cmd: "DeWolt<33><STEAM_0:0:19404857><>" changelevel "de_dust2"
+L 10/20/2017 - 21:34:02: -------- Mapchange to de_dust2 --------
+L 10/20/2017 - 21:34:03: [ms_miscstats.amxx] Could not locate <sound/misc/oneandonly.wav> file
+L 10/20/2017 - 21:34:03: [ms_miscstats.amxx] Could not locate <sound/misc/maytheforce.wav> file
+L 10/20/2017 - 21:34:03: [ms_miscstats.amxx] Could not locate <sound/misc/doublekill.wav> file
+L 10/20/2017 - 21:34:03: [ms_miscstats.amxx] Could not locate <sound/misc/prepare.wav> file
+L 10/20/2017 - 21:34:03: [ms_miscstats.amxx] Could not locate <sound/djeyl/grenade.wav> file
+L 10/20/2017 - 21:34:03: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/20/2017 - 21:34:03: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/20/2017 - 21:34:03: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/20/2017 - 21:34:03: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/20/2017 - 21:34:03: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/20/2017 - 21:34:03: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/20/2017 - 21:34:03: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/20/2017 - 21:34:03: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/20/2017 - 21:34:03: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/20/2017 - 21:34:03: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/20/2017 - 21:34:03: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/20/2017 - 21:34:03: [admin.amxx] Login: "KerchNET<31><STEAM_0:0:57395618><>" became an admin (account "STEAM_0:0:57395618") (access "c") (address "94.19.82.22")
+L 10/20/2017 - 21:34:03: [admin.amxx] Login: "DeWolt<33><STEAM_0:0:19404857><>" became an admin (account "STEAM_0:0:19404857") (access "abcdefghijklmnpqrstuvw") (address "212.104.90.17")
+L 10/20/2017 - 21:34:04: [admin.amxx] Login: "DeWolt<34><STEAM_0:0:19404857><>" became an admin (account "STEAM_0:0:19404857") (access "abcdefghijklmnpqrstuvw") (address "212.104.90.17")
+L 10/20/2017 - 21:34:06: [admin.amxx] Login: "KerchNET<35><STEAM_0:0:57395618><>" became an admin (account "STEAM_0:0:57395618") (access "c") (address "94.19.82.22")
+L 10/20/2017 - 21:38:35: [mapsmenu.amxx] Cmd: "DeWolt<34><STEAM_0:0:19404857><>" changelevel "de_dust2"
+L 10/20/2017 - 21:38:37: -------- Mapchange to de_dust2 --------
+L 10/20/2017 - 21:38:37: [ms_miscstats.amxx] Could not locate <sound/misc/oneandonly.wav> file
+L 10/20/2017 - 21:38:37: [ms_miscstats.amxx] Could not locate <sound/misc/maytheforce.wav> file
+L 10/20/2017 - 21:38:37: [ms_miscstats.amxx] Could not locate <sound/misc/doublekill.wav> file
+L 10/20/2017 - 21:38:37: [ms_miscstats.amxx] Could not locate <sound/misc/prepare.wav> file
+L 10/20/2017 - 21:38:37: [ms_miscstats.amxx] Could not locate <sound/djeyl/grenade.wav> file
+L 10/20/2017 - 21:38:37: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/20/2017 - 21:38:37: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/20/2017 - 21:38:37: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/20/2017 - 21:38:37: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/20/2017 - 21:38:37: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/20/2017 - 21:38:37: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/20/2017 - 21:38:37: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/20/2017 - 21:38:37: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/20/2017 - 21:38:37: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/20/2017 - 21:38:37: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/20/2017 - 21:38:37: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/20/2017 - 21:38:38: [admin.amxx] Login: "KerchNET<35><STEAM_0:0:57395618><>" became an admin (account "STEAM_0:0:57395618") (access "c") (address "94.19.82.22")
+L 10/20/2017 - 21:38:38: [admin.amxx] Login: "DeWolt<34><STEAM_0:0:19404857><>" became an admin (account "STEAM_0:0:19404857") (access "abcdefghijklmnpqrstuvw") (address "212.104.90.17")
+L 10/20/2017 - 21:42:32: [mapsmenu.amxx] Cmd: "DeWolt<34><STEAM_0:0:19404857><>" changelevel "de_dust2"
+L 10/20/2017 - 21:42:35: -------- Mapchange to de_dust2 --------
+L 10/20/2017 - 21:42:35: [ms_miscstats.amxx] Could not locate <sound/misc/oneandonly.wav> file
+L 10/20/2017 - 21:42:35: [ms_miscstats.amxx] Could not locate <sound/misc/maytheforce.wav> file
+L 10/20/2017 - 21:42:35: [ms_miscstats.amxx] Could not locate <sound/misc/doublekill.wav> file
+L 10/20/2017 - 21:42:35: [ms_miscstats.amxx] Could not locate <sound/misc/prepare.wav> file
+L 10/20/2017 - 21:42:35: [ms_miscstats.amxx] Could not locate <sound/djeyl/grenade.wav> file
+L 10/20/2017 - 21:42:35: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/20/2017 - 21:42:35: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/20/2017 - 21:42:35: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/20/2017 - 21:42:35: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/20/2017 - 21:42:35: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/20/2017 - 21:42:35: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/20/2017 - 21:42:35: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/20/2017 - 21:42:35: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/20/2017 - 21:42:35: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/20/2017 - 21:42:35: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/20/2017 - 21:42:35: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/20/2017 - 21:42:35: [admin.amxx] Login: "KerchNET<35><STEAM_0:0:57395618><>" became an admin (account "STEAM_0:0:57395618") (access "c") (address "94.19.82.22")
+L 10/20/2017 - 21:42:35: [admin.amxx] Login: "DeWolt<34><STEAM_0:0:19404857><>" became an admin (account "STEAM_0:0:19404857") (access "abcdefghijklmnpqrstuvw") (address "212.104.90.17")
+L 10/20/2017 - 21:46:02: [mapsmenu.amxx] Cmd: "DeWolt<34><STEAM_0:0:19404857><>" changelevel "de_dust2"
+L 10/20/2017 - 21:46:05: -------- Mapchange to de_dust2 --------
+L 10/20/2017 - 21:46:05: [ms_miscstats.amxx] Could not locate <sound/misc/oneandonly.wav> file
+L 10/20/2017 - 21:46:05: [ms_miscstats.amxx] Could not locate <sound/misc/maytheforce.wav> file
+L 10/20/2017 - 21:46:05: [ms_miscstats.amxx] Could not locate <sound/misc/doublekill.wav> file
+L 10/20/2017 - 21:46:05: [ms_miscstats.amxx] Could not locate <sound/misc/prepare.wav> file
+L 10/20/2017 - 21:46:05: [ms_miscstats.amxx] Could not locate <sound/djeyl/grenade.wav> file
+L 10/20/2017 - 21:46:05: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/20/2017 - 21:46:05: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/20/2017 - 21:46:05: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/20/2017 - 21:46:05: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/20/2017 - 21:46:05: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/20/2017 - 21:46:05: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/20/2017 - 21:46:05: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/20/2017 - 21:46:05: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/20/2017 - 21:46:05: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/20/2017 - 21:46:05: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/20/2017 - 21:46:05: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/20/2017 - 21:46:05: [admin.amxx] Login: "KerchNET<35><STEAM_0:0:57395618><>" became an admin (account "STEAM_0:0:57395618") (access "c") (address "94.19.82.22")
+L 10/20/2017 - 21:46:05: [admin.amxx] Login: "DeWolt<34><STEAM_0:0:19404857><>" became an admin (account "STEAM_0:0:19404857") (access "abcdefghijklmnpqrstuvw") (address "212.104.90.17")
+L 10/20/2017 - 21:48:52: [mapsmenu.amxx] Cmd: "DeWolt<34><STEAM_0:0:19404857><>" changelevel "de_dust2"
+L 10/20/2017 - 21:48:54: -------- Mapchange to de_dust2 --------
+L 10/20/2017 - 21:48:54: [ms_miscstats.amxx] Could not locate <sound/misc/oneandonly.wav> file
+L 10/20/2017 - 21:48:54: [ms_miscstats.amxx] Could not locate <sound/misc/maytheforce.wav> file
+L 10/20/2017 - 21:48:54: [ms_miscstats.amxx] Could not locate <sound/misc/doublekill.wav> file
+L 10/20/2017 - 21:48:54: [ms_miscstats.amxx] Could not locate <sound/misc/prepare.wav> file
+L 10/20/2017 - 21:48:54: [ms_miscstats.amxx] Could not locate <sound/djeyl/grenade.wav> file
+L 10/20/2017 - 21:48:54: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/20/2017 - 21:48:54: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/20/2017 - 21:48:54: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/20/2017 - 21:48:54: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/20/2017 - 21:48:54: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/20/2017 - 21:48:54: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/20/2017 - 21:48:54: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/20/2017 - 21:48:54: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/20/2017 - 21:48:54: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/20/2017 - 21:48:54: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/20/2017 - 21:48:54: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/20/2017 - 21:48:55: [admin.amxx] Login: "KerchNET<35><STEAM_0:0:57395618><>" became an admin (account "STEAM_0:0:57395618") (access "c") (address "94.19.82.22")
+L 10/20/2017 - 21:48:55: [admin.amxx] Login: "DeWolt<34><STEAM_0:0:19404857><>" became an admin (account "STEAM_0:0:19404857") (access "abcdefghijklmnpqrstuvw") (address "212.104.90.17")
+L 10/20/2017 - 21:52:19: [mapsmenu.amxx] Cmd: "DeWolt<34><STEAM_0:0:19404857><>" changelevel "de_dust2"
+L 10/20/2017 - 21:52:21: -------- Mapchange to de_dust2 --------
+L 10/20/2017 - 21:52:21: [ms_miscstats.amxx] Could not locate <sound/misc/oneandonly.wav> file
+L 10/20/2017 - 21:52:21: [ms_miscstats.amxx] Could not locate <sound/misc/maytheforce.wav> file
+L 10/20/2017 - 21:52:21: [ms_miscstats.amxx] Could not locate <sound/misc/doublekill.wav> file
+L 10/20/2017 - 21:52:21: [ms_miscstats.amxx] Could not locate <sound/misc/prepare.wav> file
+L 10/20/2017 - 21:52:21: [ms_miscstats.amxx] Could not locate <sound/djeyl/grenade.wav> file
+L 10/20/2017 - 21:52:21: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/20/2017 - 21:52:21: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/20/2017 - 21:52:21: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/20/2017 - 21:52:21: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/20/2017 - 21:52:21: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/20/2017 - 21:52:21: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/20/2017 - 21:52:21: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/20/2017 - 21:52:21: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/20/2017 - 21:52:21: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/20/2017 - 21:52:21: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/20/2017 - 21:52:21: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/20/2017 - 21:52:22: [admin.amxx] Login: "KerchNET<35><STEAM_0:0:57395618><>" became an admin (account "STEAM_0:0:57395618") (access "c") (address "94.19.82.22")
+L 10/20/2017 - 21:52:22: [admin.amxx] Login: "DeWolt<34><STEAM_0:0:19404857><>" became an admin (account "STEAM_0:0:19404857") (access "abcdefghijklmnpqrstuvw") (address "212.104.90.17")
+L 10/20/2017 - 21:56:09: [mapsmenu.amxx] Cmd: "DeWolt<34><STEAM_0:0:19404857><>" changelevel "de_dust2"
+L 10/20/2017 - 21:56:11: -------- Mapchange to de_dust2 --------
+L 10/20/2017 - 21:56:11: [ms_miscstats.amxx] Could not locate <sound/misc/oneandonly.wav> file
+L 10/20/2017 - 21:56:11: [ms_miscstats.amxx] Could not locate <sound/misc/maytheforce.wav> file
+L 10/20/2017 - 21:56:11: [ms_miscstats.amxx] Could not locate <sound/misc/doublekill.wav> file
+L 10/20/2017 - 21:56:11: [ms_miscstats.amxx] Could not locate <sound/misc/prepare.wav> file
+L 10/20/2017 - 21:56:11: [ms_miscstats.amxx] Could not locate <sound/djeyl/grenade.wav> file
+L 10/20/2017 - 21:56:11: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/20/2017 - 21:56:11: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/20/2017 - 21:56:11: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/20/2017 - 21:56:11: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/20/2017 - 21:56:11: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/20/2017 - 21:56:11: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/20/2017 - 21:56:11: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/20/2017 - 21:56:11: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/20/2017 - 21:56:11: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/20/2017 - 21:56:11: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/20/2017 - 21:56:11: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/20/2017 - 21:56:12: [admin.amxx] Login: "KerchNET<35><STEAM_0:0:57395618><>" became an admin (account "STEAM_0:0:57395618") (access "c") (address "94.19.82.22")
+L 10/20/2017 - 21:56:12: [admin.amxx] Login: "DeWolt<34><STEAM_0:0:19404857><>" became an admin (account "STEAM_0:0:19404857") (access "abcdefghijklmnpqrstuvw") (address "212.104.90.17")
+L 10/20/2017 - 21:59:13: -------- Mapchange to de_dust2 --------
+L 10/20/2017 - 21:59:13: [ms_miscstats.amxx] Could not locate <sound/misc/oneandonly.wav> file
+L 10/20/2017 - 21:59:13: [ms_miscstats.amxx] Could not locate <sound/misc/maytheforce.wav> file
+L 10/20/2017 - 21:59:13: [ms_miscstats.amxx] Could not locate <sound/misc/doublekill.wav> file
+L 10/20/2017 - 21:59:13: [ms_miscstats.amxx] Could not locate <sound/misc/prepare.wav> file
+L 10/20/2017 - 21:59:13: [ms_miscstats.amxx] Could not locate <sound/djeyl/grenade.wav> file
+L 10/20/2017 - 21:59:13: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/20/2017 - 21:59:13: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/20/2017 - 21:59:13: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/20/2017 - 21:59:13: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/20/2017 - 21:59:13: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/20/2017 - 21:59:13: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/20/2017 - 21:59:13: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/20/2017 - 21:59:13: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/20/2017 - 21:59:13: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/20/2017 - 21:59:13: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/20/2017 - 21:59:13: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/20/2017 - 21:59:16: [admin.amxx] Login: "DeWolt<1><STEAM_0:0:19404857><>" became an admin (account "STEAM_0:0:19404857") (access "abcdefghijklmnpqrstuvw") (address "212.104.90.17")
+L 10/20/2017 - 21:59:18: [admin.amxx] Login: "KerchNET<2><STEAM_0:0:57395618><>" became an admin (account "STEAM_0:0:57395618") (access "c") (address "94.19.82.22")
+L 10/20/2017 - 22:01:56: [mapsmenu.amxx] Cmd: "DeWolt<1><STEAM_0:0:19404857><>" changelevel "de_dust2"
+L 10/20/2017 - 22:01:58: -------- Mapchange to de_dust2 --------
+L 10/20/2017 - 22:01:58: [ms_miscstats.amxx] Could not locate <sound/misc/oneandonly.wav> file
+L 10/20/2017 - 22:01:58: [ms_miscstats.amxx] Could not locate <sound/misc/maytheforce.wav> file
+L 10/20/2017 - 22:01:58: [ms_miscstats.amxx] Could not locate <sound/misc/doublekill.wav> file
+L 10/20/2017 - 22:01:58: [ms_miscstats.amxx] Could not locate <sound/misc/prepare.wav> file
+L 10/20/2017 - 22:01:58: [ms_miscstats.amxx] Could not locate <sound/djeyl/grenade.wav> file
+L 10/20/2017 - 22:01:58: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/20/2017 - 22:01:58: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/20/2017 - 22:01:58: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/20/2017 - 22:01:58: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/20/2017 - 22:01:58: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/20/2017 - 22:01:58: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/20/2017 - 22:01:58: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/20/2017 - 22:01:58: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/20/2017 - 22:01:58: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/20/2017 - 22:01:58: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/20/2017 - 22:01:58: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/20/2017 - 22:01:59: [admin.amxx] Login: "KerchNET<2><STEAM_0:0:57395618><>" became an admin (account "STEAM_0:0:57395618") (access "c") (address "94.19.82.22")
+L 10/20/2017 - 22:01:59: [admin.amxx] Login: "DeWolt<1><STEAM_0:0:19404857><>" became an admin (account "STEAM_0:0:19404857") (access "abcdefghijklmnpqrstuvw") (address "212.104.90.17")
+L 10/20/2017 - 22:14:56: [admin.amxx] Login: "DeWolt<3><STEAM_0:0:19404857><>" became an admin (account "STEAM_0:0:19404857") (access "abcdefghijklmnpqrstuvw") (address "212.104.90.17")
+L 10/20/2017 - 22:14:58: [admin.amxx] Login: "DeWolt<4><STEAM_0:0:19404857><>" became an admin (account "STEAM_0:0:19404857") (access "abcdefghijklmnpqrstuvw") (address "212.104.90.17")
+L 10/20/2017 - 22:15:30: [admin.amxx] Login: "KerchNET<5><STEAM_0:0:57395618><>" became an admin (account "STEAM_0:0:57395618") (access "c") (address "94.19.82.22")
+L 10/20/2017 - 22:17:17: [mapsmenu.amxx] Cmd: "DeWolt<4><STEAM_0:0:19404857><>" changelevel "de_dust2"
+L 10/20/2017 - 22:17:19: -------- Mapchange to de_dust2 --------
+L 10/20/2017 - 22:17:19: [ms_miscstats.amxx] Could not locate <sound/misc/oneandonly.wav> file
+L 10/20/2017 - 22:17:19: [ms_miscstats.amxx] Could not locate <sound/misc/maytheforce.wav> file
+L 10/20/2017 - 22:17:19: [ms_miscstats.amxx] Could not locate <sound/misc/doublekill.wav> file
+L 10/20/2017 - 22:17:19: [ms_miscstats.amxx] Could not locate <sound/misc/prepare.wav> file
+L 10/20/2017 - 22:17:19: [ms_miscstats.amxx] Could not locate <sound/djeyl/grenade.wav> file
+L 10/20/2017 - 22:17:19: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/20/2017 - 22:17:19: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/20/2017 - 22:17:19: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/20/2017 - 22:17:19: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/20/2017 - 22:17:19: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/20/2017 - 22:17:19: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/20/2017 - 22:17:19: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/20/2017 - 22:17:19: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/20/2017 - 22:17:19: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/20/2017 - 22:17:19: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/20/2017 - 22:17:19: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/20/2017 - 22:17:20: [admin.amxx] Login: "KerchNET<5><STEAM_0:0:57395618><>" became an admin (account "STEAM_0:0:57395618") (access "c") (address "94.19.82.22")
+L 10/20/2017 - 22:17:20: [admin.amxx] Login: "DeWolt<4><STEAM_0:0:19404857><>" became an admin (account "STEAM_0:0:19404857") (access "abcdefghijklmnpqrstuvw") (address "212.104.90.17")
+L 10/20/2017 - 22:18:31: [admin.amxx] Login: "KerchNET<6><STEAM_0:0:57395618><>" became an admin (account "STEAM_0:0:57395618") (access "c") (address "94.19.82.22")
+L 10/20/2017 - 22:18:32: [admin.amxx] Login: "KerchNET<7><STEAM_0:0:57395618><>" became an admin (account "STEAM_0:0:57395618") (access "c") (address "94.19.82.22")
+L 10/20/2017 - 22:19:18: [admincmd.amxx] Cmd: "DeWolt<4><STEAM_0:0:19404857><>" ask for players list
+L 10/20/2017 - 22:23:15: [admincmd.amxx] Cmd: "DeWolt<4><STEAM_0:0:19404857><>" ask for players list
+L 10/20/2017 - 22:23:19: [mapsmenu.amxx] Cmd: "DeWolt<4><STEAM_0:0:19404857><>" changelevel "de_dust2"
+L 10/20/2017 - 22:23:21: -------- Mapchange to de_dust2 --------
+L 10/20/2017 - 22:23:21: [ms_miscstats.amxx] Could not locate <sound/misc/oneandonly.wav> file
+L 10/20/2017 - 22:23:21: [ms_miscstats.amxx] Could not locate <sound/misc/maytheforce.wav> file
+L 10/20/2017 - 22:23:21: [ms_miscstats.amxx] Could not locate <sound/misc/doublekill.wav> file
+L 10/20/2017 - 22:23:21: [ms_miscstats.amxx] Could not locate <sound/misc/prepare.wav> file
+L 10/20/2017 - 22:23:21: [ms_miscstats.amxx] Could not locate <sound/djeyl/grenade.wav> file
+L 10/20/2017 - 22:23:21: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/20/2017 - 22:23:21: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/20/2017 - 22:23:21: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/20/2017 - 22:23:21: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/20/2017 - 22:23:21: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/20/2017 - 22:23:21: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/20/2017 - 22:23:21: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/20/2017 - 22:23:21: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/20/2017 - 22:23:21: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/20/2017 - 22:23:21: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/20/2017 - 22:23:21: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/20/2017 - 22:23:22: [admin.amxx] Login: "KerchNET<7><STEAM_0:0:57395618><>" became an admin (account "STEAM_0:0:57395618") (access "c") (address "94.19.82.22")
+L 10/20/2017 - 22:23:22: [admin.amxx] Login: "DeWolt<4><STEAM_0:0:19404857><>" became an admin (account "STEAM_0:0:19404857") (access "abcdefghijklmnpqrstuvw") (address "212.104.90.17")
+L 10/20/2017 - 22:28:37: [mapsmenu.amxx] Cmd: "DeWolt<4><STEAM_0:0:19404857><>" changelevel "de_dust2"
+L 10/20/2017 - 22:28:39: -------- Mapchange to de_dust2 --------
+L 10/20/2017 - 22:28:39: [ms_miscstats.amxx] Could not locate <sound/misc/oneandonly.wav> file
+L 10/20/2017 - 22:28:39: [ms_miscstats.amxx] Could not locate <sound/misc/maytheforce.wav> file
+L 10/20/2017 - 22:28:39: [ms_miscstats.amxx] Could not locate <sound/misc/doublekill.wav> file
+L 10/20/2017 - 22:28:39: [ms_miscstats.amxx] Could not locate <sound/misc/prepare.wav> file
+L 10/20/2017 - 22:28:39: [ms_miscstats.amxx] Could not locate <sound/djeyl/grenade.wav> file
+L 10/20/2017 - 22:28:39: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/20/2017 - 22:28:39: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/20/2017 - 22:28:39: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/20/2017 - 22:28:39: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/20/2017 - 22:28:39: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/20/2017 - 22:28:39: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/20/2017 - 22:28:39: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/20/2017 - 22:28:39: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/20/2017 - 22:28:39: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/20/2017 - 22:28:39: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/20/2017 - 22:28:39: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/20/2017 - 22:28:40: [admin.amxx] Login: "KerchNET<7><STEAM_0:0:57395618><>" became an admin (account "STEAM_0:0:57395618") (access "o") (address "94.19.82.22")
+L 10/20/2017 - 22:28:40: [admin.amxx] Login: "DeWolt<4><STEAM_0:0:19404857><>" became an admin (account "STEAM_0:0:19404857") (access "abcdefghijklmnpqrstuvw") (address "212.104.90.17")
+L 10/20/2017 - 22:30:33: [mapsmenu.amxx] Cmd: "DeWolt<4><STEAM_0:0:19404857><>" changelevel "de_dust2"
+L 10/20/2017 - 22:30:36: -------- Mapchange to de_dust2 --------
+L 10/20/2017 - 22:30:36: [ms_miscstats.amxx] Could not locate <sound/misc/oneandonly.wav> file
+L 10/20/2017 - 22:30:36: [ms_miscstats.amxx] Could not locate <sound/misc/maytheforce.wav> file
+L 10/20/2017 - 22:30:36: [ms_miscstats.amxx] Could not locate <sound/misc/doublekill.wav> file
+L 10/20/2017 - 22:30:36: [ms_miscstats.amxx] Could not locate <sound/misc/prepare.wav> file
+L 10/20/2017 - 22:30:36: [ms_miscstats.amxx] Could not locate <sound/djeyl/grenade.wav> file
+L 10/20/2017 - 22:30:36: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/20/2017 - 22:30:36: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/20/2017 - 22:30:36: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/20/2017 - 22:30:36: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/20/2017 - 22:30:36: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/20/2017 - 22:30:36: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/20/2017 - 22:30:36: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/20/2017 - 22:30:36: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/20/2017 - 22:30:36: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/20/2017 - 22:30:36: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/20/2017 - 22:30:36: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/20/2017 - 22:30:36: [admin.amxx] Login: "KerchNET<7><STEAM_0:0:57395618><>" became an admin (account "STEAM_0:0:57395618") (access "o") (address "94.19.82.22")
+L 10/20/2017 - 22:30:36: [admin.amxx] Login: "DeWolt<4><STEAM_0:0:19404857><>" became an admin (account "STEAM_0:0:19404857") (access "abcdefghijklmnpqrstuvw") (address "212.104.90.17")
+L 10/20/2017 - 22:31:11: [admincmd.amxx] Cmd: "DeWolt<4><STEAM_0:0:19404857><>" ask for players list
+L 10/20/2017 - 22:34:05: [admincmd.amxx] Cmd: "DeWolt<4><STEAM_0:0:19404857><>" ask for players list
+L 10/20/2017 - 22:34:09: [mapsmenu.amxx] Cmd: "DeWolt<4><STEAM_0:0:19404857><>" changelevel "de_dust2"
+L 10/20/2017 - 22:34:11: -------- Mapchange to de_dust2 --------
+L 10/20/2017 - 22:34:11: [ms_miscstats.amxx] Could not locate <sound/misc/oneandonly.wav> file
+L 10/20/2017 - 22:34:11: [ms_miscstats.amxx] Could not locate <sound/misc/maytheforce.wav> file
+L 10/20/2017 - 22:34:11: [ms_miscstats.amxx] Could not locate <sound/misc/doublekill.wav> file
+L 10/20/2017 - 22:34:11: [ms_miscstats.amxx] Could not locate <sound/misc/prepare.wav> file
+L 10/20/2017 - 22:34:11: [ms_miscstats.amxx] Could not locate <sound/djeyl/grenade.wav> file
+L 10/20/2017 - 22:34:11: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/20/2017 - 22:34:11: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/20/2017 - 22:34:11: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/20/2017 - 22:34:11: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/20/2017 - 22:34:11: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/20/2017 - 22:34:11: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/20/2017 - 22:34:11: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/20/2017 - 22:34:11: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/20/2017 - 22:34:11: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/20/2017 - 22:34:11: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/20/2017 - 22:34:11: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/20/2017 - 22:34:12: [admin.amxx] Login: "KerchNET<7><STEAM_0:0:57395618><>" became an admin (account "STEAM_0:0:57395618") (access "o") (address "94.19.82.22")
+L 10/20/2017 - 22:34:12: [admin.amxx] Login: "DeWolt<4><STEAM_0:0:19404857><>" became an admin (account "STEAM_0:0:19404857") (access "abcdefghijklmnpqrstuvw") (address "212.104.90.17")
+L 10/20/2017 - 22:51:45: [admin.amxx] Login: "DeWolt<12><STEAM_0:0:19404857><>" became an admin (account "STEAM_0:0:19404857") (access "abcdefghijklmnpqrstuvw") (address "212.104.90.17")
+L 10/20/2017 - 22:51:47: [admin.amxx] Login: "KerchNET<13><STEAM_0:0:57395618><>" became an admin (account "STEAM_0:0:57395618") (access "o") (address "94.19.82.22")
+L 10/20/2017 - 22:51:57: [mapsmenu.amxx] Cmd: "DeWolt<12><STEAM_0:0:19404857><>" changelevel "de_dust2"
+L 10/20/2017 - 22:51:59: -------- Mapchange to de_dust2 --------
+L 10/20/2017 - 22:51:59: [ms_miscstats.amxx] Could not locate <sound/misc/oneandonly.wav> file
+L 10/20/2017 - 22:51:59: [ms_miscstats.amxx] Could not locate <sound/misc/maytheforce.wav> file
+L 10/20/2017 - 22:51:59: [ms_miscstats.amxx] Could not locate <sound/misc/doublekill.wav> file
+L 10/20/2017 - 22:51:59: [ms_miscstats.amxx] Could not locate <sound/misc/prepare.wav> file
+L 10/20/2017 - 22:51:59: [ms_miscstats.amxx] Could not locate <sound/djeyl/grenade.wav> file
+L 10/20/2017 - 22:51:59: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/20/2017 - 22:51:59: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/20/2017 - 22:51:59: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/20/2017 - 22:51:59: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/20/2017 - 22:51:59: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/20/2017 - 22:51:59: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/20/2017 - 22:51:59: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/20/2017 - 22:51:59: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/20/2017 - 22:51:59: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/20/2017 - 22:51:59: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/20/2017 - 22:51:59: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/20/2017 - 22:52:00: [admin.amxx] Login: "KerchNET<13><STEAM_0:0:57395618><>" became an admin (account "STEAM_0:0:57395618") (access "o") (address "94.19.82.22")
+L 10/20/2017 - 22:52:00: [admin.amxx] Login: "DeWolt<12><STEAM_0:0:19404857><>" became an admin (account "STEAM_0:0:19404857") (access "abcdefghijklmnpqrstuvw") (address "212.104.90.17")
+L 10/20/2017 - 22:53:35: [mapsmenu.amxx] Cmd: "DeWolt<12><STEAM_0:0:19404857><>" changelevel "de_dust2"
+L 10/20/2017 - 22:53:37: -------- Mapchange to de_dust2 --------
+L 10/20/2017 - 22:53:37: [ms_miscstats.amxx] Could not locate <sound/misc/oneandonly.wav> file
+L 10/20/2017 - 22:53:37: [ms_miscstats.amxx] Could not locate <sound/misc/maytheforce.wav> file
+L 10/20/2017 - 22:53:37: [ms_miscstats.amxx] Could not locate <sound/misc/doublekill.wav> file
+L 10/20/2017 - 22:53:37: [ms_miscstats.amxx] Could not locate <sound/misc/prepare.wav> file
+L 10/20/2017 - 22:53:37: [ms_miscstats.amxx] Could not locate <sound/djeyl/grenade.wav> file
+L 10/20/2017 - 22:53:37: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/20/2017 - 22:53:37: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/20/2017 - 22:53:37: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/20/2017 - 22:53:37: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/20/2017 - 22:53:37: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/20/2017 - 22:53:37: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/20/2017 - 22:53:37: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/20/2017 - 22:53:37: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/20/2017 - 22:53:37: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/20/2017 - 22:53:37: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/20/2017 - 22:53:37: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/20/2017 - 22:53:38: [admin.amxx] Login: "KerchNET<13><STEAM_0:0:57395618><>" became an admin (account "STEAM_0:0:57395618") (access "o") (address "94.19.82.22")
+L 10/20/2017 - 22:53:38: [admin.amxx] Login: "DeWolt<12><STEAM_0:0:19404857><>" became an admin (account "STEAM_0:0:19404857") (access "abcdefghijklmnpqrstuvw") (address "212.104.90.17")
+L 10/20/2017 - 22:53:39: [admin.amxx] Login: "DeWolt<14><STEAM_0:0:19404857><>" became an admin (account "STEAM_0:0:19404857") (access "abcdefghijklmnpqrstuvw") (address "212.104.90.17")
+L 10/20/2017 - 22:55:23: [mapsmenu.amxx] Cmd: "DeWolt<14><STEAM_0:0:19404857><>" changelevel "de_dust2"
+L 10/20/2017 - 22:55:26: -------- Mapchange to de_dust2 --------
+L 10/20/2017 - 22:55:26: [ms_miscstats.amxx] Could not locate <sound/misc/oneandonly.wav> file
+L 10/20/2017 - 22:55:26: [ms_miscstats.amxx] Could not locate <sound/misc/maytheforce.wav> file
+L 10/20/2017 - 22:55:26: [ms_miscstats.amxx] Could not locate <sound/misc/doublekill.wav> file
+L 10/20/2017 - 22:55:26: [ms_miscstats.amxx] Could not locate <sound/misc/prepare.wav> file
+L 10/20/2017 - 22:55:26: [ms_miscstats.amxx] Could not locate <sound/djeyl/grenade.wav> file
+L 10/20/2017 - 22:55:26: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/20/2017 - 22:55:26: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/20/2017 - 22:55:26: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/20/2017 - 22:55:26: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/20/2017 - 22:55:26: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/20/2017 - 22:55:26: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/20/2017 - 22:55:26: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/20/2017 - 22:55:26: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/20/2017 - 22:55:26: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/20/2017 - 22:55:26: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/20/2017 - 22:55:26: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/20/2017 - 22:55:26: [admin.amxx] Login: "KerchNET<13><STEAM_0:0:57395618><>" became an admin (account "STEAM_0:0:57395618") (access "o") (address "94.19.82.22")
+L 10/20/2017 - 22:55:26: [admin.amxx] Login: "DeWolt<14><STEAM_0:0:19404857><>" became an admin (account "STEAM_0:0:19404857") (access "abcdefghijklmnpqrstuvw") (address "212.104.90.17")
+L 10/20/2017 - 22:56:37: [admin.amxx] Login: "KerchNET<15><STEAM_0:0:57395618><>" became an admin (account "STEAM_0:0:57395618") (access "o") (address "94.19.82.22")
+L 10/20/2017 - 22:56:39: [admin.amxx] Login: "KerchNET<16><STEAM_0:0:57395618><>" became an admin (account "STEAM_0:0:57395618") (access "o") (address "94.19.82.22")
+L 10/20/2017 - 22:57:52: [admin.amxx] Login: "DeWolt<17><STEAM_0:0:19404857><>" became an admin (account "STEAM_0:0:19404857") (access "abcdefghijklmnpqrstuvw") (address "212.104.90.17")
+L 10/20/2017 - 22:57:54: [admin.amxx] Login: "DeWolt<18><STEAM_0:0:19404857><>" became an admin (account "STEAM_0:0:19404857") (access "abcdefghijklmnpqrstuvw") (address "212.104.90.17")
+L 10/20/2017 - 23:07:19: [mapsmenu.amxx] Cmd: "DeWolt<18><STEAM_0:0:19404857><>" changelevel "de_dust2"
+L 10/20/2017 - 23:07:21: -------- Mapchange to de_dust2 --------
+L 10/20/2017 - 23:07:21: [ms_miscstats.amxx] Could not locate <sound/misc/oneandonly.wav> file
+L 10/20/2017 - 23:07:21: [ms_miscstats.amxx] Could not locate <sound/misc/maytheforce.wav> file
+L 10/20/2017 - 23:07:21: [ms_miscstats.amxx] Could not locate <sound/misc/doublekill.wav> file
+L 10/20/2017 - 23:07:21: [ms_miscstats.amxx] Could not locate <sound/misc/prepare.wav> file
+L 10/20/2017 - 23:07:21: [ms_miscstats.amxx] Could not locate <sound/djeyl/grenade.wav> file
+L 10/20/2017 - 23:07:21: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/20/2017 - 23:07:21: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/20/2017 - 23:07:21: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/20/2017 - 23:07:21: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/20/2017 - 23:07:21: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/20/2017 - 23:07:21: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/20/2017 - 23:07:21: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/20/2017 - 23:07:21: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/20/2017 - 23:07:21: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/20/2017 - 23:07:21: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/20/2017 - 23:07:21: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/20/2017 - 23:07:21: [admin.amxx] Login: "KerchNET<16><STEAM_0:0:57395618><>" became an admin (account "STEAM_0:0:57395618") (access "o") (address "94.19.82.22")
+L 10/20/2017 - 23:07:22: [admin.amxx] Login: "DeWolt<18><STEAM_0:0:19404857><>" became an admin (account "STEAM_0:0:19404857") (access "abcdefghijklmnpqrstuvw") (address "212.104.90.17")
+L 10/20/2017 - 23:07:55: [admin.amxx] Login: "DeWolt<19><STEAM_0:0:19404857><>" became an admin (account "STEAM_0:0:19404857") (access "abcdefghijklmnpqrstuvw") (address "212.104.90.17")
+L 10/20/2017 - 23:07:57: [admin.amxx] Login: "KerchNET<20><STEAM_0:0:57395618><>" became an admin (account "STEAM_0:0:57395618") (access "o") (address "94.19.82.22")
+L 10/20/2017 - 23:07:57: [admin.amxx] Login: "DeWolt<21><STEAM_0:0:19404857><>" became an admin (account "STEAM_0:0:19404857") (access "abcdefghijklmnpqrstuvw") (address "212.104.90.17")
+L 10/20/2017 - 23:08:03: [admin.amxx] Login: "KerchNET<22><STEAM_0:0:57395618><>" became an admin (account "STEAM_0:0:57395618") (access "o") (address "94.19.82.22")
+L 10/20/2017 - 23:08:49: [admin.amxx] Login: "KerchNET<23><STEAM_0:0:57395618><>" became an admin (account "STEAM_0:0:57395618") (access "o") (address "94.19.82.22")
+L 10/20/2017 - 23:08:51: [admin.amxx] Login: "KerchNET<24><STEAM_0:0:57395618><>" became an admin (account "STEAM_0:0:57395618") (access "o") (address "94.19.82.22")
+L 10/20/2017 - 23:23:22: [admin.amxx] Login: "DeWolt<25><STEAM_0:0:19404857><>" became an admin (account "STEAM_0:0:19404857") (access "abcdefghijklmnpqrstuvw") (address "212.104.90.17")
+L 10/20/2017 - 23:23:25: [admin.amxx] Login: "KerchNET<26><STEAM_0:0:57395618><>" became an admin (account "STEAM_0:0:57395618") (access "o") (address "94.19.82.22")
+L 10/20/2017 - 23:23:33: [mapsmenu.amxx] Cmd: "DeWolt<25><STEAM_0:0:19404857><>" changelevel "de_dust2"
+L 10/20/2017 - 23:23:35: -------- Mapchange to de_dust2 --------
+L 10/20/2017 - 23:23:36: [ms_miscstats.amxx] Could not locate <sound/misc/doublekill.wav> file
+L 10/20/2017 - 23:23:36: [ms_miscstats.amxx] Could not locate <sound/misc/prepare.wav> file
+L 10/20/2017 - 23:23:36: [ms_miscstats.amxx] Could not locate <sound/djeyl/grenade.wav> file
+L 10/20/2017 - 23:23:36: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/20/2017 - 23:23:36: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/20/2017 - 23:23:36: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/20/2017 - 23:23:36: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/20/2017 - 23:23:36: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/20/2017 - 23:23:36: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/20/2017 - 23:23:36: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/20/2017 - 23:23:36: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/20/2017 - 23:23:36: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/20/2017 - 23:23:36: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/20/2017 - 23:23:36: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/20/2017 - 23:23:36: [admin.amxx] Login: "KerchNET<26><STEAM_0:0:57395618><>" became an admin (account "STEAM_0:0:57395618") (access "o") (address "94.19.82.22")
+L 10/20/2017 - 23:23:36: [admin.amxx] Login: "DeWolt<25><STEAM_0:0:19404857><>" became an admin (account "STEAM_0:0:19404857") (access "abcdefghijklmnpqrstuvw") (address "212.104.90.17")
+L 10/20/2017 - 23:23:38: [admin.amxx] Login: "KerchNET<27><STEAM_0:0:57395618><>" became an admin (account "STEAM_0:0:57395618") (access "o") (address "94.19.82.22")
+L 10/20/2017 - 23:23:38: [admin.amxx] Login: "DeWolt<28><STEAM_0:0:19404857><>" became an admin (account "STEAM_0:0:19404857") (access "abcdefghijklmnpqrstuvw") (address "212.104.90.17")
+L 10/20/2017 - 23:24:38: [mapsmenu.amxx] Cmd: "DeWolt<28><STEAM_0:0:19404857><>" changelevel "de_dust2"
+L 10/20/2017 - 23:24:40: -------- Mapchange to de_dust2 --------
+L 10/20/2017 - 23:24:40: [ms_miscstats.amxx] Could not locate <sound/misc/doublekill.wav> file
+L 10/20/2017 - 23:24:40: [ms_miscstats.amxx] Could not locate <sound/misc/prepare.wav> file
+L 10/20/2017 - 23:24:40: [ms_miscstats.amxx] Could not locate <sound/djeyl/grenade.wav> file
+L 10/20/2017 - 23:24:40: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/20/2017 - 23:24:40: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/20/2017 - 23:24:40: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/20/2017 - 23:24:40: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/20/2017 - 23:24:40: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/20/2017 - 23:24:40: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/20/2017 - 23:24:40: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/20/2017 - 23:24:40: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/20/2017 - 23:24:40: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/20/2017 - 23:24:40: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/20/2017 - 23:24:40: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/20/2017 - 23:24:41: [admin.amxx] Login: "KerchNET<27><STEAM_0:0:57395618><>" became an admin (account "STEAM_0:0:57395618") (access "o") (address "94.19.82.22")
+L 10/20/2017 - 23:24:41: [admin.amxx] Login: "DeWolt<28><STEAM_0:0:19404857><>" became an admin (account "STEAM_0:0:19404857") (access "abcdefghijklmnpqrstuvw") (address "212.104.90.17")
+L 10/20/2017 - 23:25:03: [admin.amxx] Login: "DeWolt<29><STEAM_0:0:19404857><>" became an admin (account "STEAM_0:0:19404857") (access "abcdefghijklmnpqrstuvw") (address "212.104.90.17")
+L 10/20/2017 - 23:25:11: [admin.amxx] Login: "KerchNET<30><STEAM_0:0:57395618><>" became an admin (account "STEAM_0:0:57395618") (access "o") (address "94.19.82.22")
+L 10/20/2017 - 23:28:23: [mapsmenu.amxx] Cmd: "DeWolt<29><STEAM_0:0:19404857><>" changelevel "de_dust2"
+L 10/20/2017 - 23:28:25: -------- Mapchange to de_dust2 --------
+L 10/20/2017 - 23:28:25: [ms_miscstats.amxx] Could not locate <sound/misc/doublekill.wav> file
+L 10/20/2017 - 23:28:25: [ms_miscstats.amxx] Could not locate <sound/misc/prepare.wav> file
+L 10/20/2017 - 23:28:25: [ms_miscstats.amxx] Could not locate <sound/djeyl/grenade.wav> file
+L 10/20/2017 - 23:28:25: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/20/2017 - 23:28:25: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/20/2017 - 23:28:25: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/20/2017 - 23:28:25: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/20/2017 - 23:28:25: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/20/2017 - 23:28:25: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/20/2017 - 23:28:25: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/20/2017 - 23:28:25: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/20/2017 - 23:28:25: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/20/2017 - 23:28:25: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/20/2017 - 23:28:25: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/20/2017 - 23:28:26: [admin.amxx] Login: "KerchNET<30><STEAM_0:0:57395618><>" became an admin (account "STEAM_0:0:57395618") (access "o") (address "94.19.82.22")
+L 10/20/2017 - 23:28:26: [admin.amxx] Login: "DeWolt<29><STEAM_0:0:19404857><>" became an admin (account "STEAM_0:0:19404857") (access "abcdefghijklmnpqrstuvw") (address "212.104.90.17")
+L 10/20/2017 - 23:28:27: [admin.amxx] Login: "KerchNET<31><STEAM_0:0:57395618><>" became an admin (account "STEAM_0:0:57395618") (access "o") (address "94.19.82.22")
+L 10/20/2017 - 23:28:27: [admin.amxx] Login: "DeWolt<32><STEAM_0:0:19404857><>" became an admin (account "STEAM_0:0:19404857") (access "abcdefghijklmnpqrstuvw") (address "212.104.90.17")
+L 10/20/2017 - 23:56:25: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/20/2017 - 23:56:40: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be cs_backalley
+L 10/20/2017 - 23:58:44: -------- Mapchange to cs_backalley --------
+L 10/20/2017 - 23:58:44: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/20/2017 - 23:58:44: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/20/2017 - 23:58:44: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/20/2017 - 23:58:44: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/20/2017 - 23:58:44: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/20/2017 - 23:58:44: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/20/2017 - 23:58:44: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/20/2017 - 23:58:44: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/20/2017 - 23:58:44: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/20/2017 - 23:58:44: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/20/2017 - 23:58:44: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/20/2017 - 23:58:59: -------- Mapchange to de_dust2 --------
+L 10/20/2017 - 23:58:59: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/20/2017 - 23:58:59: [ms_miscstats.amxx] Could not locate <sound/djeyl/c4powa.wav> file
+L 10/20/2017 - 23:58:59: [ms_miscstats.amxx] Could not locate <sound/djeyl/laugh.wav> file
+L 10/20/2017 - 23:58:59: [ms_miscstats.amxx] Could not locate <sound/djeyl/witch.wav> file
+L 10/20/2017 - 23:58:59: [ms_miscstats.amxx] Could not locate <sound/misc/multikill.wav> file
+L 10/20/2017 - 23:58:59: [ms_miscstats.amxx] Could not locate <sound/misc/ultrakill.wav> file
+L 10/20/2017 - 23:58:59: [ms_miscstats.amxx] Could not locate <sound/misc/killingspree.wav> file
+L 10/20/2017 - 23:58:59: [ms_miscstats.amxx] Could not locate <sound/misc/rampage.wav> file
+L 10/20/2017 - 23:58:59: [ms_miscstats.amxx] Could not locate <sound/misc/unstoppable.wav> file
+L 10/20/2017 - 23:58:59: [ms_miscstats.amxx] Could not locate <sound/misc/monsterkill.wav> file
+L 10/20/2017 - 23:58:59: [ms_miscstats.amxx] Could not locate <sound/misc/godlike.wav> file
+L 10/20/2017 - 23:59:08: [admin.amxx] Login: "DeWolt<1><STEAM_0:0:19404857><>" became an admin (account "STEAM_0:0:19404857") (access "abcdefghijklmnpqrstuvw") (address "212.104.90.17")
+L 10/20/2017 - 23:59:10: [admin.amxx] Login: "DeWolt<2><STEAM_0:0:19404857><>" became an admin (account "STEAM_0:0:19404857") (access "abcdefghijklmnpqrstuvw") (address "212.104.90.17")
