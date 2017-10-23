@@ -106,6 +106,8 @@ const TEAM_CT = 2
 new g_connected[MAX_PLAYERS + 1]
 new g_msounds[MAX_PLAYERS + 1]
 new const _msound[] = "_msound"
+//œ≈–≈Ã≈ÕÕ€≈
+//new bool:mute_sound //«‚ÛÍ ‚ÍÎ. ‚˚ÍÎ.
 
 new g_MultiKillMsg[7][] =
 {
@@ -201,7 +203,7 @@ new g_grenadesuicidesound[SOUND_SHORTPATH_MAXLEN] = "ms/suicide.wav"
 new g_bombplantedsound[SOUND_SHORTPATH_MAXLEN] = "ms/bombplanted.wav"
 new g_bombdefusedsound[SOUND_SHORTPATH_MAXLEN] = "ms/bombdefused.wav"
 new g_bombfailedsound[SOUND_SHORTPATH_MAXLEN] = "ms/bombfailed.wav"
-new g_bombpickupsound[SOUND_SHORTPATH_MAXLEN] = "ms/bombpickup.wav"
+new g_bombpickupsound[SOUND_SHORTPATH_MAXLEN] = "ms/bomb_pick_up.wav"
 new g_bombdropsound[SOUND_SHORTPATH_MAXLEN] = "ms/bombdrop.wav"
 new g_bombdefusingsound[SOUND_SHORTPATH_MAXLEN] = "ms/bombdefusing.wav"
 new g_bombplantingsound[SOUND_SHORTPATH_MAXLEN] = "ms/bombplanting.wav"
@@ -770,9 +772,7 @@ public plugin_cfg()
 	server_cmd(g_addStast, "ST_MULTI_KILL_SOUND", "MultiKillSound")
 	server_cmd(g_addStast, "ST_GIRL_MULTI_KILL_SOUND", "GirlMultiKillSound")
 	server_cmd(g_addStast, "ST_BOMB_PLANTING", "BombPlanting")
-	server_cmd(g_addStast, "ST_BOMB_PLANTING_SOUND", "BombPlantingSound")
 	server_cmd(g_addStast, "ST_BOMB_DEFUSING", "BombDefusing")
-	server_cmd(g_addStast, "ST_BOMB_DEFUSING_SOUND", "BombDefusingSound")
 	server_cmd(g_addStast, "ST_BOMB_PLANTED", "BombPlanted")
 	server_cmd(g_addStast, "ST_BOMB_PLANTED_SOUND", "BombPlantedSound")
 	server_cmd(g_addStast, "ST_BOMB_DEF_SUCC", "BombDefused")
@@ -787,7 +787,6 @@ public plugin_cfg()
 	server_cmd(g_addStast, "ST_BOMB_CD_VOICE", "BombCountVoice")
 	server_cmd(g_addStast, "ST_BOMB_CD_DEF", "BombCountDef")
 	server_cmd(g_addStast, "ST_BOMB_SITE", "BombReached")
-	server_cmd(g_addStast, "ST_BOMB_STOP_DEFUSE_SOUND", "BombStopDefuseSound")
 	server_cmd(g_addStast, "ST_ITALY_BONUS", "ItalyBonusKill")
 	server_cmd(g_addStast, "ST_LAST_MAN", "LastMan")
 	server_cmd(g_addStast, "ST_LAST_MAN_HEALTH", "LastManHealth")
@@ -1547,7 +1546,7 @@ play_sound(id, sound[])
 				}
 				else if(containi(sound, ".mp3") != -1)
 				{
-					formatex(PlayCommand, 127, "mp3 play %s", sound)
+					formatex(PlayCommand, 127, "mp3 play sound/%s", sound)
 					client_cmd(id, "%s", PlayCommand)
 				}
 				else

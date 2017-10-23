@@ -51,8 +51,6 @@ public EndRoundSound
 public PlayerJoinServerSound
 public BombDropSound
 public BombDefusingSound
-public BombPlantingSound
-public BombStopDefuseSound
 
 
 //Girl Sounds
@@ -106,6 +104,8 @@ const TEAM_CT = 2
 new g_connected[MAX_PLAYERS + 1]
 new g_msounds[MAX_PLAYERS + 1]
 new const _msound[] = "_msound"
+//œ≈–≈Ã≈ÕÕ€≈
+//new bool:mute_sound //«‚ÛÍ ‚ÍÎ. ‚˚ÍÎ.
 
 new g_MultiKillMsg[7][] =
 {
@@ -201,11 +201,9 @@ new g_grenadesuicidesound[SOUND_SHORTPATH_MAXLEN] = "ms/suicide.wav"
 new g_bombplantedsound[SOUND_SHORTPATH_MAXLEN] = "ms/bombplanted.wav"
 new g_bombdefusedsound[SOUND_SHORTPATH_MAXLEN] = "ms/bombdefused.wav"
 new g_bombfailedsound[SOUND_SHORTPATH_MAXLEN] = "ms/bombfailed.wav"
-new g_bombpickupsound[SOUND_SHORTPATH_MAXLEN] = "ms/bombpickup.wav"
+new g_bombpickupsound[SOUND_SHORTPATH_MAXLEN] = "ms/bomb_pick_up.wav"
 new g_bombdropsound[SOUND_SHORTPATH_MAXLEN] = "ms/bombdrop.wav"
 new g_bombdefusingsound[SOUND_SHORTPATH_MAXLEN] = "ms/bombdefusing.wav"
-new g_bombplantingsound[SOUND_SHORTPATH_MAXLEN] = "ms/bombplanting.wav"
-new g_bombstopdefusesound[SOUND_SHORTPATH_MAXLEN] = "ms/bombpstopdefuse.wav"
 
 //Girl Sound
 new g_girlfirstbloodsound[SOUND_SHORTPATH_MAXLEN] = "ms/girlfirstblood.wav"
@@ -444,20 +442,10 @@ public plugin_precache()
 					copy_sound(g_bombplantedsound, charsmax(g_bombplantedsound), szSoundFile)
 					if( BombPlantedSound ) precache_sound_custom(g_bombplantedsound)
 				}
-				else if( equal(szSoundKey, "BombPlantingSound") )
-				{
-					copy_sound(g_bombplantingsound, charsmax(g_bombplantingsound), szSoundFile)
-					if( BombPlantingSound ) precache_sound_custom(g_bombplantingsound)
-				}
 				else if( equal(szSoundKey, "BombDefusedSound") )
 				{
 					copy_sound(g_bombdefusedsound, charsmax(g_bombdefusedsound), szSoundFile)
 					if( BombDefusedSound ) precache_sound_custom(g_bombdefusedsound)
-				}
-				else if( equal(szSoundKey, "BombStopDefuseSound") )
-				{
-					copy_sound(g_bombstopdefusesound, charsmax(g_bombstopdefusesound), szSoundFile)
-					if( BombStopDefuseSound ) precache_sound_custom(g_bombstopdefusesound)
 				}
 				else if( equal(szSoundKey, "BombDefusingSound") )
 				{
@@ -479,9 +467,7 @@ public plugin_precache()
 					copy_sound(g_bombdropsound, charsmax(g_bombdropsound), szSoundFile)
 					if( BombDropSound ) precache_sound_custom(g_bombdropsound)
 				}
-				
-				// C4 Timer
-				if( equal(szSoundKey, "C4TimerSoundZero") )
+				else if( equal(szSoundKey, "C4TimerSoundZero") )
 				{
 					copy_sound(g_C4Timer_Sounds[0], charsmax(g_C4Timer_Sounds[]), szSoundFile)
 					if( BombCountVoice ) precache_sound_custom(g_C4Timer_Sounds[0])
@@ -546,9 +532,7 @@ public plugin_precache()
 					copy_sound(g_C4Timer_Sounds[12], charsmax(g_C4Timer_Sounds[]), szSoundFile)
 					if( BombCountVoice ) precache_sound_custom(g_C4Timer_Sounds[12])
 				}
-				
-				// End Round Sound
-				if( equal(szSoundKey, "EndRoundSoundOne") )
+				else if( equal(szSoundKey, "EndRoundSoundOne") )
 				{
 					copy_sound(g_End_Round_Sounds[0], charsmax(g_End_Round_Sounds[]), szSoundFile)
 					if( EndRoundSound ) precache_sound_custom(g_End_Round_Sounds[0])
@@ -573,9 +557,7 @@ public plugin_precache()
 					copy_sound(g_End_Round_Sounds[4], charsmax(g_End_Round_Sounds[]), szSoundFile)
 					if( EndRoundSound ) precache_sound_custom(g_End_Round_Sounds[4])
 				}
-				
-				// Start Round Sound
-				if( equal(szSoundKey, "PlayerJoinServerSound") )
+				else if( equal(szSoundKey, "PlayerJoinServerSound") )
 				{
 					copy_sound(g_playerjoinserver, charsmax(g_playerjoinserver), szSoundFile)
 					if( PlayerJoinServerSound ) precache_sound_custom(g_playerjoinserver)
@@ -770,9 +752,7 @@ public plugin_cfg()
 	server_cmd(g_addStast, "ST_MULTI_KILL_SOUND", "MultiKillSound")
 	server_cmd(g_addStast, "ST_GIRL_MULTI_KILL_SOUND", "GirlMultiKillSound")
 	server_cmd(g_addStast, "ST_BOMB_PLANTING", "BombPlanting")
-	server_cmd(g_addStast, "ST_BOMB_PLANTING_SOUND", "BombPlantingSound")
 	server_cmd(g_addStast, "ST_BOMB_DEFUSING", "BombDefusing")
-	server_cmd(g_addStast, "ST_BOMB_DEFUSING_SOUND", "BombDefusingSound")
 	server_cmd(g_addStast, "ST_BOMB_PLANTED", "BombPlanted")
 	server_cmd(g_addStast, "ST_BOMB_PLANTED_SOUND", "BombPlantedSound")
 	server_cmd(g_addStast, "ST_BOMB_DEF_SUCC", "BombDefused")
@@ -787,7 +767,6 @@ public plugin_cfg()
 	server_cmd(g_addStast, "ST_BOMB_CD_VOICE", "BombCountVoice")
 	server_cmd(g_addStast, "ST_BOMB_CD_DEF", "BombCountDef")
 	server_cmd(g_addStast, "ST_BOMB_SITE", "BombReached")
-	server_cmd(g_addStast, "ST_BOMB_STOP_DEFUSE_SOUND", "BombStopDefuseSound")
 	server_cmd(g_addStast, "ST_ITALY_BONUS", "ItalyBonusKill")
 	server_cmd(g_addStast, "ST_LAST_MAN", "LastMan")
 	server_cmd(g_addStast, "ST_LAST_MAN_HEALTH", "LastManHealth")
@@ -1451,8 +1430,6 @@ public eStopDefuse(id)
 	{
 		g_Defusing = 0
 	}
-	if (BombStopDefuseSound)
-		play_sound(0, g_bombstopdefusesound)
 }
 
 public bomb_planted(planter)
@@ -1474,9 +1451,6 @@ public bomb_planting(planter)
 {
 	if (BombPlanting)
 		announceEvent(planter, "PLANT_BOMB")
-	
-	if (BombPlantingSound)
-		play_sound(0, g_bombplantingsound)
 }
 
 public bomb_defusing(defuser)
@@ -1547,7 +1521,7 @@ play_sound(id, sound[])
 				}
 				else if(containi(sound, ".mp3") != -1)
 				{
-					formatex(PlayCommand, 127, "mp3 play %s", sound)
+					formatex(PlayCommand, 127, "mp3 play sound/%s", sound)
 					client_cmd(id, "%s", PlayCommand)
 				}
 				else
