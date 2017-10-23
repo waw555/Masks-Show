@@ -1,0 +1,19 @@
+﻿<html>
+<head>
+  <meta http-equiv="content-type"
+ content="text/html; charset=UTF-8">
+  <title>@@@ МАСКИ - ШОУ @@@</title>
+</head>
+<body>
+<h1 style="text-align:center"><span style="color:#000000"><strong>@@@ МАСКИ - ШОУ @@@</strong></span></h1>
+<hr />
+<h2 style="text-align:center"><span style="color:#000000">Добро пожаловать!</span></h2>
+<p><span style="color:#000000">На сервере запрещено:</span></p>
+<p><span style="color:#000000">1. Ругаться матом</span></p>
+<p><span style="color:#000000">2. Использовать читы, скрипты и т. д.</span></p>
+<p><span style="color:#000000">3. Осорблять игроков</span></p>
+<p><br />
+<span style="color:#000000">Сайт: masks-show.ru</span></p>
+<p><span style="color:#000000">Группа Vkontakte: https://vk.com/masks_show</span></p>
+</body>
+</html>

@@ -170,7 +170,6 @@ new g_End_Round_Sounds[5][SOUND_SHORTPATH_MAXLEN] =
 	"ms/roundend_4.mp3",
 	"ms/roundend_5.mp3"
 }
-	
 
 new g_firstbloodsound[SOUND_SHORTPATH_MAXLEN] = "ms/user_firstblood.wav"
 new g_lastmansound_1vsothers[SOUND_SHORTPATH_MAXLEN] = "ms/1_vs_all.wav"
@@ -1465,7 +1464,7 @@ play_sound(id, sound[])
 				}
 				else if(containi(sound, ".mp3") != -1)
 				{
-					formatex(PlayCommand, 127, "mp3 play %s", sound)
+					formatex(PlayCommand, 127, "mp3 play sound/%s", sound)
 					log_amx("mp3 play <%s>", sound)
 					//client_cmd(id, "stopsound")
 					client_cmd(id, "%s", PlayCommand)

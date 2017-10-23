@@ -170,6 +170,7 @@ new g_End_Round_Sounds[5][SOUND_SHORTPATH_MAXLEN] =
 	"ms/roundend_4.mp3",
 	"ms/roundend_5.mp3"
 }
+	
 
 new g_firstbloodsound[SOUND_SHORTPATH_MAXLEN] = "ms/user_firstblood.wav"
 new g_lastmansound_1vsothers[SOUND_SHORTPATH_MAXLEN] = "ms/1_vs_all.wav"
@@ -749,9 +750,7 @@ public plugin_cfg()
 
 public client_connect(id)
 {
-	if (PlayerJoinServerSound){
-		play_sound(id, g_playerjoinserver)
-	}
+
 	if( is_user_bot(id) )
 	{
 		g_msounds[id] = 0
@@ -768,6 +767,11 @@ public client_connect(id)
 	}
 	
 	
+}
+
+client_authorized(id){
+	if (PlayerJoinServerSound)
+		play_sound(id, g_playerjoinserver)
 }
 
 public client_putinserver(id)

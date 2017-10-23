@@ -749,9 +749,7 @@ public plugin_cfg()
 
 public client_connect(id)
 {
-	if (PlayerJoinServerSound){
-		play_sound(id, g_playerjoinserver)
-	}
+
 	if( is_user_bot(id) )
 	{
 		g_msounds[id] = 0
@@ -768,6 +766,12 @@ public client_connect(id)
 	}
 	
 	
+}
+
+client_authorized(id){
+	if (PlayerJoinServerSound){
+		play_sound(id, g_playerjoinserver)
+	}
 }
 
 public client_putinserver(id)
