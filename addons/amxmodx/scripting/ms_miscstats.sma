@@ -109,13 +109,13 @@ new const _msound[] = "_msound"
 
 new g_MultiKillMsg[7][] =
 {
-	"Multi-Kill! %s^n%L %d %L (%d %L)", 
-	"Ultra-Kill!!! %s^n%L %d %L (%d %L)", 
-	"%s IS ON A KILLING SPREE!!!^n%L %d %L (%d %L)", 
-	"RAMPAGE!!! %s^n%L %d %L (%d hs)", 
-	"%s IS UNSTOPPABLE!!!^n%L %d %L (%d %L)", 
-	"%s IS A MONSTER!^n%L %d %L (%d %L)", 
-	"%s IS GODLIKE!!!!^n%L %d %L (%d %L)"
+	"ОТЛИЧНЫЙ ВЫСТРЕЛ! %s^n%L %d %L (%d %L)", 
+	"КРУТО!!! %s^n%L %d %L (%d %L)", 
+	"%s СДОХНИ МРАЗЬ!!!^n%L %d %L (%d %L)", 
+	"УМОЛКНИ!!! %s^n%L %d %L (%d hs)", 
+	"%s, КАК ОН ВАС ПОИМЕЛ!!!^n%L %d %L (%d %L)", 
+	"%s В ЯРОСТИ!^n%L %d %L (%d %L)", 
+	"%s ОЧЕНЬ КРУТОЙ!!!!^n%L %d %L (%d %L)"
 }
 
 new g_Sounds[7][SOUND_SHORTPATH_MAXLEN] = 
@@ -200,7 +200,7 @@ new g_grenadekillsound[SOUND_SHORTPATH_MAXLEN] = "ms/grenadekill.wav"
 new g_grenadesuicidesound[SOUND_SHORTPATH_MAXLEN] = "ms/suicide.wav"
 new g_bombplantedsound[SOUND_SHORTPATH_MAXLEN] = "ms/bombplanted.wav"
 new g_bombdefusedsound[SOUND_SHORTPATH_MAXLEN] = "ms/bombdefused.wav"
-new g_bombfailedsound[SOUND_SHORTPATH_MAXLEN] = "ms/bombfailed.wav"
+new g_bombfailedsound[SOUND_SHORTPATH_MAXLEN] = "ms/bombfailed.mp3"
 new g_bombpickupsound[SOUND_SHORTPATH_MAXLEN] = "ms/bombpickup.wav"
 new g_bombdropsound[SOUND_SHORTPATH_MAXLEN] = "ms/bombdrop.wav"
 new g_bombdefusingsound[SOUND_SHORTPATH_MAXLEN] = "ms/bombdefusing.wav"
@@ -214,18 +214,18 @@ new g_lastgirlsound_duel[SOUND_SHORTPATH_MAXLEN] = "ms/girloneandonly.wav"
 new g_girlknifekillsound[SOUND_SHORTPATH_MAXLEN] = "ms/girlhumiliation.wav"
 new g_girldoublekillsound[SOUND_SHORTPATH_MAXLEN] = "ms/girldoublekill.wav"
 
-new g_playerjoinserver[SOUND_SHORTPATH_MAXLEN] = "ms/playerjoinserver.mp3"
+new g_playerjoinserver[SOUND_SHORTPATH_MAXLEN] = "ms/playerjoinserver.wav"
 
 
 new g_KillingMsg[7][] =
 {
-	"%s: Multi-Kill!", 
-	"%s: Ultra-Kill!!!", 
-	"%s IS ON A KILLING SPREE!!!", 
-	"%s: RAMPAGE!!!", 
-	"%s IS UNSTOPPABLE!!!", 
-	"%s IS A MONSTER!", 
-	"%s IS GODLIKE!!!"
+	"%s: НИШУТЯ!", 
+	"%s: ДЕРЗКИЙ!!!", 
+	"%s: БОРЗЫЙ!!!", 
+	"%s: БЕССМЕРТНЫЙ!!!", 
+	"%s: ОЧЕНЬ КРУТОЙ!!!",
+	"%s: НИШУТЯ!", 
+	"%s: ДЕРЗКИЙ!!!"
 }
 
 new g_KinfeMsg[4][] =
@@ -842,7 +842,7 @@ public client_connect(id)
 
 public client_putinserver(id)
 {
-	//������ ����� ��� �������
+	//Задаем права для девушек
 	if (get_user_flags(id) & ADMIN_LEVEL_C){
 		girl[id]=true
 		}else{
@@ -855,7 +855,7 @@ public client_putinserver(id)
 
 public client_disconnected(id)
 {
-	//������� ����� ��� �������
+	//Снимаем права для девушек
 	girl[id]=false
 	g_connected[id] = false
 }
@@ -904,7 +904,7 @@ public client_death(killer, victim, wpnindex, hitplace, TK)
 				
 				if (KillingStreak)
 				{
-					set_hudmessage(0, 100, 255, 0.05, 0.50, 2, 0.02, 6.0, 0.01, 0.1, -1)
+					set_hudmessage(0, 100, 255, 0.02, 0.50, 2, 0.02, 6.0, 0.01, 0.1, -1)
 					ShowSyncHudMsg(0, g_left_sync, g_KillingMsg[a], name)
 				}
 				
@@ -959,7 +959,7 @@ public client_death(killer, victim, wpnindex, hitplace, TK)
 			{
 				new message[128], team_name[32]
 
-				set_hudmessage(255, 255, 255, 0.02, 0.85, 2, 0.05, 0.1, 0.02, 3.0, -1)
+				set_hudmessage(255, 255, 255, 0.02, 0.75, 2, 0.05, 0.1, 0.02, 3.0, -1)
 				
 				/* This is a pretty stupid thing to translate, but whatever */
 				new _teamname[32]
@@ -1026,7 +1026,7 @@ public client_death(killer, victim, wpnindex, hitplace, TK)
 				get_user_name(cts[0], ctname, charsmax(ctname))
 				get_user_name(ts[0], tname, charsmax(tname))
 				
-				set_hudmessage(0, 255, 255, -1.0, 0.35, 0, 6.0, 6.0, 0.5, 0.15, -1)
+				set_hudmessage(0, 255, 255, 0.02, 0.60, 0, 6.0, 6.0, 0.5, 0.15, -1)
 				
 				if( LastManHealth )
 				{
@@ -1073,7 +1073,7 @@ public client_death(killer, victim, wpnindex, hitplace, TK)
 				
 					get_user_name(g_LastAnnounce, name, charsmax(name))
 				
-					set_hudmessage(0, 255, 255, -1.0, 0.38, 0, 6.0, 6.0, 0.5, 0.15, -1)
+					set_hudmessage(0, 255, 255, 0.02, 0.60, 0, 6.0, 6.0, 0.5, 0.15, -1)
 					
 					if( LastManHealth )
 					{
@@ -1107,7 +1107,7 @@ public client_death(killer, victim, wpnindex, hitplace, TK)
 			get_user_name(killer, killer_name, charsmax(killer_name))
 			get_user_name(victim, victim_name, charsmax(victim_name))
 			
-			set_hudmessage(255, 100, 100, -1.0, 0.25, 1, 6.0, 6.0, 0.5, 0.15, -1)
+			set_hudmessage(255, 100, 100, 0.02, 0.20, 1, 6.0, 6.0, 0.5, 0.15, -1)
 			ShowSyncHudMsg(0, g_he_sync, "%L", LANG_PLAYER, g_KinfeMsg[random_num(0, 3)], killer_name, victim_name)
 		}
 		
@@ -1127,7 +1127,7 @@ public client_death(killer, victim, wpnindex, hitplace, TK)
 			get_user_name(killer, killer_name, charsmax(killer_name))
 			get_user_name(victim, victim_name, charsmax(victim_name))
 			
-			set_hudmessage(255, 100, 100, -1.0, 0.25, 1, 6.0, 6.0, 0.5, 0.15, -1)
+			set_hudmessage(255, 100, 100, 0.02, 0.20, 1, 6.0, 6.0, 0.5, 0.15, -1)
 		}
 		
 		if (!selfkill)
@@ -1166,7 +1166,7 @@ public client_death(killer, victim, wpnindex, hitplace, TK)
 				replace(message, charsmax(message), "$wn", weapon_name)
 				replace(message, charsmax(message), "$kn", killer_name)
 				
-				set_hudmessage(100, 100, 255, -1.0, 0.30, 0, 6.0, 6.0, 0.5, 0.15, -1)
+				set_hudmessage(100, 100, 255, 0.02, 0.30, 0, 6.0, 6.0, 0.5, 0.15, -1)
 				ShowSyncHudMsg(plr, g_announce_sync, "%s", message)
 			}
 		}
@@ -1241,10 +1241,10 @@ public showStatus(id)
 			if (wpnid)
 				xmod_get_wpnname(wpnid, wpnname, charsmax(wpnname))
 		
-			set_hudmessage(color1, 50, color2, -1.0, 0.60, 1, 0.01, 3.0, 0.01, 0.01, -1)
+			set_hudmessage(color1, 50, color2, 0.02, 0.50, 1, 0.01, 3.0, 0.01, 0.01, -1)
 			ShowSyncHudMsg(id, g_status_sync, "%s -- %d HP / %d AP / %s", name, get_user_health(pid), get_user_armor(pid), wpnname)
 		} else {
-			set_hudmessage(color1, 50, color2, -1.0, 0.60, 1, 0.01, 3.0, 0.01, 0.01, -1)
+			set_hudmessage(color1, 50, color2, 0.02, 0.70, 1, 0.01, 3.0, 0.01, 0.01, -1)
 			ShowSyncHudMsg(id, g_status_sync, "%s", name)
 		}
 	}
@@ -1268,7 +1268,7 @@ public Event_HLTV_New_Round()
 
 public Delayed_New_Round()
 {
-	set_hudmessage(200, 0, 0, -1.0, 0.30, 0, 6.0, 6.0, 0.5, 0.15, -1)
+	set_hudmessage(200, 0, 0, -1.0, 0.02, 0, 6.0, 6.0, 0.5, 0.15, -1)
 	ShowSyncHudMsg(0, g_announce_sync, "%L", LANG_PLAYER, "PREPARE_FIGHT", g_roundCount)
 }
 
@@ -1332,7 +1332,7 @@ public checkKills(param[])
 				new name[MAX_NAME_LENGTH]
 				
 				get_user_name(id, name, charsmax(name))
-				set_hudmessage(255, 0, 100, 0.05, 0.50, 2, 0.02, 6.0, 0.01, 0.1, -1)
+				set_hudmessage(255, 0, 100, 0.02, 0.40, 2, 0.02, 6.0, 0.01, 0.1, -1)
 				
 				ShowSyncHudMsg(0, g_left_sync, g_MultiKillMsg[a], name, LANG_PLAYER, "WITH", g_multiKills[id][0], LANG_PLAYER, "KILLS", g_multiKills[id][1], LANG_PLAYER, "HS")
 			}
@@ -1367,7 +1367,7 @@ announceEvent(id, message[])
 	new name[MAX_NAME_LENGTH]
 	
 	get_user_name(id, name, charsmax(name))
-	set_hudmessage(255, 100, 50, -1.0, 0.30, 0, 6.0, 6.0, 0.5, 0.15, -1)
+	set_hudmessage(255, 100, 50, 0.02, 0.15, 0, 6.0, 6.0, 0.5, 0.15, -1)
 	ShowSyncHudMsg(0, g_announce_sync, "%L", LANG_PLAYER, message, name)
 }
 
@@ -1421,7 +1421,7 @@ public bombTimer()
 			}
 
 			set_hudmessage(r, g, 0, -1.0, 0.75, g_C4Timer <= 10 ? 1 : 0, 0.01, 1.1, 0.001, 0.001, .channel = -1)
-			show_hudmessage(0, "C4: %ds", g_C4Timer)
+			show_hudmessage(0, "До взрыва осталось: %d сек", g_C4Timer)
 		}
 		if (BombCountVoice)
 		{
@@ -1450,9 +1450,9 @@ public eStopDefuse(id)
 	if( id == g_Defusing )
 	{
 		g_Defusing = 0
-	}
-	if (BombStopDefuseSound)
+		if (BombStopDefuseSound)
 		play_sound(0, g_bombstopdefusesound)
+	}
 }
 
 public bomb_planted(planter)
@@ -1516,7 +1516,7 @@ play_sound(id, sound[])
 		{
 			if(containi(sound, ".wav") != -1)
 			{
-				formatex(PlayCommand, 127, "speak %s", sound)
+				formatex(PlayCommand, 127, "spk %s", sound)
 				client_cmd(id, "%s", PlayCommand)
 			}
 			else if(containi(sound, ".mp3") != -1)
@@ -1542,12 +1542,12 @@ play_sound(id, sound[])
 			if ( g_connected[id] && g_msounds[id] )
 				if(containi(sound, ".wav") != -1)
 				{
-					formatex(PlayCommand, 127, "speak %s", sound)
+					formatex(PlayCommand, 127, "spk %s", sound)
 					client_cmd(id, "%s", PlayCommand)
 				}
 				else if(containi(sound, ".mp3") != -1)
 				{
-					formatex(PlayCommand, 127, "mp3 play %s", sound)
+					formatex(PlayCommand, 127, "mp3 play sound/%s", sound)
 					client_cmd(id, "%s", PlayCommand)
 				}
 				else

@@ -43,7 +43,7 @@ TERRORIST = ТЕРРОРИСТ
 TERRORISTS = ТЕРРОРИСТЫ
 REMAINING = Осталось %d %s ...
 KILLS = убито
-HS = хедшот
+HS = в голову
 
 [en]
 WITH = with
