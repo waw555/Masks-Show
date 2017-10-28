@@ -191,7 +191,7 @@ public knife_drop(id) {
 	if(!knifedrop) return
 
 	entity_set_string(knifedrop, EV_SZ_classname, "knife_pickup")
-	entity_set_model(knifedrop, "models/ms/w_knifepack.mdl")
+	entity_set_model(knifedrop, "models/ms/weapons/w_knifepack.mdl")
 
 	new Float:MinBox[3] = {-1.0, -1.0, -1.0}
 	new Float:MaxBox[3] = {1.0, 1.0, 1.0}
@@ -224,6 +224,7 @@ public check_knife(id) {
 			client_print(id, print_center,"Вы имеете %d нож(а/ей).",knifeammo[id])
 		}*/
 		client_print(id, print_center,"У вас есть %d %s для метания",knifeammo[id], knifeammo[id] == 1 ? "нож(а)" : "ножей")
+		/*client_print(id, print_chat, "Для метания ножей, используйте в консоли [bind mouse3 knife] Колесико мыши")*/
 	}
 	else {
 		knifeout[id] = false
@@ -447,7 +448,7 @@ public command_knife(id) {
 	if (!Ent) return PLUGIN_HANDLED
 
 	entity_set_string(Ent, EV_SZ_classname, "throwing_knife")
-	entity_set_model(Ent, "models/ms/w_throwingknife.mdl")
+	entity_set_model(Ent, "models/ms/weapons/w_throwingknife.mdl")
 
 	new Float:MinBox[3] = {-1.0, -7.0, -1.0}
 	new Float:MaxBox[3] = {1.0, 7.0, 1.0}
@@ -528,8 +529,8 @@ public plugin_precache()
 	precache_sound("weapons/knife_hitwall1.wav")
 	precache_sound("weapons/knife_hit4.wav")
 	precache_sound("weapons/knife_deploy1.wav")
-	precache_model("models/ms/w_knifepack.mdl")
-	precache_model("models/ms/w_throwingknife.mdl")
+	precache_model("models/ms/weapons/w_knifepack.mdl")
+	precache_model("models/ms/weapons/w_throwingknife.mdl")
 }
 
 public check_cvars() {

@@ -214,7 +214,7 @@ new g_lastgirlsound_duel[SOUND_SHORTPATH_MAXLEN] = "ms/girloneandonly.wav"
 new g_girlknifekillsound[SOUND_SHORTPATH_MAXLEN] = "ms/girlhumiliation.wav"
 new g_girldoublekillsound[SOUND_SHORTPATH_MAXLEN] = "ms/girldoublekill.wav"
 
-new g_playerjoinserver[SOUND_SHORTPATH_MAXLEN] = "ms/playerjoinserver.wav"
+new g_playerjoinserver[SOUND_SHORTPATH_MAXLEN] = "ms/playerjoinserver.mp3"
 
 
 new g_KillingMsg[7][] =
