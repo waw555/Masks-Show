@@ -25,7 +25,7 @@ Age=1263688137
 [ms_voteban.sma]
 Age=1263688859
 [ms_miscstats.sma]
-Age=1264362798
+Age=1264389293
 [admin.sma]
 Age=1264061037
 [statscfg.sma]
@@ -38,3 +38,11 @@ Age=1264386519
 Age=1264386195
 [ms_backweapons.sma]
 Age=1264386723
+[ms_afkkiss.sma]
+Age=1264387840
+[ms_bullet_damage.sma]
+Age=1264387036
+[ms_grenade_drops.sma]
+Age=1264387428
+[ms_shoot_grenade.sma]
+Age=1264387545
