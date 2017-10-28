@@ -76,7 +76,7 @@ public plugin_init()
 	pFallSpeed = register_cvar("parachute_fallspeed", "100")
 	pDetach = register_cvar("parachute_detach", "1")
 
-	//if (cstrike_running()) gCStrike = true
+	if (cstrike_running()) gCStrike = true
 
 	/*if (gCStrike) {
 

@@ -64,8 +64,8 @@
 
 new bool:has_parachute[33]
 new para_ent[33]
-//new gCStrike = 0
-new pDetach, pFallSpeed, pEnabled/*, pCost, pPayback*/
+new gCStrike = 0
+new pDetach, pFallSpeed, pEnabled, pCost, pPayback
 
 #define PARACHUTE_LEVEL ADMIN_LEVEL_A
 
@@ -76,7 +76,7 @@ public plugin_init()
 	pFallSpeed = register_cvar("parachute_fallspeed", "100")
 	pDetach = register_cvar("parachute_detach", "1")
 
-	//if (cstrike_running()) gCStrike = true
+	if (cstrike_running()) gCStrike = true
 
 	/*if (gCStrike) {
 
@@ -135,7 +135,7 @@ public plugin_precache()
 {
 	precache_model("models/ms/parachute.mdl")
 }
-/*
+
 public client_connect(id)
 {
 	parachute_reset(id)
@@ -368,7 +368,7 @@ public admin_give_parachute(id, level, cid) {
 		log_amx("^"%s<%d><%s><>^" gave a parachute to ^"%s<%d><%s><>^"", name,get_user_userid(id),authid,name2,get_user_userid(player),authid2)
 	}
 	return PLUGIN_HANDLED
-}*/
+}
 
 public client_PreThink(id)
 {

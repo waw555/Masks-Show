@@ -1171,7 +1171,7 @@ public client_death(killer, victim, wpnindex, hitplace, TK)
 			}
 		}
 		
-		if (HeadShotKillSound && g_firstBlood && wpnindex != CSW_KNIFE)
+		if (HeadShotKillSound)
 		{
 			play_sound(victim, g_hssound_victim)
 			if( victim != killer )

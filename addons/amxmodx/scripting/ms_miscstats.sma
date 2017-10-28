@@ -214,7 +214,7 @@ new g_lastgirlsound_duel[SOUND_SHORTPATH_MAXLEN] = "ms/girloneandonly.wav"
 new g_girlknifekillsound[SOUND_SHORTPATH_MAXLEN] = "ms/girlhumiliation.wav"
 new g_girldoublekillsound[SOUND_SHORTPATH_MAXLEN] = "ms/girldoublekill.wav"
 
-new g_playerjoinserver[SOUND_SHORTPATH_MAXLEN] = "ms/playerjoinserver.wav"
+new g_playerjoinserver[SOUND_SHORTPATH_MAXLEN] = "ms/playerjoinserver.mp3"
 
 
 new g_KillingMsg[7][] =
@@ -1171,7 +1171,7 @@ public client_death(killer, victim, wpnindex, hitplace, TK)
 			}
 		}
 		
-		if (HeadShotKillSound && g_firstBlood && wpnindex != CSW_KNIFE)
+		if (HeadShotKillSound)
 		{
 			play_sound(victim, g_hssound_victim)
 			if( victim != killer )

@@ -64,8 +64,8 @@
 
 new bool:has_parachute[33]
 new para_ent[33]
-//new gCStrike = 0
-new pDetach, pFallSpeed, pEnabled/*, pCost, pPayback*/
+new gCStrike = 0
+new pDetach, pFallSpeed, pEnabled, pCost, pPayback
 
 #define PARACHUTE_LEVEL ADMIN_LEVEL_A
 
@@ -76,7 +76,7 @@ public plugin_init()
 	pFallSpeed = register_cvar("parachute_fallspeed", "100")
 	pDetach = register_cvar("parachute_detach", "1")
 
-	//if (cstrike_running()) gCStrike = true
+	if (cstrike_running()) gCStrike = true
 
 	/*if (gCStrike) {
 
