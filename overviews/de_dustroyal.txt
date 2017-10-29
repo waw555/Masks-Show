@@ -1,0 +1,13 @@
+// overview description file for de_ByKa2_0.bsp
+
+global 
+{
+	ZOOM	0.99
+	ORIGIN	176 	56.0	 -769.00
+}
+
+layer 
+{
+	IMAGE	"overviews/de_dustroyal.bmp"
+	HEIGHT	 -769.00
+}

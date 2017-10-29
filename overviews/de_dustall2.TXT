@@ -1,0 +1,14 @@
+// overview description file for de_dustall2.bsp
+
+global 
+{
+	ZOOM	1.33
+	ORIGIN	160	-312 64
+	ROTATED	0
+}
+
+layer 
+{
+	IMAGE	"overviews/de_dustall2.bmp"
+	HEIGHT	64
+}

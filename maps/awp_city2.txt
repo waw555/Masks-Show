@@ -1,0 +1,17 @@
+AWP City 2
+awp_city2.bsp
+by SuperJer
+
+SuperJer.com
+
+New and better version of awp_city.bsp.
+Improvements:
+* More cover added to both sides.
+* Reduced number of visible polys.
+* Players receive awp after time delay
+  to prevent spawn killing.
+
+Have fun!
+
+
+

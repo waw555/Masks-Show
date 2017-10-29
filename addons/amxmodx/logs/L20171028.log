@@ -87,3 +87,36 @@ L 10/28/2017 - 22:09:03: [mapchooser.amxx] Vote: Voting for the nextmap started
 L 10/28/2017 - 22:09:18: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be cs_italy
 L 10/28/2017 - 22:11:12: -------- Mapchange to cs_italy --------
 L 10/28/2017 - 22:14:01: -------- Mapchange to de_dust2 --------
+L 10/28/2017 - 22:20:52: -------- Mapchange to de_dust2 --------
+L 10/28/2017 - 22:38:53: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/28/2017 - 22:39:08: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be cs_italy
+L 10/28/2017 - 22:41:02: -------- Mapchange to cs_italy --------
+L 10/28/2017 - 22:42:09: -------- Mapchange to de_dust2 --------
+L 10/28/2017 - 22:49:28: -------- Mapchange to de_dust2 --------
+L 10/28/2017 - 22:49:43: [admin.amxx] Login: "DeWolt<1><STEAM_0:0:19404857><>" became an admin (account "STEAM_0:0:19404857") (access "abcdefghijklmnpqrstuvw") (address "212.104.90.17")
+L 10/28/2017 - 22:49:45: [admin.amxx] Login: "DeWolt<2><STEAM_0:0:19404857><>" became an admin (account "STEAM_0:0:19404857") (access "abcdefghijklmnpqrstuvw") (address "212.104.90.17")
+L 10/28/2017 - 22:52:52: [mapsmenu.amxx] Cmd: "DeWolt<2><STEAM_0:0:19404857><>" changelevel "de_dust2"
+L 10/28/2017 - 22:52:54: -------- Mapchange to de_dust2 --------
+L 10/28/2017 - 22:52:55: [admin.amxx] Login: "DeWolt<2><STEAM_0:0:19404857><>" became an admin (account "STEAM_0:0:19404857") (access "abcdefghijklmnpqrstuvw") (address "212.104.90.17")
+L 10/28/2017 - 22:54:47: [mapsmenu.amxx] Cmd: "DeWolt<2><STEAM_0:0:19404857><>" changelevel "de_dust2"
+L 10/28/2017 - 22:54:49: -------- Mapchange to de_dust2 --------
+L 10/28/2017 - 22:54:50: [admin.amxx] Login: "DeWolt<2><STEAM_0:0:19404857><>" became an admin (account "STEAM_0:0:19404857") (access "abcdefghijklmnpqrstuvw") (address "212.104.90.17")
+L 10/28/2017 - 22:59:34: [admin.amxx] Login: "MEET UNREAL YOUR MAKER<3><STEAM_0:0:57395618><>" became an admin (account "STEAM_0:0:57395618") (access "o") (address "94.19.82.22")
+L 10/28/2017 - 22:59:37: [admin.amxx] Login: "MEET UNREAL YOUR MAKER<4><STEAM_0:0:57395618><>" became an admin (account "STEAM_0:0:57395618") (access "o") (address "94.19.82.22")
+L 10/28/2017 - 23:17:49: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/28/2017 - 23:18:04: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be cs_office
+L 10/28/2017 - 23:19:54: -------- Mapchange to cs_office --------
+L 10/28/2017 - 23:35:59: [admin.amxx] Login: "DeWolt<5><STEAM_0:0:19404857><>" became an admin (account "STEAM_0:0:19404857") (access "abcdefghijklmnpqrstuvw") (address "212.104.90.17")
+L 10/28/2017 - 23:36:03: [admin.amxx] Login: "MEET UNREAL YOUR MAKER<6><STEAM_0:0:57395618><>" became an admin (account "STEAM_0:0:57395618") (access "o") (address "94.19.82.22")
+L 10/28/2017 - 23:36:20: [mapsmenu.amxx] Cmd: "DeWolt<5><STEAM_0:0:19404857><>" changelevel "de_dust2"
+L 10/28/2017 - 23:36:22: -------- Mapchange to de_dust2 --------
+L 10/28/2017 - 23:36:23: [admin.amxx] Login: "MEET UNREAL YOUR MAKER<6><STEAM_0:0:57395618><>" became an admin (account "STEAM_0:0:57395618") (access "o") (address "94.19.82.22")
+L 10/28/2017 - 23:36:23: [admin.amxx] Login: "DeWolt<5><STEAM_0:0:19404857><>" became an admin (account "STEAM_0:0:19404857") (access "abcdefghijklmnpqrstuvw") (address "212.104.90.17")
+L 10/28/2017 - 23:37:06: [admin.amxx] Login: "DeWolt<7><STEAM_0:0:19404857><>" became an admin (account "STEAM_0:0:19404857") (access "abcdefghijklmnpqrstuvw") (address "212.104.90.17")
+L 10/28/2017 - 23:37:11: [admin.amxx] Login: "DeWolt<8><STEAM_0:0:19404857><>" became an admin (account "STEAM_0:0:19404857") (access "abcdefghijklmnpqrstuvw") (address "212.104.90.17")
+L 10/28/2017 - 23:37:30: [admin.amxx] Login: "MEET UNREAL YOUR MAKER<9><STEAM_0:0:57395618><>" became an admin (account "STEAM_0:0:57395618") (access "o") (address "94.19.82.22")
+L 10/28/2017 - 23:56:07: [mapchooser.amxx] Vote: Voting for the nextmap started
+L 10/28/2017 - 23:56:22: [mapchooser.amxx] Vote: Voting for the nextmap finished. The nextmap will be de_nuke
+L 10/28/2017 - 23:58:18: -------- Mapchange to de_nuke --------
+L 10/28/2017 - 23:58:19: [admin.amxx] Login: "MEET UNREAL YOUR MAKER<9><STEAM_0:0:57395618><>" became an admin (account "STEAM_0:0:57395618") (access "o") (address "94.19.82.22")
+L 10/28/2017 - 23:58:19: [admin.amxx] Login: "DeWolt<8><STEAM_0:0:19404857><>" became an admin (account "STEAM_0:0:19404857") (access "abcdefghijklmnpqrstuvw") (address "212.104.90.17")

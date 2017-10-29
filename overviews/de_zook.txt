@@ -1,0 +1,14 @@
+// overview description file for de_zook.bsp
+
+global 
+{
+	ZOOM	1.34
+	ORIGIN	-97.27	1080.64	244.00
+	ROTATED	1
+}
+
+layer 
+{
+	IMAGE	"overviews/de_zook.bmp"
+	HEIGHT	-129.00
+}

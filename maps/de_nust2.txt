@@ -1,0 +1,19 @@
+DE_NUST2
+by Wheatley_ ( steam - kuz4 )
+
+
+Counter-Terrorists: Prevent the terrorist
+planting the explosives.
+
+Terrorists: Plant the c4 in the factory and destroy radioactive components.
+
+Other Notes: There are 2 bomb sites in this map.
+
+( press FIRE to continue )
+
+ALBERTO309 - Tester, Ideas, Models
+PKGamerX - Tester, Ideas
+PD311 - Tester, Ideas
+cRUSH - Tester, Ideas
+Arman Ossi Loko - Tester, Ideas
+TheForgery - Tester

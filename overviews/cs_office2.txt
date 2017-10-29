@@ -1,0 +1,14 @@
+//overview description file for cs_office2.bsp
+
+global
+{
+	ZOOM	3.59
+	ORIGIN	-414.38       220.94	    156
+	ROTATED 0
+}
+
+layer
+{
+	IMAGE	"overviews/cs_office2.tga"
+	HEIGHT	-9.00
+} 

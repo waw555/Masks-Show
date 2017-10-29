@@ -1,0 +1,25 @@
+de_inferno2010 - Bomb Defuse
+---
+by Tatu Eugen - www.tatueugen.info
+by Chris Auty (Barney) (narby@counter-strike.net)
+---
+Texture builds by Valve software
+
+de_inferno2010 is a new map created by
+Tatu Eugen original project by Chris Auty,
+this new map has more stuff and is a new great map.
+
+Roles:
+de_inferno2010 by Tatu Eugen
+de_infereno by Chris Auty
+
+Terrorist are attempting to blow up two critical
+gas pipeline through part of a small village.
+
+Counter-Terrorists: Prevent the terrorists
+from destroying the pipelines.
+
+Terrorists: Destroy the two gas pipelines.
+
+Other Notes: There are 2 bomb sites in this 
+mission.

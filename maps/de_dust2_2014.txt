@@ -1,0 +1,15 @@
+Dust 2014 - Bomb/Defuse
+*** Original de_dust2 by DaveJ ***
+new textures by tiosan821 Brasil 2013
+(ilsonserra3@hotmail.com)
+
+Counter-Terrorists: Prevent Terrorists
+from bombing crates.
+Team members must defuse any bombs 
+that threaten targeted areas.
+
+Terrorists: The Terrorist carrying the
+C4 must destroy one of the stashes. 
+
+Other Notes: There are 2 
+stashes in the mission.

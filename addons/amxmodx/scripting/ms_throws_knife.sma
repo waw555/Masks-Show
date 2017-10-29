@@ -254,11 +254,11 @@ public client_connect(id) {
 	holdammo[id] = 0
 	tossdelay[id] = 0.0
 	knifeout[id] = false
-	client_cmd(id, "bind mouse3 throw_knife")
+	//client_cmd(id, "bind mouse3 throw_knife")
 }
 
 public client_authorized(id){
-	client_cmd(id, "bind mouse3 knife")
+	//client_cmd(id, "bind mouse3 throw_knife")
 }
 
 public client_disconnected(id) {

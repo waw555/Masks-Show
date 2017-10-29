@@ -1268,8 +1268,8 @@ public Event_HLTV_New_Round()
 
 public Delayed_New_Round()
 {
-	set_hudmessage(200, 0, 0, -1.0, 0.02, 0, 6.0, 6.0, 0.5, 0.15, -1)
-	ShowSyncHudMsg(0, g_announce_sync, "%L", LANG_PLAYER, "PREPARE_FIGHT", g_roundCount)
+	set_dhudmessage(200, 0, 0, -1.0, 0.02, 0, 6.0, 6.0, 0.5, 0.15)
+	show_dhudmessage(0, "%L", LANG_PLAYER, "PREPARE_FIGHT", g_roundCount)
 }
 
 public LogEvent_Round_Start()
@@ -1420,8 +1420,8 @@ public bombTimer()
 				g = 255 - r
 			}
 
-			set_hudmessage(r, g, 0, -1.0, 0.75, g_C4Timer <= 10 ? 1 : 0, 0.01, 1.1, 0.001, 0.001, .channel = -1)
-			show_hudmessage(0, "До взрыва осталось: %d сек", g_C4Timer)
+			set_dhudmessage(r, g, 0, -1.0, 0.95, 0, 0.01, 1.1, 0.001, 0.001)
+			show_dhudmessage(0, "До взрыва осталось: %d сек", g_C4Timer)
 		}
 		if (BombCountVoice)
 		{
@@ -1438,8 +1438,8 @@ public bombTimer()
 				play_sound(0, g_C4Timer_Sounds[g_C4Timer])
 			}
 		}
-		if (BombCountDef && g_Defusing && is_user_alive(g_Defusing))
-			client_print(g_Defusing, print_center, "%d", g_C4Timer)
+		/*if (BombCountDef && g_Defusing && is_user_alive(g_Defusing))
+			client_print(g_Defusing, print_center, "%d", g_C4Timer)*/
 	}
 	else
 		remove_task(TASK_BOMB_TIMER)

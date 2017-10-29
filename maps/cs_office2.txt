@@ -1,0 +1,17 @@
+Baller-Office - Hostage Rescue
+
+Terrorists got in an Office-Building an took Hostages,
+to get extra money of an important business-man.
+
+Counter-Terrorists: Enter the office 
+building and rescue the hostages. 
+Take out the Terrorists without 
+jeopardizing the hostages.
+
+Terrorists: Prevent Counter-Terrorist
+force from rescuing the hostages. 
+
+Other Notes: There are 2 hostages in 
+this mission.
+
+(Press FIRE to die)
