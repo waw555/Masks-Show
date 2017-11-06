@@ -1,0 +1,25 @@
+[ru]
+VOTEMAP_BEFORE_CHANGINGS_MAPS = До смены карты осталось
+VOTEMAP_MIN = мин.
+VOTEMAP_VOTING_IS_COMPLETED = Голосование завершено.
+VOTEMAP_NEXT_MAP = Следующая карта
+VOTEMAP_CURRENT = Текущая карта
+VOTEMAP_MENU = Голосование за карту
+VOTEMAP_LAST_MAPS = Предыдущие карты
+VOTEMAP_VOTED_CHANGE_MAP = проголосовал за карту
+VOTEMAP_OF = из
+VOTEMAP_PLAYER_VOTING_IS_COMPLETED = завершил голосование картой
+VOTEMAP_LAST_ROUND = Последний раунд!
+
+[en]
+VOTEMAP_BEFORE_CHANGINGS_MAPS = До смены карты осталось
+VOTEMAP_MIN = мин.
+VOTEMAP_VOTING_IS_COMPLETED = Голосование завершено.
+VOTEMAP_NEXT_MAP = Следующая карта
+VOTEMAP_CURRENT = Текущая карта
+VOTEMAP_MENU = Голосование за карту
+VOTEMAP_LAST_MAPS = Прдыдущие карты
+VOTEMAP_VOTED_CHANGE_MAP = проголосовал за карту
+VOTEMAP_OF = из
+VOTEMAP_PLAYER_VOTING_IS_COMPLETED = завершил голосование картой
+VOTEMAP_LAST_ROUND = Последний раунд!

@@ -835,6 +835,13 @@ public client_connect(id)
 		g_msounds[id] = 0
 	}
 	
+	/*if (PlayerJoinServerSound){
+		play_sound(id, g_playerjoinserver)
+	}*/
+}
+
+public client_authorized(id)
+{
 	if (PlayerJoinServerSound){
 		play_sound(id, g_playerjoinserver)
 	}

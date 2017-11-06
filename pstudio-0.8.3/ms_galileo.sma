@@ -1,59 +1,61 @@
+new const PLUGIN_VERSION[]  = "1.1 $Revision: 290 $"; // $Date: 2009-02-26 11:20:25 -0500 (Thu, 26 Feb 2009) $;
+
 #include <amxmodx>
 #include <amxmisc>
 
 #pragma semicolon 1
 
-#define TASKID_EMPTYSERVER			98176977
-#define TASKID_REMINDER				52691153
+#define TASKID_EMPTYSERVER	98176977
+#define TASKID_REMINDER			52691153
 
-#define RTV_CMD_STANDARD 			1
-#define RTV_CMD_SHORTHAND			2
-#define RTV_CMD_DYNAMIC				4
+#define RTV_CMD_STANDARD 	1
+#define RTV_CMD_SHORTHAND	2
+#define RTV_CMD_DYNAMIC		4
 
-#define SOUND_GETREADYTOCHOOSE			1
-#define SOUND_COUNTDOWN				2
+#define SOUND_GETREADYTOCHOOSE	1
+#define SOUND_COUNTDOWN					2
 #define SOUND_TIMETOCHOOSE			4
-#define SOUND_RUNOFFREQUIRED			8
+#define SOUND_RUNOFFREQUIRED		8
 
-#define MAPFILETYPE_SINGLE			1
-#define MAPFILETYPE_GROUPS			2
+#define MAPFILETYPE_SINGLE	1
+#define MAPFILETYPE_GROUPS	2
 
-#define SHOWSTATUS_VOTE				1
-#define SHOWSTATUS_END				2
+#define SHOWSTATUS_VOTE		1
+#define SHOWSTATUS_END		2
 
 #define SHOWSTATUSTYPE_COUNT			1
-#define SHOWSTATUSTYPE_PERCENTAGE		2
+#define SHOWSTATUSTYPE_PERCENTAGE	2
 
-#define ANNOUNCECHOICE_PLAYERS			1
-#define ANNOUNCECHOICE_ADMINS			2
+#define ANNOUNCECHOICE_PLAYERS	1
+#define ANNOUNCECHOICE_ADMINS		2
 
 #define MAX_NOMINATION_CNT			5
 
-#define MAX_PREFIX_CNT				32
-#define MAX_RECENT_MAP_CNT			16
+#define MAX_PREFIX_CNT			32
+#define MAX_RECENT_MAP_CNT	16
 
 #define MAX_PLAYER_CNT				32
-#define MAX_STANDARD_MAP_CNT			25
+#define MAX_STANDARD_MAP_CNT	25
 #define MAX_MAPNAME_LEN				31
 #define MAX_MAPS_IN_VOTE			8
-#define MAX_NOM_MATCH_CNT     			1000
+#define MAX_NOM_MATCH_CNT     1000
 
-#define VOTE_IN_PROGRESS			1
+#define VOTE_IN_PROGRESS	1
 #define VOTE_FORCED				2
-#define VOTE_IS_RUNOFF				4
-#define VOTE_IS_OVER      			8
-#define VOTE_IS_EARLY				16
-#define VOTE_HAS_EXPIRED			32
+#define VOTE_IS_RUNOFF		4
+#define VOTE_IS_OVER      8
+#define VOTE_IS_EARLY			16
+#define VOTE_HAS_EXPIRED	32
 
-#define SRV_START_CURRENTMAP			1
+#define SRV_START_CURRENTMAP	1
 #define SRV_START_NEXTMAP			2
 #define SRV_START_MAPVOTE			3
-#define SRV_START_RANDOMMAP			4
+#define SRV_START_RANDOMMAP		4
 
-#define LISTMAPS_USERID				0
-#define LISTMAPS_LAST				1
+#define LISTMAPS_USERID	0
+#define LISTMAPS_LAST		1
 
-#define TIMELIMIT_NOT_SET 			-1.0
+#define TIMELIMIT_NOT_SET -1.0
 
 new MENU_CHOOSEMAP[] = "gal_menuChooseMap";
 
@@ -61,8 +63,8 @@ new DIR_CONFIGS[64];
 new DIR_DATA[64];
 
 new CLR_RED[3];			// \r
-new CLR_WHITE[3];   		// \w
-new CLR_YELLOW[3];  		// \y
+new CLR_WHITE[3];   	// \w
+new CLR_YELLOW[3];  	// \y
 new CLR_GREY[3];		// \d
 
 new bool:g_wasLastRound = false;
@@ -116,7 +118,15 @@ new cvar_soundsMute;
 public plugin_init()
 {
 	// build version information
-	register_plugin("Менеджер карт", "1.1", "WAW555");
+	new jnk[1], version[8], rev[8];
+	parse(PLUGIN_VERSION, version, sizeof(version)-1, jnk, sizeof(jnk)-1, rev, sizeof(rev)-1, jnk, sizeof(jnk)-1);
+	new pluginVersion[16];
+	formatex(pluginVersion, sizeof(pluginVersion)-1, "%s.%s", version, rev);
+
+	register_plugin("Galileo", pluginVersion, "Brad Jones");
+	
+	register_cvar("gal_version", pluginVersion, FCVAR_SERVER|FCVAR_SPONLY);
+	set_cvar_string("gal_version", pluginVersion);
 	
 	register_cvar("gal_server_starting", "1", FCVAR_SPONLY);
 	cvar_emptyCycle = register_cvar("gal_in_empty_cycle", "0", FCVAR_SPONLY);
@@ -143,9 +153,9 @@ public plugin_init()
 	register_menucmd(g_menuChooseMap, MENU_KEY_1|MENU_KEY_2|MENU_KEY_3|MENU_KEY_4|MENU_KEY_5|MENU_KEY_6|MENU_KEY_7|MENU_KEY_8|MENU_KEY_9|MENU_KEY_0, "vote_handleChoice");
 
 	register_clcmd("say", "cmd_say", -1);
-	register_clcmd("say nextmap", "cmd_nextmap", 0, "- показать следующую карту");
-	register_clcmd("say currentmap", "cmd_currentmap", 0, "- показать текущую карту");
-	register_clcmd("say ff", "cmd_ff", 0, "- статус поражения своих");	// grrface
+	register_clcmd("say nextmap", "cmd_nextmap", 0, "- displays nextmap");
+	register_clcmd("say currentmap", "cmd_currentmap", 0, "- display current map");
+	register_clcmd("say ff", "cmd_ff", 0, "- display friendly fire status");	// grrface
 	register_clcmd("votemap", "cmd_HL1_votemap");
 	register_clcmd("listmaps", "cmd_HL1_listmaps");
 
@@ -154,49 +164,51 @@ public plugin_init()
 
 	register_cvar("amx_nextmap", "", FCVAR_SERVER|FCVAR_EXTDLL|FCVAR_SPONLY);
 	cvar_extendmapMax				=	register_cvar("amx_extendmap_max", "90");
-	cvar_extendmapStep				=	register_cvar("amx_extendmap_step", "30");
+	cvar_extendmapStep			=	register_cvar("amx_extendmap_step", "15");
 	
-	cvar_cmdVotemap 				= 	register_cvar("gal_cmd_votemap", "0");
-	cvar_cmdListmaps				= 	register_cvar("gal_cmd_listmaps", "2");
+	cvar_cmdVotemap 				= register_cvar("gal_cmd_votemap", "0");
+	cvar_cmdListmaps				= register_cvar("gal_cmd_listmaps", "2");
 
-	cvar_listmapsPaginate	 			= 	register_cvar("gal_listmaps_paginate", "10");
+	cvar_listmapsPaginate	 	= register_cvar("gal_listmaps_paginate", "10");
 	
-	cvar_banRecent					= 	register_cvar("gal_banrecent", "3");
-	cvar_banRecentStyle				= 	register_cvar("gal_banrecentstyle", "1");
+	cvar_banRecent					= register_cvar("gal_banrecent", "3");
+	cvar_banRecentStyle			= register_cvar("gal_banrecentstyle", "1");
 
-	cvar_endOnRound					= 	register_cvar("gal_endonround", "1");
-	cvar_endOfMapVote				= 	register_cvar("gal_endofmapvote", "1");
+	cvar_endOnRound					= register_cvar("gal_endonround", "1");
+	cvar_endOfMapVote				= register_cvar("gal_endofmapvote", "1");
 
 	cvar_emptyWait					=	register_cvar("gal_emptyserver_wait", "0");
-	cvar_emptyMapFile				= 	register_cvar("gal_emptyserver_mapfile", "");
+	cvar_emptyMapFile				= register_cvar("gal_emptyserver_mapfile", "");
 
-	cvar_srvStart					= 	register_cvar("gal_srv_start", "0");
+	cvar_srvStart						= register_cvar("gal_srv_start", "0");
 
-	cvar_rtvCommands				= 	register_cvar("gal_rtv_commands", "3");
-	cvar_rtvWait	  				= 	register_cvar("gal_rtv_wait", "10");
-	cvar_rtvRatio					= 	register_cvar("gal_rtv_ratio", "0.60");
-	cvar_rtvReminder				= 	register_cvar("gal_rtv_reminder", "2");
+	cvar_rtvCommands				= register_cvar("gal_rtv_commands", "3");
+	cvar_rtvWait	  				= register_cvar("gal_rtv_wait", "10");
+	cvar_rtvRatio						= register_cvar("gal_rtv_ratio", "0.60");
+	cvar_rtvReminder				= register_cvar("gal_rtv_reminder", "2");
 
-	cvar_nomPlayerAllowance				= 	register_cvar("gal_nom_playerallowance", "2");
-	cvar_nomMapFile					= 	register_cvar("gal_nom_mapfile", "mapcycle");
-	cvar_nomPrefixes				= 	register_cvar("gal_nom_prefixes", "1");
-	cvar_nomQtyUsed					= 	register_cvar("gal_nom_qtyused", "0");
+	cvar_nomPlayerAllowance	= register_cvar("gal_nom_playerallowance", "2");
+	cvar_nomMapFile					= register_cvar("gal_nom_mapfile", "mapcycle");
+	cvar_nomPrefixes				= register_cvar("gal_nom_prefixes", "1");
+	cvar_nomQtyUsed					= register_cvar("gal_nom_qtyused", "0");
 	
-	cvar_voteWeight 				= 	register_cvar("gal_vote_weight", "2");
-	cvar_voteWeightFlags				= 	register_cvar("gal_vote_weightflags", "y");
-	cvar_voteMapFile				= 	register_cvar("gal_vote_mapfile", "mapcycle.txt");
-	cvar_voteDuration				= 	register_cvar("gal_vote_duration", "15");
-	cvar_voteExpCountdown				= 	register_cvar("gal_vote_expirationcountdown", "1");
-	cvar_voteMapChoiceCnt				=	register_cvar("gal_vote_mapchoices", "5");
-	cvar_voteAnnounceChoice				= 	register_cvar("gal_vote_announcechoice", "1");
+	cvar_voteWeight 				= register_cvar("gal_vote_weight", "2");
+	cvar_voteWeightFlags		= register_cvar("gal_vote_weightflags", "y");
+	cvar_voteMapFile				= register_cvar("gal_vote_mapfile", "mapcycle.txt");
+	cvar_voteDuration				= register_cvar("gal_vote_duration", "15");
+	cvar_voteExpCountdown		= register_cvar("gal_vote_expirationcountdown", "1");
+	cvar_voteMapChoiceCnt		=	register_cvar("gal_vote_mapchoices", "5");
+	cvar_voteAnnounceChoice	= register_cvar("gal_vote_announcechoice", "1");
 	cvar_voteStatus					=	register_cvar("gal_vote_showstatus", "1");
-	cvar_voteStatusType				= 	register_cvar("gal_vote_showstatustype", "2");
-	cvar_voteUniquePrefixes 			= 	register_cvar("gal_vote_uniqueprefixes", "0");
+	cvar_voteStatusType			= register_cvar("gal_vote_showstatustype", "2");
+	cvar_voteUniquePrefixes = register_cvar("gal_vote_uniqueprefixes", "0");
 	
-	cvar_runoffEnabled				= 	register_cvar("gal_runoff_enabled", "0");
-	cvar_runoffDuration				= 	register_cvar("gal_runoff_duration", "10");
+	cvar_runoffEnabled			= register_cvar("gal_runoff_enabled", "0");
+	cvar_runoffDuration			= register_cvar("gal_runoff_duration", "10");
 	
-	cvar_soundsMute					= 	register_cvar("gal_sounds_mute", "0");
+	cvar_soundsMute					= register_cvar("gal_sounds_mute", "0");
+	
+	//set_task(1.0, "dbg_test",_,_,_,"a", 15);
 }
 
 public dbg_fakeVotes()
@@ -240,6 +252,7 @@ public plugin_cfg()
 	get_pcvar_string(cvar_voteWeightFlags, g_voteWeightFlags, sizeof(g_voteWeightFlags)-1);
 	get_mapname(g_currentMap, sizeof(g_currentMap)-1);
 	g_choiceMax = max(min(MAX_MAPS_IN_VOTE, get_pcvar_num(cvar_voteMapChoiceCnt)), 2);
+//	g_nonOverlapHudSync = CreateHudSyncObj();
 	g_fillerMap = ArrayCreate(32);
 	g_nominationMap = ArrayCreate(32);
 
@@ -266,7 +279,7 @@ public plugin_cfg()
 	if (get_pcvar_num(cvar_nomPlayerAllowance))
 	{
 		register_concmd("gal_listmaps", "cmd_listmaps");
-		register_clcmd("say nominations", "cmd_nominations", 0, "- показать текущую номинацию следующих карт");
+		register_clcmd("say nominations", "cmd_nominations", 0, "- displays current nominations for next map");
 
 		if (get_pcvar_num(cvar_nomPrefixes))
 		{
@@ -562,12 +575,10 @@ public cmd_startVote(id, level, cid)
 
 	if (g_voteStatus & VOTE_IN_PROGRESS)
 	{
-		
 		client_print(id, print_chat, "%L", id, "GAL_VOTE_INPROGRESS");
 	}
 	else if (g_voteStatus & VOTE_IS_OVER)
 	{
-		client_cmd(0,"spk sound/ms/voteend");
 		client_print(id, print_chat, "%L", id, "GAL_VOTE_ENDED");
 	}
 	else
@@ -836,6 +847,28 @@ public map_manageEnd()
 	dbg_log(2, "%32s mp_timelimit: %f", "map_manageEnd(out)", get_cvar_float("mp_timelimit"));
 }
 
+/*
+public intermission_displayTimer(originalChatTime)
+{
+	static secondsLeft = -1;
+	if (secondsLeft == -1)
+	{
+		secondsLeft = originalChatTime;
+	}
+	secondsLeft--;
+
+	client_print(0, print_center, "Intermission ends in %i seconds.", secondsLeft);
+	client_print(0, print_chat, "%i seconds", secondsLeft);
+
+	set_hudmessage(255, 0, 90, 0.80, 0.20, 0, 1.0, 2.0, 0.1, 0.1, -1);
+//	set_hudmessage(0, 222, 50, -1.0, 0.13, 0, 1.0, 0.94, 0.0, 0.0, -1);
+	show_hudmessage(0, "Intermission ends in %i seconds.", secondsLeft);
+	// use audio since visual doesn't seem to work
+	// something like "map will change in 2 seconds"
+	
+}
+*/
+
 public event_round_start()
 {
 	if (g_wasLastRound)
@@ -959,7 +992,7 @@ nomination_attempt(id, nomination[]) // (playerName[], &phraseIdx, matchingSegme
 	
 	// assume there'll be more than one match (because we're lazy) and starting building the match menu
 	//menu_destroy(g_nominationMatchesMenu[id]);
-	g_nominationMatchesMenu[id] = menu_create("Номинация карт", "nomination_handleMatchChoice");
+	g_nominationMatchesMenu[id] = menu_create("Nominate Map", "nomination_handleMatchChoice");
 	
 	// gather all maps that match the nomination
 	new mapIdx, nominationMap[32], matchCnt = 0, matchIdx = -1, info[1], choice[64], disabledReason[16];
@@ -1260,6 +1293,9 @@ public nomination_list(id)
 	{
 		client_print(0, print_chat, "%L: %L", LANG_PLAYER, "GAL_NOMINATIONS", LANG_PLAYER, "NONE");
 	}
+
+//	set_hudmessage(255, 0, 90, 0.80, 0.20, 0, 1.0, 12.0, 0.1, 0.1, -1);
+//	ShowSyncHudMsg(id, g_nonOverlapHudSync, hudMessage);
 }
 
 public vote_startDirector(bool:forced)
@@ -1342,11 +1378,11 @@ public vote_startDirector(bool:forced)
 		// make perfunctory announcement: "get ready to choose a map"
 		if (!(get_pcvar_num(cvar_soundsMute) & SOUND_GETREADYTOCHOOSE))
 		{
-			client_cmd(0, "spk sound/prevote");
+			client_cmd(0, "spk ^"get red(e80) ninety(s45) to check(e20) use bay(s18) mass(e42) cap(s50)^"");
 		}
 
 		// announce the pending vote countdown from 7 to 1
-		set_task(1.0, "vote_countdownPendingVote", _, _, _, "a", 10);
+		set_task(1.0, "vote_countdownPendingVote", _, _, _, "a", 7);
 
 		// display the map choices
 		set_task(8.5, "vote_handleDisplay");
@@ -1376,7 +1412,7 @@ public vote_startDirector(bool:forced)
 
 public vote_countdownPendingVote()
 {
-	static countdown = 10;
+	static countdown = 7;
 
 	// visual countdown	
 	set_hudmessage(0, 222, 50, -1.0, 0.13, 0, 1.0, 0.94, 0.0, 0.0, -1);
@@ -1385,10 +1421,10 @@ public vote_countdownPendingVote()
 	// audio countdown
 	if (!(get_pcvar_num(cvar_soundsMute) & SOUND_COUNTDOWN))
 	{	
-		new word[9];
-		num_to_word(countdown, word, 8);
+		new word[6];
+		num_to_word(countdown, word, 5);
 		
-		client_cmd(0, "spk ^"sound/ms/%s^"", word);
+		client_cmd(0, "spk ^"fvox/%s^"", word);
 	}
 	
 	// decrement the countdown
@@ -1396,7 +1432,7 @@ public vote_countdownPendingVote()
 	
 	if (countdown == 0)
 	{
-		countdown = 10;
+		countdown = 7;
 	}
 }
 
@@ -1641,7 +1677,7 @@ public vote_handleDisplay()
 	// announce: "time to choose"
 	if (!(get_pcvar_num(cvar_soundsMute) & SOUND_TIMETOCHOOSE))
 	{
-		client_cmd(0, "spk sound/ms/votestart");
+		client_cmd(0, "spk Gman/Gman_Choose%i", random_num(1, 2));
 	}
 
 	if (g_voteStatus & VOTE_IS_RUNOFF)
@@ -1814,7 +1850,6 @@ public vote_display(arg[3])
 	}
 	else
 	{
-		client_cmd(0,"spk sound/ms/voteend");
 		formatex(menuDirty, sizeof(menuDirty)-1, "%s^n^n%s%L", voteStatus, CLR_YELLOW, LANG_SERVER, "GAL_VOTE_ENDED");
 	}
 
@@ -1988,7 +2023,7 @@ public vote_expire()
 				client_print(0, print_chat, "%L", LANG_PLAYER, "GAL_RUNOFF_REQUIRED");
 				if (!(get_pcvar_num(cvar_soundsMute) & SOUND_RUNOFFREQUIRED))
 				{
-					client_cmd(0, "spk sound/ms/repeat");
+					client_cmd(0, "spk ^"run officer(e40) voltage(e30) accelerating(s70) is required^"");
 				}
 
 				// let the server know the next vote will be a runoff
@@ -2596,6 +2631,39 @@ map_listAll(id)
 	}
 }
 
+/*
+map_listMatches(id, match[])
+{
+	strtolower(match);
+	con_print(id, "%L", id, "GAL_MATCHING", match);
+	con_print(id, "------------------------------------------");
+	
+	new mapName[32], matchCnt;
+	new nominated[64], nominator_id, name[32];
+
+	for (new idx = 1; idx <= g_nominationMapCnt; ++idx)
+	{
+		copy(mapName, sizeof(mapName)-1, g_nominationMap[idx]);
+		strtolower(mapName);
+		
+		if (containi(mapName, match) > -1)
+		{
+			nominator_id = nomination_getPlayer(idx);
+			if (nominator_id)
+			{
+				get_user_name(nominator_id, name, sizeof(name)-1);
+				formatex(nominated, sizeof(nominated)-1, "(nominated by %s)", name);
+			}
+			else
+			{
+				nominated[0] = 0;
+			}			
+			con_print(id, "%3i: %s  %s", ++matchCnt, g_nominationMap[idx], nominated);
+		}
+	}
+}
+*/
+
 con_print(id, message[], {Float,Sql,Result,_}:...)
 {
 	new consoleMessage[256];
@@ -2836,12 +2904,3 @@ dbg_log(const mode, const text[] = "", {Float,Sql,Result,_}:...)
 	// not needed but gets rid of stupid compiler error
 	if (text[0] == 0) return;
 }
-
-public plugin_precache()
-{
-	precache_sound("ms/votestart.wav");
-	precache_sound("ms/voteend.wav");
-	precache_sound("ms/repeat.wav");
-	precache_sound("ms/prevote.wav");
-}
-

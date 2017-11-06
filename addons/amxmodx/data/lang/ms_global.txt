@@ -1,0 +1,11 @@
+[ru]
+MS_ATTENTION = [Внимание]
+MS_MORE = Далее
+MS_BACK = Назад
+MS_EXIT = Выход
+
+[en]
+MS_ATTENTION = [Attention]
+MS_MORE = More
+MS_BACK = Back
+MS_EXIT = Exit

@@ -25,7 +25,7 @@ Age=1263688137
 [ms_voteban.sma]
 Age=1263688859
 [ms_miscstats.sma]
-Age=1264453124
+Age=1264518903
 [admin.sma]
 Age=1264061037
 [statscfg.sma]
@@ -46,3 +46,7 @@ Age=1264387036
 Age=1264387428
 [ms_shoot_grenade.sma]
 Age=1264387545
+[ms_blockmotd.sma]
+Age=1264518731
+[ms_mapchooser.sma]
+Age=1265007444
