@@ -35,7 +35,7 @@ new g_i_pcvar_TimeOutNominate // Квар теймера отложенной н
 //Включение выключение функций
 new bool:g_b_changemap = false; // Переменная указывает, разрешено ли менять карту
 new bool:g_b_changemap_full = false; // Переменная указывает, разрешено ли менять карту
-//new bool:g_b_votemap = true; // Переменная указывает разрешено ли голосовать
+new bool:g_b_votemap = true; // Переменная указывает разрешено ли голосовать
 //Время игры на карте
 new Float: g_f_MapTimer //Счетчик минут
 
@@ -94,8 +94,8 @@ public plugin_cfg()
 
 public Cmd_Vote_Map(id)
 {	
-	//if(g_b_votemap) // Проверяем Если голосование разрешено
-	//{
+	if(g_b_votemap) // Проверяем Если голосование разрешено
+	{
 		new s_timer = check_disable_nominate()
 		if ( s_timer )
 		{
@@ -104,10 +104,10 @@ public Cmd_Vote_Map(id)
 		}else{
 			Vote_Map_Menu(id, g_i_MenuPosition[id] = 0); // Показываем меню с картами
 		}
-	//}else{
-	//	client_printc(id, "\g%L \d%L %L \g%s",id, "MS_ATTENTION", id, "VOTEMAP_VOTING_IS_COMPLETED", id, "VOTEMAP_NEXT_MAP",  NEXT_MAP_NAME);
-	//	client_cmd(id, "spk sound/events/friend_died.wav");
-	//}
+	}else{
+		client_printc(id, "\g%L \d%L %L \g%s",id, "MS_ATTENTION", id, "VOTEMAP_VOTING_IS_COMPLETED", id, "VOTEMAP_NEXT_MAP",  NEXT_MAP_NAME);
+		client_cmd(id, "spk sound/events/friend_died.wav");
+	}
 }
 
 //Создаем меню с картами
@@ -323,7 +323,7 @@ public CheckVotes(id, voter)
 	{
 		NEXT_MAP_NAME = NOMINATION_MAPS_NAME[id]
 		g_b_changemap = true;
-		//g_b_votemap = false;
+		g_b_votemap = false;
 		new s_Name[32];
 		get_user_name(voter, s_Name, charsmax(s_Name));
 		new i_Players[32], i_PlayersNum
