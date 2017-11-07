@@ -110,13 +110,13 @@ new const _msound[] = "_msound"
 
 new g_MultiKillMsg[7][] =
 {
-	"–û–¢–õ–ò–ß–ù–´–ô –í–´–°–¢–†–ï–õ! %s^n%L %d %L (%d %L)", 
-	"–ö–†–£–¢–û!!! %s^n%L %d %L (%d %L)", 
-	"%s –°–î–û–•–ù–ò –ú–†–ê–ó–¨!!!^n%L %d %L (%d %L)", 
-	"–£–ú–û–õ–ö–ù–ò!!! %s^n%L %d %L (%d hs)", 
-	"%s, –ö–ê–ö –û–ù –í–ê–° –ü–û–ò–ú–ï–õ!!!^n%L %d %L (%d %L)", 
-	"%s –í –Ø–†–û–°–¢–ò!^n%L %d %L (%d %L)", 
-	"%s –û–ß–ï–ù–¨ –ö–†–£–¢–û–ô!!!!^n%L %d %L (%d %L)"
+	"Œ“À»◊Õ€… ¬€—“–≈À! %s^n%L %d %L (%d %L)", 
+	" –”“Œ!!! %s^n%L %d %L (%d %L)", 
+	"%s —ƒŒ’Õ» Ã–¿«‹!!!^n%L %d %L (%d %L)", 
+	"”ÃŒÀ Õ»!!! %s^n%L %d %L (%d hs)", 
+	"%s,  ¿  ŒÕ ¬¿— œŒ»Ã≈À!!!^n%L %d %L (%d %L)", 
+	"%s ¬ ﬂ–Œ—“»!^n%L %d %L (%d %L)", 
+	"%s Œ◊≈Õ‹  –”“Œ…!!!!^n%L %d %L (%d %L)"
 }
 
 new g_Sounds[7][SOUND_SHORTPATH_MAXLEN] = 
@@ -220,13 +220,13 @@ new g_playerjoinserver[SOUND_SHORTPATH_MAXLEN] = "ms/playerjoinserver.mp3"
 
 new g_KillingMsg[7][] =
 {
-	"%s: –ù–ò–®–£–¢–Ø!", 
-	"%s: –î–ï–†–ó–ö–ò–ô!!!", 
-	"%s: –ë–û–†–ó–´–ô!!!", 
-	"%s: –ë–ï–°–°–ú–ï–†–¢–ù–´–ô!!!", 
-	"%s: –û–ß–ï–ù–¨ –ö–†–£–¢–û–ô!!!",
-	"%s: –ù–ò–®–£–¢–Ø!", 
-	"%s: –î–ï–†–ó–ö–ò–ô!!!"
+	"%s: Õ»ÿ”“ﬂ!", 
+	"%s: ƒ≈–« »…!!!", 
+	"%s: ¡Œ–«€…!!!", 
+	"%s: ¡≈——Ã≈–“Õ€…!!!", 
+	"%s: Œ◊≈Õ‹  –”“Œ…!!!",
+	"%s: Õ»ÿ”“ﬂ!", 
+	"%s: ƒ≈–« »…!!!"
 }
 
 new g_KinfeMsg[4][] =
@@ -854,7 +854,7 @@ public client_authorized(id)
 
 public client_putinserver(id)
 {
-	//–ó–∞–¥–∞–µ–º –ø—Ä–∞–≤–∞ –¥–ª—è –¥–µ–≤—É—à–µ–∫
+	//«‡‰‡ÂÏ Ô‡‚‡ ‰Îˇ ‰Â‚Û¯ÂÍ
 	if (get_user_flags(id) & ADMIN_LEVEL_C){
 		girl[id]=true
 		}else{
@@ -867,7 +867,7 @@ public client_putinserver(id)
 
 public client_disconnected(id)
 {
-	//–°–Ω–∏–º–∞–µ–º –ø—Ä–∞–≤–∞ –¥–ª—è –¥–µ–≤—É—à–µ–∫
+	//—ÌËÏ‡ÂÏ Ô‡‚‡ ‰Îˇ ‰Â‚Û¯ÂÍ
 	girl[id]=false
 	g_connected[id] = false
 }
@@ -1433,7 +1433,7 @@ public bombTimer()
 			}
 
 			set_dhudmessage(r, g, 0, -1.0, 0.95, 0, 0.01, 1.1, 0.001, 0.001)
-			show_dhudmessage(0, "–î–æ –≤–∑—Ä—ã–≤–∞ –æ—Å—Ç–∞–ª–æ—Å—å: %d —Å–µ–∫", g_C4Timer)
+			show_dhudmessage(0, "ƒÓ ‚Á˚‚‡ ÓÒÚ‡ÎÓÒ¸: %d ÒÂÍ", g_C4Timer)
 		}
 		if (BombCountVoice)
 		{
@@ -1523,12 +1523,36 @@ public bomb_explode(planter, defuser)
 
 play_sound(id, sound[])
 {
-	if (b_playsound)
+	if( id )
 	{
-		if( id )
+		if( g_msounds[id] )
 		{
-			if( g_msounds[id] )
+			if(containi(sound, ".wav") != -1)
 			{
+				formatex(PlayCommand, 127, "spk %s", sound)
+				client_cmd(id, "%s", PlayCommand)
+			}
+			else if(containi(sound, ".mp3") != -1)
+			{
+				formatex(PlayCommand, 127, "mp3 play sound/%s", sound)
+				client_cmd(id, "%s", PlayCommand)
+			}
+			else
+			{
+				log_amx("Unsupported file type <%s>", sound)
+			}
+
+		}
+	}
+	else
+	{
+		new players[MAX_PLAYERS], pnum, id
+		get_players(players, pnum, "ch")
+
+		for(--pnum; pnum>=0; pnum--)
+		{
+			id = players[pnum]
+			if ( g_connected[id] && g_msounds[id] )
 				if(containi(sound, ".wav") != -1)
 				{
 					formatex(PlayCommand, 127, "spk %s", sound)
@@ -1543,33 +1567,6 @@ play_sound(id, sound[])
 				{
 					log_amx("Unsupported file type <%s>", sound)
 				}
-
-			}
-		}
-		else
-		{
-			new players[MAX_PLAYERS], pnum, id
-			get_players(players, pnum, "ch")
-
-			for(--pnum; pnum>=0; pnum--)
-			{
-				id = players[pnum]
-				if ( g_connected[id] && g_msounds[id] )
-					if(containi(sound, ".wav") != -1)
-					{
-						formatex(PlayCommand, 127, "spk %s", sound)
-						client_cmd(id, "%s", PlayCommand)
-					}
-					else if(containi(sound, ".mp3") != -1)
-					{
-						formatex(PlayCommand, 127, "mp3 play sound/%s", sound)
-						client_cmd(id, "%s", PlayCommand)
-					}
-					else
-					{
-						log_amx("Unsupported file type <%s>", sound)
-					}
-			}
 		}
 	}
 }

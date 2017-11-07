@@ -110,13 +110,13 @@ new const _msound[] = "_msound"
 
 new g_MultiKillMsg[7][] =
 {
-	"ĞĞ¢Ğ›Ğ˜Ğ§ĞĞ«Ğ™ Ğ’Ğ«Ğ¡Ğ¢Ğ Ğ•Ğ›! %s^n%L %d %L (%d %L)", 
-	"ĞšĞ Ğ£Ğ¢Ğ!!! %s^n%L %d %L (%d %L)", 
-	"%s Ğ¡Ğ”ĞĞ¥ĞĞ˜ ĞœĞ ĞĞ—Ğ¬!!!^n%L %d %L (%d %L)", 
-	"Ğ£ĞœĞĞ›ĞšĞĞ˜!!! %s^n%L %d %L (%d hs)", 
-	"%s, ĞšĞĞš ĞĞ Ğ’ĞĞ¡ ĞŸĞĞ˜ĞœĞ•Ğ›!!!^n%L %d %L (%d %L)", 
-	"%s Ğ’ Ğ¯Ğ ĞĞ¡Ğ¢Ğ˜!^n%L %d %L (%d %L)", 
-	"%s ĞĞ§Ğ•ĞĞ¬ ĞšĞ Ğ£Ğ¢ĞĞ™!!!!^n%L %d %L (%d %L)"
+	"ÎÒËÈ×ÍÛÉ ÂÛÑÒĞÅË! %s^n%L %d %L (%d %L)", 
+	"ÊĞÓÒÎ!!! %s^n%L %d %L (%d %L)", 
+	"%s ÑÄÎÕÍÈ ÌĞÀÇÜ!!!^n%L %d %L (%d %L)", 
+	"ÓÌÎËÊÍÈ!!! %s^n%L %d %L (%d hs)", 
+	"%s, ÊÀÊ ÎÍ ÂÀÑ ÏÎÈÌÅË!!!^n%L %d %L (%d %L)", 
+	"%s Â ßĞÎÑÒÈ!^n%L %d %L (%d %L)", 
+	"%s Î×ÅÍÜ ÊĞÓÒÎÉ!!!!^n%L %d %L (%d %L)"
 }
 
 new g_Sounds[7][SOUND_SHORTPATH_MAXLEN] = 
@@ -220,13 +220,13 @@ new g_playerjoinserver[SOUND_SHORTPATH_MAXLEN] = "ms/playerjoinserver.mp3"
 
 new g_KillingMsg[7][] =
 {
-	"%s: ĞĞ˜Ğ¨Ğ£Ğ¢Ğ¯!", 
-	"%s: Ğ”Ğ•Ğ Ğ—ĞšĞ˜Ğ™!!!", 
-	"%s: Ğ‘ĞĞ Ğ—Ğ«Ğ™!!!", 
-	"%s: Ğ‘Ğ•Ğ¡Ğ¡ĞœĞ•Ğ Ğ¢ĞĞ«Ğ™!!!", 
-	"%s: ĞĞ§Ğ•ĞĞ¬ ĞšĞ Ğ£Ğ¢ĞĞ™!!!",
-	"%s: ĞĞ˜Ğ¨Ğ£Ğ¢Ğ¯!", 
-	"%s: Ğ”Ğ•Ğ Ğ—ĞšĞ˜Ğ™!!!"
+	"%s: ÍÈØÓÒß!", 
+	"%s: ÄÅĞÇÊÈÉ!!!", 
+	"%s: ÁÎĞÇÛÉ!!!", 
+	"%s: ÁÅÑÑÌÅĞÒÍÛÉ!!!", 
+	"%s: Î×ÅÍÜ ÊĞÓÒÎÉ!!!",
+	"%s: ÍÈØÓÒß!", 
+	"%s: ÄÅĞÇÊÈÉ!!!"
 }
 
 new g_KinfeMsg[4][] =
@@ -854,7 +854,7 @@ public client_authorized(id)
 
 public client_putinserver(id)
 {
-	//Ğ—Ğ°Ğ´Ğ°ĞµĞ¼ Ğ¿Ñ€Ğ°Ğ²Ğ° Ğ´Ğ»Ñ Ğ´ĞµĞ²ÑƒÑˆĞµĞº
+	//Çàäàåì ïğàâà äëÿ äåâóøåê
 	if (get_user_flags(id) & ADMIN_LEVEL_C){
 		girl[id]=true
 		}else{
@@ -867,7 +867,7 @@ public client_putinserver(id)
 
 public client_disconnected(id)
 {
-	//Ğ¡Ğ½Ğ¸Ğ¼Ğ°ĞµĞ¼ Ğ¿Ñ€Ğ°Ğ²Ğ° Ğ´Ğ»Ñ Ğ´ĞµĞ²ÑƒÑˆĞµĞº
+	//Ñíèìàåì ïğàâà äëÿ äåâóøåê
 	girl[id]=false
 	g_connected[id] = false
 }
@@ -1433,7 +1433,7 @@ public bombTimer()
 			}
 
 			set_dhudmessage(r, g, 0, -1.0, 0.95, 0, 0.01, 1.1, 0.001, 0.001)
-			show_dhudmessage(0, "Ğ”Ğ¾ Ğ²Ğ·Ñ€Ñ‹Ğ²Ğ° Ğ¾ÑÑ‚Ğ°Ğ»Ğ¾ÑÑŒ: %d ÑĞµĞº", g_C4Timer)
+			show_dhudmessage(0, "Äî âçğûâà îñòàëîñü: %d ñåê", g_C4Timer)
 		}
 		if (BombCountVoice)
 		{

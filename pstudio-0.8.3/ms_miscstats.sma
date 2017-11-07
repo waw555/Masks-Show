@@ -92,6 +92,7 @@ new g_left_sync
 new g_bottom_sync
 new g_he_sync
 new PlayCommand[128]
+new bool:b_playsound = false
 
 new bool:girl[33];
 
@@ -306,6 +307,15 @@ public plugin_init()
 		register_event("23", "chickenKill", "a", "1=108", "15=4")
 		register_event("23", "radioKill", "a", "1=108", n == 8 ? "15=2" : "15=8") // cz radio is wood
 		
+	} 
+	
+	if (equali(mapname, "de_", 3) || equali(mapname, "cs_", 3) || equali(mapname, "css_", 4))
+	{
+		b_playsound = true
+	}
+	else 
+	{
+		b_playsound = false
 	}
 	
 	g_center1_sync = CreateHudSyncObj()
@@ -1275,7 +1285,7 @@ public Event_HLTV_New_Round()
 
 public Delayed_New_Round()
 {
-	set_dhudmessage(200, 0, 0, -1.0, 0.02, 0, 6.0, 6.0, 0.5, 0.15)
+	set_dhudmessage(200, 0, 0, -1.0, 0.02, 0, 6.0, 3.0, 0.5, 0.15)
 	show_dhudmessage(0, "%L", LANG_PLAYER, "PREPARE_FIGHT", g_roundCount)
 }
 
@@ -1518,36 +1528,12 @@ public bomb_explode(planter, defuser)
 
 play_sound(id, sound[])
 {
-	if( id )
+	if (b_playsound)
 	{
-		if( g_msounds[id] )
+		if( id )
 		{
-			if(containi(sound, ".wav") != -1)
+			if( g_msounds[id] )
 			{
-				formatex(PlayCommand, 127, "spk %s", sound)
-				client_cmd(id, "%s", PlayCommand)
-			}
-			else if(containi(sound, ".mp3") != -1)
-			{
-				formatex(PlayCommand, 127, "mp3 play sound/%s", sound)
-				client_cmd(id, "%s", PlayCommand)
-			}
-			else
-			{
-				log_amx("Unsupported file type <%s>", sound)
-			}
-
-		}
-	}
-	else
-	{
-		new players[MAX_PLAYERS], pnum, id
-		get_players(players, pnum, "ch")
-
-		for(--pnum; pnum>=0; pnum--)
-		{
-			id = players[pnum]
-			if ( g_connected[id] && g_msounds[id] )
 				if(containi(sound, ".wav") != -1)
 				{
 					formatex(PlayCommand, 127, "spk %s", sound)
@@ -1562,6 +1548,33 @@ play_sound(id, sound[])
 				{
 					log_amx("Unsupported file type <%s>", sound)
 				}
+
+			}
+		}
+		else
+		{
+			new players[MAX_PLAYERS], pnum, id
+			get_players(players, pnum, "ch")
+
+			for(--pnum; pnum>=0; pnum--)
+			{
+				id = players[pnum]
+				if ( g_connected[id] && g_msounds[id] )
+					if(containi(sound, ".wav") != -1)
+					{
+						formatex(PlayCommand, 127, "spk %s", sound)
+						client_cmd(id, "%s", PlayCommand)
+					}
+					else if(containi(sound, ".mp3") != -1)
+					{
+						formatex(PlayCommand, 127, "mp3 play sound/%s", sound)
+						client_cmd(id, "%s", PlayCommand)
+					}
+					else
+					{
+						log_amx("Unsupported file type <%s>", sound)
+					}
+			}
 		}
 	}
 }

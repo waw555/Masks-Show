@@ -144,12 +144,12 @@ public Vote_Map_Menu(id, i_Pos)
 	for(new i_AddMapCount = i_Start; i_AddMapCount < i_End; ++i_AddMapCount)
 	{
 		
-		/*if(g_i_VotedPlayers[id] & (1 << i_AddMapCount))
+		if(g_i_VotedPlayers[id] & (1 << i_AddMapCount))
 		{
 			s_Color = "\y"
 		}else{
 			s_Color = "\w"
-		}*/
+		}
 		i_Keys |= (1 << i_CurrPos)
 		i_Len += formatex(s_Menu[i_Len], MENU_SIZE - i_Len, "\y%d. \w%s \d(\r%d%%\d)^n", ++i_CurrPos, NOMINATION_MAPS_NAME[i_AddMapCount], get_percent(g_i_Votes[i_AddMapCount], g_i_Num))
 	}
@@ -262,7 +262,7 @@ public Maps_Menu_Command(id, key) {
 	
 			for (i = 0; i < i_PlayerNum; i++)
 			{
-			client_printc(i_Players[i], "\g%L \t%s \d%L \t%s\d (\g%d%% %L %d%%%\d%)",i_Players[i], "MS_ATTENTION", s_Name[0],i_Players[i], "VOTEMAP_VOTED_CHANGE_MAP", NOMINATION_MAPS_NAME[i_MapsNum],get_percent(g_i_Votes[i_MapsNum], g_i_Num),i_Players[i], "VOTEMAP_OF",i_Percent);
+			client_printc(i_Players[i], "\g%L \t%s \d%L \t%s\d (\g%d%% %L %d%%%\d)",i_Players[i], "MS_ATTENTION", s_Name[0],i_Players[i], "VOTEMAP_VOTED_CHANGE_MAP", NOMINATION_MAPS_NAME[i_MapsNum],get_percent(g_i_Votes[i_MapsNum], g_i_Num),i_Players[i], "VOTEMAP_OF",i_Percent);
 			}
 			client_cmd(id, "spk sound/events/tutor_msg.wav");
 			CheckVotes(i_MapsNum, id);
@@ -581,10 +581,10 @@ public change_level_message (){
 	
 	for (i = 0; i < i_PlayersNum; i++)
 	{
-		set_dhudmessage(255, 0, 0, -1.0, 0.01, 0, 6.0, 1800.0);
+		set_dhudmessage(255, 0, 0, -1.0, 0.17, 0, 6.0, 1800.0);
 		show_dhudmessage(i_Players[i], "%L", i_Players[i], "VOTEMAP_LAST_ROUND");
 		
-		set_dhudmessage(0, 255, 0, -1.0, 0.04, 0, 6.0, 1800.0);
+		set_dhudmessage(0, 255, 0, -1.0, 0.14, 0, 6.0, 1800.0);
 		show_dhudmessage(i_Players[i], "%L %s", i_Players[i], "VOTEMAP_NEXT_MAP", NEXT_MAP_NAME);
 	}
 }

@@ -39,12 +39,12 @@ new bool:g_b_votemap = true; // Переменная указывает разр
 //Время игры на карте
 new Float: g_f_MapTimer //Счетчик минут
 
-//new g_szLogFile[64]; // Файл логов
+new g_szLogFile[64]; // Файл логов
 
 public plugin_init() {
 	register_plugin(PLUGIN, VERSION, AUTHOR)
 	//Регистрируем команды
-	register_dictionary("ms_votemap.txt"); // Регистрируем словарь
+	register_dictionary("ms_mapchooser.txt"); // Регистрируем словарь
 	register_dictionary("ms_global.txt"); // Регистрируем словарь
 	register_saycmd("votemap", "Cmd_Vote_Map", -1, ""); //Комманда вызова меню для смены карты
 	register_saycmd("rtv", "Cmd_Vote_Map", -1, ""); //Комманда вызова меню для смены карты
@@ -67,9 +67,9 @@ public plugin_init() {
 	g_i_pcvar_LastMaps = register_cvar ( "ms_lastmaps","7" )
 	g_i_pcvar_TimeOutNominate	= register_cvar ( "ms_timeout_nominate",		"10" )
 	
-	/*new szLogInfo[] = "amx_logdir"; // Записываем в переменную путь к папке с логами
+	new szLogInfo[] = "amx_logdir"; // Записываем в переменную путь к папке с логами
 	get_localinfo(szLogInfo, g_szLogFile, charsmax(g_szLogFile)); //Проверяем на наличие файлов
-	add(g_szLogFile, charsmax(g_szLogFile), "/votemap");// Добавляем файл в папку votemap
+	add(g_szLogFile, charsmax(g_szLogFile), "/ms_votemap");// Добавляем файл в папку votemap
 	
 	if(!dir_exists(g_szLogFile)) // проверяем если папка votemap не существует, до создаем ее
 		mkdir(g_szLogFile); // создаем папку votemap
@@ -77,11 +77,11 @@ public plugin_init() {
 	new szTime[32]; //Массив времени
 	get_time("%d-%m-%Y", szTime, charsmax(szTime)); //Получаем время
 	format(g_szLogFile, charsmax(g_szLogFile), "%s/%s.log", g_szLogFile, szTime); //Создаем файл с логами и добавляем текущее время в название файла 
-	*///Создаем путь к файлу с картами
+	//Создаем путь к файлу с картами
 	new s_TempConfigDir[64]; //Создаем переменную для путей к файлам со списком карт
 	get_configsdir(s_TempConfigDir, 63); // Получаем дирректорию с настройками
 	format(g_s_MapFile, 63, "%s/ms_config/ms_maps.ini", s_TempConfigDir);// Получаем путь к файлу с картами
-	format(g_s_LastMapFile, 63, "%s/ms_config/ms_mapslast.ini", s_TempConfigDir);// Получаем путь к файлу с последними картами
+	format(g_s_LastMapFile, 63, "%s/ms_config/ms_lastmaps.ini", s_TempConfigDir);// Получаем путь к файлу с последними картами
 	// Add your code here...
 	Load_Maps()
 }
@@ -262,7 +262,7 @@ public Maps_Menu_Command(id, key) {
 	
 			for (i = 0; i < i_PlayerNum; i++)
 			{
-			client_printc(i_Players[i], "\g%L \t%s \d%L \t%s\d (\g%d%% %L %d%%%\d)",i_Players[i], "MS_ATTENTION", s_Name[0],i_Players[i], "VOTEMAP_VOTED_CHANGE_MAP", NOMINATION_MAPS_NAME[i_MapsNum],get_percent(g_i_Votes[i_MapsNum], g_i_Num),i_Players[i], "VOTEMAP_OF",i_Percent);
+			client_printc(i_Players[i], "\g%L \t%s \d%L \t%s\d (\g %d%% %L %d%% \d)",i_Players[i], "MS_ATTENTION", s_Name[0],i_Players[i], "VOTEMAP_VOTED_CHANGE_MAP", NOMINATION_MAPS_NAME[i_MapsNum],get_percent(g_i_Votes[i_MapsNum], g_i_Num),i_Players[i], "VOTEMAP_OF",i_Percent);
 			}
 			client_cmd(id, "spk sound/events/tutor_msg.wav");
 			CheckVotes(i_MapsNum, id);
@@ -581,10 +581,10 @@ public change_level_message (){
 	
 	for (i = 0; i < i_PlayersNum; i++)
 	{
-		set_dhudmessage(255, 0, 0, -1.0, 0.17, 0, 6.0, 1800.0);
+		set_dhudmessage(255, 0, 0, -1.0, 0.01, 0, 6.0, 1800.0);
 		show_dhudmessage(i_Players[i], "%L", i_Players[i], "VOTEMAP_LAST_ROUND");
 		
-		set_dhudmessage(0, 255, 0, -1.0, 0.14, 0, 6.0, 1800.0);
+		set_dhudmessage(0, 255, 0, -1.0, 0.04, 0, 6.0, 1800.0);
 		show_dhudmessage(i_Players[i], "%L %s", i_Players[i], "VOTEMAP_NEXT_MAP", NEXT_MAP_NAME);
 	}
 }
@@ -603,4 +603,10 @@ public event_restart_game ( )
 {
 	g_f_MapTimer = get_gametime()
 	return PLUGIN_CONTINUE
+}
+
+public plugin_precache()
+{
+	precache_sound("events/friend_died.wav");
+	precache_sound("events/tutor_msg.wav");
 }
