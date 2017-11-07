@@ -92,7 +92,7 @@ new g_left_sync
 new g_bottom_sync
 new g_he_sync
 new PlayCommand[128]
-new bool:b_playsound = false
+new bool:b_playsound
 
 new bool:girl[33];
 
@@ -308,9 +308,14 @@ public plugin_init()
 		register_event("23", "radioKill", "a", "1=108", n == 8 ? "15=2" : "15=8") // cz radio is wood
 		
 	} 
-	else if (equali(mapname, "de_", 3) || equali(mapname, "cs_", 3) || equali(mapname, "css_", 4))
+	
+	if (equali(mapname, "de_", 3) || equali(mapname, "cs_", 3) || equali(mapname, "css_", 4))
 	{
 		b_playsound = true
+	}
+	else 
+	{
+		b_playsound = false
 	}
 	
 	g_center1_sync = CreateHudSyncObj()

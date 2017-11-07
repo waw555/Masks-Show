@@ -92,7 +92,7 @@ new g_left_sync
 new g_bottom_sync
 new g_he_sync
 new PlayCommand[128]
-new bool:b_playsound = false
+new bool:b_playsound
 
 new bool:girl[33];
 
