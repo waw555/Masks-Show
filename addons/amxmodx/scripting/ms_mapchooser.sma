@@ -223,7 +223,7 @@ public Maps_Menu_Command(id, key) {
 			
 			switch (i_PlayerNum){
 				case 1:{
-					i_Percent = 60;
+					i_Percent = 100;
 				}
 				case 2..5:{
 					i_Percent = 55;
@@ -254,7 +254,7 @@ public Maps_Menu_Command(id, key) {
 		
 				}
 				default:{
-					i_Percent = 60;
+					i_Percent = 100;
 				}
 			}
 				
@@ -283,7 +283,7 @@ public CheckVotes(id, voter)
 	
 	switch (g_i_Num){
 		case 1:{
-			i_Percent = 60;
+			i_Percent = 100;
 		}
 		case 2..5:{
 			i_Percent = 55;
@@ -314,7 +314,7 @@ public CheckVotes(id, voter)
 
 		}
 		default:{
-			i_Percent = 60;
+			i_Percent = 100;
 		}
 	}
 

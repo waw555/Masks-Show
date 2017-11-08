@@ -312,10 +312,12 @@ public plugin_init()
 	if (equali(mapname, "de_", 3) || equali(mapname, "cs_", 3) || equali(mapname, "css_", 4))
 	{
 		b_playsound = true
+		log_amx("b_playsound = true")
 	}
 	else 
 	{
 		b_playsound = false
+		log_amx("b_playsound = false")
 	}
 	
 	g_center1_sync = CreateHudSyncObj()

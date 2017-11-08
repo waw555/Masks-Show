@@ -223,7 +223,7 @@ public Maps_Menu_Command(id, key) {
 			
 			switch (i_PlayerNum){
 				case 1:{
-					i_Percent = 60;
+					i_Percent = 100;
 				}
 				case 2..5:{
 					i_Percent = 55;
@@ -254,7 +254,7 @@ public Maps_Menu_Command(id, key) {
 		
 				}
 				default:{
-					i_Percent = 60;
+					i_Percent = 100;
 				}
 			}
 				
@@ -262,7 +262,7 @@ public Maps_Menu_Command(id, key) {
 	
 			for (i = 0; i < i_PlayerNum; i++)
 			{
-			client_printc(i_Players[i], "\g%L \t%s \d%L \t%s\d (\g%d%% %L %d%%%\d%)",i_Players[i], "MS_ATTENTION", s_Name[0],i_Players[i], "VOTEMAP_VOTED_CHANGE_MAP", NOMINATION_MAPS_NAME[i_MapsNum],get_percent(g_i_Votes[i_MapsNum], g_i_Num),i_Players[i], "VOTEMAP_OF",i_Percent);
+			client_printc(i_Players[i], "\g%L \t%s \d%L \t%s\d (\g %d%% %L %d%% \d)",i_Players[i], "MS_ATTENTION", s_Name[0],i_Players[i], "VOTEMAP_VOTED_CHANGE_MAP", NOMINATION_MAPS_NAME[i_MapsNum],get_percent(g_i_Votes[i_MapsNum], g_i_Num),i_Players[i], "VOTEMAP_OF",i_Percent);
 			}
 			client_cmd(id, "spk sound/events/tutor_msg.wav");
 			CheckVotes(i_MapsNum, id);
