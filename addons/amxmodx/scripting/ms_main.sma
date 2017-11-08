@@ -60,7 +60,7 @@ new const ADMIN_MODEL_CT_6[] = "marinegirl_ct" // Морячка
 
 new const ADMIN_MODEL_T_1[] = "ms_admin_t_2" // Скелет
 new const ADMIN_MODEL_T_2[] = "cheburashka_t" // Чебурашка
-new const ADMIN_MODEL_T_3[] = "gena_ct" // Гена
+new const ADMIN_MODEL_T_3[] = "gena_t" // Гена
 new const ADMIN_MODEL_T_4[] = "girl_ter" // Девушка спецназ
 new const ADMIN_MODEL_T_5[] = "girl_ter1" // Дженифер
 new const ADMIN_MODEL_T_6[] = "kiska_t" // Модели администратора
@@ -333,7 +333,7 @@ public show_esp_menu(id){
 	new menu[1024];
 	//new keys=MENU_KEY_0|MENU_KEY_1|MENU_KEY_2|MENU_KEY_3|MENU_KEY_4|MENU_KEY_5|MENU_KEY_6|MENU_KEY_7|MENU_KEY_8|MENU_KEY_9;
 	new onoff[2][]={{"\rвыкл\w"},{"\yвкл\w"}} // \r=red \y=yellow \w white
-	new text[2][]={{"(используйте цифры)"},{"Изменить настройки^n F3\w"}} // \r=red \y=yellow \w white
+	new text[2][]={{"(используйте цифры)"},{"Изменить настройки^n /menu\w"}} // \r=red \y=yellow \w white
 	new text_index=get_pcvar_num(pcvar_help)
 	if (text_index!=1) text_index=0
 	format(menu, 1023, "\yМеню настроек\w^n^n %s ^n^n1. Луч смерти %s^n2. Отображать повреждения %s^n3. Показывать модели сервера %s^n4. Показывать меню при старте %s^n8. Сохранить и выйти",

@@ -1,0 +1,101 @@
+L 10/28/2017 - 22:51:33: Start of error session.
+L 10/28/2017 - 22:51:33: Info (map "de_dust2") (file "addons/amxmodx/logs/error_20171028.log")
+L 10/28/2017 - 22:51:33: [FAKEMETA] Invalid entity
+L 10/28/2017 - 22:51:33: [AMXX] Run time error 10 (plugin "ms_grenade_drops.amxx") (native "pev") - debug not enabled!
+L 10/28/2017 - 22:51:33: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 10/28/2017 - 22:51:36: [FAKEMETA] Invalid entity
+L 10/28/2017 - 22:51:36: [AMXX] Run time error 10 (plugin "ms_grenade_drops.amxx") (native "pev") - debug not enabled!
+L 10/28/2017 - 22:51:36: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 10/28/2017 - 22:51:49: [FAKEMETA] Invalid entity
+L 10/28/2017 - 22:51:49: [AMXX] Run time error 10 (plugin "ms_grenade_drops.amxx") (native "pev") - debug not enabled!
+L 10/28/2017 - 22:51:49: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 10/28/2017 - 23:06:26: Start of error session.
+L 10/28/2017 - 23:06:26: Info (map "de_dust2") (file "addons/amxmodx/logs/error_20171028.log")
+L 10/28/2017 - 23:06:26: [FAKEMETA] Invalid entity
+L 10/28/2017 - 23:06:26: [AMXX] Run time error 10 (plugin "ms_bomb_for_ct.amxx") (native "pev") - debug not enabled!
+L 10/28/2017 - 23:06:26: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 10/28/2017 - 23:06:26: [FAKEMETA] Invalid entity
+L 10/28/2017 - 23:06:26: [AMXX] Run time error 10 (plugin "ms_grenade_drops.amxx") (native "pev") - debug not enabled!
+L 10/28/2017 - 23:06:26: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 10/28/2017 - 23:06:27: [FAKEMETA] Invalid entity
+L 10/28/2017 - 23:06:27: [AMXX] Run time error 10 (plugin "ms_bomb_for_ct.amxx") (native "pev") - debug not enabled!
+L 10/28/2017 - 23:06:27: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 10/28/2017 - 23:06:27: [FAKEMETA] Invalid entity
+L 10/28/2017 - 23:06:27: [AMXX] Run time error 10 (plugin "ms_grenade_drops.amxx") (native "pev") - debug not enabled!
+L 10/28/2017 - 23:06:27: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 10/28/2017 - 23:06:27: [FAKEMETA] Invalid entity
+L 10/28/2017 - 23:06:27: [AMXX] Run time error 10 (plugin "ms_bomb_for_ct.amxx") (native "pev") - debug not enabled!
+L 10/28/2017 - 23:06:27: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 10/28/2017 - 23:06:27: [FAKEMETA] Invalid entity
+L 10/28/2017 - 23:06:27: [AMXX] Run time error 10 (plugin "ms_grenade_drops.amxx") (native "pev") - debug not enabled!
+L 10/28/2017 - 23:06:27: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 10/28/2017 - 23:06:29: [FAKEMETA] Invalid entity
+L 10/28/2017 - 23:06:29: [AMXX] Run time error 10 (plugin "ms_grenade_drops.amxx") (native "pev") - debug not enabled!
+L 10/28/2017 - 23:06:29: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 10/28/2017 - 23:06:30: [FAKEMETA] Invalid entity
+L 10/28/2017 - 23:06:30: [AMXX] Run time error 10 (plugin "ms_grenade_drops.amxx") (native "pev") - debug not enabled!
+L 10/28/2017 - 23:06:30: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 10/28/2017 - 23:09:58: [FAKEMETA] Invalid entity
+L 10/28/2017 - 23:09:58: [AMXX] Run time error 10 (plugin "ms_bomb_for_ct.amxx") (native "pev") - debug not enabled!
+L 10/28/2017 - 23:09:58: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 10/28/2017 - 23:09:58: [FAKEMETA] Invalid entity
+L 10/28/2017 - 23:09:58: [AMXX] Run time error 10 (plugin "ms_grenade_drops.amxx") (native "pev") - debug not enabled!
+L 10/28/2017 - 23:09:58: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 10/28/2017 - 23:09:58: [FAKEMETA] Invalid entity
+L 10/28/2017 - 23:09:58: [AMXX] Run time error 10 (plugin "ms_bomb_for_ct.amxx") (native "pev") - debug not enabled!
+L 10/28/2017 - 23:09:58: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 10/28/2017 - 23:09:58: [FAKEMETA] Invalid entity
+L 10/28/2017 - 23:09:58: [AMXX] Run time error 10 (plugin "ms_grenade_drops.amxx") (native "pev") - debug not enabled!
+L 10/28/2017 - 23:09:58: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 10/28/2017 - 23:09:59: [FAKEMETA] Invalid entity
+L 10/28/2017 - 23:09:59: [AMXX] Run time error 10 (plugin "ms_bomb_for_ct.amxx") (native "pev") - debug not enabled!
+L 10/28/2017 - 23:09:59: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 10/28/2017 - 23:09:59: [FAKEMETA] Invalid entity
+L 10/28/2017 - 23:09:59: [AMXX] Run time error 10 (plugin "ms_grenade_drops.amxx") (native "pev") - debug not enabled!
+L 10/28/2017 - 23:09:59: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 10/28/2017 - 23:10:00: [FAKEMETA] Invalid entity
+L 10/28/2017 - 23:10:00: [AMXX] Run time error 10 (plugin "ms_bomb_for_ct.amxx") (native "pev") - debug not enabled!
+L 10/28/2017 - 23:10:00: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 10/28/2017 - 23:10:00: [FAKEMETA] Invalid entity
+L 10/28/2017 - 23:10:00: [AMXX] Run time error 10 (plugin "ms_grenade_drops.amxx") (native "pev") - debug not enabled!
+L 10/28/2017 - 23:10:00: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 10/28/2017 - 23:36:18: Start of error session.
+L 10/28/2017 - 23:36:18: Info (map "cs_office") (file "addons/amxmodx/logs/error_20171028.log")
+L 10/28/2017 - 23:36:18: [FAKEMETA] Invalid entity
+L 10/28/2017 - 23:36:18: [AMXX] Run time error 10 (plugin "ms_grenade_drops.amxx") (native "pev") - debug not enabled!
+L 10/28/2017 - 23:36:18: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 10/28/2017 - 23:36:18: [FAKEMETA] Invalid entity
+L 10/28/2017 - 23:36:18: [AMXX] Run time error 10 (plugin "ms_grenade_drops.amxx") (native "pev") - debug not enabled!
+L 10/28/2017 - 23:36:18: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 10/28/2017 - 23:37:25: Start of error session.
+L 10/28/2017 - 23:37:25: Info (map "de_dust2") (file "addons/amxmodx/logs/error_20171028.log")
+L 10/28/2017 - 23:37:25: [FAKEMETA] Invalid entity
+L 10/28/2017 - 23:37:25: [AMXX] Run time error 10 (plugin "ms_bomb_for_ct.amxx") (native "pev") - debug not enabled!
+L 10/28/2017 - 23:37:25: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 10/28/2017 - 23:37:25: [FAKEMETA] Invalid entity
+L 10/28/2017 - 23:37:25: [AMXX] Run time error 10 (plugin "ms_grenade_drops.amxx") (native "pev") - debug not enabled!
+L 10/28/2017 - 23:37:25: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 10/28/2017 - 23:37:26: [FAKEMETA] Invalid entity
+L 10/28/2017 - 23:37:26: [AMXX] Run time error 10 (plugin "ms_bomb_for_ct.amxx") (native "pev") - debug not enabled!
+L 10/28/2017 - 23:37:26: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 10/28/2017 - 23:37:26: [FAKEMETA] Invalid entity
+L 10/28/2017 - 23:37:26: [AMXX] Run time error 10 (plugin "ms_grenade_drops.amxx") (native "pev") - debug not enabled!
+L 10/28/2017 - 23:37:26: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 10/28/2017 - 23:45:09: [FAKEMETA] Invalid entity
+L 10/28/2017 - 23:45:09: [AMXX] Run time error 10 (plugin "ms_bomb_for_ct.amxx") (native "pev") - debug not enabled!
+L 10/28/2017 - 23:45:09: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 10/28/2017 - 23:45:09: [FAKEMETA] Invalid entity
+L 10/28/2017 - 23:45:09: [AMXX] Run time error 10 (plugin "ms_grenade_drops.amxx") (native "pev") - debug not enabled!
+L 10/28/2017 - 23:45:09: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 10/28/2017 - 23:45:09: [FAKEMETA] Invalid entity
+L 10/28/2017 - 23:45:09: [AMXX] Run time error 10 (plugin "ms_bomb_for_ct.amxx") (native "pev") - debug not enabled!
+L 10/28/2017 - 23:45:09: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 10/28/2017 - 23:45:09: [FAKEMETA] Invalid entity
+L 10/28/2017 - 23:45:09: [AMXX] Run time error 10 (plugin "ms_grenade_drops.amxx") (native "pev") - debug not enabled!
+L 10/28/2017 - 23:45:09: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 10/28/2017 - 23:45:16: [FAKEMETA] Invalid entity
+L 10/28/2017 - 23:45:16: [AMXX] Run time error 10 (plugin "ms_bomb_for_ct.amxx") (native "pev") - debug not enabled!
+L 10/28/2017 - 23:45:16: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 10/28/2017 - 23:45:16: [FAKEMETA] Invalid entity
+L 10/28/2017 - 23:45:16: [AMXX] Run time error 10 (plugin "ms_grenade_drops.amxx") (native "pev") - debug not enabled!
+L 10/28/2017 - 23:45:16: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
