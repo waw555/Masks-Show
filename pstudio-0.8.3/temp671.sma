@@ -390,11 +390,8 @@ public show_esp_menu(id){
 	new menu[1024];
 	//new keys=MENU_KEY_0|MENU_KEY_1|MENU_KEY_2|MENU_KEY_3|MENU_KEY_4|MENU_KEY_5|MENU_KEY_6|MENU_KEY_7|MENU_KEY_8|MENU_KEY_9;
 	new onoff[2][]={{"\rвыкл\w"},{"\yвкл\w"}} // \r=red \y=yellow \w white
-	new text[2][]={{"(используйте цифры)"},{"Изменить настройки^n /menu\w"}} // \r=red \y=yellow \w white
-	new text_index=get_cvar_num("ms_help")
 	if (text_index!=1) text_index=0
-	format(menu, 1023, "\yМеню настроек\w^n^n %s ^n^n1. Луч смерти %s^n2. Отображать повреждения %s^n3. Показывать модели сервера %s^n4. Показывать меню при старте %s^n8. Сохранить и выйти",
-	text[text_index],
+	format(menu, 1023, "\yМеню настроек\w^n^n^n1. Луч смерти %s^n2. Отображать повреждения %s^n3. Показывать модели сервера %s^n4. Показывать меню при старте %s^n^n^n8. Сохранить и выйти",
 	onoff[admin_options[id][MS_DEATH_LINE]],
 	onoff[admin_options[id][MS_DAMAGE_MSG]],
 	onoff[admin_options[id][MS_MODEL]],
@@ -1203,8 +1200,8 @@ public client_putinserver(id){
 		admin_options[id][i]=true
 	}
 	load_vault_data(id);
-	if(admin_options[id][MS_AUTO_MENU]){
-	set_task(1.0,"cmd_esp_menu", id)
+	if(admin_options[id][MS_AUTO_MENU] || get_cvar_num("ms_help")){
+		set_task(1.0,"cmd_esp_menu", id)
 	}
 	if(admin_options[id][MS_MODEL]){
 	client_cmd(id,"cl_minmodels 0");

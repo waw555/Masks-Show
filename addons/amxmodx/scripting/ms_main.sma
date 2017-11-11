@@ -133,6 +133,69 @@ new g_player_model[33][32]//Текущая модель игрока
 new Float:g_models_targettime // Целая единица времени для последнего изменения модели
 new Float:g_roundstarttime // Последнее круглое стартовое время
 
+
+  // ------------------------------------------------------------------------------------------
+  // --PLUGIN ININITATION---------------------------------------------------------------------
+  // ------------------------------------------------------------------------------------------
+public plugin_init() {
+register_plugin("Меню моделей","0.1","WAW555");
+//РЕГИСТРАЦИЯ КОМАНД ЧАТА
+register_clcmd("say /model","currmodel",-1);
+register_clcmd("say model","usermodel",-1);
+register_clcmd("say /menu","cmd_esp_menu",-1);
+register_clcmd("say menu","cmd_esp_menu",-1);
+
+//РЕГИСТРАЦИЯ КОНСОЛЬНЫХ КОМАНД
+register_clcmd("ms_model","usermodel",-1,"Меню моделей");
+register_clcmd("menu","cmd_esp_menu",-1);
+
+//РЕГИСТРАЦИЯ КВАРОВ НАСТРОЙКИ
+register_cvar("ms_on_off","1")//Включение выключение плагина
+register_cvar("ms_help","0")//Показывать справку или нет
+    //КВАРЫ - Луч смерти
+register_cvar("amx_deathbeams_enabled","1")//Включить выключить показ откуда убили
+register_cvar("amx_deathbeams_randcolor","0")//Цвет лазера
+
+//РЕГИСТРАЦИЯ СОБЫТИЙ   
+register_forward( FM_SetClientKeyValue, "fw_SetClientKeyValue" );
+register_forward( FM_ClientUserInfoChanged, "fw_ClientUserInfoChanged" );
+register_event("TextMsg", "Change_Team", "a", "1=1", "2&Game_join_te", "2&Game_join_ct"); //Регистрируем событие Смена Команды
+register_event( "HLTV", "event_round_start", "a", "1=0", "2=0" ); // Регистрируем событие Начало раунда
+RegisterHam( Ham_Spawn, "player", "fw_PlayerSpawn", 1 );
+register_event("DeathMsg","death","a")//Событие смерти игрока (Луч смерти)
+register_event("Damage", "damage_message", "b", "2!0", "3=0", "4!0") //Отображение повреждения
+
+// Регистрируем ID меню
+new menu1ID = register_menuid("Menu_Admin_CT");
+new menu2ID = register_menuid("Menu_Admin_T");
+new menu3ID = register_menuid("Menu_Girl_CT");
+new menu4ID = register_menuid("Menu_Girl_T");
+new menu5ID = register_menuid("Menu_Clan_CT");
+new menu6ID = register_menuid("Menu_Clan_T");
+new menu7ID = register_menuid("Menu_User_CT");
+new menu8ID = register_menuid("Menu_User_T");
+new menu9ID = register_menuid("show_esp_menu");
+
+// Регистрируем команды меню
+register_menucmd(menu1ID,1023,"Menu_Admin_CT_Action");
+register_menucmd(menu2ID,1023,"Menu_Admin_T_Action");
+register_menucmd(menu3ID,511,"Menu_Girl_CT_Action");
+register_menucmd(menu4ID,511,"Menu_Girl_T_Action");
+register_menucmd(menu5ID,511,"Menu_Clan_CT_Action");
+register_menucmd(menu6ID,511,"Menu_Clan_T_Action");
+register_menucmd(menu7ID,511,"Menu_User_CT_Action");
+register_menucmd(menu8ID,511,"Menu_User_T_Action");
+register_menucmd(menu9ID,1023,"menu_esp");
+
+//Реклама
+set_task( 30.0, "Reklama", _,_,_,_, 1);
+g_HudSync = CreateHudSyncObj()
+
+max_players=get_maxplayers()
+
+return PLUGIN_CONTINUE
+}
+
   //Меню с уровнем доступа
 public Show_Menu_Level(player) {
 	if (is_user_connected(player))
@@ -327,11 +390,7 @@ public show_esp_menu(id){
 	new menu[1024];
 	//new keys=MENU_KEY_0|MENU_KEY_1|MENU_KEY_2|MENU_KEY_3|MENU_KEY_4|MENU_KEY_5|MENU_KEY_6|MENU_KEY_7|MENU_KEY_8|MENU_KEY_9;
 	new onoff[2][]={{"\rвыкл\w"},{"\yвкл\w"}} // \r=red \y=yellow \w white
-	new text[2][]={{"(используйте цифры)"},{"Изменить настройки^n /menu\w"}} // \r=red \y=yellow \w white
-	new text_index=get_cvar_num("ms_help")
-	if (text_index!=1) text_index=0
-	format(menu, 1023, "\yМеню настроек\w^n^n %s ^n^n1. Луч смерти %s^n2. Отображать повреждения %s^n3. Показывать модели сервера %s^n4. Показывать меню при старте %s^n8. Сохранить и выйти",
-	text[text_index],
+	format(menu, 1023, "\yМеню настроек\w^n^n^n1. Луч смерти %s^n2. Отображать повреждения %s^n3. Показывать модели сервера %s^n4. Показывать меню при старте %s^n^n^n8. Сохранить и выйти",
 	onoff[admin_options[id][MS_DEATH_LINE]],
 	onoff[admin_options[id][MS_DAMAGE_MSG]],
 	onoff[admin_options[id][MS_MODEL]],
@@ -1140,8 +1199,8 @@ public client_putinserver(id){
 		admin_options[id][i]=true
 	}
 	load_vault_data(id);
-	if(admin_options[id][MS_AUTO_MENU]){
-	set_task(1.0,"cmd_esp_menu", id)
+	if(admin_options[id][MS_AUTO_MENU] || get_cvar_num("ms_help")){
+		set_task(1.0,"cmd_esp_menu", id)
 	}
 	if(admin_options[id][MS_MODEL]){
 	client_cmd(id,"cl_minmodels 0");
@@ -1179,63 +1238,6 @@ public currmodel(player) {
 	return PLUGIN_HANDLED;
 }
 
-  // ------------------------------------------------------------------------------------------
-  // --PLUGIN ININITATION---------------------------------------------------------------------
-  // ------------------------------------------------------------------------------------------
-public plugin_init() {
-register_plugin("Меню моделей","0.1","WAW555");
-register_event("TextMsg", "Change_Team", "a", "1=1", "2&Game_join_te", "2&Game_join_ct");
-register_clcmd("ms_model","usermodel",-1,"Меню моделей");
-register_clcmd("say /model","currmodel",-1);
-register_clcmd("say /menu","cmd_esp_menu",-1);
-register_clcmd("say menu","cmd_esp_menu",-1);
-register_clcmd("menu","cmd_esp_menu",-1);
-    
-register_forward( FM_SetClientKeyValue, "fw_SetClientKeyValue" );
-register_forward( FM_ClientUserInfoChanged, "fw_ClientUserInfoChanged" );
-register_event( "HLTV", "event_round_start", "a", "1=0", "2=0" );
-RegisterHam( Ham_Spawn, "player", "fw_PlayerSpawn", 1 );
-
-    // Регистрируем ID меню
-new menu1ID = register_menuid("Menu_Admin_CT");
-new menu2ID = register_menuid("Menu_Admin_T");
-new menu3ID = register_menuid("Menu_Girl_CT");
-new menu4ID = register_menuid("Menu_Girl_T");
-new menu5ID = register_menuid("Menu_Clan_CT");
-new menu6ID = register_menuid("Menu_Clan_T");
-new menu7ID = register_menuid("Menu_User_CT");
-new menu8ID = register_menuid("Menu_User_T");
-new menu9ID = register_menuid("show_esp_menu");
-
-    // Регистрируем команды меню
-register_menucmd(menu1ID,1023,"Menu_Admin_CT_Action");
-register_menucmd(menu2ID,1023,"Menu_Admin_T_Action");
-register_menucmd(menu3ID,511,"Menu_Girl_CT_Action");
-register_menucmd(menu4ID,511,"Menu_Girl_T_Action");
-register_menucmd(menu5ID,511,"Menu_Clan_CT_Action");
-register_menucmd(menu6ID,511,"Menu_Clan_T_Action");
-register_menucmd(menu7ID,511,"Menu_User_CT_Action");
-register_menucmd(menu8ID,511,"Menu_User_T_Action");
-register_menucmd(menu9ID,1023,"menu_esp");
-    //Реклама
-set_task( 30.0, "Reklama", _,_,_,_, 1);
-    
-
-    
-register_cvar("ms_on_off","1")//Включение выключение плагина
-register_cvar("ms_help","1")//Показывать справку или нет
-    //Луч смерти
-register_cvar("amx_deathbeams_enabled","1")//Включить выключить показ откуда убили
-register_cvar("amx_deathbeams_randcolor","0")//Цвет лазера
-register_event("DeathMsg","death","a")//Событие смерти игрока
-    //Отображение повреждения
-register_event("Damage", "damage_message", "b", "2!0", "3=0", "4!0")
-g_HudSync = CreateHudSyncObj()
-
-max_players=get_maxplayers()
-
-return PLUGIN_CONTINUE
-}
   // ------------------------------------------------------------------------------------------
   // --Set stats---------------------------------------------------------------------
   // ------------------------------------------------------------------------------------------
