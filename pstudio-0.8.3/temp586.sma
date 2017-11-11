@@ -38,6 +38,12 @@ MS_MODEL,//показывать модели сервера
 MS_AUTO_MENU,//автопоказ настроек меню
 }
 new bool:admin_options[33][30] // Индивидуальные опции
+//new bool:is_in_menu[33] // Открытое меню у игрока
+//new bool:is_in_menu_audio[33] // Открытое меню у игрока
+//new bool:is_in_menu_audio1[33] // Открытое меню у игрока
+//new bool:is_in_menu_audio2[33] // Открытое меню у игрока
+new pcvar_ms	//Включение выключение плагина
+new pcvar_help	//Справка по плагину
 
 new bool:admin[33];
 new bool:girl[33];
@@ -328,7 +334,7 @@ public show_esp_menu(id){
 	//new keys=MENU_KEY_0|MENU_KEY_1|MENU_KEY_2|MENU_KEY_3|MENU_KEY_4|MENU_KEY_5|MENU_KEY_6|MENU_KEY_7|MENU_KEY_8|MENU_KEY_9;
 	new onoff[2][]={{"\rвыкл\w"},{"\yвкл\w"}} // \r=red \y=yellow \w white
 	new text[2][]={{"(используйте цифры)"},{"Изменить настройки^n /menu\w"}} // \r=red \y=yellow \w white
-	new text_index=get_cvar_num("ms_help")
+	new text_index=get_pcvar_num(pcvar_help)
 	if (text_index!=1) text_index=0
 	format(menu, 1023, "\yМеню настроек\w^n^n %s ^n^n1. Луч смерти %s^n2. Отображать повреждения %s^n3. Показывать модели сервера %s^n4. Показывать меню при старте %s^n8. Сохранить и выйти",
 	text[text_index],
@@ -1187,9 +1193,7 @@ register_plugin("Меню моделей","0.1","WAW555");
 register_event("TextMsg", "Change_Team", "a", "1=1", "2&Game_join_te", "2&Game_join_ct");
 register_clcmd("ms_model","usermodel",-1,"Меню моделей");
 register_clcmd("say /model","currmodel",-1);
-register_clcmd("say /menu","cmd_esp_menu",-1);
-register_clcmd("say menu","cmd_esp_menu",-1);
-register_clcmd("menu","cmd_esp_menu",-1);
+register_clcmd("say /menu","",-1);
     
 register_forward( FM_SetClientKeyValue, "fw_SetClientKeyValue" );
 register_forward( FM_ClientUserInfoChanged, "fw_ClientUserInfoChanged" );
@@ -1224,6 +1228,9 @@ set_task( 30.0, "Reklama", _,_,_,_, 1);
     
 register_cvar("ms_on_off","1")//Включение выключение плагина
 register_cvar("ms_help","1")//Показывать справку или нет
+register_clcmd("say /menu","cmd_esp_menu",-1);
+register_clcmd("say menu","cmd_esp_menu",-1);
+register_clcmd("menu","cmd_esp_menu",-1);
     //Луч смерти
 register_cvar("amx_deathbeams_enabled","1")//Включить выключить показ откуда убили
 register_cvar("amx_deathbeams_randcolor","0")//Цвет лазера
@@ -1452,7 +1459,7 @@ public death(){
 	new victim_id = read_data(2)                // Victim's player ID.
 	new killer_team = get_user_team(killer_id)  // The team the killer's on.
 
-	if (get_cvar_num("amx_deathbeams_enabled") == 1)
+	if (get_xvar_num("amx_deathbeams_enabled") == 1)
 	{
 		if (!is_user_alive(victim_id) && admin_options[victim_id][MS_DEATH_LINE]){
 		if (killer_id!=victim_id && killer_id)
@@ -1567,7 +1574,7 @@ public save2vault(id){
  Включение настроек меню
 =================================================================================*/
 public cmd_esp_menu(id){
-	if (get_cvar_num("ms_on_off")==1){
+	if (get_pcvar_num(pcvar_ms)==1){
 		show_esp_menu(id)
 	}
 }

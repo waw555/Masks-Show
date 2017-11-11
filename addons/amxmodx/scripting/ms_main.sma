@@ -38,12 +38,6 @@ MS_MODEL,//показывать модели сервера
 MS_AUTO_MENU,//автопоказ настроек меню
 }
 new bool:admin_options[33][30] // Индивидуальные опции
-//new bool:is_in_menu[33] // Открытое меню у игрока
-//new bool:is_in_menu_audio[33] // Открытое меню у игрока
-//new bool:is_in_menu_audio1[33] // Открытое меню у игрока
-//new bool:is_in_menu_audio2[33] // Открытое меню у игрока
-new pcvar_ms//Включение выключение плагина
-new pcvar_help//Справка по плагину
 
 new bool:admin[33];
 new bool:girl[33];
@@ -334,7 +328,7 @@ public show_esp_menu(id){
 	//new keys=MENU_KEY_0|MENU_KEY_1|MENU_KEY_2|MENU_KEY_3|MENU_KEY_4|MENU_KEY_5|MENU_KEY_6|MENU_KEY_7|MENU_KEY_8|MENU_KEY_9;
 	new onoff[2][]={{"\rвыкл\w"},{"\yвкл\w"}} // \r=red \y=yellow \w white
 	new text[2][]={{"(используйте цифры)"},{"Изменить настройки^n /menu\w"}} // \r=red \y=yellow \w white
-	new text_index=get_pcvar_num(pcvar_help)
+	new text_index=get_cvar_num("ms_help")
 	if (text_index!=1) text_index=0
 	format(menu, 1023, "\yМеню настроек\w^n^n %s ^n^n1. Луч смерти %s^n2. Отображать повреждения %s^n3. Показывать модели сервера %s^n4. Показывать меню при старте %s^n8. Сохранить и выйти",
 	text[text_index],
@@ -1193,6 +1187,9 @@ register_plugin("Меню моделей","0.1","WAW555");
 register_event("TextMsg", "Change_Team", "a", "1=1", "2&Game_join_te", "2&Game_join_ct");
 register_clcmd("ms_model","usermodel",-1,"Меню моделей");
 register_clcmd("say /model","currmodel",-1);
+register_clcmd("say /menu","cmd_esp_menu",-1);
+register_clcmd("say menu","cmd_esp_menu",-1);
+register_clcmd("menu","cmd_esp_menu",-1);
     
 register_forward( FM_SetClientKeyValue, "fw_SetClientKeyValue" );
 register_forward( FM_ClientUserInfoChanged, "fw_ClientUserInfoChanged" );
@@ -1208,10 +1205,7 @@ new menu5ID = register_menuid("Menu_Clan_CT");
 new menu6ID = register_menuid("Menu_Clan_T");
 new menu7ID = register_menuid("Menu_User_CT");
 new menu8ID = register_menuid("Menu_User_T");
-new menu9ID = register_menuid("Audio_Settings");
-new menu10ID = register_menuid("Sound_Settings");
-new menu11ID = register_menuid("Music_Settings");
-new menu12ID = register_menuid("show_esp_menu");
+new menu9ID = register_menuid("show_esp_menu");
 
     // Регистрируем команды меню
 register_menucmd(menu1ID,1023,"Menu_Admin_CT_Action");
@@ -1222,20 +1216,14 @@ register_menucmd(menu5ID,511,"Menu_Clan_CT_Action");
 register_menucmd(menu6ID,511,"Menu_Clan_T_Action");
 register_menucmd(menu7ID,511,"Menu_User_CT_Action");
 register_menucmd(menu8ID,511,"Menu_User_T_Action");
-register_menucmd(menu9ID,1023,"Audio_Settings_Action");
-register_menucmd(menu10ID,1023,"Sound_Settings_Action");
-register_menucmd(menu11ID,1023,"Music_Settings_Action");
-register_menucmd(menu12ID,1023,"menu_esp");
+register_menucmd(menu9ID,1023,"menu_esp");
     //Реклама
 set_task( 30.0, "Reklama", _,_,_,_, 1);
     
 
     
-pcvar_ms=register_cvar("ms","1")//Включение выключение плагина
-pcvar_help=register_cvar("ms_help","1")//Показывать справку или нет
-register_clcmd("say /menu","cmd_esp_menu",-1);
-register_clcmd("say menu","cmd_esp_menu",-1);
-register_clcmd("menu","cmd_esp_menu",-1);
+register_cvar("ms_on_off","1")//Включение выключение плагина
+register_cvar("ms_help","1")//Показывать справку или нет
     //Луч смерти
 register_cvar("amx_deathbeams_enabled","1")//Включить выключить показ откуда убили
 register_cvar("amx_deathbeams_randcolor","0")//Цвет лазера
@@ -1579,7 +1567,7 @@ public save2vault(id){
  Включение настроек меню
 =================================================================================*/
 public cmd_esp_menu(id){
-	if (get_pcvar_num(pcvar_ms)==1){
+	if (get_cvar_num("ms_on_off")==1){
 		show_esp_menu(id)
 	}
 }
