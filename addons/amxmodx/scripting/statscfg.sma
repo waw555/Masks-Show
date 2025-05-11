@@ -213,7 +213,7 @@ displayCfgMenu(id, pos)
 
 	if (end != g_menuDataNum)
 	{
-		format(menu_body[len], charsmax(menu_body) -len, "^n9. %L^n0. %L", id, "MORE", id, pos ? "BACK" : "EXIT")
+		format(menu_body[len], charsmax(menu_body) -len, "^n9. %L...^n0. %L", id, "MORE", id, pos ? "BACK" : "EXIT")
 		keys |= MENU_KEY_9
 	}
 	else
