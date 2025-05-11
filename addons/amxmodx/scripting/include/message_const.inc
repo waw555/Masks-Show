@@ -565,7 +565,6 @@ enum
  * write_byte(red)
  * write_byte(green)
  * write_byte(blue)
- * write_byte(brightness)
  * write_byte(life in 10's)
  * write_byte(decay rate in 10's)
  */
@@ -738,7 +737,7 @@ enum
  * write_byte(TE_FIZZ)
  * write_short(entity)
  * write_short(sprite index)
- * write_byte density)
+ * write_byte(density)
  */
 #define TE_FIZZ                     105
 
