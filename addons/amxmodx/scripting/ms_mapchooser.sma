@@ -37,9 +37,9 @@ new bool:g_b_changemap = false; 					// 	Переменная указывает
 new bool:g_b_changemap_full = false; 				// 	Переменная указывает, разрешено ли менять карту
 new bool:g_b_votemap = true; 						// 	Переменная указывает разрешено ли голосовать
 //Время игры на карте
-new Float: g_f_MapTimer //Счетчик минут
+new Float: g_f_MapTimer 							//	Счетчик минут
 
-new g_szLogFile[64]; // Файл логов
+new g_szLogFile[64]; 								// 	Файл логов
 
 public plugin_init() {
 	register_plugin(PLUGIN, VERSION, AUTHOR)
@@ -65,7 +65,7 @@ public plugin_init() {
 	g_i_MessageIDSayText = get_user_msgid("SayText"); //Функция цветного чата
 	
 	g_i_pcvar_LastMaps = register_cvar ( "ms_lastmaps","7" )
-	g_i_pcvar_TimeOutNominate	= register_cvar ( "ms_timeout_nominate",		"10" )
+	g_i_pcvar_TimeOutNominate = register_cvar ( "ms_timeout_nominate","10" )
 	
 	new szLogInfo[] = "amx_logdir"; // Записываем в переменную путь к папке с логами
 	get_localinfo(szLogInfo, g_szLogFile, charsmax(g_szLogFile)); //Проверяем на наличие файлов
