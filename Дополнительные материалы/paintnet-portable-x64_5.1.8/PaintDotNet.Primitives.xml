@@ -1,0 +1,322 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PaintDotNet.Primitives</name>
+    </assembly>
+    <members>
+        <member name="T:PaintDotNet.Imaging.GammaMode">
+            <summary>
+            Defines the modes that control <a href="http://blog.johnnovak.net/2016/09/21/what-every-coder-should-know-about-gamma/">gamma correction</a>
+            in pixel sampling, filtering, and blending.
+            </summary>
+        </member>
+        <member name="F:PaintDotNet.Imaging.GammaMode.Linear">
+            <summary>
+            Convert values to linear RGB before blending. This is more mathematically correct and more visually
+            pleasing in most cases, but usually has lower performance.
+            </summary>
+        </member>
+        <member name="F:PaintDotNet.Imaging.GammaMode.Companded">
+            <summary>
+            Blend gamma-companded R'G'B' values directly. This is usually a poor choice but may be used
+            for compatibility with other software or where speed is more important than image quality.
+            </summary>
+        </member>
+        <member name="T:PaintDotNet.Imaging.LinearColors">
+            <summary>
+            Provides predefined colors in the scRGB color space, which uses linear (1.0) gamma.
+            </summary>
+        </member>
+        <member name="F:PaintDotNet.Imaging.PixelFormatNumericRepresentation.Unspecified">
+            <summary>
+            <inheritdoc cref="F:TerraFX.Interop.Windows.WICPixelFormatNumericRepresentation.WICPixelFormatNumericRepresentationUnspecified"/>
+            </summary>
+        </member>
+        <member name="F:PaintDotNet.Imaging.PixelFormatNumericRepresentation.Indexed">
+            <summary>
+            <inheritdoc cref="F:TerraFX.Interop.Windows.WICPixelFormatNumericRepresentation.WICPixelFormatNumericRepresentationIndexed"/>
+            </summary>
+        </member>
+        <member name="F:PaintDotNet.Imaging.PixelFormatNumericRepresentation.UnsignedInteger">
+            <summary>
+            <inheritdoc cref="F:TerraFX.Interop.Windows.WICPixelFormatNumericRepresentation.WICPixelFormatNumericRepresentationUnsignedInteger"/>
+            </summary>
+        </member>
+        <member name="F:PaintDotNet.Imaging.PixelFormatNumericRepresentation.SignedInteger">
+            <summary>
+            <inheritdoc cref="F:TerraFX.Interop.Windows.WICPixelFormatNumericRepresentation.WICPixelFormatNumericRepresentationSignedInteger"/>
+            </summary>
+        </member>
+        <member name="F:PaintDotNet.Imaging.PixelFormatNumericRepresentation.Fixed">
+            <summary>
+            <inheritdoc cref="F:TerraFX.Interop.Windows.WICPixelFormatNumericRepresentation.WICPixelFormatNumericRepresentationFixed"/>
+            </summary>
+        </member>
+        <member name="F:PaintDotNet.Imaging.PixelFormatNumericRepresentation.Float">
+            <summary>
+            <inheritdoc cref="F:TerraFX.Interop.Windows.WICPixelFormatNumericRepresentation.WICPixelFormatNumericRepresentationFloat"/>
+            </summary>
+        </member>
+        <member name="T:PaintDotNet.Imaging.PixelFormats">
+            <summary>
+            Contains properties for getting the documented, built-in pixel formats, as well as methods
+            for obtaining information about the supported pixel formats.
+            </summary>
+            <remarks>
+            For more information, see: <a href="http://msdn.microsoft.com/en-us/library/ee719797.aspx">Native Pixel Formats Overview</a>.
+            </remarks>
+        </member>
+        <member name="M:PaintDotNet.Imaging.PixelFormats.GetSupportedFormatsList">
+            <summary>
+            Gets a list of the <see cref="T:PaintDotNet.Imaging.PixelFormat"/>s that have full support in the imaging framework.
+            These pixel formats will have a corresponding color struct, such as <see cref="T:PaintDotNet.Imaging.ColorBgra32"/>,
+            as well as support for <c>IBitmapSource</c>, <c>IBitmap</c>, and <c>IBitmapLock</c>, and their
+            generic counterparts <c>IBitmapSource&lt;TPixel&gt;</c>, <c>IBitmap&lt;TPixel&gt;</c>, and
+            <c>IBitmapLock&lt;TPixel&gt;</c>.
+            </summary>
+        </member>
+        <member name="M:PaintDotNet.Imaging.PixelFormats.GetSupportedFormatsSet">
+            <summary>
+            Gets a set of the <see cref="T:PaintDotNet.Imaging.PixelFormat"/>s that have full support in the imaging framework.
+            These pixel formats will have a corresponding color struct, such as <see cref="T:PaintDotNet.Imaging.ColorBgra32"/>,
+            as well as support for <c>IBitmapSource</c>, <c>IBitmap</c>, and <c>IBitmapLock</c>.
+            </summary>
+        </member>
+        <member name="M:PaintDotNet.Imaging.PixelFormats.TryGetPixelInfo(PaintDotNet.Imaging.PixelFormat@)">
+            <summary>
+            Gets information about the pixel format.
+            </summary>
+            <remarks>
+            This will be a boxed instance of a color struct, e.g. ColorAlpha8 for PixelFormats.Alpha8.
+            </remarks>
+        </member>
+        <member name="M:PaintDotNet.Imaging.PixelFormats.IsSupported(PaintDotNet.Imaging.PixelFormat@)">
+            <summary>
+            Gets a flag indicating whether the <see cref="T:PaintDotNet.Imaging.PixelFormat"/> has full support in the imaging framework.
+            Supported pixel formats will have a corresponding color struct, such as <see cref="T:PaintDotNet.Imaging.ColorBgra32"/>,
+            as well as support for <c>IBitmapSource</c>, <c>IBitmap</c>, and <c>IBitmapLock</c>, and their
+            generic counterparts <c>IBitmapSource&lt;TPixel&gt;</c>, <c>IBitmap&lt;TPixel&gt;</c>, and
+            <c>IBitmapLock&lt;TPixel&gt;</c>.
+            </summary>
+        </member>
+        <member name="T:PaintDotNet.Imaging.SrgbColors">
+            <summary>
+            Provides predefined colors in the sRGB color space, which uses approximately 2.2 gamma.
+            </summary>
+        </member>
+        <member name="M:PaintDotNet.Rendering.FunctionInterpolator.Create(PaintDotNet.Rendering.FunctionInterpolationMode,System.Collections.Generic.IEnumerable{PaintDotNet.Rendering.Point2Double})">
+            <summary>
+            Creates a <see cref="T:PaintDotNet.Rendering.IFunctionInterpolator"/> from the given points.
+            </summary>
+            <param name="interpolationMode">The interpolation mode to use.</param>
+            <param name="points">The points that make up the function. These will be sorted
+            by their X value. If an X value occurs more than once then the behavior of the
+            interpolator is undefined.</param>
+        </member>
+        <member name="M:PaintDotNet.Rendering.FunctionInterpolator.Create(PaintDotNet.Rendering.FunctionInterpolationMode,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.Double,System.Double}})">
+            <summary>
+            <inheritdoc cref="M:PaintDotNet.Rendering.FunctionInterpolator.Create(PaintDotNet.Rendering.FunctionInterpolationMode,System.Collections.Generic.IEnumerable{PaintDotNet.Rendering.Point2Double})"/>
+            </summary>
+            <param name="interpolationMode"><inheritdoc cref="M:PaintDotNet.Rendering.FunctionInterpolator.Create(PaintDotNet.Rendering.FunctionInterpolationMode,System.Collections.Generic.IEnumerable{PaintDotNet.Rendering.Point2Double})" path="/param[@name='interpolationMode']"/></param>
+            <param name="points"><inheritdoc cref="M:PaintDotNet.Rendering.FunctionInterpolator.Create(PaintDotNet.Rendering.FunctionInterpolationMode,System.Collections.Generic.IEnumerable{PaintDotNet.Rendering.Point2Double})" path="/param[@name='points']"/></param>
+        </member>
+        <member name="M:PaintDotNet.Rendering.FunctionInterpolator.Create(PaintDotNet.Rendering.FunctionInterpolationMode,System.Collections.Generic.IEnumerable{PaintDotNet.Rendering.Point2Float})">
+            <summary>
+            <inheritdoc cref="M:PaintDotNet.Rendering.FunctionInterpolator.Create(PaintDotNet.Rendering.FunctionInterpolationMode,System.Collections.Generic.IEnumerable{PaintDotNet.Rendering.Point2Double})"/>
+            </summary>
+            <param name="interpolationMode"><inheritdoc cref="M:PaintDotNet.Rendering.FunctionInterpolator.Create(PaintDotNet.Rendering.FunctionInterpolationMode,System.Collections.Generic.IEnumerable{PaintDotNet.Rendering.Point2Double})" path="/param[@name='interpolationMode']"/></param>
+            <param name="points"><inheritdoc cref="M:PaintDotNet.Rendering.FunctionInterpolator.Create(PaintDotNet.Rendering.FunctionInterpolationMode,System.Collections.Generic.IEnumerable{PaintDotNet.Rendering.Point2Double})" path="/param[@name='points']"/></param>
+        </member>
+        <member name="M:PaintDotNet.Rendering.FunctionInterpolator.Create(PaintDotNet.Rendering.FunctionInterpolationMode,System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.Single,System.Single}})">
+            <summary>
+            <inheritdoc cref="M:PaintDotNet.Rendering.FunctionInterpolator.Create(PaintDotNet.Rendering.FunctionInterpolationMode,System.Collections.Generic.IEnumerable{PaintDotNet.Rendering.Point2Double})"/>
+            </summary>
+            <param name="interpolationMode"><inheritdoc cref="M:PaintDotNet.Rendering.FunctionInterpolator.Create(PaintDotNet.Rendering.FunctionInterpolationMode,System.Collections.Generic.IEnumerable{PaintDotNet.Rendering.Point2Double})" path="/param[@name='interpolationMode']"/></param>
+            <param name="points"><inheritdoc cref="M:PaintDotNet.Rendering.FunctionInterpolator.Create(PaintDotNet.Rendering.FunctionInterpolationMode,System.Collections.Generic.IEnumerable{PaintDotNet.Rendering.Point2Double})" path="/param[@name='points']"/></param>
+        </member>
+        <member name="T:PaintDotNet.Rendering.IFunctionInterpolator">
+            <summary>
+            Provides a means for sampling a function along the x-axis.
+            </summary>
+            <remarks>
+            Use methods on the <see cref="T:PaintDotNet.Rendering.FunctionInterpolator"/> to create instances of this.
+            </remarks>
+        </member>
+        <member name="P:PaintDotNet.Rendering.Matrix3x2Double.IsRectilinear">
+            <summary>
+            Gets a flag indicating whether this matrix consists of only translation and scaling.
+            </summary>
+        </member>
+        <member name="P:PaintDotNet.Rendering.Matrix3x2Float.IsRectilinear">
+            <summary>
+            Gets a flag indicating whether this matrix consists of only translation and scaling.
+            </summary>
+        </member>
+        <member name="M:PaintDotNet.Rendering.PixelKernels.ClearTransparentColors(PaintDotNet.RegionPtr{PaintDotNet.Imaging.ColorBgra32})">
+            <summary>
+            For pixels whose alpha value is zero, sets the color channels to zero as well.
+            </summary>
+        </member>
+        <member name="M:PaintDotNet.Rendering.PixelKernels.DetectAndFixDishonestAlpha(PaintDotNet.RegionPtr{PaintDotNet.Imaging.ColorBgra32})">
+            <summary>
+            Examines the pixels of the region and detects if its contents should be reprocessed.<br/>
+            If all alpha values are 255, then no processing is performed.<br/>
+            If all alpha values are greater than or equal to the color values, then the image is
+            converted from premultiplied alpha.<br/>
+            Otherwise, all alpha values are set to 255 and the color values are untouched.<br/>
+            </summary>
+            <remarks>
+            This is usually not needed except when image data form a 3rd-party source needs to be
+            imported with an untrusted pixel format. For instance, images acquired from the clipboard.
+            </remarks>
+        </member>
+        <member name="P:PaintDotNet.Rendering.RectDouble.Empty">
+            <summary>
+            Gets a special value that represents a rectangle with no position or area.
+            </summary>
+            <returns>
+            The empty rectangle, which has <see cref="P:PaintDotNet.Rendering.RectDouble.X" /> and <see cref="P:PaintDotNet.Rendering.RectDouble.Y" /> property values of
+            <see cref="F:System.Double.PositiveInfinity" />, and has <see cref="P:PaintDotNet.Rendering.RectDouble.Width" /> and <see cref="P:PaintDotNet.Rendering.RectDouble.Height" />
+            property values of <see cref="F:System.Double.NegativeInfinity" />.
+            </returns>
+        </member>
+        <member name="P:PaintDotNet.Rendering.RectDouble.IsEmpty">
+            <summary>
+            Indicates whether the rectangle is the <see cref="P:PaintDotNet.Rendering.RectDouble.Empty"/> rectangle or equivalent
+            (negative width or negative height). Use <see cref="P:PaintDotNet.Rendering.RectDouble.HasArea"/> to test whether the
+            rectangle is non-empty and has a non-zero area.
+            </summary>
+        </member>
+        <member name="P:PaintDotNet.Rendering.RectFloat.Empty">
+            <summary>
+            Gets a special value that represents a rectangle with no position or area.
+            </summary>
+            <returns>
+            The empty rectangle, which has <see cref="P:PaintDotNet.Rendering.RectFloat.X" /> and <see cref="P:PaintDotNet.Rendering.RectFloat.Y" /> property values of
+            <see cref="F:System.Single.PositiveInfinity" />, and has <see cref="P:PaintDotNet.Rendering.RectFloat.Width" /> and <see cref="P:PaintDotNet.Rendering.RectFloat.Height" />
+            property values of <see cref="F:System.Single.NegativeInfinity" />.
+            </returns>
+        </member>
+        <member name="P:PaintDotNet.Rendering.RectFloat.IsEmpty">
+            <summary>
+            Indicates whether the rectangle is the <see cref="P:PaintDotNet.Rendering.RectFloat.Empty"/> rectangle or equivalent
+            (negative width or negative height). Use <see cref="P:PaintDotNet.Rendering.RectFloat.HasArea"/> to test whether the
+            rectangle is non-empty and has a non-zero area.
+            </summary>
+        </member>
+        <member name="P:PaintDotNet.Rendering.RectInt32.Empty">
+            <summary>
+            Gets a special value that represents a rectangle with no position or area.
+            </summary>
+            <returns>
+            The empty rectangle, which has <see cref="P:PaintDotNet.Rendering.RectInt32.X" /> and <see cref="P:PaintDotNet.Rendering.RectInt32.Y" /> property values of
+            <see cref="F:System.Int32.MaxValue" />, and has <see cref="P:PaintDotNet.Rendering.RectInt32.Width" /> and <see cref="P:PaintDotNet.Rendering.RectInt32.Height" />
+            property values of <see cref="F:System.Int32.MinValue" />.
+            </returns>
+        </member>
+        <member name="P:PaintDotNet.Rendering.RectInt32.IsEmpty">
+            <summary>
+            Indicates whether the rectangle is the <see cref="P:PaintDotNet.Rendering.RectInt32.Empty"/> rectangle or equivalent
+            (negative width or negative height). Use <see cref="P:PaintDotNet.Rendering.RectInt32.HasArea"/> to test whether the
+            rectangle is non-empty and has a non-zero area.
+            </summary>
+        </member>
+        <member name="P:PaintDotNet.Rendering.RectInt64.Empty">
+            <summary>
+            Gets a special value that represents a rectangle with no position or area.
+            </summary>
+            <returns>
+            The empty rectangle, which has <see cref="P:PaintDotNet.Rendering.RectInt64.X" /> and <see cref="P:PaintDotNet.Rendering.RectInt64.Y" /> property values of
+            <see cref="F:System.Int64.MaxValue" />, and has <see cref="P:PaintDotNet.Rendering.RectInt64.Width" /> and <see cref="P:PaintDotNet.Rendering.RectInt64.Height" />
+            property values of <see cref="F:System.Int64.MinValue" />.
+            </returns>
+        </member>
+        <member name="P:PaintDotNet.Rendering.RectInt64.IsEmpty">
+            <summary>
+            Indicates whether the rectangle is the <see cref="P:PaintDotNet.Rendering.RectInt64.Empty"/> rectangle or equivalent
+            (negative width or negative height). Use <see cref="P:PaintDotNet.Rendering.RectInt64.HasArea"/> to test whether the
+            rectangle is non-empty and has a non-zero area.
+            </summary>
+        </member>
+        <member name="P:PaintDotNet.Rendering.SizeDouble.Empty">
+            <summary>
+            Gets a special value that represents a size with no area. Note that his is not the same as a size
+            value with zero area. See <see cref="P:PaintDotNet.Rendering.SizeDouble.IsEmpty"/> and <see cref="P:PaintDotNet.Rendering.SizeDouble.HasArea"/> for more details.
+            </summary>
+            <returns>
+            The empty rectangle, which has <see cref="P:PaintDotNet.Rendering.SizeDouble.Width" /> and <see cref="P:PaintDotNet.Rendering.SizeDouble.Height" /> property values
+            of <see cref="F:System.Double.NegativeInfinity" />.
+            </returns>
+        </member>
+        <member name="P:PaintDotNet.Rendering.SizeDouble.IsEmpty">
+            <summary>
+            Indicates whether the size is the <see cref="P:PaintDotNet.Rendering.SizeDouble.Empty"/> size or equivalent (negative
+            width or negative height). Use <see cref="P:PaintDotNet.Rendering.SizeDouble.HasArea"/> to test whether the size is
+            non-empty and has a non-zero area.
+            </summary>
+            <remarks>
+            This does <u>not</u> return false if the width and height are zero.
+            </remarks>
+        </member>
+        <member name="P:PaintDotNet.Rendering.SizeFloat.Empty">
+            <summary>
+            Gets a special value that represents a size with no area. Note that his is not the same as a size
+            value with zero area. See <see cref="P:PaintDotNet.Rendering.SizeFloat.IsEmpty"/> and <see cref="P:PaintDotNet.Rendering.SizeFloat.HasArea"/> for more details.
+            </summary>
+            <returns>
+            The empty rectangle, which has <see cref="P:PaintDotNet.Rendering.SizeFloat.Width" /> and <see cref="P:PaintDotNet.Rendering.SizeFloat.Height" /> property values
+            of <see cref="F:System.Single.NegativeInfinity" />.
+            </returns>
+        </member>
+        <member name="P:PaintDotNet.Rendering.SizeFloat.IsEmpty">
+            <summary>
+            Indicates whether the size is the <see cref="P:PaintDotNet.Rendering.SizeFloat.Empty"/> size or equivalent (negative
+            width or negative height). Use <see cref="P:PaintDotNet.Rendering.SizeFloat.HasArea"/> to test whether the size is
+            non-empty and has a non-zero area.
+            </summary>
+            <remarks>
+            This does <u>not</u> return false if the width and height are zero.
+            </remarks>
+        </member>
+        <member name="P:PaintDotNet.Rendering.SizeInt32.Empty">
+            <summary>
+            Gets a special value that represents a size with no area. Note that his is not the same as a size
+            value with zero area. See <see cref="P:PaintDotNet.Rendering.SizeInt32.IsEmpty"/> and <see cref="P:PaintDotNet.Rendering.SizeInt32.HasArea"/> for more details.
+            </summary>
+            <returns>
+            The empty size, which has <see cref="P:PaintDotNet.Rendering.SizeInt32.Width" /> and <see cref="P:PaintDotNet.Rendering.SizeInt32.Height" /> property values
+            of <see cref="F:System.Int32.MinValue" />.
+            </returns>
+        </member>
+        <member name="P:PaintDotNet.Rendering.SizeInt32.IsEmpty">
+            <summary>
+            Indicates whether the size is the <see cref="P:PaintDotNet.Rendering.SizeInt32.Empty"/> size or equivalent (negative
+            width or negative height). Use <see cref="P:PaintDotNet.Rendering.SizeInt32.HasArea"/> to test whether the size is
+            non-empty and has a non-zero area.
+            </summary>
+            <remarks>
+            This does <u>not</u> return false if the width and height are zero.
+            </remarks>
+        </member>
+        <member name="P:PaintDotNet.Rendering.SizeInt64.Empty">
+            <summary>
+            Gets a special value that represents a size with no area. Note that his is not the same as a size
+            value with zero area. See <see cref="P:PaintDotNet.Rendering.SizeInt64.IsEmpty"/> and <see cref="P:PaintDotNet.Rendering.SizeInt64.HasArea"/> for more details.
+            </summary>
+            <returns>
+            The empty size, which has <see cref="P:PaintDotNet.Rendering.SizeInt64.Width" /> and <see cref="P:PaintDotNet.Rendering.SizeInt64.Height" /> property values
+            of <see cref="F:System.Int64.MinValue" />.
+            </returns>
+        </member>
+        <member name="P:PaintDotNet.Rendering.SizeInt64.IsEmpty">
+            <summary>
+            Indicates whether the size is the <see cref="P:PaintDotNet.Rendering.SizeInt64.Empty"/> size or equivalent (negative
+            width or negative height). Use <see cref="P:PaintDotNet.Rendering.SizeInt64.HasArea"/> to test whether the size is
+            non-empty and has a non-zero area.
+            </summary>
+            <remarks>
+            This does <u>not</u> return false if the width and height are zero.
+            </remarks>
+        </member>
+    </members>
+</doc>
