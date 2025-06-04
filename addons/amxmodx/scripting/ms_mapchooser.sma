@@ -1,45 +1,45 @@
 #include <amxmodx>
 #include <amxmisc>
 
-#define PLUGIN "Maps"
-#define VERSION "1.0"
-#define AUTHOR "Алексей"
+#define PLUGIN "Nextmap Chooser"
+#define VERSION "1.0.0/03.06.2025"
+#define AUTHOR "AMXX Dev Team"
 
 #define MAX_MAPS 128
 #define MAXPLAYERS 33
 //Меню
 #define MENU_SIZE 1024
 #define MENU_KEYS (1<<0 | 1<<1 | 1<<2 | 1<<3 | 1<<4 | 1<<5 | 1<<6 | 1<<7 | 1<<8 | 1<<9)
-#define MENU_SLOTS 8 //Количество слотов под модели
+#define MENU_SLOTS 8 								//	Количество слотов под карты
 //Название карты и статус
-new MAPS_NAME[MAX_MAPS][MAX_MAPS]//Название всех карт
-new NOMINATION_MAPS_NAME[MAX_MAPS][MAX_MAPS]//Карты для номинированя
-new LAST_MAPS_NAME[MAX_MAPS][MAX_MAPS]//Последние карты
-new NEXT_MAP_NAME[MAX_MAPS]; // Переменная хранит в себе название следующей карты.
+new MAPS_NAME[MAX_MAPS][MAX_MAPS]					//	Название всех карт
+new NOMINATION_MAPS_NAME[MAX_MAPS][MAX_MAPS]		//	Карты для номинированя
+new LAST_MAPS_NAME[MAX_MAPS][MAX_MAPS]				//	Последние карты
+new NEXT_MAP_NAME[MAX_MAPS]; 						// 	Переменная хранит в себе название следующей карты.
 //Файлы
-new g_s_MapFile[128] //Файл с картами
-new g_s_LastMapFile[128] //Файл с последними картами
+new g_s_MapFile[128] 								//	Файл с картами
+new g_s_LastMapFile[128] 							//	Файл с последними картами
 //Счетчик
-new g_i_MapCounter //Счетчик карт
-new g_i_LastMapCounter //Счетчик последних карт
+new g_i_MapCounter 									//	Счетчик карт
+new g_i_LastMapCounter 								//	Счетчик последних карт
 new g_i_NominateMapCounter = 0
-new g_i_MenuPosition[33] //Счетчик позиции меню игрока
-new g_i_VotedPlayers[MAXPLAYERS]; //Переменная хранит в себе, какой игрок учавствовал в голосовании
-new g_i_Votes[MAXPLAYERS]; // Переменная хранит в себе список голосов за каждую карту.
-new g_i_Num; // Колличество игроков
+new g_i_MenuPosition[33] 							//	Счетчик позиции меню игрока
+new g_i_VotedPlayers[MAXPLAYERS]; 					//	Переменная хранит в себе, какой игрок учавствовал в голосовании
+new g_i_Votes[MAXPLAYERS]; 							// 	Переменная хранит в себе список голосов за каждую карту.
+new g_i_Num; 										// 	Колличество игроков
 new g_i_Players[MAXPLAYERS - 1]
-new g_i_MessageIDSayText; // Функция цветного чата
+new g_i_MessageIDSayText; 							// 	Функция цветного чата
 //Настройки
-new g_i_pcvar_LastMaps //Количество последних карт
-new g_i_pcvar_TimeOutNominate // Квар теймера отложенной номинации
+new g_i_pcvar_LastMaps 								//	Количество последних карт
+new g_i_pcvar_TimeOutNominate 						// 	Квар теймера отложенной номинации
 //Включение выключение функций
-new bool:g_b_changemap = false; // Переменная указывает, разрешено ли менять карту
-new bool:g_b_changemap_full = false; // Переменная указывает, разрешено ли менять карту
-new bool:g_b_votemap = true; // Переменная указывает разрешено ли голосовать
+new bool:g_b_changemap = false; 					// 	Переменная указывает, разрешено ли менять карту
+new bool:g_b_changemap_full = false; 				// 	Переменная указывает, разрешено ли менять карту
+new bool:g_b_votemap = true; 						// 	Переменная указывает разрешено ли голосовать
 //Время игры на карте
-new Float: g_f_MapTimer //Счетчик минут
+new Float: g_f_MapTimer 							//	Счетчик минут
 
-new g_szLogFile[64]; // Файл логов
+new g_szLogFile[64]; 								// 	Файл логов
 
 public plugin_init() {
 	register_plugin(PLUGIN, VERSION, AUTHOR)
@@ -65,7 +65,7 @@ public plugin_init() {
 	g_i_MessageIDSayText = get_user_msgid("SayText"); //Функция цветного чата
 	
 	g_i_pcvar_LastMaps = register_cvar ( "ms_lastmaps","7" )
-	g_i_pcvar_TimeOutNominate	= register_cvar ( "ms_timeout_nominate",		"10" )
+	g_i_pcvar_TimeOutNominate = register_cvar ( "ms_timeout_nominate","10" )
 	
 	new szLogInfo[] = "amx_logdir"; // Записываем в переменную путь к папке с логами
 	get_localinfo(szLogInfo, g_szLogFile, charsmax(g_szLogFile)); //Проверяем на наличие файлов

@@ -3,98 +3,98 @@
 
 #define PLUGIN "Maps"
 #define VERSION "1.0"
-#define AUTHOR "Алексей"
+#define AUTHOR "РђР»РµРєСЃРµР№"
 
 #define MAX_MAPS 128
 #define MAXPLAYERS 33
-//Меню
+//РњРµРЅСЋ
 #define MENU_SIZE 1024
 #define MENU_KEYS (1<<0 | 1<<1 | 1<<2 | 1<<3 | 1<<4 | 1<<5 | 1<<6 | 1<<7 | 1<<8 | 1<<9)
-#define MENU_SLOTS 8 //Количество слотов под модели
-//Название карты и статус
-new MAPS_NAME[MAX_MAPS][MAX_MAPS]//Название всех карт
-new NOMINATION_MAPS_NAME[MAX_MAPS][MAX_MAPS]//Карты для номинированя
-new LAST_MAPS_NAME[MAX_MAPS][MAX_MAPS]//Последние карты
-new NEXT_MAP_NAME[MAX_MAPS]; // Переменная хранит в себе название следующей карты.
-//Файлы
-new g_s_MapFile[128] //Файл с картами
-new g_s_LastMapFile[128] //Файл с последними картами
-//Счетчик
-new g_i_MapCounter //Счетчик карт
-new g_i_LastMapCounter //Счетчик последних карт
+#define MENU_SLOTS 8 //РљРѕР»РёС‡РµСЃС‚РІРѕ СЃР»РѕС‚РѕРІ РїРѕРґ РјРѕРґРµР»Рё
+//РќР°Р·РІР°РЅРёРµ РєР°СЂС‚С‹ Рё СЃС‚Р°С‚СѓСЃ
+new MAPS_NAME[MAX_MAPS][MAX_MAPS]//РќР°Р·РІР°РЅРёРµ РІСЃРµС… РєР°СЂС‚
+new NOMINATION_MAPS_NAME[MAX_MAPS][MAX_MAPS]//РљР°СЂС‚С‹ РґР»СЏ РЅРѕРјРёРЅРёСЂРѕРІР°РЅСЏ
+new LAST_MAPS_NAME[MAX_MAPS][MAX_MAPS]//РџРѕСЃР»РµРґРЅРёРµ РєР°СЂС‚С‹
+new NEXT_MAP_NAME[MAX_MAPS]; // РџРµСЂРµРјРµРЅРЅР°СЏ С…СЂР°РЅРёС‚ РІ СЃРµР±Рµ РЅР°Р·РІР°РЅРёРµ СЃР»РµРґСѓСЋС‰РµР№ РєР°СЂС‚С‹.
+//Р¤Р°Р№Р»С‹
+new g_s_MapFile[128] //Р¤Р°Р№Р» СЃ РєР°СЂС‚Р°РјРё
+new g_s_LastMapFile[128] //Р¤Р°Р№Р» СЃ РїРѕСЃР»РµРґРЅРёРјРё РєР°СЂС‚Р°РјРё
+//РЎС‡РµС‚С‡РёРє
+new g_i_MapCounter //РЎС‡РµС‚С‡РёРє РєР°СЂС‚
+new g_i_LastMapCounter //РЎС‡РµС‚С‡РёРє РїРѕСЃР»РµРґРЅРёС… РєР°СЂС‚
 new g_i_NominateMapCounter = 0
-new g_i_MenuPosition[33] //Счетчик позиции меню игрока
-new g_i_VotedPlayers[MAXPLAYERS]; //Переменная хранит в себе, какой игрок учавствовал в голосовании
-new g_i_Votes[MAXPLAYERS]; // Переменная хранит в себе список голосов за каждую карту.
-new g_i_Num; // Колличество игроков
+new g_i_MenuPosition[33] //РЎС‡РµС‚С‡РёРє РїРѕР·РёС†РёРё РјРµРЅСЋ РёРіСЂРѕРєР°
+new g_i_VotedPlayers[MAXPLAYERS]; //РџРµСЂРµРјРµРЅРЅР°СЏ С…СЂР°РЅРёС‚ РІ СЃРµР±Рµ, РєР°РєРѕР№ РёРіСЂРѕРє СѓС‡Р°РІСЃС‚РІРѕРІР°Р» РІ РіРѕР»РѕСЃРѕРІР°РЅРёРё
+new g_i_Votes[MAXPLAYERS]; // РџРµСЂРµРјРµРЅРЅР°СЏ С…СЂР°РЅРёС‚ РІ СЃРµР±Рµ СЃРїРёСЃРѕРє РіРѕР»РѕСЃРѕРІ Р·Р° РєР°Р¶РґСѓСЋ РєР°СЂС‚Сѓ.
+new g_i_Num; // РљРѕР»Р»РёС‡РµСЃС‚РІРѕ РёРіСЂРѕРєРѕРІ
 new g_i_Players[MAXPLAYERS - 1]
-new g_i_MessageIDSayText; // Функция цветного чата
-//Настройки
-new g_i_pcvar_LastMaps //Количество последних карт
-new g_i_pcvar_TimeOutNominate // Квар теймера отложенной номинации
-//Включение выключение функций
-new bool:g_b_changemap = false; // Переменная указывает, разрешено ли менять карту
-new bool:g_b_changemap_full = false; // Переменная указывает, разрешено ли менять карту
-new bool:g_b_votemap = true; // Переменная указывает разрешено ли голосовать
-//Время игры на карте
-new Float: g_f_MapTimer //Счетчик минут
+new g_i_MessageIDSayText; // Р¤СѓРЅРєС†РёСЏ С†РІРµС‚РЅРѕРіРѕ С‡Р°С‚Р°
+//РќР°СЃС‚СЂРѕР№РєРё
+new g_i_pcvar_LastMaps //РљРѕР»РёС‡РµСЃС‚РІРѕ РїРѕСЃР»РµРґРЅРёС… РєР°СЂС‚
+new g_i_pcvar_TimeOutNominate // РљРІР°СЂ С‚РµР№РјРµСЂР° РѕС‚Р»РѕР¶РµРЅРЅРѕР№ РЅРѕРјРёРЅР°С†РёРё
+//Р’РєР»СЋС‡РµРЅРёРµ РІС‹РєР»СЋС‡РµРЅРёРµ С„СѓРЅРєС†РёР№
+new bool:g_b_changemap = false; // РџРµСЂРµРјРµРЅРЅР°СЏ СѓРєР°Р·С‹РІР°РµС‚, СЂР°Р·СЂРµС€РµРЅРѕ Р»Рё РјРµРЅСЏС‚СЊ РєР°СЂС‚Сѓ
+new bool:g_b_changemap_full = false; // РџРµСЂРµРјРµРЅРЅР°СЏ СѓРєР°Р·С‹РІР°РµС‚, СЂР°Р·СЂРµС€РµРЅРѕ Р»Рё РјРµРЅСЏС‚СЊ РєР°СЂС‚Сѓ
+new bool:g_b_votemap = true; // РџРµСЂРµРјРµРЅРЅР°СЏ СѓРєР°Р·С‹РІР°РµС‚ СЂР°Р·СЂРµС€РµРЅРѕ Р»Рё РіРѕР»РѕСЃРѕРІР°С‚СЊ
+//Р’СЂРµРјСЏ РёРіСЂС‹ РЅР° РєР°СЂС‚Рµ
+new Float: g_f_MapTimer //РЎС‡РµС‚С‡РёРє РјРёРЅСѓС‚
 
-new g_szLogFile[64]; // Файл логов
+new g_szLogFile[64]; // Р¤Р°Р№Р» Р»РѕРіРѕРІ
 
 public plugin_init() {
 	register_plugin(PLUGIN, VERSION, AUTHOR)
-	//Регистрируем команды
-	register_dictionary("ms_mapchooser.txt"); // Регистрируем словарь
-	register_dictionary("ms_global.txt"); // Регистрируем словарь
-	register_saycmd("votemap", "Cmd_Vote_Map", -1, ""); //Комманда вызова меню для смены карты
-	register_saycmd("rtv", "Cmd_Vote_Map", -1, ""); //Комманда вызова меню для смены карты
-	register_saycmd("nominate", "Cmd_Vote_Map", -1, ""); //Комманда вызова меню для смены карты
-	register_saycmd("rockthevote", "Cmd_Vote_Map", -1, ""); //Комманда вызова меню для смены карты
-	register_saycmd("nextmap", "Cmd_Vote_Map", -1, ""); //Комманда вызова меню для смены карты
-	register_saycmd("map", "Cmd_Vote_Map", -1, ""); //Комманда вызова меню для смены карты
-	register_saycmd("maps", "Cmd_Vote_Map", -1, ""); //Комманда вызова меню для смены карты
-	register_saycmd("currentmap", "Cmd_Vote_Map", -1, ""); //Комманда вызова меню для смены карты
-	register_saycmd("nom", "Cmd_Vote_Map", -1, ""); //Комманда вызова меню для смены карты
+	//Р РµРіРёСЃС‚СЂРёСЂСѓРµРј РєРѕРјР°РЅРґС‹
+	register_dictionary("ms_mapchooser.txt"); // Р РµРіРёСЃС‚СЂРёСЂСѓРµРј СЃР»РѕРІР°СЂСЊ
+	register_dictionary("ms_global.txt"); // Р РµРіРёСЃС‚СЂРёСЂСѓРµРј СЃР»РѕРІР°СЂСЊ
+	register_saycmd("votemap", "Cmd_Vote_Map", -1, ""); //РљРѕРјРјР°РЅРґР° РІС‹Р·РѕРІР° РјРµРЅСЋ РґР»СЏ СЃРјРµРЅС‹ РєР°СЂС‚С‹
+	register_saycmd("rtv", "Cmd_Vote_Map", -1, ""); //РљРѕРјРјР°РЅРґР° РІС‹Р·РѕРІР° РјРµРЅСЋ РґР»СЏ СЃРјРµРЅС‹ РєР°СЂС‚С‹
+	register_saycmd("nominate", "Cmd_Vote_Map", -1, ""); //РљРѕРјРјР°РЅРґР° РІС‹Р·РѕРІР° РјРµРЅСЋ РґР»СЏ СЃРјРµРЅС‹ РєР°СЂС‚С‹
+	register_saycmd("rockthevote", "Cmd_Vote_Map", -1, ""); //РљРѕРјРјР°РЅРґР° РІС‹Р·РѕРІР° РјРµРЅСЋ РґР»СЏ СЃРјРµРЅС‹ РєР°СЂС‚С‹
+	register_saycmd("nextmap", "Cmd_Vote_Map", -1, ""); //РљРѕРјРјР°РЅРґР° РІС‹Р·РѕРІР° РјРµРЅСЋ РґР»СЏ СЃРјРµРЅС‹ РєР°СЂС‚С‹
+	register_saycmd("map", "Cmd_Vote_Map", -1, ""); //РљРѕРјРјР°РЅРґР° РІС‹Р·РѕРІР° РјРµРЅСЋ РґР»СЏ СЃРјРµРЅС‹ РєР°СЂС‚С‹
+	register_saycmd("maps", "Cmd_Vote_Map", -1, ""); //РљРѕРјРјР°РЅРґР° РІС‹Р·РѕРІР° РјРµРЅСЋ РґР»СЏ СЃРјРµРЅС‹ РєР°СЂС‚С‹
+	register_saycmd("currentmap", "Cmd_Vote_Map", -1, ""); //РљРѕРјРјР°РЅРґР° РІС‹Р·РѕРІР° РјРµРЅСЋ РґР»СЏ СЃРјРµРЅС‹ РєР°СЂС‚С‹
+	register_saycmd("nom", "Cmd_Vote_Map", -1, ""); //РљРѕРјРјР°РЅРґР° РІС‹Р·РѕРІР° РјРµРЅСЋ РґР»СЏ СЃРјРµРЅС‹ РєР°СЂС‚С‹
 	
-	register_logevent("Event_Round_Start", 2, "0=World triggered", "1=Round_Start"); // Событие Начало раунда
-	register_event("SendAudio", "Event_Round_End", "a", "2&%!MRAD_terwin", "2&%!MRAD_ctwin", "2&%!MRAD_rounddraw"); //Событие Конец Раунда
+	register_logevent("Event_Round_Start", 2, "0=World triggered", "1=Round_Start"); // РЎРѕР±С‹С‚РёРµ РќР°С‡Р°Р»Рѕ СЂР°СѓРЅРґР°
+	register_event("SendAudio", "Event_Round_End", "a", "2&%!MRAD_terwin", "2&%!MRAD_ctwin", "2&%!MRAD_rounddraw"); //РЎРѕР±С‹С‚РёРµ РљРѕРЅРµС† Р Р°СѓРЅРґР°
 	register_event ( "TextMsg","event_restart_game","a", "2=#Game_Commencing","2=#Game_will_restart_in" )
 	
-	register_menu("Vote Map Menu", MENU_KEYS, "Maps_Menu_Command")//Создаем меню
+	register_menu("Vote Map Menu", MENU_KEYS, "Maps_Menu_Command")//РЎРѕР·РґР°РµРј РјРµРЅСЋ
 	
-	g_i_MessageIDSayText = get_user_msgid("SayText"); //Функция цветного чата
+	g_i_MessageIDSayText = get_user_msgid("SayText"); //Р¤СѓРЅРєС†РёСЏ С†РІРµС‚РЅРѕРіРѕ С‡Р°С‚Р°
 	
 	g_i_pcvar_LastMaps = register_cvar ( "ms_lastmaps","7" )
 	g_i_pcvar_TimeOutNominate	= register_cvar ( "ms_timeout_nominate",		"10" )
 	
-	new szLogInfo[] = "amx_logdir"; // Записываем в переменную путь к папке с логами
-	get_localinfo(szLogInfo, g_szLogFile, charsmax(g_szLogFile)); //Проверяем на наличие файлов
-	add(g_szLogFile, charsmax(g_szLogFile), "/ms_votemap");// Добавляем файл в папку votemap
+	new szLogInfo[] = "amx_logdir"; // Р—Р°РїРёСЃС‹РІР°РµРј РІ РїРµСЂРµРјРµРЅРЅСѓСЋ РїСѓС‚СЊ Рє РїР°РїРєРµ СЃ Р»РѕРіР°РјРё
+	get_localinfo(szLogInfo, g_szLogFile, charsmax(g_szLogFile)); //РџСЂРѕРІРµСЂСЏРµРј РЅР° РЅР°Р»РёС‡РёРµ С„Р°Р№Р»РѕРІ
+	add(g_szLogFile, charsmax(g_szLogFile), "/ms_votemap");// Р”РѕР±Р°РІР»СЏРµРј С„Р°Р№Р» РІ РїР°РїРєСѓ votemap
 	
-	if(!dir_exists(g_szLogFile)) // проверяем если папка votemap не существует, до создаем ее
-		mkdir(g_szLogFile); // создаем папку votemap
+	if(!dir_exists(g_szLogFile)) // РїСЂРѕРІРµСЂСЏРµРј РµСЃР»Рё РїР°РїРєР° votemap РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚, РґРѕ СЃРѕР·РґР°РµРј РµРµ
+		mkdir(g_szLogFile); // СЃРѕР·РґР°РµРј РїР°РїРєСѓ votemap
 	
-	new szTime[32]; //Массив времени
-	get_time("%d-%m-%Y", szTime, charsmax(szTime)); //Получаем время
-	format(g_szLogFile, charsmax(g_szLogFile), "%s/%s.log", g_szLogFile, szTime); //Создаем файл с логами и добавляем текущее время в название файла 
-	//Создаем путь к файлу с картами
-	new s_TempConfigDir[64]; //Создаем переменную для путей к файлам со списком карт
-	get_configsdir(s_TempConfigDir, 63); // Получаем дирректорию с настройками
-	format(g_s_MapFile, 63, "%s/ms_config/ms_maps.ini", s_TempConfigDir);// Получаем путь к файлу с картами
-	format(g_s_LastMapFile, 63, "%s/ms_config/ms_lastmaps.ini", s_TempConfigDir);// Получаем путь к файлу с последними картами
+	new szTime[32]; //РњР°СЃСЃРёРІ РІСЂРµРјРµРЅРё
+	get_time("%d-%m-%Y", szTime, charsmax(szTime)); //РџРѕР»СѓС‡Р°РµРј РІСЂРµРјСЏ
+	format(g_szLogFile, charsmax(g_szLogFile), "%s/%s.log", g_szLogFile, szTime); //РЎРѕР·РґР°РµРј С„Р°Р№Р» СЃ Р»РѕРіР°РјРё Рё РґРѕР±Р°РІР»СЏРµРј С‚РµРєСѓС‰РµРµ РІСЂРµРјСЏ РІ РЅР°Р·РІР°РЅРёРµ С„Р°Р№Р»Р° 
+	//РЎРѕР·РґР°РµРј РїСѓС‚СЊ Рє С„Р°Р№Р»Сѓ СЃ РєР°СЂС‚Р°РјРё
+	new s_TempConfigDir[64]; //РЎРѕР·РґР°РµРј РїРµСЂРµРјРµРЅРЅСѓСЋ РґР»СЏ РїСѓС‚РµР№ Рє С„Р°Р№Р»Р°Рј СЃРѕ СЃРїРёСЃРєРѕРј РєР°СЂС‚
+	get_configsdir(s_TempConfigDir, 63); // РџРѕР»СѓС‡Р°РµРј РґРёСЂСЂРµРєС‚РѕСЂРёСЋ СЃ РЅР°СЃС‚СЂРѕР№РєР°РјРё
+	format(g_s_MapFile, 63, "%s/ms_config/ms_maps.ini", s_TempConfigDir);// РџРѕР»СѓС‡Р°РµРј РїСѓС‚СЊ Рє С„Р°Р№Р»Сѓ СЃ РєР°СЂС‚Р°РјРё
+	format(g_s_LastMapFile, 63, "%s/ms_config/ms_lastmaps.ini", s_TempConfigDir);// РџРѕР»СѓС‡Р°РµРј РїСѓС‚СЊ Рє С„Р°Р№Р»Сѓ СЃ РїРѕСЃР»РµРґРЅРёРјРё РєР°СЂС‚Р°РјРё
 	// Add your code here...
 	Load_Maps()
 }
 
 public plugin_cfg()
 {
-	server_cmd("mp_timelimit 0"); //Меняем время карты на 0
+	server_cmd("mp_timelimit 0"); //РњРµРЅСЏРµРј РІСЂРµРјСЏ РєР°СЂС‚С‹ РЅР° 0
 	
 }
 
 public Cmd_Vote_Map(id)
 {	
-	if(g_b_votemap) // Проверяем Если голосование разрешено
+	if(g_b_votemap) // РџСЂРѕРІРµСЂСЏРµРј Р•СЃР»Рё РіРѕР»РѕСЃРѕРІР°РЅРёРµ СЂР°Р·СЂРµС€РµРЅРѕ
 	{
 		new s_timer = check_disable_nominate()
 		if ( s_timer )
@@ -102,7 +102,7 @@ public Cmd_Vote_Map(id)
 			client_printc(id, "\g%L \d%L \t%d:%d \d%L",id, "MS_ATTENTION", id, "VOTEMAP_BEFORE_CHANGINGS_MAPS", s_timer / 60, s_timer % 60, id, "VOTEMAP_MIN" );
 			client_cmd(id, "spk sound/events/friend_died.wav");
 		}else{
-			Vote_Map_Menu(id, g_i_MenuPosition[id] = 0); // Показываем меню с картами
+			Vote_Map_Menu(id, g_i_MenuPosition[id] = 0); // РџРѕРєР°Р·С‹РІР°РµРј РјРµРЅСЋ СЃ РєР°СЂС‚Р°РјРё
 		}
 	}else{
 		client_printc(id, "\g%L \d%L %L \g%s",id, "MS_ATTENTION", id, "VOTEMAP_VOTING_IS_COMPLETED", id, "VOTEMAP_NEXT_MAP",  NEXT_MAP_NAME);
@@ -110,15 +110,15 @@ public Cmd_Vote_Map(id)
 	}
 }
 
-//Создаем меню с картами
+//РЎРѕР·РґР°РµРј РјРµРЅСЋ СЃ РєР°СЂС‚Р°РјРё
 public Vote_Map_Menu(id, i_Pos)
 {
 	if (i_Pos < 0)
 		return
 	
 	client_cmd(id, "spk sound/events/tutor_msg.wav")
-	new s_Menu[MENU_SIZE + 1] //Размер меню
-	new i_CurrPos = 0 //Текущая позиция в списке меню
+	new s_Menu[MENU_SIZE + 1] //Р Р°Р·РјРµСЂ РјРµРЅСЋ
+	new i_CurrPos = 0 //РўРµРєСѓС‰Р°СЏ РїРѕР·РёС†РёСЏ РІ СЃРїРёСЃРєРµ РјРµРЅСЋ
 	new i_Start = i_Pos * MENU_SLOTS
 	new i_Keys
 	new i_Len
@@ -172,7 +172,7 @@ public Vote_Map_Menu(id, i_Pos)
 	
 	show_menu(id, i_Keys, s_Menu, -1, "Vote Map Menu")
 }
-//Действие с меню
+//Р”РµР№СЃС‚РІРёРµ СЃ РјРµРЅСЋ
 public Maps_Menu_Command(id, key) {
 	switch(key)
 	{
@@ -273,7 +273,7 @@ public Maps_Menu_Command(id, key) {
 	return PLUGIN_HANDLED
 }
 
-//Проверяем количество голосов на установленное количество
+//РџСЂРѕРІРµСЂСЏРµРј РєРѕР»РёС‡РµСЃС‚РІРѕ РіРѕР»РѕСЃРѕРІ РЅР° СѓСЃС‚Р°РЅРѕРІР»РµРЅРЅРѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ
 public CheckVotes(id, voter)
 {
 	
@@ -338,11 +338,11 @@ public CheckVotes(id, voter)
 	}
 }
 
-//Загружаем список карт из файла
+//Р—Р°РіСЂСѓР¶Р°РµРј СЃРїРёСЃРѕРє РєР°СЂС‚ РёР· С„Р°Р№Р»Р°
 Load_Maps()
 {
 	
-	//Получаем список недавних карт
+	//РџРѕР»СѓС‡Р°РµРј СЃРїРёСЃРѕРє РЅРµРґР°РІРЅРёС… РєР°СЂС‚
 	
 	new i_LastMaps = get_pcvar_num (g_i_pcvar_LastMaps)
 
@@ -368,10 +368,10 @@ Load_Maps()
 			}
 		}
 	} else {
-		log_amx ( "Файл %s не найден. Плагин создаст файл автоматически.", g_s_LastMapFile)
+		log_amx ( "Р¤Р°Р№Р» %s РЅРµ РЅР°Р№РґРµРЅ. РџР»Р°РіРёРЅ СЃРѕР·РґР°СЃС‚ С„Р°Р№Р» Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРё.", g_s_LastMapFile)
 	}
 	
-	new b_FileOpen = fopen(g_s_MapFile, "r") // Открываем файл с картами
+	new b_FileOpen = fopen(g_s_MapFile, "r") // РћС‚РєСЂС‹РІР°РµРј С„Р°Р№Р» СЃ РєР°СЂС‚Р°РјРё
 	
 	if (!b_FileOpen)
 	{
@@ -403,12 +403,12 @@ Load_Maps()
 	
 	if ( !delete_file ( g_s_LastMapFile) )
 	{
-		log_amx ( "Невозможно удалить файл %s", g_s_LastMapFile )
+		log_amx ( "РќРµРІРѕР·РјРѕР¶РЅРѕ СѓРґР°Р»РёС‚СЊ С„Р°Р№Р» %s", g_s_LastMapFile )
 	}
 
-	if ( !write_file ( g_s_LastMapFile, "; Данный файл создается и изменяется автоматически, не изменяйте его!" ) )
+	if ( !write_file ( g_s_LastMapFile, "; Р”Р°РЅРЅС‹Р№ С„Р°Р№Р» СЃРѕР·РґР°РµС‚СЃСЏ Рё РёР·РјРµРЅСЏРµС‚СЃСЏ Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРё, РЅРµ РёР·РјРµРЅСЏР№С‚Рµ РµРіРѕ!" ) )
 	{
-		log_amx ("Невозможна запись в файл %s", g_s_LastMapFile )
+		log_amx ("РќРµРІРѕР·РјРѕР¶РЅР° Р·Р°РїРёСЃСЊ РІ С„Р°Р№Р» %s", g_s_LastMapFile )
 	
 		return 0
 	}
@@ -422,7 +422,7 @@ Load_Maps()
 
 	return 1;
 }
-//Проверяем карту на валидность
+//РџСЂРѕРІРµСЂСЏРµРј РєР°СЂС‚Сѓ РЅР° РІР°Р»РёРґРЅРѕСЃС‚СЊ
 stock bool:Valid_Map(s_MapName[])
 {
 	if ( is_map_valid(s_MapName) )
@@ -452,7 +452,7 @@ stock bool:Valid_Map(s_MapName[])
 	
 	return false;
 }
-//Проверяем карту на наличие в списке недавних карт
+//РџСЂРѕРІРµСЂСЏРµРј РєР°СЂС‚Сѓ РЅР° РЅР°Р»РёС‡РёРµ РІ СЃРїРёСЃРєРµ РЅРµРґР°РІРЅРёС… РєР°СЂС‚
 bool:b_CheckLastMapName (s_MapName[] )
 {
 	for ( new i = 0; i < g_i_LastMapCounter; ++i )
@@ -509,46 +509,46 @@ stock client_printc(id, const text[], any:...)
 		message_end();
 	}
 }
-//Получаем процент голосов
+//РџРѕР»СѓС‡Р°РµРј РїСЂРѕС†РµРЅС‚ РіРѕР»РѕСЃРѕРІ
 stock get_percent(value, tvalue)
 {     
 	return floatround(floatmul(float(value) / float(tvalue) , 100.0));
 }
 
-//Отключение игрока, сброс голосов
+//РћС‚РєР»СЋС‡РµРЅРёРµ РёРіСЂРѕРєР°, СЃР±СЂРѕСЃ РіРѕР»РѕСЃРѕРІ
 public client_disconnected(id)
 {
-	if(g_i_VotedPlayers[id])// Если игрок учавствовал в голосовании продолжаем
+	if(g_i_VotedPlayers[id])// Р•СЃР»Рё РёРіСЂРѕРє СѓС‡Р°РІСЃС‚РІРѕРІР°Р» РІ РіРѕР»РѕСЃРѕРІР°РЅРёРё РїСЂРѕРґРѕР»Р¶Р°РµРј
 	{
-		get_players(g_i_Players, g_i_Num, "h"); //Получаем количество игроков без HLTV
+		get_players(g_i_Players, g_i_Num, "h"); //РџРѕР»СѓС‡Р°РµРј РєРѕР»РёС‡РµСЃС‚РІРѕ РёРіСЂРѕРєРѕРІ Р±РµР· HLTV
 		
-		for(new i = 0 ; i < g_i_Num ; i++) // Ищем за что голосовал игрок
+		for(new i = 0 ; i < g_i_Num ; i++) // РС‰РµРј Р·Р° С‡С‚Рѕ РіРѕР»РѕСЃРѕРІР°Р» РёРіСЂРѕРє
 		{
-			if(g_i_VotedPlayers[id] & (1 << g_i_Players[i])) // Находим все голоса игрока
+			if(g_i_VotedPlayers[id] & (1 << g_i_Players[i])) // РќР°С…РѕРґРёРј РІСЃРµ РіРѕР»РѕСЃР° РёРіСЂРѕРєР°
 			{
-				g_i_Votes[g_i_Players[i]]--; //Удаляем все голоса данного игрока
+				g_i_Votes[g_i_Players[i]]--; //РЈРґР°Р»СЏРµРј РІСЃРµ РіРѕР»РѕСЃР° РґР°РЅРЅРѕРіРѕ РёРіСЂРѕРєР°
 			}
 		}
-		g_i_VotedPlayers[id] = 0; // Сбрасываем участие игрока в голосовании на 0
+		g_i_VotedPlayers[id] = 0; // РЎР±СЂР°СЃС‹РІР°РµРј СѓС‡Р°СЃС‚РёРµ РёРіСЂРѕРєР° РІ РіРѕР»РѕСЃРѕРІР°РЅРёРё РЅР° 0
 	}
 }
 
-//Подключение игрока
+//РџРѕРґРєР»СЋС‡РµРЅРёРµ РёРіСЂРѕРєР°
 
 public client_authorized(id)
 {
-	if(g_i_VotedPlayers[id])// Если игрок учавствовал в голосовании продолжаем
+	if(g_i_VotedPlayers[id])// Р•СЃР»Рё РёРіСЂРѕРє СѓС‡Р°РІСЃС‚РІРѕРІР°Р» РІ РіРѕР»РѕСЃРѕРІР°РЅРёРё РїСЂРѕРґРѕР»Р¶Р°РµРј
 	{
-		get_players(g_i_Players, g_i_Num, "h"); //Получаем количество игроков без HLTV
+		get_players(g_i_Players, g_i_Num, "h"); //РџРѕР»СѓС‡Р°РµРј РєРѕР»РёС‡РµСЃС‚РІРѕ РёРіСЂРѕРєРѕРІ Р±РµР· HLTV
 		
-		for(new i = 0 ; i < g_i_Num ; i++) // Ищем за что голосовал игрок
+		for(new i = 0 ; i < g_i_Num ; i++) // РС‰РµРј Р·Р° С‡С‚Рѕ РіРѕР»РѕСЃРѕРІР°Р» РёРіСЂРѕРє
 		{
-			if(g_i_VotedPlayers[id] & (1 << g_i_Players[i])) // Находим все голоса игрока
+			if(g_i_VotedPlayers[id] & (1 << g_i_Players[i])) // РќР°С…РѕРґРёРј РІСЃРµ РіРѕР»РѕСЃР° РёРіСЂРѕРєР°
 			{
-				g_i_Votes[g_i_Players[i]]--; //Удаляем все голоса данного игрока
+				g_i_Votes[g_i_Players[i]]--; //РЈРґР°Р»СЏРµРј РІСЃРµ РіРѕР»РѕСЃР° РґР°РЅРЅРѕРіРѕ РёРіСЂРѕРєР°
 			}
 		}
-		g_i_VotedPlayers[id] = 0; // Сбрасываем участие игрока в голосовании на 0
+		g_i_VotedPlayers[id] = 0; // РЎР±СЂР°СЃС‹РІР°РµРј СѓС‡Р°СЃС‚РёРµ РёРіСЂРѕРєР° РІ РіРѕР»РѕСЃРѕРІР°РЅРёРё РЅР° 0
 	}
 }
 
