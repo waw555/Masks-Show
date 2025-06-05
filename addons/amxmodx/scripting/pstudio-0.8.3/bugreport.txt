@@ -1,779 +1,28 @@
-date/time         : 2025-06-03, 23:48:05, 844ms
-computer name     : HOME
-user name         : waw55
-operating system  : Windows NT New x64 build 9200
-system language   : Russian
-system up time    : 2 hours 45 minutes
-program up time   : 2 minutes 45 seconds
-processors        : 4x Intel(R) Core(TM) i5-6500 CPU @ 3.20GHz
-physical memory   : 2953/8135 MB (free/total)
-free disk space   : (C:) 333,88 GB (D:) 25,61 GB
-display mode      : 1920x1080, 32 bit
-process id        : $d58
-allocated memory  : 111,04 MB
-executable        : PawnStudio.exe
-exec. date/time   : 2017-10-14 20:52
-version           : 0.8.3.0
-compiled with     : Delphi 7
-madExcept version : 3.0e
-callstack crc     : $af83868d, $cfea9cf1, $c899d05d
-exception number  : 1
-exception class   : EAccessViolation
-exception message : Zugriffsverletzung bei Adresse 0046BE68 in Modul 'PawnStudio.exe'. Lesen von Adresse 000004B4.
-
-main thread ($3294):
-0046be68 +008 PawnStudio.exe Classes                     TCollection.GetItem
-006d3c82 +1d2 PawnStudio.exe UnitCodeInspector  198  +30 FillComboBox
-006d41cf +3a3 PawnStudio.exe UnitCodeInspector  304  +49 RecreateInspector
-006e1895 +659 PawnStudio.exe UnitfrmMain       1746 +132 TfrmMain.sciEditorModified
-0057cd5f +033 PawnStudio.exe SciLexer          1921   +2 TScintillaBase.doSciModified
-005880c0 +080 PawnStudio.exe SciLexerMod       1416  +16 TScintilla.doSciModified
-0057c25b +127 PawnStudio.exe SciLexer          1204  +15 TScintillaBase.WMNotify
-004c3dcc +188 PawnStudio.exe Controls                    TControl.WndProc
-004c6d17 +157 PawnStudio.exe Controls                    TWinControl.WndProc
-006e9a66 +00e PawnStudio.exe UnitfrmMain       4005   +1 TfrmMain.sciEditorProc
-004c3b9c +024 PawnStudio.exe Controls                    TControl.Perform
-004c6e4f +023 PawnStudio.exe Controls                    DoControlMsg
-004c74c9 +00d PawnStudio.exe Controls                    TWinControl.WMNotify
-004c3dcc +188 PawnStudio.exe Controls                    TControl.WndProc
-004c3b9c +024 PawnStudio.exe Controls                    TControl.Perform
-004c6e4f +023 PawnStudio.exe Controls                    DoControlMsg
-004c74a7 +00b PawnStudio.exe Controls                    TWinControl.WMCommand
-004c3dcc +188 PawnStudio.exe Controls                    TControl.WndProc
-004c6d17 +157 PawnStudio.exe Controls                    TWinControl.WndProc
-0053cb4b +4ff PawnStudio.exe JvExControls                TJvExCustomControl.WndProc
-004c6994 +02c PawnStudio.exe Controls                    TWinControl.MainWndProc
-004752dc +014 PawnStudio.exe Classes                     StdWndProc
-777771da +04a ntdll.dll                                  KiUserCallbackDispatcher
-75acda88 +038 USER32.dll                                 SendMessageA
-777771da +04a ntdll.dll                                  KiUserCallbackDispatcher
-75acd0dd +07d USER32.dll                                 CallWindowProcA
-004c6dfb +0d7 PawnStudio.exe Controls                    TWinControl.DefaultHandler
-0057c3e5 +02d PawnStudio.exe SciLexer          1257   +7 TScintillaBase.DefaultHandler
-004c8081 +019 PawnStudio.exe Controls                    TWinControl.WMKeyDown
-004c3dcc +188 PawnStudio.exe Controls                    TControl.WndProc
-004c6d17 +157 PawnStudio.exe Controls                    TWinControl.WndProc
-006e9a66 +00e PawnStudio.exe UnitfrmMain       4005   +1 TfrmMain.sciEditorProc
-004c6994 +02c PawnStudio.exe Controls                    TWinControl.MainWndProc
-004752dc +014 PawnStudio.exe Classes                     StdWndProc
-75ad1a6b +00b USER32.dll                                 DispatchMessageA
-004e35a3 +083 PawnStudio.exe Forms                       TApplication.ProcessMessage
-004e35da +00a PawnStudio.exe Forms                       TApplication.HandleMessage
-004e37fa +096 PawnStudio.exe Forms                       TApplication.Run
-006f8257 +1c7 PawnStudio.exe PawnStudio         101  +30 initialization
-76af6837 +017 KERNEL32.DLL                               BaseThreadInitThunk
-
-thread $1fd8: <priority:-1>
-77774f6c +0c ntdll.dll                                NtDelayExecution
-7778edb4 +e4 ntdll.dll                                RtlDelayExecution
-75d7c4b9 +59 KERNELBASE.dll                           SleepEx
-75d7c44a +0a KERNELBASE.dll                           Sleep
-006cf88d +d1 PawnStudio.exe UnitCSResultSaver 931 +17 TQueueParser.Execute
-00473d70 +34 PawnStudio.exe Classes                   ThreadProc
-00404b6c +28 PawnStudio.exe System                    ThreadWrapper
-76af6837 +17 KERNEL32.DLL                             BaseThreadInitThunk
-
-thread $678:
-77776a1c +0c ntdll.dll     NtWaitForWorkViaWorkerFactory
-76af6837 +17 KERNEL32.DLL  BaseThreadInitThunk
-
-thread $35f4:
-77776a1c +0c ntdll.dll     NtWaitForWorkViaWorkerFactory
-76af6837 +17 KERNEL32.DLL  BaseThreadInitThunk
-
-thread $2c68:
-777751dc +00c ntdll.dll                NtWaitForMultipleObjects
-75d7a4bd +12d KERNELBASE.dll           WaitForMultipleObjectsEx
-0044ed21 +00d PawnStudio.exe madExcept CallThreadProcSafe
-0044ed8b +037 PawnStudio.exe madExcept ThreadExceptFrame
-76af6837 +017 KERNEL32.DLL             BaseThreadInitThunk
->> created by main thread ($3294) at:
-76834d7e +000 combase.dll
-
-thread $1bf4:
-77776a1c +0c ntdll.dll     NtWaitForWorkViaWorkerFactory
-76af6837 +17 KERNEL32.DLL  BaseThreadInitThunk
-
-thread $15e8:
-77776a1c +0c ntdll.dll     NtWaitForWorkViaWorkerFactory
-76af6837 +17 KERNEL32.DLL  BaseThreadInitThunk
-
-thread $255c:
-777751dc +00c ntdll.dll                 NtWaitForMultipleObjects
-75d7a4bd +12d KERNELBASE.dll            WaitForMultipleObjectsEx
-75d7a373 +013 KERNELBASE.dll            WaitForMultipleObjects
-005dc862 +056 PawnStudio.exe ShellCtrls TShellChangeThread.Execute
-00473d70 +034 PawnStudio.exe Classes    ThreadProc
-00404b6c +028 PawnStudio.exe System     ThreadWrapper
-76af6837 +017 KERNEL32.DLL              BaseThreadInitThunk
-
-thread $2c60:
-77776a1c +0c ntdll.dll     NtWaitForWorkViaWorkerFactory
-76af6837 +17 KERNEL32.DLL  BaseThreadInitThunk
-
-thread $5fc:
-76bd10cc +0c win32u.dll               NtUserGetMessage
-75abff8a +2a USER32.dll               GetMessageW
-0044ed21 +0d PawnStudio.exe madExcept CallThreadProcSafe
-0044ed8b +37 PawnStudio.exe madExcept ThreadExceptFrame
-76af6837 +17 KERNEL32.DLL             BaseThreadInitThunk
->> created by thread $35f4 at:
-76834d7e +00 combase.dll
-
-thread $1ed4:
-77776a1c +0c ntdll.dll     NtWaitForWorkViaWorkerFactory
-76af6837 +17 KERNEL32.DLL  BaseThreadInitThunk
-
-thread $2ee0:
-76bd10cc +0c win32u.dll               NtUserGetMessage
-75acdd8f +4f USER32.dll               GetMessageA
-0044f770 +18 PawnStudio.exe madExcept GetMessageCallbackA
-76127fac +8c msvcrt.dll               _endthreadex
-0044ed21 +0d PawnStudio.exe madExcept CallThreadProcSafe
-0044ed8b +37 PawnStudio.exe madExcept ThreadExceptFrame
-76af6837 +17 KERNEL32.DLL             BaseThreadInitThunk
->> created by main thread ($3294) at:
-76127e8f +7f msvcrt.dll               _beginthreadex
-
-thread $f30:
-77776a1c +0c ntdll.dll     NtWaitForWorkViaWorkerFactory
-76af6837 +17 KERNEL32.DLL  BaseThreadInitThunk
-
-thread $22f0:
-77776a1c +0c ntdll.dll     NtWaitForWorkViaWorkerFactory
-76af6837 +17 KERNEL32.DLL  BaseThreadInitThunk
-
-thread $36ec:
-77776a1c +0c ntdll.dll     NtWaitForWorkViaWorkerFactory
-76af6837 +17 KERNEL32.DLL  BaseThreadInitThunk
-
-thread $ec4:
-76bd5cbc +0c win32u.dll    NtUserMsgWaitForMultipleObjectsEx
-75abebe9 +39 USER32.dll    MsgWaitForMultipleObjects
-76af6837 +17 KERNEL32.DLL  BaseThreadInitThunk
-
-thread $2dbc:
-76bd5cbc +0c win32u.dll    NtUserMsgWaitForMultipleObjectsEx
-75abebe9 +39 USER32.dll    MsgWaitForMultipleObjects
-76af6837 +17 KERNEL32.DLL  BaseThreadInitThunk
-
-thread $3094:
-76bd5cbc +0c win32u.dll    NtUserMsgWaitForMultipleObjectsEx
-75abebe9 +39 USER32.dll    MsgWaitForMultipleObjects
-76af6837 +17 KERNEL32.DLL  BaseThreadInitThunk
-
-thread $2038:
-76bd5cbc +0c win32u.dll    NtUserMsgWaitForMultipleObjectsEx
-75abebe9 +39 USER32.dll    MsgWaitForMultipleObjects
-76af6837 +17 KERNEL32.DLL  BaseThreadInitThunk
-
-thread $cb0:
-77776a1c +0c ntdll.dll     NtWaitForWorkViaWorkerFactory
-76af6837 +17 KERNEL32.DLL  BaseThreadInitThunk
-
-thread $d04:
-77774c4c +0c ntdll.dll                            NtWaitForSingleObject
-75d71b03 +93 KERNELBASE.dll                       WaitForSingleObjectEx
-75d71a5d +0d KERNELBASE.dll                       WaitForSingleObject
-004740d8 +c8 PawnStudio.exe Classes               TThread.Synchronize
-0047416c +1c PawnStudio.exe Classes               TThread.Synchronize
-006d2369 +1d PawnStudio.exe UnitDocuments 1053 +4 TDocParser.Execute
-00473d70 +34 PawnStudio.exe Classes               ThreadProc
-00404b6c +28 PawnStudio.exe System                ThreadWrapper
-76af6837 +17 KERNEL32.DLL                         BaseThreadInitThunk
-
-thread $2ff4:
-77774f6c +0c ntdll.dll                            NtDelayExecution
-7778edb4 +e4 ntdll.dll                            RtlDelayExecution
-75d7c4b9 +59 KERNELBASE.dll                       SleepEx
-75d7c44a +0a KERNELBASE.dll                       Sleep
-006d2f2c +38 PawnStudio.exe UnitDocuments 1376 +7 TKeywordUpdater.Execute
-00473d70 +34 PawnStudio.exe Classes               ThreadProc
-00404b6c +28 PawnStudio.exe System                ThreadWrapper
-76af6837 +17 KERNEL32.DLL                         BaseThreadInitThunk
-
-thread $4c8:
-77776a1c +0c ntdll.dll     NtWaitForWorkViaWorkerFactory
-76af6837 +17 KERNEL32.DLL  BaseThreadInitThunk
-
-thread $136c:
-77776a1c +0c ntdll.dll     NtWaitForWorkViaWorkerFactory
-76af6837 +17 KERNEL32.DLL  BaseThreadInitThunk
-
-thread $12e0:
-76bd10dc +00c win32u.dll                            NtUserMessageCall
-75acda88 +038 USER32.dll                            SendMessageA
-0042b6f1 +011 PawnStudio.exe CommCtrl               TreeView_GetNextItem
-0042b778 +004 PawnStudio.exe CommCtrl               TreeView_GetRoot
-0049f886 +00a PawnStudio.exe ComCtrls               TTreeNodes.GetFirstNode
-0049f912 +07a PawnStudio.exe ComCtrls               TTreeNodes.GetNodeFromIndex
-006d1b00 +06c PawnStudio.exe UnitDocuments  828  +9 GetCategory
-006d1ab9 +025 PawnStudio.exe UnitDocuments  823  +4 GetCategory
-006d1fb6 +08e PawnStudio.exe UnitDocuments  952 +12 UpdateCat
-006d285e +512 PawnStudio.exe UnitDocuments 1129 +80 TDocParser.Execute
-00473d70 +034 PawnStudio.exe Classes                ThreadProc
-00404b6c +028 PawnStudio.exe System                 ThreadWrapper
-76af6837 +017 KERNEL32.DLL                          BaseThreadInitThunk
-
-thread $2e38:
-77774f6c +0c ntdll.dll                            NtDelayExecution
-7778edb4 +e4 ntdll.dll                            RtlDelayExecution
-75d7c4b9 +59 KERNELBASE.dll                       SleepEx
-75d7c44a +0a KERNELBASE.dll                       Sleep
-006d2f2c +38 PawnStudio.exe UnitDocuments 1376 +7 TKeywordUpdater.Execute
-00473d70 +34 PawnStudio.exe Classes               ThreadProc
-00404b6c +28 PawnStudio.exe System                ThreadWrapper
-76af6837 +17 KERNEL32.DLL                         BaseThreadInitThunk
-
-thread $2c10: <priority:-1>
-77774c4c +0c ntdll.dll                               NtWaitForSingleObject
-75d71b03 +93 KERNELBASE.dll                          WaitForSingleObjectEx
-75d71a5d +0d KERNELBASE.dll                          WaitForSingleObject
-004740d8 +c8 PawnStudio.exe Classes                  TThread.Synchronize
-0047416c +1c PawnStudio.exe Classes                  TThread.Synchronize
-006cf38f +1f PawnStudio.exe UnitCSResultSaver 789 +3 TFileWatcher.Execute
-00473d70 +34 PawnStudio.exe Classes                  ThreadProc
-00404b6c +28 PawnStudio.exe System                   ThreadWrapper
-76af6837 +17 KERNEL32.DLL                            BaseThreadInitThunk
-
-thread $1ed8: <priority:-1>
-77774c4c +0c ntdll.dll                               NtWaitForSingleObject
-75d71b03 +93 KERNELBASE.dll                          WaitForSingleObjectEx
-75d71a5d +0d KERNELBASE.dll                          WaitForSingleObject
-004740d8 +c8 PawnStudio.exe Classes                  TThread.Synchronize
-0047416c +1c PawnStudio.exe Classes                  TThread.Synchronize
-006cf38f +1f PawnStudio.exe UnitCSResultSaver 789 +3 TFileWatcher.Execute
-00473d70 +34 PawnStudio.exe Classes                  ThreadProc
-00404b6c +28 PawnStudio.exe System                   ThreadWrapper
-76af6837 +17 KERNEL32.DLL                            BaseThreadInitThunk
-
-modules:
-00400000 PawnStudio.exe                  0.8.3.0             D:\GitHub\Masks-Show\addons\amxmodx\scripting\pstudio-0.8.3
-0c7e0000 GrooveIntlResource.dll          16.0.4684.1000      C:\PROGRA~2\MICROS~2\Office16\1049
-10000000 scilexer.dll                    1.7.4.0             D:\GitHub\Masks-Show\addons\amxmodx\scripting\pstudio-0.8.3
-5aad0000 msi.dll                         5.0.22000.2176      C:\WINDOWS\SYSTEM32
-5ad90000 GROOVEEX.DLL                    16.0.4732.1000      C:\PROGRA~2\MICROS~2\Office16
-5af10000 dbghelp.dll                     6.2.22000.1         C:\WINDOWS\SYSTEM32
-5b0e0000 d2d1.dll                        6.2.22000.120       C:\WINDOWS\SYSTEM32
-5b5d0000 drivefsext.dll                  109.0.3.0           C:\Program Files\Google\Drive File Stream\109.0.3.0\x86
-5cde0000 FileSyncShell.dll               25.85.504.2         C:\Program Files\Microsoft OneDrive\25.085.0504.0002\i386
-5cf90000 windows.staterepositorycore.dll 6.2.22000.2124      C:\WINDOWS\SYSTEM32
-5cfb0000 Windows.System.Launcher.dll     6.2.22000.1165      C:\Windows\System32
-5d0a0000 Windows.Storage.Search.dll      6.2.22000.2124      C:\WINDOWS\system32
-5d150000 StructuredQuery.dll             7.0.22000.1         C:\WINDOWS\System32
-5d1f0000 CoreUIComponents.dll            6.2.22000.132       C:\WINDOWS\SYSTEM32
-5d490000 textinputframework.dll          6.2.22000.2360      C:\WINDOWS\SYSTEM32
-5d580000 msscript.ocx                    1.0.10240.16384     C:\Windows\System32
-5d5a0000 castingshellext.dll             6.2.22000.653       C:\WINDOWS\SYSTEM32
-5d5c0000 WMASF.DLL                       12.0.22000.653      C:\WINDOWS\system32
-5d610000 WMVCore.DLL                     12.0.22000.653      C:\WINDOWS\system32
-5d7e0000 audiodev.dll                    6.2.22000.1         C:\WINDOWS\system32
-5d830000 PortableDeviceApi.dll           6.2.22000.1         C:\Windows\System32
-5d8c0000 wpdshext.dll                    6.2.22000.1         C:\WINDOWS\system32
-5d950000 DevDispItemProvider.dll         6.2.22000.653       C:\Windows\System32
-5d970000 PlayToDevice.dll                6.2.22000.653       C:\Windows\System32
-5d9c0000 dlnashext.dll                   6.2.22000.1         C:\Windows\System32
-5da10000 thumbcache.dll                  6.2.22000.1         C:\Windows\System32
-5da60000 icm32.dll                       6.2.22000.708       C:\WINDOWS\SYSTEM32
-5daa0000 mscms.dll                       6.2.22000.708       C:\WINDOWS\SYSTEM32
-5db40000 wkscli.dll                      6.2.22000.2124      C:\WINDOWS\System32
-5db60000 davclnt.dll                     6.2.22000.1         C:\WINDOWS\System32
-5db80000 ntlanman.dll                    6.2.22000.1574      C:\WINDOWS\System32
-5dba0000 p9np.dll                        6.2.22000.1281      C:\WINDOWS\System32
-5dbd0000 YandexDisk3ShellExt-1511.dll    3.2.43.1511         C:\Users\waw55\AppData\Roaming\Yandex\YandexDisk2\3.2.43.5089\wow64
-5dcc0000 NetworkExplorer.dll             6.2.22000.1         C:\WINDOWS\system32
-5dce0000 apphelp.dll                     6.2.22000.1880      C:\WINDOWS\SYSTEM32
-5dd90000 tiptsf.dll                      6.2.22000.1         C:\Program Files (x86)\Common Files\microsoft shared\ink
-5de20000 TextShaping.dll                                     C:\WINDOWS\SYSTEM32
-5dec0000 olepro32.dll                    6.2.22000.65        C:\WINDOWS\SYSTEM32
-5dee0000 msvcp110_win.dll                6.2.22000.1         C:\WINDOWS\SYSTEM32
-5df50000 policymanager.dll               6.2.22000.2538      C:\WINDOWS\SYSTEM32
-5dfe0000 cscapi.dll                      6.2.22000.1         C:\WINDOWS\SYSTEM32
-5dff0000 ntshrui.dll                     6.2.22000.65        C:\WINDOWS\SYSTEM32
-5e050000 msls31.dll                      3.10.349.0          C:\WINDOWS\SYSTEM32
-5e090000 RICHED20.DLL                    5.31.23.1231        C:\WINDOWS\SYSTEM32
-5e180000 OneCoreUAPCommonProxyStub.dll   6.2.22000.1761      C:\Windows\System32
-5e5f0000 drprov.dll                      6.2.22000.1         C:\WINDOWS\System32
-5e600000 USP10.dll                       6.2.22000.1         C:\WINDOWS\SYSTEM32
-5eff0000 MMDevApi.dll                    6.2.22000.1042      C:\WINDOWS\System32
-60c90000 twinapi.appcore.dll             6.2.22000.2538      C:\WINDOWS\system32
-60e90000 dataexchange.dll                6.2.22000.1         C:\WINDOWS\system32
-60ee0000 dwmapi.dll                      6.2.22000.41        C:\WINDOWS\SYSTEM32
-612f0000 CoreMessaging.dll               6.2.22000.1042      C:\WINDOWS\SYSTEM32
-649b0000 WININET.dll                     11.0.22000.2245     C:\WINDOWS\SYSTEM32
-64ef0000 wsock32.dll                     6.2.22000.1         C:\WINDOWS\SYSTEM32
-64f00000 comctl32.dll                    6.10.22000.120      C:\WINDOWS\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22000.120_none_e541a94fcce8ed6d
-6c190000 WindowsCodecs.dll               6.2.22000.1042      C:\WINDOWS\SYSTEM32
-6ee30000 MSVCP140.dll                    14.32.31332.0       C:\WINDOWS\SYSTEM32
-6f330000 gdiplus.dll                     6.2.22000.2003      C:\WINDOWS\WinSxS\x86_microsoft.windows.gdiplus_6595b64144ccf1df_1.1.22000.2003_none_93fcfb98d9f1057f
-6f4d0000 uxtheme.dll                     6.2.22000.2416      C:\WINDOWS\system32
-6f560000 msimg32.dll                     6.2.22000.1         C:\WINDOWS\SYSTEM32
-6fe30000 MSASN1.dll                      6.2.22000.1219      C:\WINDOWS\SYSTEM32
-6fe40000 WINSTA.dll                      6.2.22000.2124      C:\WINDOWS\System32
-6fe90000 VCRUNTIME140.dll                14.32.31332.0       C:\WINDOWS\SYSTEM32
-70550000 MPR.dll                         6.2.22000.778       C:\WINDOWS\SYSTEM32
-70950000 cldapi.dll                      6.2.22000.2295      C:\Windows\System32
-70a00000 netutils.dll                    6.2.22000.434       C:\WINDOWS\System32
-70a10000 srvcli.dll                      6.2.22000.2124      C:\WINDOWS\SYSTEM32
-70be0000 VAULTCLI.dll                    6.2.22000.613       C:\WINDOWS\SYSTEM32
-70c30000 edputil.dll                     6.2.22000.1         C:\WINDOWS\SYSTEM32
-710d0000 Windows.StateRepositoryPS.dll   6.2.22000.2124      C:\Windows\System32
-71160000 SSPICLI.DLL                     6.2.22000.2245      C:\WINDOWS\SYSTEM32
-71190000 Secur32.dll                     6.2.22000.675       C:\WINDOWS\SYSTEM32
-72450000 iertutil.dll                    11.0.22000.2538     C:\Windows\System32
-72740000 Windows.FileExplorer.Common.dll 6.2.22000.1641      C:\Windows\System32
-73080000 propsys.dll                     7.0.22000.37        C:\WINDOWS\system32
-73160000 version.dll                     6.2.22000.1         C:\WINDOWS\SYSTEM32
-73200000 USERENV.dll                     6.2.22000.2124      C:\WINDOWS\SYSTEM32
-73450000 CRYPTBASE.DLL                   6.2.22000.1         C:\WINDOWS\SYSTEM32
-73460000 bcrypt.dll                      6.2.22000.2176      C:\WINDOWS\SYSTEM32
-734d0000 profapi.dll                     6.2.22000.2124      C:\WINDOWS\SYSTEM32
-734f0000 wintypes.dll                    6.2.22000.2360      C:\WINDOWS\SYSTEM32
-736d0000 windows.storage.dll             6.2.22000.2245      C:\WINDOWS\SYSTEM32
-73da0000 DEVOBJ.dll                      6.2.22000.2124      C:\WINDOWS\System32
-75160000 CFGMGR32.dll                    6.2.22000.2124      C:\WINDOWS\SYSTEM32
-75300000 kernel.appcore.dll              6.2.22000.71        C:\WINDOWS\SYSTEM32
-75320000 winspool.drv                    6.2.22000.2003      C:\WINDOWS\SYSTEM32
-753e0000 winmm.dll                       6.2.22000.1         C:\WINDOWS\SYSTEM32
-75440000 WTSAPI32.dll                    6.2.22000.1         C:\WINDOWS\SYSTEM32
-75450000 MSCTF.dll                       6.2.22000.1641      C:\WINDOWS\System32
-755c0000 ole32.dll                       6.2.22000.2538      C:\WINDOWS\System32
-75710000 clbcatq.dll                     2001.12.10941.16384 C:\WINDOWS\System32
-757a0000 GDI32.dll                       6.2.22000.2360      C:\WINDOWS\System32
-757d0000 comdlg32.dll                    6.2.22000.778       C:\WINDOWS\System32
-75890000 bcryptPrimitives.dll            6.2.22000.1455      C:\WINDOWS\System32
-75900000 ucrtbase.dll                    6.2.22000.1         C:\WINDOWS\System32
-75a90000 USER32.dll                      6.2.22000.2360      C:\WINDOWS\System32
-75c40000 KERNELBASE.dll                  6.2.22000.2538      C:\WINDOWS\System32
-75eb0000 advapi32.dll                    6.2.22000.2360      C:\WINDOWS\System32
-75fa0000 gdi32full.dll                   6.2.22000.2538      C:\WINDOWS\System32
-76090000 imm32.dll                       6.2.22000.1641      C:\WINDOWS\System32
-760c0000 msvcrt.dll                      7.0.22000.1         C:\WINDOWS\System32
-76190000 sechost.dll                     6.2.22000.2360      C:\WINDOWS\System32
-76270000 SETUPAPI.dll                    6.2.22000.2124      C:\WINDOWS\System32
-766b0000 WS2_32.dll                      6.2.22000.1         C:\WINDOWS\System32
-76720000 combase.dll                     6.2.22000.2360      C:\WINDOWS\System32
-769c0000 SHLWAPI.dll                     6.2.22000.1         C:\WINDOWS\System32
-76a10000 shcore.dll                      6.2.22000.708       C:\WINDOWS\System32
-76ae0000 KERNEL32.DLL                    6.2.22000.2538      C:\WINDOWS\System32
-76bd0000 win32u.dll                      6.2.22000.37        C:\WINDOWS\System32
-76c20000 RPCRT4.dll                      6.2.22000.2538      C:\WINDOWS\System32
-76ce0000 CRYPT32.dll                     6.2.22000.2482      C:\WINDOWS\System32
-76de0000 oleaut32.dll                    6.2.22000.2176      C:\WINDOWS\System32
-76e80000 WINTRUST.dll                    6.2.22000.2482      C:\WINDOWS\System32
-76ee0000 msvcp_win.dll                   6.2.22000.1         C:\WINDOWS\System32
-76f60000 SHELL32.dll                     6.2.22000.2482      C:\WINDOWS\System32
-77700000 ntdll.dll                       6.2.22000.2538      C:\WINDOWS\SYSTEM32
-
-processes:
-0000 Idle                        0
-0004 System                      0
-0080 Registry                    0
-01b8 smss.exe                    0
-02c4 csrss.exe                   0
-0334 wininit.exe                 0
-033c csrss.exe                   1
-037c services.exe                0
-0384 lsass.exe                   0
-01c0 svchost.exe                 0
-0218 fontdrvhost.exe             0
-03d0 winlogon.exe                1
-0424 fontdrvhost.exe             1
-042c svchost.exe                 0
-047c svchost.exe                 0
-04b4 dwm.exe                     1
-0500 svchost.exe                 0
-053c svchost.exe                 0
-0568 svchost.exe                 0
-0570 svchost.exe                 0
-05b4 svchost.exe                 0
-05c4 svchost.exe                 0
-0604 svchost.exe                 0
-060c svchost.exe                 0
-061c svchost.exe                 0
-067c svchost.exe                 0
-06d8 svchost.exe                 0
-0758 atiesrxx.exe                0
-0760 svchost.exe                 0
-0768 amdfendrsr.exe              0
-07cc svchost.exe                 0
-0420 svchost.exe                 0
-0838 svchost.exe                 0
-0840 svchost.exe                 0
-085c svchost.exe                 0
-0864 svchost.exe                 0
-0870 atieclxx.exe                1
-08f4 Memory Compression          0
-0910 svchost.exe                 0
-0970 svchost.exe                 0
-0978 svchost.exe                 0
-0998 svchost.exe                 0
-09c4 svchost.exe                 0
-0af0 svchost.exe                 0
-0b6c svchost.exe                 0
-0b8c svchost.exe                 0
-0b94 svchost.exe                 0
-0bbc svchost.exe                 0
-0858 spoolsv.exe                 0
-07d8 svchost.exe                 0
-0ac8 svchost.exe                 0
-0c10 svchost.exe                 0
-0d24 svchost.exe                 0
-0d9c svchost.exe                 0
-0da4 armsvc.exe                  0
-0db8 atkexComSvc.exe             0
-0dc0 svchost.exe                 0
-0dd0 AsusFanControlService.exe   0
-0de8 svchost.exe                 0
-0e10 svchost.exe                 0
-0e18 svchost.exe                 0
-0e28 DSAService.exe              0
-0e38 DSAUpdateService.exe        0
-0ebc jhi_service.exe             0
-0f18 MpDefenderCoreService.exe   0
-0f78 svchost.exe                 0
-0f80 PsiService_2.exe            0
-0f9c svchost.exe                 0
-0fb4 ss_conn_service.exe         0
-0fbc ss_conn_service2.exe        0
-0fdc svchost.exe                 0
-0fe4 MsMpEng.exe                 0
-0ff8 wireguard.exe               0
-0e00 WMIRegistrationService.exe  0
-1004 svchost.exe                 0
-1010 SearchIndexer.exe           0
-11cc svchost.exe                 0
-1238 dasHost.exe                 0
-12fc svchost.exe                 0
-133c svchost.exe                 0
-1374 svchost.exe                 0
-13ec WmiPrvSE.exe                0
-1154 AggregatorHost.exe          0
-14c8 svchost.exe                 0
-14e4 svchost.exe                 0
-16bc wmpnetwk.exe                0
-1774 svchost.exe                 0
-15e0 dllhost.exe                 0
-190c svchost.exe                 0
-1918 svchost.exe                 0
-1a88 unsecapp.exe                0
-0efc svchost.exe                 0
-1338 NisSrv.exe                  0
-1e28 wireguard.exe               1
-1e58 sihost.exe                  1 normal       C:\Windows\System32
-1e74 svchost.exe                 1 normal       C:\Windows\System32
-1e88 svchost.exe                 1 normal       C:\Windows\System32
-1f14 svchost.exe                 0
-1fe0 taskhostw.exe               1 normal       C:\Windows\System32
-1ff8 DSATray.exe                 1 normal       C:\Program Files (x86)\Intel\Driver and Support Assistant\x86
-1abc svchost.exe                 0
-16f8 explorer.exe                1 normal       C:\Windows
-045c svchost.exe                 0
-1c54 svchost.exe                 0
-0fb0 svchost.exe                 1 normal       C:\Windows\System32
-1c68 ctfmon.exe                  1
-09ac svchost.exe                 0
-0f0c Widgets.exe                 1 normal       C:\Program Files\WindowsApps\MicrosoftWindows.Client.WebExperience_525.10401.30.0_x64__cw5n1h2txyewy\Dashboard
-150c WidgetService.exe           1 normal       C:\Program Files\WindowsApps\Microsoft.WidgetsPlatformRuntime_1.6.9.0_x64__8wekyb3d8bbwe\WidgetService
-0a80 SearchHost.exe              1 normal       C:\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy
-1f4c StartMenuExperienceHost.exe 1 normal       C:\Windows\SystemApps\Microsoft.Windows.StartMenuExperienceHost_cw5n1h2txyewy
-1fe8 RuntimeBroker.exe           1 normal       C:\Windows\System32
-06f8 svchost.exe                 1 normal       C:\Windows\System32
-06bc RuntimeBroker.exe           1 normal       C:\Windows\System32
-20d8 dllhost.exe                 1 normal       C:\Windows\System32
-1228 TextInputHost.exe           1 high         C:\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy
-20a0 SecurityHealthSystray.exe   1 normal       C:\Windows\System32
-20ac SecurityHealthService.exe   0
-1d48 RtkNGUI64.exe               1 normal       C:\Program Files\Realtek\Audio\HDA
-1f8c YandexDisk2.exe             1 normal       C:\Users\waw55\AppData\Roaming\Yandex\YandexDisk2\3.2.43.5089
-256c svchost.exe                 0
-2770 cmd.exe                     1 normal       C:\Windows\System32
-2778 conhost.exe                 1 normal       C:\Windows\System32
-27f0 AMDRSServ.exe               1
-2668 amdow.exe                   1
-1d4c IAStorDataMgrSvc.exe        0
-27e4 SgrmBroker.exe              0
-2554 svchost.exe                 0
-25f8 svchost.exe                 0
-0bb0 svchost.exe                 0
-1ddc svchost.exe                 1 normal       C:\Windows\System32
-0b14 svchost.exe                 0
-2878 svchost.exe                 0
-2984 orca-slicer.exe             1 normal       C:\Program Files\OrcaSlicer
-29bc msedgewebview2.exe          1 normal       C:\Program Files (x86)\Microsoft\EdgeWebView\Application\136.0.3240.92
-1fb0 msedgewebview2.exe          1 normal       C:\Program Files (x86)\Microsoft\EdgeWebView\Application\136.0.3240.92
-1610 msedgewebview2.exe          1 above normal C:\Program Files (x86)\Microsoft\EdgeWebView\Application\136.0.3240.92
-27d4 msedgewebview2.exe          1 normal       C:\Program Files (x86)\Microsoft\EdgeWebView\Application\136.0.3240.92
-1ca4 msedgewebview2.exe          1 normal       C:\Program Files (x86)\Microsoft\EdgeWebView\Application\136.0.3240.92
-21fc msedgewebview2.exe          1 normal       C:\Program Files (x86)\Microsoft\EdgeWebView\Application\136.0.3240.92
-2af0 msedgewebview2.exe          1 normal       C:\Program Files (x86)\Microsoft\EdgeWebView\Application\136.0.3240.92
-2bb8 msedgewebview2.exe          1 normal       C:\Program Files (x86)\Microsoft\EdgeWebView\Application\136.0.3240.92
-279c msedgewebview2.exe          1 normal       C:\Program Files (x86)\Microsoft\EdgeWebView\Application\136.0.3240.92
-0ad8 svchost.exe                 0
-1eb4 AMDRSSrcExt.exe             1 normal       C:\Program Files\AMD\CNext\CNext
-245c AdobeCollabSync.exe         1 below normal C:\Program Files\Adobe\Acrobat DC\Acrobat
-1b80 AdobeCollabSync.exe         1 below normal C:\Program Files\Adobe\Acrobat DC\Acrobat
-2c3c steam.exe                   1 normal       D:\Steam
-2f0c steamwebhelper.exe          1 normal       D:\Steam\bin\cef\cef.win7x64
-26cc SteamService.exe            0
-153c steamwebhelper.exe          1 normal       D:\Steam\bin\cef\cef.win7x64
-32c8 steamwebhelper.exe          1 above normal D:\Steam\bin\cef\cef.win7x64
-349c steamwebhelper.exe          1 normal       D:\Steam\bin\cef\cef.win7x64
-355c steamwebhelper.exe          1 normal       D:\Steam\bin\cef\cef.win7x64
-3660 steamwebhelper.exe          1 normal       D:\Steam\bin\cef\cef.win7x64
-35dc svchost.exe                 0
-1144 svchost.exe                 0
-2964 svchost.exe                 0
-361c chrome.exe                  1 normal       C:\Program Files (x86)\Google\Chrome\Application
-1944 chrome.exe                  1 normal       C:\Program Files (x86)\Google\Chrome\Application
-360c chrome.exe                  1 above normal C:\Program Files (x86)\Google\Chrome\Application
-24a0 chrome.exe                  1 normal       C:\Program Files (x86)\Google\Chrome\Application
-093c chrome.exe                  1 normal       C:\Program Files (x86)\Google\Chrome\Application
-3008 chrome.exe                  1 normal       C:\Program Files (x86)\Google\Chrome\Application
-1cf0 chrome.exe                  1 normal       C:\Program Files (x86)\Google\Chrome\Application
-331c chrome.exe                  1 normal       C:\Program Files (x86)\Google\Chrome\Application
-3148 chrome.exe                  1 normal       C:\Program Files (x86)\Google\Chrome\Application
-15a8 chrome.exe                  1 idle         C:\Program Files (x86)\Google\Chrome\Application
-303c svchost.exe                 0
-2910 ShellExperienceHost.exe     1 normal       C:\Windows\SystemApps\ShellExperienceHost_cw5n1h2txyewy
-3598 RuntimeBroker.exe           1 normal       C:\Windows\System32
-1834 steamwebhelper.exe          1 idle         D:\Steam\bin\cef\cef.win7x64
-14d0 dllhost.exe                 1 normal       C:\Windows\System32
-2e9c svchost.exe                 0
-0d18 taskhostw.exe               1
-31d4 GitHubDesktop.exe           1 normal       C:\Users\waw55\AppData\Local\GitHubDesktop\app-3.4.20
-27e0 GitHubDesktop.exe           1 above normal C:\Users\waw55\AppData\Local\GitHubDesktop\app-3.4.20
-2d18 GitHubDesktop.exe           1 normal       C:\Users\waw55\AppData\Local\GitHubDesktop\app-3.4.20
-12a0 GitHubDesktop.exe           1 idle         C:\Users\waw55\AppData\Local\GitHubDesktop\app-3.4.20
-2920 chrome.exe                  1 idle         C:\Program Files (x86)\Google\Chrome\Application
-3590 svchost.exe                 0
-1b98 svchost.exe                 0
-2c04 smartscreen.exe             1 normal       C:\Windows\System32
-0d58 PawnStudio.exe              1 normal       D:\GitHub\Masks-Show\addons\amxmodx\scripting\pstudio-0.8.3
-1a58 RuntimeBroker.exe           1 normal       C:\Windows\System32
-1514 chrome.exe                  1 idle         C:\Program Files (x86)\Google\Chrome\Application
-0ed0 audiodg.exe                 0
-
-hardware:
-+ {1ed2bbf9-11f0-4084-b21f-ad83a8e6dcdc}
-  - Adobe PDF
-  - Fax
-  - Microsoft Print to PDF
-  - Microsoft XPS Document Writer
-  - Корневая очередь печати
-  - Отправить в OneNote 16
-+ {36fc9e60-c465-11cf-8056-444553540000}
-  - Realtek USB 3.0 Card Reader (driver 10.0.27305.31273)
-  - Корневой USB-концентратор (USB 3.0)
-  - Расширяемый хост-контроллер Intel(R) USB 3.0 — 1.0 (Майкрософт)
-  - Составное USB устройство
-  - Составное USB устройство
-+ {4d36e965-e325-11ce-bfc1-08002be10318}
-  - Optiarc DVD RW AD-7200S
-+ {4d36e966-e325-11ce-bfc1-08002be10318}
-  - Компьютер с ACPI на базе x64
-+ {4d36e967-e325-11ce-bfc1-08002be10318}
-  - Samsung SSD 870 EVO 500GB
-  - ST31000528AS
-  - TOSHIBA DT01ACA200
-+ {4d36e968-e325-11ce-bfc1-08002be10318}
-  - Radeon RX 570 Series (driver 31.0.12027.9001)
-+ {4d36e96a-e325-11ce-bfc1-08002be10318}
-  - Intel(R) 100 Series/C230 Chipset Family SATA AHCI Controller (driver 16.8.4.1011)
-+ {4d36e96b-e325-11ce-bfc1-08002be10318}
-  - Клавиатура HID
-  - Клавиатура HID
-  - Клавиатура HID
-+ {4d36e96c-e325-11ce-bfc1-08002be10318}
-  - AMD High Definition Audio Device (driver 10.0.1.24)
-  - AMD Streaming Audio Device (driver 1.0.0.8)
-  - Realtek High Definition Audio (driver 6.0.9418.1)
-+ {4d36e96e-e325-11ce-bfc1-08002be10318}
-  - Универсальный монитор PnP
-+ {4d36e96f-e325-11ce-bfc1-08002be10318}
-  - HID-совместимая мышь
-  - HID-совместимая мышь
-+ {4d36e972-e325-11ce-bfc1-08002be10318}
-  - Realtek PCIe GbE Family Controller (driver 10.63.1014.2022)
-  - TAP Adapter V9 for Private Tunnel (driver 9.0.0.20)
-+ {4d36e978-e325-11ce-bfc1-08002be10318}
-  - Последовательный порт (COM1)
-+ {4d36e97b-e325-11ce-bfc1-08002be10318}
-  - Контроллер дискового пространства (Майкрософт)
-+ {4d36e97d-e325-11ce-bfc1-08002be10318}
-  - AMD Crash Defender (driver 22.40.0.0)
-  - AMD Link Controller Emulation (driver 22.20.0.7)
-  - AMD Special Tools Driver (driver 1.7.16.218)
-  - CMOS системы и часы реального времени
-  - High Definition Audio Bus (driver 22.20.0.1)
-  - Intel(R) 100 Series/C230 Series Chipset Family LPC Controller (H110) - A143 (driver 10.1.1.44)
-  - Intel(R) 100 Series/C230 Series Chipset Family PCI Express Root Port #5 - A114 (driver 10.1.1.44)
-  - Intel(R) 100 Series/C230 Series Chipset Family PCI Express Root Port #8 - A117 (driver 10.1.1.44)
-  - Intel(R) 100 Series/C230 Series Chipset Family PCI Express Root Port #9 - A118 (driver 10.1.1.44)
-  - Intel(R) 100 Series/C230 Series Chipset Family PMC - A121 (driver 10.1.1.44)
-  - Intel(R) 100 Series/C230 Series Chipset Family SMBus - A123 (driver 10.1.1.44)
-  - Intel(R) Host Bridge/DRAM Registers - 191F (driver 10.1.7.3)
-  - Intel(R) Management Engine Interface #1 (driver 2247.3.5.0)
-  - Intel(R) PCIe Controller (x16) - 1901 (driver 10.1.7.3)
-  - Microsoft ACPI-совместимая система
-  - Pci Bus (driver 22.20.0.1)
-  - UMBus перечислитель корневой шины
-  - Агрегатор процессора ACPI
-  - Арифметический сопроцессор
-  - Базовый видеодрайвер (Майкрософт)
-  - Базовый драйвер отрисовки (Майкрософт)
-  - Вентилятор ACPI
-  - Вентилятор ACPI
-  - Вентилятор ACPI
-  - Вентилятор ACPI
-  - Вентилятор ACPI
-  - Высокоточный таймер событий
-  - Диспетчер томов
-  - Драйвер Microsoft System Management BIOS
-  - Драйвер инфраструктуры виртуализации Microsoft Hyper-V
-  - Интерфейс управления для ACPI Microsoft Windows
-  - Интерфейс управления для ACPI Microsoft Windows
-  - Кнопка питания ACPI
-  - Кнопка спящего режима ACPI
-  - Контроллер High Definition Audio (Microsoft)
-  - Перечислитель виртуальных дисков (Майкрософт)
-  - Перечислитель виртуальных сетевых адаптеров NDIS
-  - Перечислитель композитной шины
-  - Перечислитель программных устройств Plug and Play
-  - Подключаемый модуль управления питанием Intel(R)
-  - Программируемый контроллер прерываний
-  - Ресурсы системной платы
-  - Ресурсы системной платы
-  - Ресурсы системной платы
-  - Ресурсы системной платы
-  - Ресурсы системной платы
-  - Ресурсы системной платы
-  - Ресурсы системной платы
-  - Ресурсы системной платы
-  - Ресурсы системной платы
-  - Системный таймер
-  - Служба низкоуровневой оболочки Microsoft
-  - Термальная зона ACPI
-  - Термальная зона ACPI
-  - Устаревшее устройство
-  - Фиксированная функциональная кнопка ACPI
-  - Шина перенаправителя устройств удаленных рабочих столов
-+ {50127dc3-0f36-415e-a6cc-4cb3be910b65}
-  - Intel(R) Core(TM) i5-6500 CPU @ 3.20GHz
-  - Intel(R) Core(TM) i5-6500 CPU @ 3.20GHz
-  - Intel(R) Core(TM) i5-6500 CPU @ 3.20GHz
-  - Intel(R) Core(TM) i5-6500 CPU @ 3.20GHz
-+ {5c4c3332-344d-483c-8739-259e934c9cc8}
-  - Intel(R) Dynamic Application Loader Host Interface (driver 1.44.2023.710)
-  - Intel(R) iCLS Client (driver 1.71.99.0)
-  - Intel(R) Management Engine WMI Provider (driver 2408.5.4.0)
-  - Универсальный компонент программного обеспечения
-+ {62f9c741-b25a-46ce-b54c-9bccce08b6f2}
-  - Bluetooth
-  - HOME: tanya.tvv@outlook.com:
-  - HOME: waw555@live.ru:
-  - HOME: Мама:
-  - Microsoft Device Association Root Enumerator
-  - Microsoft Radio Device Enumeration Bus
-  - Microsoft RRAS Root Enumerator
-  - Plex Media Server: SERVER
-  - Программный синтезатор звуковой таблицы Microsoft
-+ {745a17a0-74d3-11d0-b6fe-00a0c90f57da}
-  - HID-совместимое устройство управления
-  - HID-совместимое устройство управления
-  - HID-совместимое устройство, определенное поставщиком
-  - HID-совместимый системный контроллер
-  - HID-совместимый системный контроллер
-  - USB-устройство ввода
-  - USB-устройство ввода
-  - USB-устройство ввода
-  - USB-устройство ввода
-  - USB-устройство ввода
-+ {c166523c-fe0c-4a94-a586-f1a80cfbbf3e}
-  - 6 - C24F390 (AMD High Definition Audio Device)
-  - Realtek Digital Output (Realtek High Definition Audio)
-  - Динамики (Realtek High Definition Audio)
-  - Лин. вход (Realtek High Definition Audio)
-  - Микрофон (Realtek High Definition Audio)
-+ {d94ee5d8-d189-4994-83d2-f68d7d41b0e6}
-  - Доверенный платформенный модуль 2.0
-+ {e0cbf06c-cd8b-4647-bb8a-263b43f0f974}
-  - Realtek Bluetooth 5.1 Adapter (driver 1.9.1041.3000)
-
-cpu registers:
-eax = 000004ac
-ebx = 000004ac
-ecx = 00000000
-edx = 00000001
-esi = 00000001
-edi = 00519f64
-eip = 0046be68
-esp = 0019ec18
-ebp = 0019ec50
-
-stack dump:
-0019ec18  01 00 00 00 07 00 00 00 - 87 3c 6d 00 5c ec 19 00  .........<m.\...
-0019ec28  78 44 40 00 50 ec 19 00 - 0a 00 00 00 4e 01 00 00  xD@.P.......N...
-0019ec38  5e 14 8d 08 00 00 00 00 - 00 00 00 00 30 15 1e 0d  ^...........0...
-0019ec48  7b 40 6d 00 07 00 00 00 - 94 ef 19 00 d4 41 6d 00  {@m..........Am.
-0019ec58  94 ef 19 00 9c ef 19 00 - 78 44 40 00 94 ef 19 00  ........xD@.....
-0019ec68  01 00 00 00 01 00 00 00 - cc 91 6a 02 00 00 00 00  ..........j.....
-0019ec78  00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00  ................
-0019ec88  00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00  ................
-0019ec98  00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00  ................
-0019eca8  00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00  ................
-0019ecb8  00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00  ................
-0019ecc8  00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00  ................
-0019ecd8  00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00  ................
-0019ece8  00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00  ................
-0019ecf8  00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00  ................
-0019ed08  00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00  ................
-0019ed18  00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00  ................
-0019ed28  00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00  ................
-0019ed38  00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00  ................
-0019ed48  00 00 00 00 00 00 00 00 - 00 00 00 00 00 00 00 00  ................
-
-disassembling:
-[...]
-006d3c77
-006d3c7a     loc_6d3c7a:
-006d3c7a 198   mov     eax, [ebp-$c]
-006d3c7d       mov     eax, [eax+4]
-006d3c80       mov     edx, esi
-006d3c82     > call    -$267e27 ($46be60)     ; Classes.TCollection.GetItem
-006d3c82
-006d3c87       mov     edi, eax
-006d3c89 199   mov     eax, [$708294]
-006d3c8e       mov     eax, [eax]
-006d3c90       mov     eax, [eax+$470]
-[...]
-
-date/time         : 2025-06-04, 12:52:45, 477ms
+date/time         : 2025-06-04, 16:19:58, 453ms
 computer name     : DEKOTECH_URAL
 user name         : waw55
 registered owner  : waw555@live.ru
 operating system  : Windows NT New x64 build 9200
 system language   : Russian
-system up time    : 1 hour 24 minutes
-program up time   : 10 minutes 41 seconds
+system up time    : 4 hours 51 minutes
+program up time   : 22 seconds
 processors        : 12x 13th Gen Intel(R) Core(TM) i5-1335U
-physical memory   : 5703/16069 MB (free/total)
-free disk space   : (C:) 296,88 GB
+physical memory   : 6970/16069 MB (free/total)
+free disk space   : (C:) 296,92 GB
 display mode      : 1536x864, 32 bit
-process id        : $3150
-allocated memory  : 120,87 MB
+process id        : $4768
+allocated memory  : 109,60 MB
 executable        : PawnStudio.exe
 exec. date/time   : 2025-06-04 11:53
 version           : 0.8.3.0
 compiled with     : Delphi 7
 madExcept version : 3.0e
-callstack crc     : $2e920751, $ea622b03, $ec0d687f
-count             : 3
-exception number  : 2
+callstack crc     : $2e920751, $ea622b03, $84ebea74
+exception number  : 1
 exception class   : EFCreateError
 exception message : Datei "C:\Users\waw55\Documents\GitHub\Masks-Show\addons\amxmodx\scripting\pstudio-0.8.3\configs\Configuration.prof" kann nicht erstellt werden. Системе не удается найти указанный путь.
 
-main thread ($43d8):
+main thread ($3284):
 0046e1b0 +0a4 PawnStudio.exe Classes                    TFileStream.Create
 0046e0e8 +020 PawnStudio.exe Classes                    TFileStream.Create
 006f48c2 +02e PawnStudio.exe UnitConfigManager  531  +1 SaveConfig
@@ -815,7 +64,19 @@ main thread ($43d8):
 006f8257 +1c7 PawnStudio.exe PawnStudio         101 +30 initialization
 76167ba7 +017 KERNEL32.DLL                              BaseThreadInitThunk
 
-thread $1ba8: <priority:-1>
+thread $3d94:
+775d8c7c +0c ntdll.dll     NtWaitForWorkViaWorkerFactory
+76167ba7 +17 KERNEL32.DLL  BaseThreadInitThunk
+
+thread $b7c:
+775d8c7c +0c ntdll.dll     NtWaitForWorkViaWorkerFactory
+76167ba7 +17 KERNEL32.DLL  BaseThreadInitThunk
+
+thread $4d90:
+775d8c7c +0c ntdll.dll     NtWaitForWorkViaWorkerFactory
+76167ba7 +17 KERNEL32.DLL  BaseThreadInitThunk
+
+thread $4dec: <priority:-1>
 775d718c +0c ntdll.dll                                NtDelayExecution
 775f1354 +e4 ntdll.dll                                RtlDelayExecution
 773d91b9 +49 KERNELBASE.dll                           SleepEx
@@ -825,7 +86,36 @@ thread $1ba8: <priority:-1>
 00404b6c +28 PawnStudio.exe System                    ThreadWrapper
 76167ba7 +17 KERNEL32.DLL                             BaseThreadInitThunk
 
-thread $1c2c:
+thread $4c08:
+75135cfc +0c win32u.dll    NtUserMsgWaitForMultipleObjectsEx
+76d02e6c +4c USER32.dll    MsgWaitForMultipleObjectsEx
+76d128aa +1a USER32.dll    MsgWaitForMultipleObjects
+76167ba7 +17 KERNEL32.DLL  BaseThreadInitThunk
+
+thread $2d14:
+75135cfc +0c win32u.dll    NtUserMsgWaitForMultipleObjectsEx
+76d02e6c +4c USER32.dll    MsgWaitForMultipleObjectsEx
+76d128aa +1a USER32.dll    MsgWaitForMultipleObjects
+76167ba7 +17 KERNEL32.DLL  BaseThreadInitThunk
+
+thread $4648:
+775d73fc +00c ntdll.dll                NtWaitForMultipleObjects
+773f82b9 +189 KERNELBASE.dll           WaitForMultipleObjectsEx
+0044ed21 +00d PawnStudio.exe madExcept CallThreadProcSafe
+0044ed8b +037 PawnStudio.exe madExcept ThreadExceptFrame
+76167ba7 +017 KERNEL32.DLL             BaseThreadInitThunk
+>> created by main thread ($3284) at:
+767fa1be +000 combase.dll
+
+thread $48e0:
+775d8c7c +0c ntdll.dll     NtWaitForWorkViaWorkerFactory
+76167ba7 +17 KERNEL32.DLL  BaseThreadInitThunk
+
+thread $3e24:
+775d8c7c +0c ntdll.dll     NtWaitForWorkViaWorkerFactory
+76167ba7 +17 KERNEL32.DLL  BaseThreadInitThunk
+
+thread $23c8:
 775d73fc +00c ntdll.dll                 NtWaitForMultipleObjects
 773f82b9 +189 KERNELBASE.dll            WaitForMultipleObjectsEx
 773f8113 +013 KERNELBASE.dll            WaitForMultipleObjects
@@ -834,28 +124,83 @@ thread $1c2c:
 00404b6c +028 PawnStudio.exe System     ThreadWrapper
 76167ba7 +017 KERNEL32.DLL              BaseThreadInitThunk
 
-thread $3ce8:
+thread $1cec:
+75135cfc +0c win32u.dll    NtUserMsgWaitForMultipleObjectsEx
+76d02e6c +4c USER32.dll    MsgWaitForMultipleObjectsEx
+76167ba7 +17 KERNEL32.DLL  BaseThreadInitThunk
+
+thread $3f18:
 751310fc +0c win32u.dll               NtUserGetMessage
 76d6b9dc +ec USER32.dll               GetMessageA
-0044f770 +18 PawnStudio.exe madExcept GetMessageCallbackA
 750c857c +8c msvcrt.dll               _endthreadex
 0044ed21 +0d PawnStudio.exe madExcept CallThreadProcSafe
 0044ed8b +37 PawnStudio.exe madExcept ThreadExceptFrame
 76167ba7 +17 KERNEL32.DLL             BaseThreadInitThunk
->> created by main thread ($43d8) at:
+>> created by main thread ($3284) at:
 750c845f +7f msvcrt.dll               _beginthreadex
 
-thread $1d54:
-775d718c +0c ntdll.dll                            NtDelayExecution
-775f1354 +e4 ntdll.dll                            RtlDelayExecution
-773d91b9 +49 KERNELBASE.dll                       SleepEx
-773d915a +0a KERNELBASE.dll                       Sleep
-006d2358 +0c PawnStudio.exe UnitDocuments 1051 +2 TDocParser.Execute
+thread $3f48:
+775d9540 ntdll.dll  RtlUserThreadStart
+
+thread $4890:
+75135cfc +0c win32u.dll               NtUserMsgWaitForMultipleObjectsEx
+76d02e6c +4c USER32.dll               MsgWaitForMultipleObjectsEx
+0044ed21 +0d PawnStudio.exe madExcept CallThreadProcSafe
+0044ed8b +37 PawnStudio.exe madExcept ThreadExceptFrame
+76167ba7 +17 KERNEL32.DLL             BaseThreadInitThunk
+775cc32a +00 ntdll.dll                RtlUserThreadStart
+>> created by main thread ($3284) at:
+75d76a8b +00 shcore.dll
+
+thread $4b8c:
+75135cfc +0c win32u.dll    NtUserMsgWaitForMultipleObjectsEx
+76d02e6c +4c USER32.dll    MsgWaitForMultipleObjectsEx
+76d128aa +1a USER32.dll    MsgWaitForMultipleObjects
+76167ba7 +17 KERNEL32.DLL  BaseThreadInitThunk
+775cc32a +00 ntdll.dll     RtlUserThreadStart
+
+thread $4f04:
+775d8c7c +0c ntdll.dll     NtWaitForWorkViaWorkerFactory
+76167ba7 +17 KERNEL32.DLL  BaseThreadInitThunk
+775cc32a +00 ntdll.dll     RtlUserThreadStart
+
+thread $4cb0:
+75135cfc +0c win32u.dll    NtUserMsgWaitForMultipleObjectsEx
+76d02e6c +4c USER32.dll    MsgWaitForMultipleObjectsEx
+76d128aa +1a USER32.dll    MsgWaitForMultipleObjects
+76167ba7 +17 KERNEL32.DLL  BaseThreadInitThunk
+775cc32a +00 ntdll.dll     RtlUserThreadStart
+
+thread $440c:
+75135cfc +0c win32u.dll    NtUserMsgWaitForMultipleObjectsEx
+76d02e6c +4c USER32.dll    MsgWaitForMultipleObjectsEx
+76d128aa +1a USER32.dll    MsgWaitForMultipleObjects
+76167ba7 +17 KERNEL32.DLL  BaseThreadInitThunk
+775cc32a +00 ntdll.dll     RtlUserThreadStart
+
+thread $2e4:
+775d8c7c +0c ntdll.dll     NtWaitForWorkViaWorkerFactory
+76167ba7 +17 KERNEL32.DLL  BaseThreadInitThunk
+775cc32a +00 ntdll.dll     RtlUserThreadStart
+
+thread $4e08:
+775d8c7c +0c ntdll.dll     NtWaitForWorkViaWorkerFactory
+76167ba7 +17 KERNEL32.DLL  BaseThreadInitThunk
+775cc32a +00 ntdll.dll     RtlUserThreadStart
+
+thread $2c8c:
+775d6e6c +0c ntdll.dll                            NtWaitForSingleObject
+773f7492 +82 KERNELBASE.dll                       WaitForSingleObjectEx
+773f73fd +0d KERNELBASE.dll                       WaitForSingleObject
+004740d8 +c8 PawnStudio.exe Classes               TThread.Synchronize
+0047416c +1c PawnStudio.exe Classes               TThread.Synchronize
+006d2369 +1d PawnStudio.exe UnitDocuments 1053 +4 TDocParser.Execute
 00473d70 +34 PawnStudio.exe Classes               ThreadProc
 00404b6c +28 PawnStudio.exe System                ThreadWrapper
 76167ba7 +17 KERNEL32.DLL                         BaseThreadInitThunk
+775cc32a +00 ntdll.dll                            RtlUserThreadStart
 
-thread $223c:
+thread $4920:
 775d718c +0c ntdll.dll                            NtDelayExecution
 775f1354 +e4 ntdll.dll                            RtlDelayExecution
 773d91b9 +49 KERNELBASE.dll                       SleepEx
@@ -864,934 +209,282 @@ thread $223c:
 00473d70 +34 PawnStudio.exe Classes               ThreadProc
 00404b6c +28 PawnStudio.exe System                ThreadWrapper
 76167ba7 +17 KERNEL32.DLL                         BaseThreadInitThunk
-
-thread $415c: <priority:-1>
-775d6e6c +00c ntdll.dll                                NtWaitForSingleObject
-773f7492 +082 KERNELBASE.dll                           WaitForSingleObjectEx
-773f73fd +00d KERNELBASE.dll                           WaitForSingleObject
-00474224 +07c PawnStudio.exe Classes                   TThread.WaitFor
-00473ee1 +02d PawnStudio.exe Classes                   TThread.Destroy
-00403cb4 +008 PawnStudio.exe System                    TObject.Free
-006cf528 +1b8 PawnStudio.exe UnitCSResultSaver 826 +40 TFileWatcher.Execute
-00473d70 +034 PawnStudio.exe Classes                   ThreadProc
-00404b6c +028 PawnStudio.exe System                    ThreadWrapper
-76167ba7 +017 KERNEL32.DLL                             BaseThreadInitThunk
-
-thread $a4c: <priority:-1>
-775d6e6c +00c ntdll.dll                                NtWaitForSingleObject
-773f7492 +082 KERNELBASE.dll                           WaitForSingleObjectEx
-773f73fd +00d KERNELBASE.dll                           WaitForSingleObject
-00474224 +07c PawnStudio.exe Classes                   TThread.WaitFor
-00473ee1 +02d PawnStudio.exe Classes                   TThread.Destroy
-00403cb4 +008 PawnStudio.exe System                    TObject.Free
-006cf528 +1b8 PawnStudio.exe UnitCSResultSaver 826 +40 TFileWatcher.Execute
-00473d70 +034 PawnStudio.exe Classes                   ThreadProc
-00404b6c +028 PawnStudio.exe System                    ThreadWrapper
-76167ba7 +017 KERNEL32.DLL                             BaseThreadInitThunk
-
-thread $260c: <priority:-1>
-775d6e6c +00c ntdll.dll                                NtWaitForSingleObject
-773f7492 +082 KERNELBASE.dll                           WaitForSingleObjectEx
-773f73fd +00d KERNELBASE.dll                           WaitForSingleObject
-00474224 +07c PawnStudio.exe Classes                   TThread.WaitFor
-00473ee1 +02d PawnStudio.exe Classes                   TThread.Destroy
-00403cb4 +008 PawnStudio.exe System                    TObject.Free
-006cf528 +1b8 PawnStudio.exe UnitCSResultSaver 826 +40 TFileWatcher.Execute
-00473d70 +034 PawnStudio.exe Classes                   ThreadProc
-00404b6c +028 PawnStudio.exe System                    ThreadWrapper
-76167ba7 +017 KERNEL32.DLL                             BaseThreadInitThunk
-
-thread $4218: <priority:-1>
-775d6e6c +00c ntdll.dll                                NtWaitForSingleObject
-773f7492 +082 KERNELBASE.dll                           WaitForSingleObjectEx
-773f73fd +00d KERNELBASE.dll                           WaitForSingleObject
-00474224 +07c PawnStudio.exe Classes                   TThread.WaitFor
-00473ee1 +02d PawnStudio.exe Classes                   TThread.Destroy
-00403cb4 +008 PawnStudio.exe System                    TObject.Free
-006cf528 +1b8 PawnStudio.exe UnitCSResultSaver 826 +40 TFileWatcher.Execute
-00473d70 +034 PawnStudio.exe Classes                   ThreadProc
-00404b6c +028 PawnStudio.exe System                    ThreadWrapper
-76167ba7 +017 KERNEL32.DLL                             BaseThreadInitThunk
-
-thread $3798: <priority:-1>
-775d6e6c +00c ntdll.dll                                NtWaitForSingleObject
-773f7492 +082 KERNELBASE.dll                           WaitForSingleObjectEx
-773f73fd +00d KERNELBASE.dll                           WaitForSingleObject
-00474224 +07c PawnStudio.exe Classes                   TThread.WaitFor
-00473ee1 +02d PawnStudio.exe Classes                   TThread.Destroy
-00403cb4 +008 PawnStudio.exe System                    TObject.Free
-006cf528 +1b8 PawnStudio.exe UnitCSResultSaver 826 +40 TFileWatcher.Execute
-00473d70 +034 PawnStudio.exe Classes                   ThreadProc
-00404b6c +028 PawnStudio.exe System                    ThreadWrapper
-76167ba7 +017 KERNEL32.DLL                             BaseThreadInitThunk
-
-thread $2fe0: <priority:-1>
-775d6e6c +00c ntdll.dll                                NtWaitForSingleObject
-773f7492 +082 KERNELBASE.dll                           WaitForSingleObjectEx
-773f73fd +00d KERNELBASE.dll                           WaitForSingleObject
-00474224 +07c PawnStudio.exe Classes                   TThread.WaitFor
-00473ee1 +02d PawnStudio.exe Classes                   TThread.Destroy
-00403cb4 +008 PawnStudio.exe System                    TObject.Free
-006cf528 +1b8 PawnStudio.exe UnitCSResultSaver 826 +40 TFileWatcher.Execute
-00473d70 +034 PawnStudio.exe Classes                   ThreadProc
-00404b6c +028 PawnStudio.exe System                    ThreadWrapper
-76167ba7 +017 KERNEL32.DLL                             BaseThreadInitThunk
-
-thread $1e08: <priority:-1>
-775d6e6c +00c ntdll.dll                                NtWaitForSingleObject
-773f7492 +082 KERNELBASE.dll                           WaitForSingleObjectEx
-773f73fd +00d KERNELBASE.dll                           WaitForSingleObject
-00474224 +07c PawnStudio.exe Classes                   TThread.WaitFor
-00473ee1 +02d PawnStudio.exe Classes                   TThread.Destroy
-00403cb4 +008 PawnStudio.exe System                    TObject.Free
-006cf528 +1b8 PawnStudio.exe UnitCSResultSaver 826 +40 TFileWatcher.Execute
-00473d70 +034 PawnStudio.exe Classes                   ThreadProc
-00404b6c +028 PawnStudio.exe System                    ThreadWrapper
-76167ba7 +017 KERNEL32.DLL                             BaseThreadInitThunk
-
-thread $15dc: <priority:-1>
-775d6e6c +00c ntdll.dll                                NtWaitForSingleObject
-773f7492 +082 KERNELBASE.dll                           WaitForSingleObjectEx
-773f73fd +00d KERNELBASE.dll                           WaitForSingleObject
-00474224 +07c PawnStudio.exe Classes                   TThread.WaitFor
-00473ee1 +02d PawnStudio.exe Classes                   TThread.Destroy
-00403cb4 +008 PawnStudio.exe System                    TObject.Free
-006cf528 +1b8 PawnStudio.exe UnitCSResultSaver 826 +40 TFileWatcher.Execute
-00473d70 +034 PawnStudio.exe Classes                   ThreadProc
-00404b6c +028 PawnStudio.exe System                    ThreadWrapper
-76167ba7 +017 KERNEL32.DLL                             BaseThreadInitThunk
-
-thread $d04: <priority:-1>
-775d6e6c +00c ntdll.dll                                NtWaitForSingleObject
-773f7492 +082 KERNELBASE.dll                           WaitForSingleObjectEx
-773f73fd +00d KERNELBASE.dll                           WaitForSingleObject
-00474224 +07c PawnStudio.exe Classes                   TThread.WaitFor
-00473ee1 +02d PawnStudio.exe Classes                   TThread.Destroy
-00403cb4 +008 PawnStudio.exe System                    TObject.Free
-006cf528 +1b8 PawnStudio.exe UnitCSResultSaver 826 +40 TFileWatcher.Execute
-00473d70 +034 PawnStudio.exe Classes                   ThreadProc
-00404b6c +028 PawnStudio.exe System                    ThreadWrapper
-76167ba7 +017 KERNEL32.DLL                             BaseThreadInitThunk
-
-thread $1b38: <priority:-1>
-775d6e6c +00c ntdll.dll                                NtWaitForSingleObject
-773f7492 +082 KERNELBASE.dll                           WaitForSingleObjectEx
-773f73fd +00d KERNELBASE.dll                           WaitForSingleObject
-00474224 +07c PawnStudio.exe Classes                   TThread.WaitFor
-00473ee1 +02d PawnStudio.exe Classes                   TThread.Destroy
-00403cb4 +008 PawnStudio.exe System                    TObject.Free
-006cf528 +1b8 PawnStudio.exe UnitCSResultSaver 826 +40 TFileWatcher.Execute
-00473d70 +034 PawnStudio.exe Classes                   ThreadProc
-00404b6c +028 PawnStudio.exe System                    ThreadWrapper
-76167ba7 +017 KERNEL32.DLL                             BaseThreadInitThunk
+775cc32a +00 ntdll.dll                            RtlUserThreadStart
 
 thread $4258: <priority:-1>
-775d6e6c +00c ntdll.dll                                NtWaitForSingleObject
-773f7492 +082 KERNELBASE.dll                           WaitForSingleObjectEx
-773f73fd +00d KERNELBASE.dll                           WaitForSingleObject
-00474224 +07c PawnStudio.exe Classes                   TThread.WaitFor
-00473ee1 +02d PawnStudio.exe Classes                   TThread.Destroy
-00403cb4 +008 PawnStudio.exe System                    TObject.Free
-006cf528 +1b8 PawnStudio.exe UnitCSResultSaver 826 +40 TFileWatcher.Execute
+775d718c +00c ntdll.dll                                NtDelayExecution
+775f1354 +0e4 ntdll.dll                                RtlDelayExecution
+773d91b9 +049 KERNELBASE.dll                           SleepEx
+773d915a +00a KERNELBASE.dll                           Sleep
+006cf4b4 +144 PawnStudio.exe UnitCSResultSaver 814 +28 TFileWatcher.Execute
 00473d70 +034 PawnStudio.exe Classes                   ThreadProc
 00404b6c +028 PawnStudio.exe System                    ThreadWrapper
 76167ba7 +017 KERNEL32.DLL                             BaseThreadInitThunk
+775cc32a +000 ntdll.dll                                RtlUserThreadStart
 
-thread $299c: <priority:-1>
-775d6e6c +00c ntdll.dll                                NtWaitForSingleObject
-773f7492 +082 KERNELBASE.dll                           WaitForSingleObjectEx
-773f73fd +00d KERNELBASE.dll                           WaitForSingleObject
-00474224 +07c PawnStudio.exe Classes                   TThread.WaitFor
-00473ee1 +02d PawnStudio.exe Classes                   TThread.Destroy
-00403cb4 +008 PawnStudio.exe System                    TObject.Free
-006cf528 +1b8 PawnStudio.exe UnitCSResultSaver 826 +40 TFileWatcher.Execute
+thread $4844: <priority:-1>
+775d718c +00c ntdll.dll                                NtDelayExecution
+775f1354 +0e4 ntdll.dll                                RtlDelayExecution
+773d91b9 +049 KERNELBASE.dll                           SleepEx
+773d915a +00a KERNELBASE.dll                           Sleep
+006cf4b4 +144 PawnStudio.exe UnitCSResultSaver 814 +28 TFileWatcher.Execute
 00473d70 +034 PawnStudio.exe Classes                   ThreadProc
 00404b6c +028 PawnStudio.exe System                    ThreadWrapper
 76167ba7 +017 KERNEL32.DLL                             BaseThreadInitThunk
+775cc32a +000 ntdll.dll                                RtlUserThreadStart
 
-thread $4208: <priority:-1>
-775d6e6c +00c ntdll.dll                                NtWaitForSingleObject
-773f7492 +082 KERNELBASE.dll                           WaitForSingleObjectEx
-773f73fd +00d KERNELBASE.dll                           WaitForSingleObject
-00474224 +07c PawnStudio.exe Classes                   TThread.WaitFor
-00473ee1 +02d PawnStudio.exe Classes                   TThread.Destroy
-00403cb4 +008 PawnStudio.exe System                    TObject.Free
-006cf528 +1b8 PawnStudio.exe UnitCSResultSaver 826 +40 TFileWatcher.Execute
+thread $3378: <priority:-1>
+775d718c +00c ntdll.dll                                NtDelayExecution
+775f1354 +0e4 ntdll.dll                                RtlDelayExecution
+773d91b9 +049 KERNELBASE.dll                           SleepEx
+773d915a +00a KERNELBASE.dll                           Sleep
+006cf4b4 +144 PawnStudio.exe UnitCSResultSaver 814 +28 TFileWatcher.Execute
 00473d70 +034 PawnStudio.exe Classes                   ThreadProc
 00404b6c +028 PawnStudio.exe System                    ThreadWrapper
 76167ba7 +017 KERNEL32.DLL                             BaseThreadInitThunk
+775cc32a +000 ntdll.dll                                RtlUserThreadStart
 
-thread $f64: <priority:-1>
-775d6e6c +00c ntdll.dll                                NtWaitForSingleObject
-773f7492 +082 KERNELBASE.dll                           WaitForSingleObjectEx
-773f73fd +00d KERNELBASE.dll                           WaitForSingleObject
-00474224 +07c PawnStudio.exe Classes                   TThread.WaitFor
-00473ee1 +02d PawnStudio.exe Classes                   TThread.Destroy
-00403cb4 +008 PawnStudio.exe System                    TObject.Free
-006cf528 +1b8 PawnStudio.exe UnitCSResultSaver 826 +40 TFileWatcher.Execute
+thread $458c: <priority:-1>
+775d718c +00c ntdll.dll                                NtDelayExecution
+775f1354 +0e4 ntdll.dll                                RtlDelayExecution
+773d91b9 +049 KERNELBASE.dll                           SleepEx
+773d915a +00a KERNELBASE.dll                           Sleep
+006cf4b4 +144 PawnStudio.exe UnitCSResultSaver 814 +28 TFileWatcher.Execute
 00473d70 +034 PawnStudio.exe Classes                   ThreadProc
 00404b6c +028 PawnStudio.exe System                    ThreadWrapper
 76167ba7 +017 KERNEL32.DLL                             BaseThreadInitThunk
+775cc32a +000 ntdll.dll                                RtlUserThreadStart
 
-thread $2a2c: <priority:-1>
-775d6e6c +00c ntdll.dll                                NtWaitForSingleObject
-773f7492 +082 KERNELBASE.dll                           WaitForSingleObjectEx
-773f73fd +00d KERNELBASE.dll                           WaitForSingleObject
-00474224 +07c PawnStudio.exe Classes                   TThread.WaitFor
-00473ee1 +02d PawnStudio.exe Classes                   TThread.Destroy
-00403cb4 +008 PawnStudio.exe System                    TObject.Free
-006cf528 +1b8 PawnStudio.exe UnitCSResultSaver 826 +40 TFileWatcher.Execute
+thread $18a8: <priority:-1>
+775d718c +00c ntdll.dll                                NtDelayExecution
+775f1354 +0e4 ntdll.dll                                RtlDelayExecution
+773d91b9 +049 KERNELBASE.dll                           SleepEx
+773d915a +00a KERNELBASE.dll                           Sleep
+006cf4b4 +144 PawnStudio.exe UnitCSResultSaver 814 +28 TFileWatcher.Execute
 00473d70 +034 PawnStudio.exe Classes                   ThreadProc
 00404b6c +028 PawnStudio.exe System                    ThreadWrapper
 76167ba7 +017 KERNEL32.DLL                             BaseThreadInitThunk
+775cc32a +000 ntdll.dll                                RtlUserThreadStart
 
-thread $3f2c: <priority:-1>
-775d6e6c +00c ntdll.dll                                NtWaitForSingleObject
-773f7492 +082 KERNELBASE.dll                           WaitForSingleObjectEx
-773f73fd +00d KERNELBASE.dll                           WaitForSingleObject
-00474224 +07c PawnStudio.exe Classes                   TThread.WaitFor
-00473ee1 +02d PawnStudio.exe Classes                   TThread.Destroy
-00403cb4 +008 PawnStudio.exe System                    TObject.Free
-006cf528 +1b8 PawnStudio.exe UnitCSResultSaver 826 +40 TFileWatcher.Execute
+thread $4ba8: <priority:-1>
+775d718c +00c ntdll.dll                                NtDelayExecution
+775f1354 +0e4 ntdll.dll                                RtlDelayExecution
+773d91b9 +049 KERNELBASE.dll                           SleepEx
+773d915a +00a KERNELBASE.dll                           Sleep
+006cf4b4 +144 PawnStudio.exe UnitCSResultSaver 814 +28 TFileWatcher.Execute
 00473d70 +034 PawnStudio.exe Classes                   ThreadProc
 00404b6c +028 PawnStudio.exe System                    ThreadWrapper
 76167ba7 +017 KERNEL32.DLL                             BaseThreadInitThunk
+775cc32a +000 ntdll.dll                                RtlUserThreadStart
 
-thread $648: <priority:-1>
-775d6e6c +00c ntdll.dll                                NtWaitForSingleObject
-773f7492 +082 KERNELBASE.dll                           WaitForSingleObjectEx
-773f73fd +00d KERNELBASE.dll                           WaitForSingleObject
-00474224 +07c PawnStudio.exe Classes                   TThread.WaitFor
-00473ee1 +02d PawnStudio.exe Classes                   TThread.Destroy
-00403cb4 +008 PawnStudio.exe System                    TObject.Free
-006cf528 +1b8 PawnStudio.exe UnitCSResultSaver 826 +40 TFileWatcher.Execute
+thread $4380: <priority:-1>
+775d718c +00c ntdll.dll                                NtDelayExecution
+775f1354 +0e4 ntdll.dll                                RtlDelayExecution
+773d91b9 +049 KERNELBASE.dll                           SleepEx
+773d915a +00a KERNELBASE.dll                           Sleep
+006cf4b4 +144 PawnStudio.exe UnitCSResultSaver 814 +28 TFileWatcher.Execute
 00473d70 +034 PawnStudio.exe Classes                   ThreadProc
 00404b6c +028 PawnStudio.exe System                    ThreadWrapper
 76167ba7 +017 KERNEL32.DLL                             BaseThreadInitThunk
+775cc32a +000 ntdll.dll                                RtlUserThreadStart
 
-thread $16b4: <priority:-1>
-775d6e6c +00c ntdll.dll                                NtWaitForSingleObject
-773f7492 +082 KERNELBASE.dll                           WaitForSingleObjectEx
-773f73fd +00d KERNELBASE.dll                           WaitForSingleObject
-00474224 +07c PawnStudio.exe Classes                   TThread.WaitFor
-00473ee1 +02d PawnStudio.exe Classes                   TThread.Destroy
-00403cb4 +008 PawnStudio.exe System                    TObject.Free
-006cf528 +1b8 PawnStudio.exe UnitCSResultSaver 826 +40 TFileWatcher.Execute
+thread $3b44: <priority:-1>
+775d718c +00c ntdll.dll                                NtDelayExecution
+775f1354 +0e4 ntdll.dll                                RtlDelayExecution
+773d91b9 +049 KERNELBASE.dll                           SleepEx
+773d915a +00a KERNELBASE.dll                           Sleep
+006cf4b4 +144 PawnStudio.exe UnitCSResultSaver 814 +28 TFileWatcher.Execute
 00473d70 +034 PawnStudio.exe Classes                   ThreadProc
 00404b6c +028 PawnStudio.exe System                    ThreadWrapper
 76167ba7 +017 KERNEL32.DLL                             BaseThreadInitThunk
+775cc32a +000 ntdll.dll                                RtlUserThreadStart
 
-thread $2f38: <priority:-1>
-775d6e6c +00c ntdll.dll                                NtWaitForSingleObject
-773f7492 +082 KERNELBASE.dll                           WaitForSingleObjectEx
-773f73fd +00d KERNELBASE.dll                           WaitForSingleObject
-00474224 +07c PawnStudio.exe Classes                   TThread.WaitFor
-00473ee1 +02d PawnStudio.exe Classes                   TThread.Destroy
-00403cb4 +008 PawnStudio.exe System                    TObject.Free
-006cf528 +1b8 PawnStudio.exe UnitCSResultSaver 826 +40 TFileWatcher.Execute
+thread $1fac: <priority:-1>
+775d718c +00c ntdll.dll                                NtDelayExecution
+775f1354 +0e4 ntdll.dll                                RtlDelayExecution
+773d91b9 +049 KERNELBASE.dll                           SleepEx
+773d915a +00a KERNELBASE.dll                           Sleep
+006cf4b4 +144 PawnStudio.exe UnitCSResultSaver 814 +28 TFileWatcher.Execute
 00473d70 +034 PawnStudio.exe Classes                   ThreadProc
 00404b6c +028 PawnStudio.exe System                    ThreadWrapper
 76167ba7 +017 KERNEL32.DLL                             BaseThreadInitThunk
+775cc32a +000 ntdll.dll                                RtlUserThreadStart
 
-thread $4300: <priority:-1>
-775d6e6c +00c ntdll.dll                                NtWaitForSingleObject
-773f7492 +082 KERNELBASE.dll                           WaitForSingleObjectEx
-773f73fd +00d KERNELBASE.dll                           WaitForSingleObject
-00474224 +07c PawnStudio.exe Classes                   TThread.WaitFor
-00473ee1 +02d PawnStudio.exe Classes                   TThread.Destroy
-00403cb4 +008 PawnStudio.exe System                    TObject.Free
-006cf528 +1b8 PawnStudio.exe UnitCSResultSaver 826 +40 TFileWatcher.Execute
+thread $4384: <priority:-1>
+775d718c +00c ntdll.dll                                NtDelayExecution
+775f1354 +0e4 ntdll.dll                                RtlDelayExecution
+773d91b9 +049 KERNELBASE.dll                           SleepEx
+773d915a +00a KERNELBASE.dll                           Sleep
+006cf4b4 +144 PawnStudio.exe UnitCSResultSaver 814 +28 TFileWatcher.Execute
 00473d70 +034 PawnStudio.exe Classes                   ThreadProc
 00404b6c +028 PawnStudio.exe System                    ThreadWrapper
 76167ba7 +017 KERNEL32.DLL                             BaseThreadInitThunk
+775cc32a +000 ntdll.dll                                RtlUserThreadStart
 
-thread $23c8: <priority:-1>
-775d6e6c +00c ntdll.dll                                NtWaitForSingleObject
-773f7492 +082 KERNELBASE.dll                           WaitForSingleObjectEx
-773f73fd +00d KERNELBASE.dll                           WaitForSingleObject
-00474224 +07c PawnStudio.exe Classes                   TThread.WaitFor
-00473ee1 +02d PawnStudio.exe Classes                   TThread.Destroy
-00403cb4 +008 PawnStudio.exe System                    TObject.Free
-006cf528 +1b8 PawnStudio.exe UnitCSResultSaver 826 +40 TFileWatcher.Execute
+thread $4b24: <priority:-1>
+775d718c +00c ntdll.dll                                NtDelayExecution
+775f1354 +0e4 ntdll.dll                                RtlDelayExecution
+773d91b9 +049 KERNELBASE.dll                           SleepEx
+773d915a +00a KERNELBASE.dll                           Sleep
+006cf4b4 +144 PawnStudio.exe UnitCSResultSaver 814 +28 TFileWatcher.Execute
 00473d70 +034 PawnStudio.exe Classes                   ThreadProc
 00404b6c +028 PawnStudio.exe System                    ThreadWrapper
 76167ba7 +017 KERNEL32.DLL                             BaseThreadInitThunk
+775cc32a +000 ntdll.dll                                RtlUserThreadStart
 
-thread $c84: <priority:-1>
-775d6e6c +00c ntdll.dll                                NtWaitForSingleObject
-773f7492 +082 KERNELBASE.dll                           WaitForSingleObjectEx
-773f73fd +00d KERNELBASE.dll                           WaitForSingleObject
-00474224 +07c PawnStudio.exe Classes                   TThread.WaitFor
-00473ee1 +02d PawnStudio.exe Classes                   TThread.Destroy
-00403cb4 +008 PawnStudio.exe System                    TObject.Free
-006cf528 +1b8 PawnStudio.exe UnitCSResultSaver 826 +40 TFileWatcher.Execute
+thread $4fb4: <priority:-1>
+775d718c +00c ntdll.dll                                NtDelayExecution
+775f1354 +0e4 ntdll.dll                                RtlDelayExecution
+773d91b9 +049 KERNELBASE.dll                           SleepEx
+773d915a +00a KERNELBASE.dll                           Sleep
+006cf4b4 +144 PawnStudio.exe UnitCSResultSaver 814 +28 TFileWatcher.Execute
 00473d70 +034 PawnStudio.exe Classes                   ThreadProc
 00404b6c +028 PawnStudio.exe System                    ThreadWrapper
 76167ba7 +017 KERNEL32.DLL                             BaseThreadInitThunk
+775cc32a +000 ntdll.dll                                RtlUserThreadStart
 
-thread $2964: <priority:-1>
-775d6e6c +00c ntdll.dll                                NtWaitForSingleObject
-773f7492 +082 KERNELBASE.dll                           WaitForSingleObjectEx
-773f73fd +00d KERNELBASE.dll                           WaitForSingleObject
-00474224 +07c PawnStudio.exe Classes                   TThread.WaitFor
-00473ee1 +02d PawnStudio.exe Classes                   TThread.Destroy
-00403cb4 +008 PawnStudio.exe System                    TObject.Free
-006cf528 +1b8 PawnStudio.exe UnitCSResultSaver 826 +40 TFileWatcher.Execute
+thread $1fbc: <priority:-1>
+775d718c +00c ntdll.dll                                NtDelayExecution
+775f1354 +0e4 ntdll.dll                                RtlDelayExecution
+773d91b9 +049 KERNELBASE.dll                           SleepEx
+773d915a +00a KERNELBASE.dll                           Sleep
+006cf4b4 +144 PawnStudio.exe UnitCSResultSaver 814 +28 TFileWatcher.Execute
 00473d70 +034 PawnStudio.exe Classes                   ThreadProc
 00404b6c +028 PawnStudio.exe System                    ThreadWrapper
 76167ba7 +017 KERNEL32.DLL                             BaseThreadInitThunk
+775cc32a +000 ntdll.dll                                RtlUserThreadStart
 
-thread $23fc: <priority:-1>
-775d6e6c +00c ntdll.dll                                NtWaitForSingleObject
-773f7492 +082 KERNELBASE.dll                           WaitForSingleObjectEx
-773f73fd +00d KERNELBASE.dll                           WaitForSingleObject
-00474224 +07c PawnStudio.exe Classes                   TThread.WaitFor
-00473ee1 +02d PawnStudio.exe Classes                   TThread.Destroy
-00403cb4 +008 PawnStudio.exe System                    TObject.Free
-006cf528 +1b8 PawnStudio.exe UnitCSResultSaver 826 +40 TFileWatcher.Execute
+thread $2a68: <priority:-1>
+775d718c +00c ntdll.dll                                NtDelayExecution
+775f1354 +0e4 ntdll.dll                                RtlDelayExecution
+773d91b9 +049 KERNELBASE.dll                           SleepEx
+773d915a +00a KERNELBASE.dll                           Sleep
+006cf4b4 +144 PawnStudio.exe UnitCSResultSaver 814 +28 TFileWatcher.Execute
 00473d70 +034 PawnStudio.exe Classes                   ThreadProc
 00404b6c +028 PawnStudio.exe System                    ThreadWrapper
 76167ba7 +017 KERNEL32.DLL                             BaseThreadInitThunk
+775cc32a +000 ntdll.dll                                RtlUserThreadStart
 
-thread $1bf8: <priority:-1>
-775d6e6c +00c ntdll.dll                                NtWaitForSingleObject
-773f7492 +082 KERNELBASE.dll                           WaitForSingleObjectEx
-773f73fd +00d KERNELBASE.dll                           WaitForSingleObject
-00474224 +07c PawnStudio.exe Classes                   TThread.WaitFor
-00473ee1 +02d PawnStudio.exe Classes                   TThread.Destroy
-00403cb4 +008 PawnStudio.exe System                    TObject.Free
-006cf528 +1b8 PawnStudio.exe UnitCSResultSaver 826 +40 TFileWatcher.Execute
+thread $3650: <priority:-1>
+775d718c +00c ntdll.dll                                NtDelayExecution
+775f1354 +0e4 ntdll.dll                                RtlDelayExecution
+773d91b9 +049 KERNELBASE.dll                           SleepEx
+773d915a +00a KERNELBASE.dll                           Sleep
+006cf4b4 +144 PawnStudio.exe UnitCSResultSaver 814 +28 TFileWatcher.Execute
 00473d70 +034 PawnStudio.exe Classes                   ThreadProc
 00404b6c +028 PawnStudio.exe System                    ThreadWrapper
 76167ba7 +017 KERNEL32.DLL                             BaseThreadInitThunk
+775cc32a +000 ntdll.dll                                RtlUserThreadStart
 
-thread $3fac: <priority:-1>
-775d6e6c +00c ntdll.dll                                NtWaitForSingleObject
-773f7492 +082 KERNELBASE.dll                           WaitForSingleObjectEx
-773f73fd +00d KERNELBASE.dll                           WaitForSingleObject
-00474224 +07c PawnStudio.exe Classes                   TThread.WaitFor
-00473ee1 +02d PawnStudio.exe Classes                   TThread.Destroy
-00403cb4 +008 PawnStudio.exe System                    TObject.Free
-006cf528 +1b8 PawnStudio.exe UnitCSResultSaver 826 +40 TFileWatcher.Execute
+thread $4b6c: <priority:-1>
+775d718c +00c ntdll.dll                                NtDelayExecution
+775f1354 +0e4 ntdll.dll                                RtlDelayExecution
+773d91b9 +049 KERNELBASE.dll                           SleepEx
+773d915a +00a KERNELBASE.dll                           Sleep
+006cf4b4 +144 PawnStudio.exe UnitCSResultSaver 814 +28 TFileWatcher.Execute
 00473d70 +034 PawnStudio.exe Classes                   ThreadProc
 00404b6c +028 PawnStudio.exe System                    ThreadWrapper
 76167ba7 +017 KERNEL32.DLL                             BaseThreadInitThunk
-
-thread $256c: <priority:-1>
-775d6e6c +00c ntdll.dll                                NtWaitForSingleObject
-773f7492 +082 KERNELBASE.dll                           WaitForSingleObjectEx
-773f73fd +00d KERNELBASE.dll                           WaitForSingleObject
-00474224 +07c PawnStudio.exe Classes                   TThread.WaitFor
-00473ee1 +02d PawnStudio.exe Classes                   TThread.Destroy
-00403cb4 +008 PawnStudio.exe System                    TObject.Free
-006cf528 +1b8 PawnStudio.exe UnitCSResultSaver 826 +40 TFileWatcher.Execute
-00473d70 +034 PawnStudio.exe Classes                   ThreadProc
-00404b6c +028 PawnStudio.exe System                    ThreadWrapper
-76167ba7 +017 KERNEL32.DLL                             BaseThreadInitThunk
-
-thread $1ff0: <priority:-1>
-775d6e6c +00c ntdll.dll                                NtWaitForSingleObject
-773f7492 +082 KERNELBASE.dll                           WaitForSingleObjectEx
-773f73fd +00d KERNELBASE.dll                           WaitForSingleObject
-00474224 +07c PawnStudio.exe Classes                   TThread.WaitFor
-00473ee1 +02d PawnStudio.exe Classes                   TThread.Destroy
-00403cb4 +008 PawnStudio.exe System                    TObject.Free
-006cf528 +1b8 PawnStudio.exe UnitCSResultSaver 826 +40 TFileWatcher.Execute
-00473d70 +034 PawnStudio.exe Classes                   ThreadProc
-00404b6c +028 PawnStudio.exe System                    ThreadWrapper
-76167ba7 +017 KERNEL32.DLL                             BaseThreadInitThunk
-
-thread $6b8: <priority:-1>
-775d6e6c +00c ntdll.dll                                NtWaitForSingleObject
-773f7492 +082 KERNELBASE.dll                           WaitForSingleObjectEx
-773f73fd +00d KERNELBASE.dll                           WaitForSingleObject
-00474224 +07c PawnStudio.exe Classes                   TThread.WaitFor
-00473ee1 +02d PawnStudio.exe Classes                   TThread.Destroy
-00403cb4 +008 PawnStudio.exe System                    TObject.Free
-006cf528 +1b8 PawnStudio.exe UnitCSResultSaver 826 +40 TFileWatcher.Execute
-00473d70 +034 PawnStudio.exe Classes                   ThreadProc
-00404b6c +028 PawnStudio.exe System                    ThreadWrapper
-76167ba7 +017 KERNEL32.DLL                             BaseThreadInitThunk
-
-thread $d78: <priority:-1>
-775d6e6c +00c ntdll.dll                                NtWaitForSingleObject
-773f7492 +082 KERNELBASE.dll                           WaitForSingleObjectEx
-773f73fd +00d KERNELBASE.dll                           WaitForSingleObject
-00474224 +07c PawnStudio.exe Classes                   TThread.WaitFor
-00473ee1 +02d PawnStudio.exe Classes                   TThread.Destroy
-00403cb4 +008 PawnStudio.exe System                    TObject.Free
-006cf528 +1b8 PawnStudio.exe UnitCSResultSaver 826 +40 TFileWatcher.Execute
-00473d70 +034 PawnStudio.exe Classes                   ThreadProc
-00404b6c +028 PawnStudio.exe System                    ThreadWrapper
-76167ba7 +017 KERNEL32.DLL                             BaseThreadInitThunk
-
-thread $1c08: <priority:-1>
-775d6e6c +00c ntdll.dll                                NtWaitForSingleObject
-773f7492 +082 KERNELBASE.dll                           WaitForSingleObjectEx
-773f73fd +00d KERNELBASE.dll                           WaitForSingleObject
-00474224 +07c PawnStudio.exe Classes                   TThread.WaitFor
-00473ee1 +02d PawnStudio.exe Classes                   TThread.Destroy
-00403cb4 +008 PawnStudio.exe System                    TObject.Free
-006cf528 +1b8 PawnStudio.exe UnitCSResultSaver 826 +40 TFileWatcher.Execute
-00473d70 +034 PawnStudio.exe Classes                   ThreadProc
-00404b6c +028 PawnStudio.exe System                    ThreadWrapper
-76167ba7 +017 KERNEL32.DLL                             BaseThreadInitThunk
-
-thread $1b3c: <priority:-1>
-775d6e6c +00c ntdll.dll                                NtWaitForSingleObject
-773f7492 +082 KERNELBASE.dll                           WaitForSingleObjectEx
-773f73fd +00d KERNELBASE.dll                           WaitForSingleObject
-00474224 +07c PawnStudio.exe Classes                   TThread.WaitFor
-00473ee1 +02d PawnStudio.exe Classes                   TThread.Destroy
-00403cb4 +008 PawnStudio.exe System                    TObject.Free
-006cf528 +1b8 PawnStudio.exe UnitCSResultSaver 826 +40 TFileWatcher.Execute
-00473d70 +034 PawnStudio.exe Classes                   ThreadProc
-00404b6c +028 PawnStudio.exe System                    ThreadWrapper
-76167ba7 +017 KERNEL32.DLL                             BaseThreadInitThunk
-
-thread $de4: <priority:-1>
-775d6e6c +00c ntdll.dll                                NtWaitForSingleObject
-773f7492 +082 KERNELBASE.dll                           WaitForSingleObjectEx
-773f73fd +00d KERNELBASE.dll                           WaitForSingleObject
-00474224 +07c PawnStudio.exe Classes                   TThread.WaitFor
-00473ee1 +02d PawnStudio.exe Classes                   TThread.Destroy
-00403cb4 +008 PawnStudio.exe System                    TObject.Free
-006cf528 +1b8 PawnStudio.exe UnitCSResultSaver 826 +40 TFileWatcher.Execute
-00473d70 +034 PawnStudio.exe Classes                   ThreadProc
-00404b6c +028 PawnStudio.exe System                    ThreadWrapper
-76167ba7 +017 KERNEL32.DLL                             BaseThreadInitThunk
-
-thread $12f4: <priority:-1>
-775d6e6c +00c ntdll.dll                                NtWaitForSingleObject
-773f7492 +082 KERNELBASE.dll                           WaitForSingleObjectEx
-773f73fd +00d KERNELBASE.dll                           WaitForSingleObject
-00474224 +07c PawnStudio.exe Classes                   TThread.WaitFor
-00473ee1 +02d PawnStudio.exe Classes                   TThread.Destroy
-00403cb4 +008 PawnStudio.exe System                    TObject.Free
-006cf528 +1b8 PawnStudio.exe UnitCSResultSaver 826 +40 TFileWatcher.Execute
-00473d70 +034 PawnStudio.exe Classes                   ThreadProc
-00404b6c +028 PawnStudio.exe System                    ThreadWrapper
-76167ba7 +017 KERNEL32.DLL                             BaseThreadInitThunk
-
-thread $3ae4: <priority:-1>
-775d6e6c +00c ntdll.dll                                NtWaitForSingleObject
-773f7492 +082 KERNELBASE.dll                           WaitForSingleObjectEx
-773f73fd +00d KERNELBASE.dll                           WaitForSingleObject
-00474224 +07c PawnStudio.exe Classes                   TThread.WaitFor
-00473ee1 +02d PawnStudio.exe Classes                   TThread.Destroy
-00403cb4 +008 PawnStudio.exe System                    TObject.Free
-006cf528 +1b8 PawnStudio.exe UnitCSResultSaver 826 +40 TFileWatcher.Execute
-00473d70 +034 PawnStudio.exe Classes                   ThreadProc
-00404b6c +028 PawnStudio.exe System                    ThreadWrapper
-76167ba7 +017 KERNEL32.DLL                             BaseThreadInitThunk
-
-thread $acc: <priority:-1>
-775d6e6c +00c ntdll.dll                                NtWaitForSingleObject
-773f7492 +082 KERNELBASE.dll                           WaitForSingleObjectEx
-773f73fd +00d KERNELBASE.dll                           WaitForSingleObject
-00474224 +07c PawnStudio.exe Classes                   TThread.WaitFor
-00473ee1 +02d PawnStudio.exe Classes                   TThread.Destroy
-00403cb4 +008 PawnStudio.exe System                    TObject.Free
-006cf528 +1b8 PawnStudio.exe UnitCSResultSaver 826 +40 TFileWatcher.Execute
-00473d70 +034 PawnStudio.exe Classes                   ThreadProc
-00404b6c +028 PawnStudio.exe System                    ThreadWrapper
-76167ba7 +017 KERNEL32.DLL                             BaseThreadInitThunk
-
-thread $3118: <priority:-1>
-775d6e6c +00c ntdll.dll                                NtWaitForSingleObject
-773f7492 +082 KERNELBASE.dll                           WaitForSingleObjectEx
-773f73fd +00d KERNELBASE.dll                           WaitForSingleObject
-00474224 +07c PawnStudio.exe Classes                   TThread.WaitFor
-00473ee1 +02d PawnStudio.exe Classes                   TThread.Destroy
-00403cb4 +008 PawnStudio.exe System                    TObject.Free
-006cf528 +1b8 PawnStudio.exe UnitCSResultSaver 826 +40 TFileWatcher.Execute
-00473d70 +034 PawnStudio.exe Classes                   ThreadProc
-00404b6c +028 PawnStudio.exe System                    ThreadWrapper
-76167ba7 +017 KERNEL32.DLL                             BaseThreadInitThunk
-
-thread $3684: <priority:-1>
-775d6e6c +00c ntdll.dll                                NtWaitForSingleObject
-773f7492 +082 KERNELBASE.dll                           WaitForSingleObjectEx
-773f73fd +00d KERNELBASE.dll                           WaitForSingleObject
-00474224 +07c PawnStudio.exe Classes                   TThread.WaitFor
-00473ee1 +02d PawnStudio.exe Classes                   TThread.Destroy
-00403cb4 +008 PawnStudio.exe System                    TObject.Free
-006cf528 +1b8 PawnStudio.exe UnitCSResultSaver 826 +40 TFileWatcher.Execute
-00473d70 +034 PawnStudio.exe Classes                   ThreadProc
-00404b6c +028 PawnStudio.exe System                    ThreadWrapper
-76167ba7 +017 KERNEL32.DLL                             BaseThreadInitThunk
-
-thread $3120: <priority:-1>
-775d6e6c +00c ntdll.dll                                NtWaitForSingleObject
-773f7492 +082 KERNELBASE.dll                           WaitForSingleObjectEx
-773f73fd +00d KERNELBASE.dll                           WaitForSingleObject
-00474224 +07c PawnStudio.exe Classes                   TThread.WaitFor
-00473ee1 +02d PawnStudio.exe Classes                   TThread.Destroy
-00403cb4 +008 PawnStudio.exe System                    TObject.Free
-006cf528 +1b8 PawnStudio.exe UnitCSResultSaver 826 +40 TFileWatcher.Execute
-00473d70 +034 PawnStudio.exe Classes                   ThreadProc
-00404b6c +028 PawnStudio.exe System                    ThreadWrapper
-76167ba7 +017 KERNEL32.DLL                             BaseThreadInitThunk
-
-thread $3648: <priority:-1>
-775d6e6c +00c ntdll.dll                                NtWaitForSingleObject
-773f7492 +082 KERNELBASE.dll                           WaitForSingleObjectEx
-773f73fd +00d KERNELBASE.dll                           WaitForSingleObject
-00474224 +07c PawnStudio.exe Classes                   TThread.WaitFor
-00473ee1 +02d PawnStudio.exe Classes                   TThread.Destroy
-00403cb4 +008 PawnStudio.exe System                    TObject.Free
-006cf528 +1b8 PawnStudio.exe UnitCSResultSaver 826 +40 TFileWatcher.Execute
-00473d70 +034 PawnStudio.exe Classes                   ThreadProc
-00404b6c +028 PawnStudio.exe System                    ThreadWrapper
-76167ba7 +017 KERNEL32.DLL                             BaseThreadInitThunk
-
-thread $2320: <priority:-1>
-775d6e6c +0c ntdll.dll                               NtWaitForSingleObject
-773f7492 +82 KERNELBASE.dll                          WaitForSingleObjectEx
-773f73fd +0d KERNELBASE.dll                          WaitForSingleObject
-004740d8 +c8 PawnStudio.exe Classes                  TThread.Synchronize
-0047416c +1c PawnStudio.exe Classes                  TThread.Synchronize
-006cf38f +1f PawnStudio.exe UnitCSResultSaver 789 +3 TFileWatcher.Execute
-00473d70 +34 PawnStudio.exe Classes                  ThreadProc
-00404b6c +28 PawnStudio.exe System                   ThreadWrapper
-76167ba7 +17 KERNEL32.DLL                            BaseThreadInitThunk
-
-thread $3f1c: <priority:-1>
-775d6e6c +0c ntdll.dll                               NtWaitForSingleObject
-773f7492 +82 KERNELBASE.dll                          WaitForSingleObjectEx
-773f73fd +0d KERNELBASE.dll                          WaitForSingleObject
-004740d8 +c8 PawnStudio.exe Classes                  TThread.Synchronize
-0047416c +1c PawnStudio.exe Classes                  TThread.Synchronize
-006cf38f +1f PawnStudio.exe UnitCSResultSaver 789 +3 TFileWatcher.Execute
-00473d70 +34 PawnStudio.exe Classes                  ThreadProc
-00404b6c +28 PawnStudio.exe System                   ThreadWrapper
-76167ba7 +17 KERNEL32.DLL                            BaseThreadInitThunk
-
-thread $1dd4: <priority:-1>
-775d6e6c +0c ntdll.dll                               NtWaitForSingleObject
-773f7492 +82 KERNELBASE.dll                          WaitForSingleObjectEx
-773f73fd +0d KERNELBASE.dll                          WaitForSingleObject
-004740d8 +c8 PawnStudio.exe Classes                  TThread.Synchronize
-0047416c +1c PawnStudio.exe Classes                  TThread.Synchronize
-006cf38f +1f PawnStudio.exe UnitCSResultSaver 789 +3 TFileWatcher.Execute
-00473d70 +34 PawnStudio.exe Classes                  ThreadProc
-00404b6c +28 PawnStudio.exe System                   ThreadWrapper
-76167ba7 +17 KERNEL32.DLL                            BaseThreadInitThunk
-
-thread $15b0: <priority:-1>
-775d6e6c +0c ntdll.dll                               NtWaitForSingleObject
-773f7492 +82 KERNELBASE.dll                          WaitForSingleObjectEx
-773f73fd +0d KERNELBASE.dll                          WaitForSingleObject
-004740d8 +c8 PawnStudio.exe Classes                  TThread.Synchronize
-0047416c +1c PawnStudio.exe Classes                  TThread.Synchronize
-006cf38f +1f PawnStudio.exe UnitCSResultSaver 789 +3 TFileWatcher.Execute
-00473d70 +34 PawnStudio.exe Classes                  ThreadProc
-00404b6c +28 PawnStudio.exe System                   ThreadWrapper
-76167ba7 +17 KERNEL32.DLL                            BaseThreadInitThunk
-
-thread $21c0: <priority:-1>
-775d6e6c +0c ntdll.dll                               NtWaitForSingleObject
-773f7492 +82 KERNELBASE.dll                          WaitForSingleObjectEx
-773f73fd +0d KERNELBASE.dll                          WaitForSingleObject
-004740d8 +c8 PawnStudio.exe Classes                  TThread.Synchronize
-0047416c +1c PawnStudio.exe Classes                  TThread.Synchronize
-006cf38f +1f PawnStudio.exe UnitCSResultSaver 789 +3 TFileWatcher.Execute
-00473d70 +34 PawnStudio.exe Classes                  ThreadProc
-00404b6c +28 PawnStudio.exe System                   ThreadWrapper
-76167ba7 +17 KERNEL32.DLL                            BaseThreadInitThunk
-
-thread $3990: <priority:-1>
-775d6e6c +0c ntdll.dll                               NtWaitForSingleObject
-773f7492 +82 KERNELBASE.dll                          WaitForSingleObjectEx
-773f73fd +0d KERNELBASE.dll                          WaitForSingleObject
-004740d8 +c8 PawnStudio.exe Classes                  TThread.Synchronize
-0047416c +1c PawnStudio.exe Classes                  TThread.Synchronize
-006cf38f +1f PawnStudio.exe UnitCSResultSaver 789 +3 TFileWatcher.Execute
-00473d70 +34 PawnStudio.exe Classes                  ThreadProc
-00404b6c +28 PawnStudio.exe System                   ThreadWrapper
-76167ba7 +17 KERNEL32.DLL                            BaseThreadInitThunk
-
-thread $2638: <priority:-1>
-775d6e6c +0c ntdll.dll                               NtWaitForSingleObject
-773f7492 +82 KERNELBASE.dll                          WaitForSingleObjectEx
-773f73fd +0d KERNELBASE.dll                          WaitForSingleObject
-004740d8 +c8 PawnStudio.exe Classes                  TThread.Synchronize
-0047416c +1c PawnStudio.exe Classes                  TThread.Synchronize
-006cf38f +1f PawnStudio.exe UnitCSResultSaver 789 +3 TFileWatcher.Execute
-00473d70 +34 PawnStudio.exe Classes                  ThreadProc
-00404b6c +28 PawnStudio.exe System                   ThreadWrapper
-76167ba7 +17 KERNEL32.DLL                            BaseThreadInitThunk
-
-thread $2f10: <priority:-1>
-775d6e6c +0c ntdll.dll                               NtWaitForSingleObject
-773f7492 +82 KERNELBASE.dll                          WaitForSingleObjectEx
-773f73fd +0d KERNELBASE.dll                          WaitForSingleObject
-004740d8 +c8 PawnStudio.exe Classes                  TThread.Synchronize
-0047416c +1c PawnStudio.exe Classes                  TThread.Synchronize
-006cf38f +1f PawnStudio.exe UnitCSResultSaver 789 +3 TFileWatcher.Execute
-00473d70 +34 PawnStudio.exe Classes                  ThreadProc
-00404b6c +28 PawnStudio.exe System                   ThreadWrapper
-76167ba7 +17 KERNEL32.DLL                            BaseThreadInitThunk
-
-thread $3764: <priority:-1>
-775d6e6c +0c ntdll.dll                               NtWaitForSingleObject
-773f7492 +82 KERNELBASE.dll                          WaitForSingleObjectEx
-773f73fd +0d KERNELBASE.dll                          WaitForSingleObject
-004740d8 +c8 PawnStudio.exe Classes                  TThread.Synchronize
-0047416c +1c PawnStudio.exe Classes                  TThread.Synchronize
-006cf38f +1f PawnStudio.exe UnitCSResultSaver 789 +3 TFileWatcher.Execute
-00473d70 +34 PawnStudio.exe Classes                  ThreadProc
-00404b6c +28 PawnStudio.exe System                   ThreadWrapper
-76167ba7 +17 KERNEL32.DLL                            BaseThreadInitThunk
-
-thread $2634: <priority:-1>
-775d6e6c +0c ntdll.dll                               NtWaitForSingleObject
-773f7492 +82 KERNELBASE.dll                          WaitForSingleObjectEx
-773f73fd +0d KERNELBASE.dll                          WaitForSingleObject
-004740d8 +c8 PawnStudio.exe Classes                  TThread.Synchronize
-0047416c +1c PawnStudio.exe Classes                  TThread.Synchronize
-006cf38f +1f PawnStudio.exe UnitCSResultSaver 789 +3 TFileWatcher.Execute
-00473d70 +34 PawnStudio.exe Classes                  ThreadProc
-00404b6c +28 PawnStudio.exe System                   ThreadWrapper
-76167ba7 +17 KERNEL32.DLL                            BaseThreadInitThunk
-
-thread $42e8: <priority:-1>
-775d6e6c +0c ntdll.dll                               NtWaitForSingleObject
-773f7492 +82 KERNELBASE.dll                          WaitForSingleObjectEx
-773f73fd +0d KERNELBASE.dll                          WaitForSingleObject
-004740d8 +c8 PawnStudio.exe Classes                  TThread.Synchronize
-0047416c +1c PawnStudio.exe Classes                  TThread.Synchronize
-006cf38f +1f PawnStudio.exe UnitCSResultSaver 789 +3 TFileWatcher.Execute
-00473d70 +34 PawnStudio.exe Classes                  ThreadProc
-00404b6c +28 PawnStudio.exe System                   ThreadWrapper
-76167ba7 +17 KERNEL32.DLL                            BaseThreadInitThunk
-
-thread $3760: <priority:-1>
-775d6e6c +0c ntdll.dll                               NtWaitForSingleObject
-773f7492 +82 KERNELBASE.dll                          WaitForSingleObjectEx
-773f73fd +0d KERNELBASE.dll                          WaitForSingleObject
-004740d8 +c8 PawnStudio.exe Classes                  TThread.Synchronize
-0047416c +1c PawnStudio.exe Classes                  TThread.Synchronize
-006cf38f +1f PawnStudio.exe UnitCSResultSaver 789 +3 TFileWatcher.Execute
-00473d70 +34 PawnStudio.exe Classes                  ThreadProc
-00404b6c +28 PawnStudio.exe System                   ThreadWrapper
-76167ba7 +17 KERNEL32.DLL                            BaseThreadInitThunk
-
-thread $c8: <priority:-1>
-775d6e6c +0c ntdll.dll                               NtWaitForSingleObject
-773f7492 +82 KERNELBASE.dll                          WaitForSingleObjectEx
-773f73fd +0d KERNELBASE.dll                          WaitForSingleObject
-004740d8 +c8 PawnStudio.exe Classes                  TThread.Synchronize
-0047416c +1c PawnStudio.exe Classes                  TThread.Synchronize
-006cf38f +1f PawnStudio.exe UnitCSResultSaver 789 +3 TFileWatcher.Execute
-00473d70 +34 PawnStudio.exe Classes                  ThreadProc
-00404b6c +28 PawnStudio.exe System                   ThreadWrapper
-76167ba7 +17 KERNEL32.DLL                            BaseThreadInitThunk
-
-thread $23b8: <priority:-1>
-775d6e6c +0c ntdll.dll                               NtWaitForSingleObject
-773f7492 +82 KERNELBASE.dll                          WaitForSingleObjectEx
-773f73fd +0d KERNELBASE.dll                          WaitForSingleObject
-004740d8 +c8 PawnStudio.exe Classes                  TThread.Synchronize
-0047416c +1c PawnStudio.exe Classes                  TThread.Synchronize
-006cf38f +1f PawnStudio.exe UnitCSResultSaver 789 +3 TFileWatcher.Execute
-00473d70 +34 PawnStudio.exe Classes                  ThreadProc
-00404b6c +28 PawnStudio.exe System                   ThreadWrapper
-76167ba7 +17 KERNEL32.DLL                            BaseThreadInitThunk
-
-thread $818: <priority:-1>
-775d6e6c +0c ntdll.dll                               NtWaitForSingleObject
-773f7492 +82 KERNELBASE.dll                          WaitForSingleObjectEx
-773f73fd +0d KERNELBASE.dll                          WaitForSingleObject
-004740d8 +c8 PawnStudio.exe Classes                  TThread.Synchronize
-0047416c +1c PawnStudio.exe Classes                  TThread.Synchronize
-006cf38f +1f PawnStudio.exe UnitCSResultSaver 789 +3 TFileWatcher.Execute
-00473d70 +34 PawnStudio.exe Classes                  ThreadProc
-00404b6c +28 PawnStudio.exe System                   ThreadWrapper
-76167ba7 +17 KERNEL32.DLL                            BaseThreadInitThunk
-
-thread $3980: <priority:-1>
-775d6e6c +0c ntdll.dll                               NtWaitForSingleObject
-773f7492 +82 KERNELBASE.dll                          WaitForSingleObjectEx
-773f73fd +0d KERNELBASE.dll                          WaitForSingleObject
-004740d8 +c8 PawnStudio.exe Classes                  TThread.Synchronize
-0047416c +1c PawnStudio.exe Classes                  TThread.Synchronize
-006cf38f +1f PawnStudio.exe UnitCSResultSaver 789 +3 TFileWatcher.Execute
-00473d70 +34 PawnStudio.exe Classes                  ThreadProc
-00404b6c +28 PawnStudio.exe System                   ThreadWrapper
-76167ba7 +17 KERNEL32.DLL                            BaseThreadInitThunk
-
-thread $1a04: <priority:-1>
-775d6e6c +0c ntdll.dll                               NtWaitForSingleObject
-773f7492 +82 KERNELBASE.dll                          WaitForSingleObjectEx
-773f73fd +0d KERNELBASE.dll                          WaitForSingleObject
-004740d8 +c8 PawnStudio.exe Classes                  TThread.Synchronize
-0047416c +1c PawnStudio.exe Classes                  TThread.Synchronize
-006cf38f +1f PawnStudio.exe UnitCSResultSaver 789 +3 TFileWatcher.Execute
-00473d70 +34 PawnStudio.exe Classes                  ThreadProc
-00404b6c +28 PawnStudio.exe System                   ThreadWrapper
-76167ba7 +17 KERNEL32.DLL                            BaseThreadInitThunk
-
-thread $810: <priority:-1>
-775d6e6c +0c ntdll.dll                               NtWaitForSingleObject
-773f7492 +82 KERNELBASE.dll                          WaitForSingleObjectEx
-773f73fd +0d KERNELBASE.dll                          WaitForSingleObject
-004740d8 +c8 PawnStudio.exe Classes                  TThread.Synchronize
-0047416c +1c PawnStudio.exe Classes                  TThread.Synchronize
-006cf38f +1f PawnStudio.exe UnitCSResultSaver 789 +3 TFileWatcher.Execute
-00473d70 +34 PawnStudio.exe Classes                  ThreadProc
-00404b6c +28 PawnStudio.exe System                   ThreadWrapper
-76167ba7 +17 KERNEL32.DLL                            BaseThreadInitThunk
-
-thread $1abc: <priority:-1>
-775d6e6c +0c ntdll.dll                               NtWaitForSingleObject
-773f7492 +82 KERNELBASE.dll                          WaitForSingleObjectEx
-773f73fd +0d KERNELBASE.dll                          WaitForSingleObject
-004740d8 +c8 PawnStudio.exe Classes                  TThread.Synchronize
-0047416c +1c PawnStudio.exe Classes                  TThread.Synchronize
-006cf38f +1f PawnStudio.exe UnitCSResultSaver 789 +3 TFileWatcher.Execute
-00473d70 +34 PawnStudio.exe Classes                  ThreadProc
-00404b6c +28 PawnStudio.exe System                   ThreadWrapper
-76167ba7 +17 KERNEL32.DLL                            BaseThreadInitThunk
-
-thread $2f34: <priority:-1>
-775d6e6c +0c ntdll.dll                               NtWaitForSingleObject
-773f7492 +82 KERNELBASE.dll                          WaitForSingleObjectEx
-773f73fd +0d KERNELBASE.dll                          WaitForSingleObject
-004740d8 +c8 PawnStudio.exe Classes                  TThread.Synchronize
-0047416c +1c PawnStudio.exe Classes                  TThread.Synchronize
-006cf38f +1f PawnStudio.exe UnitCSResultSaver 789 +3 TFileWatcher.Execute
-00473d70 +34 PawnStudio.exe Classes                  ThreadProc
-00404b6c +28 PawnStudio.exe System                   ThreadWrapper
-76167ba7 +17 KERNEL32.DLL                            BaseThreadInitThunk
-
-thread $38b4: <priority:-1>
-775d6e6c +0c ntdll.dll                               NtWaitForSingleObject
-773f7492 +82 KERNELBASE.dll                          WaitForSingleObjectEx
-773f73fd +0d KERNELBASE.dll                          WaitForSingleObject
-004740d8 +c8 PawnStudio.exe Classes                  TThread.Synchronize
-0047416c +1c PawnStudio.exe Classes                  TThread.Synchronize
-006cf38f +1f PawnStudio.exe UnitCSResultSaver 789 +3 TFileWatcher.Execute
-00473d70 +34 PawnStudio.exe Classes                  ThreadProc
-00404b6c +28 PawnStudio.exe System                   ThreadWrapper
-76167ba7 +17 KERNEL32.DLL                            BaseThreadInitThunk
-
-thread $43f4: <priority:-1>
-775d6e6c +0c ntdll.dll                               NtWaitForSingleObject
-773f7492 +82 KERNELBASE.dll                          WaitForSingleObjectEx
-773f73fd +0d KERNELBASE.dll                          WaitForSingleObject
-004740d8 +c8 PawnStudio.exe Classes                  TThread.Synchronize
-0047416c +1c PawnStudio.exe Classes                  TThread.Synchronize
-006cf38f +1f PawnStudio.exe UnitCSResultSaver 789 +3 TFileWatcher.Execute
-00473d70 +34 PawnStudio.exe Classes                  ThreadProc
-00404b6c +28 PawnStudio.exe System                   ThreadWrapper
-76167ba7 +17 KERNEL32.DLL                            BaseThreadInitThunk
-
-thread $2884: <priority:-1>
-775d6e6c +0c ntdll.dll                               NtWaitForSingleObject
-773f7492 +82 KERNELBASE.dll                          WaitForSingleObjectEx
-773f73fd +0d KERNELBASE.dll                          WaitForSingleObject
-004740d8 +c8 PawnStudio.exe Classes                  TThread.Synchronize
-0047416c +1c PawnStudio.exe Classes                  TThread.Synchronize
-006cf38f +1f PawnStudio.exe UnitCSResultSaver 789 +3 TFileWatcher.Execute
-00473d70 +34 PawnStudio.exe Classes                  ThreadProc
-00404b6c +28 PawnStudio.exe System                   ThreadWrapper
-76167ba7 +17 KERNEL32.DLL                            BaseThreadInitThunk
-
-thread $2314: <priority:-1>
-775d6e6c +0c ntdll.dll                               NtWaitForSingleObject
-773f7492 +82 KERNELBASE.dll                          WaitForSingleObjectEx
-773f73fd +0d KERNELBASE.dll                          WaitForSingleObject
-004740d8 +c8 PawnStudio.exe Classes                  TThread.Synchronize
-0047416c +1c PawnStudio.exe Classes                  TThread.Synchronize
-006cf38f +1f PawnStudio.exe UnitCSResultSaver 789 +3 TFileWatcher.Execute
-00473d70 +34 PawnStudio.exe Classes                  ThreadProc
-00404b6c +28 PawnStudio.exe System                   ThreadWrapper
-76167ba7 +17 KERNEL32.DLL                            BaseThreadInitThunk
-
-thread $8bc: <priority:-1>
-775d6e6c +0c ntdll.dll                               NtWaitForSingleObject
-773f7492 +82 KERNELBASE.dll                          WaitForSingleObjectEx
-773f73fd +0d KERNELBASE.dll                          WaitForSingleObject
-004740d8 +c8 PawnStudio.exe Classes                  TThread.Synchronize
-0047416c +1c PawnStudio.exe Classes                  TThread.Synchronize
-006cf38f +1f PawnStudio.exe UnitCSResultSaver 789 +3 TFileWatcher.Execute
-00473d70 +34 PawnStudio.exe Classes                  ThreadProc
-00404b6c +28 PawnStudio.exe System                   ThreadWrapper
-76167ba7 +17 KERNEL32.DLL                            BaseThreadInitThunk
-
-thread $2b68: <priority:-1>
-775d6e6c +0c ntdll.dll                               NtWaitForSingleObject
-773f7492 +82 KERNELBASE.dll                          WaitForSingleObjectEx
-773f73fd +0d KERNELBASE.dll                          WaitForSingleObject
-004740d8 +c8 PawnStudio.exe Classes                  TThread.Synchronize
-0047416c +1c PawnStudio.exe Classes                  TThread.Synchronize
-006cf38f +1f PawnStudio.exe UnitCSResultSaver 789 +3 TFileWatcher.Execute
-00473d70 +34 PawnStudio.exe Classes                  ThreadProc
-00404b6c +28 PawnStudio.exe System                   ThreadWrapper
-76167ba7 +17 KERNEL32.DLL                            BaseThreadInitThunk
-
-thread $1718: <priority:-1>
-775d6e6c +0c ntdll.dll                               NtWaitForSingleObject
-773f7492 +82 KERNELBASE.dll                          WaitForSingleObjectEx
-773f73fd +0d KERNELBASE.dll                          WaitForSingleObject
-004740d8 +c8 PawnStudio.exe Classes                  TThread.Synchronize
-0047416c +1c PawnStudio.exe Classes                  TThread.Synchronize
-006cf38f +1f PawnStudio.exe UnitCSResultSaver 789 +3 TFileWatcher.Execute
-00473d70 +34 PawnStudio.exe Classes                  ThreadProc
-00404b6c +28 PawnStudio.exe System                   ThreadWrapper
-76167ba7 +17 KERNEL32.DLL                            BaseThreadInitThunk
+775cc32a +000 ntdll.dll                                RtlUserThreadStart
 
 thread $a0c: <priority:-1>
-775d6e6c +0c ntdll.dll                               NtWaitForSingleObject
-773f7492 +82 KERNELBASE.dll                          WaitForSingleObjectEx
-773f73fd +0d KERNELBASE.dll                          WaitForSingleObject
-004740d8 +c8 PawnStudio.exe Classes                  TThread.Synchronize
-0047416c +1c PawnStudio.exe Classes                  TThread.Synchronize
-006cf38f +1f PawnStudio.exe UnitCSResultSaver 789 +3 TFileWatcher.Execute
-00473d70 +34 PawnStudio.exe Classes                  ThreadProc
-00404b6c +28 PawnStudio.exe System                   ThreadWrapper
-76167ba7 +17 KERNEL32.DLL                            BaseThreadInitThunk
+775d718c +00c ntdll.dll                                NtDelayExecution
+775f1354 +0e4 ntdll.dll                                RtlDelayExecution
+773d91b9 +049 KERNELBASE.dll                           SleepEx
+773d915a +00a KERNELBASE.dll                           Sleep
+006cf4b4 +144 PawnStudio.exe UnitCSResultSaver 814 +28 TFileWatcher.Execute
+00473d70 +034 PawnStudio.exe Classes                   ThreadProc
+00404b6c +028 PawnStudio.exe System                    ThreadWrapper
+76167ba7 +017 KERNEL32.DLL                             BaseThreadInitThunk
+775cc32a +000 ntdll.dll                                RtlUserThreadStart
 
-thread $1854: <priority:-1>
-775d6e6c +0c ntdll.dll                               NtWaitForSingleObject
-773f7492 +82 KERNELBASE.dll                          WaitForSingleObjectEx
-773f73fd +0d KERNELBASE.dll                          WaitForSingleObject
-004740d8 +c8 PawnStudio.exe Classes                  TThread.Synchronize
-0047416c +1c PawnStudio.exe Classes                  TThread.Synchronize
-006cf38f +1f PawnStudio.exe UnitCSResultSaver 789 +3 TFileWatcher.Execute
-00473d70 +34 PawnStudio.exe Classes                  ThreadProc
-00404b6c +28 PawnStudio.exe System                   ThreadWrapper
-76167ba7 +17 KERNEL32.DLL                            BaseThreadInitThunk
+thread $37a0: <priority:-1>
+775d718c +00c ntdll.dll                                NtDelayExecution
+775f1354 +0e4 ntdll.dll                                RtlDelayExecution
+773d91b9 +049 KERNELBASE.dll                           SleepEx
+773d915a +00a KERNELBASE.dll                           Sleep
+006cf4b4 +144 PawnStudio.exe UnitCSResultSaver 814 +28 TFileWatcher.Execute
+00473d70 +034 PawnStudio.exe Classes                   ThreadProc
+00404b6c +028 PawnStudio.exe System                    ThreadWrapper
+76167ba7 +017 KERNEL32.DLL                             BaseThreadInitThunk
+775cc32a +000 ntdll.dll                                RtlUserThreadStart
 
-thread $41cc: <priority:-1>
-775d6e6c +0c ntdll.dll                               NtWaitForSingleObject
-773f7492 +82 KERNELBASE.dll                          WaitForSingleObjectEx
-773f73fd +0d KERNELBASE.dll                          WaitForSingleObject
-004740d8 +c8 PawnStudio.exe Classes                  TThread.Synchronize
-0047416c +1c PawnStudio.exe Classes                  TThread.Synchronize
-006cf38f +1f PawnStudio.exe UnitCSResultSaver 789 +3 TFileWatcher.Execute
-00473d70 +34 PawnStudio.exe Classes                  ThreadProc
-00404b6c +28 PawnStudio.exe System                   ThreadWrapper
-76167ba7 +17 KERNEL32.DLL                            BaseThreadInitThunk
+thread $4ab4: <priority:-1>
+775d718c +00c ntdll.dll                                NtDelayExecution
+775f1354 +0e4 ntdll.dll                                RtlDelayExecution
+773d91b9 +049 KERNELBASE.dll                           SleepEx
+773d915a +00a KERNELBASE.dll                           Sleep
+006cf4b4 +144 PawnStudio.exe UnitCSResultSaver 814 +28 TFileWatcher.Execute
+00473d70 +034 PawnStudio.exe Classes                   ThreadProc
+00404b6c +028 PawnStudio.exe System                    ThreadWrapper
+76167ba7 +017 KERNEL32.DLL                             BaseThreadInitThunk
+775cc32a +000 ntdll.dll                                RtlUserThreadStart
 
-thread $3b3c: <priority:-1>
-775d6e6c +0c ntdll.dll                               NtWaitForSingleObject
-773f7492 +82 KERNELBASE.dll                          WaitForSingleObjectEx
-773f73fd +0d KERNELBASE.dll                          WaitForSingleObject
-004740d8 +c8 PawnStudio.exe Classes                  TThread.Synchronize
-0047416c +1c PawnStudio.exe Classes                  TThread.Synchronize
-006cf38f +1f PawnStudio.exe UnitCSResultSaver 789 +3 TFileWatcher.Execute
-00473d70 +34 PawnStudio.exe Classes                  ThreadProc
-00404b6c +28 PawnStudio.exe System                   ThreadWrapper
-76167ba7 +17 KERNEL32.DLL                            BaseThreadInitThunk
+thread $228c: <priority:-1>
+775d718c +00c ntdll.dll                                NtDelayExecution
+775f1354 +0e4 ntdll.dll                                RtlDelayExecution
+773d91b9 +049 KERNELBASE.dll                           SleepEx
+773d915a +00a KERNELBASE.dll                           Sleep
+006cf4b4 +144 PawnStudio.exe UnitCSResultSaver 814 +28 TFileWatcher.Execute
+00473d70 +034 PawnStudio.exe Classes                   ThreadProc
+00404b6c +028 PawnStudio.exe System                    ThreadWrapper
+76167ba7 +017 KERNEL32.DLL                             BaseThreadInitThunk
+775cc32a +000 ntdll.dll                                RtlUserThreadStart
 
-thread $4308: <priority:-1>
-775d6e6c +0c ntdll.dll                               NtWaitForSingleObject
-773f7492 +82 KERNELBASE.dll                          WaitForSingleObjectEx
-773f73fd +0d KERNELBASE.dll                          WaitForSingleObject
-004740d8 +c8 PawnStudio.exe Classes                  TThread.Synchronize
-0047416c +1c PawnStudio.exe Classes                  TThread.Synchronize
-006cf38f +1f PawnStudio.exe UnitCSResultSaver 789 +3 TFileWatcher.Execute
-00473d70 +34 PawnStudio.exe Classes                  ThreadProc
-00404b6c +28 PawnStudio.exe System                   ThreadWrapper
-76167ba7 +17 KERNEL32.DLL                            BaseThreadInitThunk
+thread $1810: <priority:-1>
+775d718c +00c ntdll.dll                                NtDelayExecution
+775f1354 +0e4 ntdll.dll                                RtlDelayExecution
+773d91b9 +049 KERNELBASE.dll                           SleepEx
+773d915a +00a KERNELBASE.dll                           Sleep
+006cf4b4 +144 PawnStudio.exe UnitCSResultSaver 814 +28 TFileWatcher.Execute
+00473d70 +034 PawnStudio.exe Classes                   ThreadProc
+00404b6c +028 PawnStudio.exe System                    ThreadWrapper
+76167ba7 +017 KERNEL32.DLL                             BaseThreadInitThunk
+775cc32a +000 ntdll.dll                                RtlUserThreadStart
 
-thread $1ee8: <priority:-1>
-775d6e6c +0c ntdll.dll                               NtWaitForSingleObject
-773f7492 +82 KERNELBASE.dll                          WaitForSingleObjectEx
-773f73fd +0d KERNELBASE.dll                          WaitForSingleObject
-004740d8 +c8 PawnStudio.exe Classes                  TThread.Synchronize
-0047416c +1c PawnStudio.exe Classes                  TThread.Synchronize
-006cf38f +1f PawnStudio.exe UnitCSResultSaver 789 +3 TFileWatcher.Execute
-00473d70 +34 PawnStudio.exe Classes                  ThreadProc
-00404b6c +28 PawnStudio.exe System                   ThreadWrapper
-76167ba7 +17 KERNEL32.DLL                            BaseThreadInitThunk
+thread $4f70: <priority:-1>
+775d718c +00c ntdll.dll                                NtDelayExecution
+775f1354 +0e4 ntdll.dll                                RtlDelayExecution
+773d91b9 +049 KERNELBASE.dll                           SleepEx
+773d915a +00a KERNELBASE.dll                           Sleep
+006cf4b4 +144 PawnStudio.exe UnitCSResultSaver 814 +28 TFileWatcher.Execute
+00473d70 +034 PawnStudio.exe Classes                   ThreadProc
+00404b6c +028 PawnStudio.exe System                    ThreadWrapper
+76167ba7 +017 KERNEL32.DLL                             BaseThreadInitThunk
+775cc32a +000 ntdll.dll                                RtlUserThreadStart
 
-thread $1858: <priority:-1>
-775d6e6c +0c ntdll.dll                               NtWaitForSingleObject
-773f7492 +82 KERNELBASE.dll                          WaitForSingleObjectEx
-773f73fd +0d KERNELBASE.dll                          WaitForSingleObject
-004740d8 +c8 PawnStudio.exe Classes                  TThread.Synchronize
-0047416c +1c PawnStudio.exe Classes                  TThread.Synchronize
-006cf38f +1f PawnStudio.exe UnitCSResultSaver 789 +3 TFileWatcher.Execute
-00473d70 +34 PawnStudio.exe Classes                  ThreadProc
-00404b6c +28 PawnStudio.exe System                   ThreadWrapper
-76167ba7 +17 KERNEL32.DLL                            BaseThreadInitThunk
+thread $37b8: <priority:-1>
+775d718c +00c ntdll.dll                                NtDelayExecution
+775f1354 +0e4 ntdll.dll                                RtlDelayExecution
+773d91b9 +049 KERNELBASE.dll                           SleepEx
+773d915a +00a KERNELBASE.dll                           Sleep
+006cf4b4 +144 PawnStudio.exe UnitCSResultSaver 814 +28 TFileWatcher.Execute
+00473d70 +034 PawnStudio.exe Classes                   ThreadProc
+00404b6c +028 PawnStudio.exe System                    ThreadWrapper
+76167ba7 +017 KERNEL32.DLL                             BaseThreadInitThunk
+775cc32a +000 ntdll.dll                                RtlUserThreadStart
 
-thread $1634: <priority:-1>
-775d6e6c +0c ntdll.dll                               NtWaitForSingleObject
-773f7492 +82 KERNELBASE.dll                          WaitForSingleObjectEx
-773f73fd +0d KERNELBASE.dll                          WaitForSingleObject
-004740d8 +c8 PawnStudio.exe Classes                  TThread.Synchronize
-0047416c +1c PawnStudio.exe Classes                  TThread.Synchronize
-006cf38f +1f PawnStudio.exe UnitCSResultSaver 789 +3 TFileWatcher.Execute
-00473d70 +34 PawnStudio.exe Classes                  ThreadProc
-00404b6c +28 PawnStudio.exe System                   ThreadWrapper
-76167ba7 +17 KERNEL32.DLL                            BaseThreadInitThunk
+thread $4e10: <priority:-1>
+775d718c +00c ntdll.dll                                NtDelayExecution
+775f1354 +0e4 ntdll.dll                                RtlDelayExecution
+773d91b9 +049 KERNELBASE.dll                           SleepEx
+773d915a +00a KERNELBASE.dll                           Sleep
+006cf4b4 +144 PawnStudio.exe UnitCSResultSaver 814 +28 TFileWatcher.Execute
+00473d70 +034 PawnStudio.exe Classes                   ThreadProc
+00404b6c +028 PawnStudio.exe System                    ThreadWrapper
+76167ba7 +017 KERNEL32.DLL                             BaseThreadInitThunk
+775cc32a +000 ntdll.dll                                RtlUserThreadStart
 
-thread $1500: <priority:-1>
-775d6e6c +0c ntdll.dll                               NtWaitForSingleObject
-773f7492 +82 KERNELBASE.dll                          WaitForSingleObjectEx
-773f73fd +0d KERNELBASE.dll                          WaitForSingleObject
-004740d8 +c8 PawnStudio.exe Classes                  TThread.Synchronize
-0047416c +1c PawnStudio.exe Classes                  TThread.Synchronize
-006cf38f +1f PawnStudio.exe UnitCSResultSaver 789 +3 TFileWatcher.Execute
-00473d70 +34 PawnStudio.exe Classes                  ThreadProc
-00404b6c +28 PawnStudio.exe System                   ThreadWrapper
-76167ba7 +17 KERNEL32.DLL                            BaseThreadInitThunk
-
-thread $2b80: <priority:-1>
-775d6e6c +0c ntdll.dll                               NtWaitForSingleObject
-773f7492 +82 KERNELBASE.dll                          WaitForSingleObjectEx
-773f73fd +0d KERNELBASE.dll                          WaitForSingleObject
-004740d8 +c8 PawnStudio.exe Classes                  TThread.Synchronize
-0047416c +1c PawnStudio.exe Classes                  TThread.Synchronize
-006cf38f +1f PawnStudio.exe UnitCSResultSaver 789 +3 TFileWatcher.Execute
-00473d70 +34 PawnStudio.exe Classes                  ThreadProc
-00404b6c +28 PawnStudio.exe System                   ThreadWrapper
-76167ba7 +17 KERNEL32.DLL                            BaseThreadInitThunk
-
-thread $1044: <priority:-1>
-775d6e6c +0c ntdll.dll                               NtWaitForSingleObject
-773f7492 +82 KERNELBASE.dll                          WaitForSingleObjectEx
-773f73fd +0d KERNELBASE.dll                          WaitForSingleObject
-004740d8 +c8 PawnStudio.exe Classes                  TThread.Synchronize
-0047416c +1c PawnStudio.exe Classes                  TThread.Synchronize
-006cf38f +1f PawnStudio.exe UnitCSResultSaver 789 +3 TFileWatcher.Execute
-00473d70 +34 PawnStudio.exe Classes                  ThreadProc
-00404b6c +28 PawnStudio.exe System                   ThreadWrapper
-76167ba7 +17 KERNEL32.DLL                            BaseThreadInitThunk
-
-thread $1448: <priority:-1>
-775d6e6c +0c ntdll.dll                               NtWaitForSingleObject
-773f7492 +82 KERNELBASE.dll                          WaitForSingleObjectEx
-773f73fd +0d KERNELBASE.dll                          WaitForSingleObject
-004740d8 +c8 PawnStudio.exe Classes                  TThread.Synchronize
-0047416c +1c PawnStudio.exe Classes                  TThread.Synchronize
-006cf38f +1f PawnStudio.exe UnitCSResultSaver 789 +3 TFileWatcher.Execute
-00473d70 +34 PawnStudio.exe Classes                  ThreadProc
-00404b6c +28 PawnStudio.exe System                   ThreadWrapper
-76167ba7 +17 KERNEL32.DLL                            BaseThreadInitThunk
-
-thread $1bd0: <priority:-1>
-775d6e6c +0c ntdll.dll                               NtWaitForSingleObject
-773f7492 +82 KERNELBASE.dll                          WaitForSingleObjectEx
-773f73fd +0d KERNELBASE.dll                          WaitForSingleObject
-004740d8 +c8 PawnStudio.exe Classes                  TThread.Synchronize
-0047416c +1c PawnStudio.exe Classes                  TThread.Synchronize
-006cf38f +1f PawnStudio.exe UnitCSResultSaver 789 +3 TFileWatcher.Execute
-00473d70 +34 PawnStudio.exe Classes                  ThreadProc
-00404b6c +28 PawnStudio.exe System                   ThreadWrapper
-76167ba7 +17 KERNEL32.DLL                            BaseThreadInitThunk
-
-thread $3a50:
-775d8c7c +0c ntdll.dll     NtWaitForWorkViaWorkerFactory
-76167ba7 +17 KERNEL32.DLL  BaseThreadInitThunk
-
-thread $3d40:
-775d8c7c +0c ntdll.dll     NtWaitForWorkViaWorkerFactory
-76167ba7 +17 KERNEL32.DLL  BaseThreadInitThunk
+thread $3e88: <priority:-1>
+775d718c +00c ntdll.dll                                NtDelayExecution
+775f1354 +0e4 ntdll.dll                                RtlDelayExecution
+773d91b9 +049 KERNELBASE.dll                           SleepEx
+773d915a +00a KERNELBASE.dll                           Sleep
+006cf4b4 +144 PawnStudio.exe UnitCSResultSaver 814 +28 TFileWatcher.Execute
+00473d70 +034 PawnStudio.exe Classes                   ThreadProc
+00404b6c +028 PawnStudio.exe System                    ThreadWrapper
+76167ba7 +017 KERNEL32.DLL                             BaseThreadInitThunk
+775cc32a +000 ntdll.dll                                RtlUserThreadStart
 
 modules:
 00400000 PawnStudio.exe                    0.8.3.0             C:\Users\waw55\Documents\GitHub\Masks-Show\addons\amxmodx\scripting\pstudio-0.8.3
@@ -1801,27 +494,27 @@ modules:
 6aad0000 winspool.drv                      6.2.22621.5262      C:\Windows\SYSTEM32
 6b000000 WTSAPI32.dll                      6.2.22621.5413      C:\Windows\SYSTEM32
 6b290000 dwmapi.dll                        6.2.22621.5262      C:\Windows\SYSTEM32
+6deb0000 OneCoreUAPCommonProxyStub.dll     6.2.22621.5413      C:\Windows\System32
 6e140000 WININET.dll                       11.0.22621.5262     C:\Windows\SYSTEM32
-6e5d0000 FileSyncShell.dll                 25.91.512.1         C:\Program Files\Microsoft OneDrive\25.091.0512.0001\i386
-6e780000 OneCoreCommonProxyStub.dll        6.2.22621.5413      C:\Windows\System32
-6e7d0000 OneCoreUAPCommonProxyStub.dll     6.2.22621.5413      C:\Windows\System32
+6e700000 UIAutomationCore.DLL              7.2.22621.5413      C:\Windows\SYSTEM32
 6ea60000 policymanager.dll                 6.2.22621.5262      C:\Windows\SYSTEM32
-6eaf0000 Windows.StateRepositoryPS.dll     6.2.22621.4036      C:\Windows\System32
 6eb50000 ntshrui.dll                       6.2.22621.5413      C:\Windows\SYSTEM32
-6ebe0000 UIAutomationCore.DLL              7.2.22621.5413      C:\Windows\SYSTEM32
-6ef40000 OLEACC.dll                        7.2.22621.5413      C:\Windows\SYSTEM32
+6ec20000 FileSyncShell.dll                 25.91.512.1         C:\Program Files\Microsoft OneDrive\25.091.0512.0001\i386
+6edd0000 WMVCore.DLL                       12.0.22621.3527     C:\Windows\system32
 6efa0000 CoreUIComponents.dll              6.2.22621.5262      C:\Windows\SYSTEM32
 6f240000 CoreMessaging.dll                 6.2.22621.5413      C:\Windows\SYSTEM32
 6f310000 textinputframework.dll            6.2.22621.5413      C:\Windows\SYSTEM32
-6f410000 WMASF.DLL                         12.0.22621.1        C:\Windows\system32
-6f460000 WMVCore.DLL                       12.0.22621.3527     C:\Windows\system32
-6f630000 audiodev.dll                      6.2.22621.1         C:\Windows\system32
+6f430000 OneCoreCommonProxyStub.dll        6.2.22621.5413      C:\Windows\System32
+6f480000 Windows.StateRepositoryPS.dll     6.2.22621.4036      C:\Windows\System32
+6f4e0000 OLEACC.dll                        7.2.22621.5413      C:\Windows\SYSTEM32
+6f540000 WMASF.DLL                         12.0.22621.1        C:\Windows\system32
+6f590000 audiodev.dll                      6.2.22621.1         C:\Windows\system32
+6f5e0000 wpdshext.dll                      6.2.22621.5262      C:\Windows\system32
 6f730000 PortableDeviceApi.dll             6.2.22621.4974      C:\Windows\System32
 6f8c0000 msscript.ocx                      1.0.10240.16384     C:\Windows\System32
-6f8e0000 wpdshext.dll                      6.2.22621.5262      C:\Windows\system32
+6f8e0000 PlayToDevice.dll                  6.2.22621.1         C:\Windows\System32
+6f930000 dlnashext.dll                     6.2.22621.5262      C:\Windows\System32
 6f980000 MMDevApi.dll                      6.2.22621.5262      C:\Windows\System32
-6fa00000 PlayToDevice.dll                  6.2.22621.1         C:\Windows\System32
-6fa50000 dlnashext.dll                     6.2.22621.5262      C:\Windows\System32
 6faa0000 thumbcache.dll                    6.2.22621.5262      C:\Windows\System32
 6fb00000 icm32.dll                         6.2.22621.4455      C:\Windows\SYSTEM32
 6fb40000 mscms.dll                         6.2.22621.5262      C:\Windows\SYSTEM32
@@ -1847,11 +540,11 @@ modules:
 733a0000 comctl32.dll                      6.10.22621.5413     C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.5413_none_6ebadc388803cd9e
 735d0000 version.dll                       6.2.22621.1         C:\Windows\SYSTEM32
 73680000 cscapi.dll                        6.2.22621.1         C:\Windows\SYSTEM32
-73690000 windows.staterepositorycore.dll   6.2.22621.5262      C:\Windows\SYSTEM32
-736b0000 olepro32.dll                      6.2.22621.3235      C:\Windows\SYSTEM32
+73690000 drprov.dll                        6.2.22621.1         C:\Windows\System32
+736a0000 msls31.dll                        3.10.349.0          C:\Windows\SYSTEM32
 73810000 MPR.dll                           6.2.22621.1         C:\Windows\SYSTEM32
 73850000 MSASN1.dll                        6.2.22621.2506      C:\Windows\SYSTEM32
-73870000 USP10.dll                         6.2.22621.1         C:\Windows\SYSTEM32
+73870000 windows.staterepositorycore.dll   6.2.22621.5262      C:\Windows\SYSTEM32
 73890000 RICHED20.DLL                      5.31.23.1231        C:\Windows\SYSTEM32
 73980000 cldapi.dll                        6.2.22621.2506      C:\Windows\System32
 739b0000 iertutil.dll                      11.0.22621.5413     C:\Windows\System32
@@ -1860,8 +553,8 @@ modules:
 73c20000 urlmon.dll                        11.0.22621.5413     C:\Windows\System32
 73dd0000 edputil.dll                       6.2.22621.3527      C:\Windows\SYSTEM32
 73df0000 windows.staterepositoryclient.dll 6.2.22621.5262      C:\Windows\SYSTEM32
-73e20000 drprov.dll                        6.2.22621.1         C:\Windows\System32
-73e30000 msls31.dll                        3.10.349.0          C:\Windows\SYSTEM32
+73e20000 olepro32.dll                      6.2.22621.3235      C:\Windows\SYSTEM32
+73e40000 USP10.dll                         6.2.22621.1         C:\Windows\SYSTEM32
 73e60000 msimg32.dll                       6.2.22621.2506      C:\Windows\SYSTEM32
 73e70000 wsock32.dll                       6.2.22621.1         C:\Windows\SYSTEM32
 73e80000 Windows.FileExplorer.Common.dll   6.2.22621.5413      C:\Windows\System32
@@ -1897,7 +590,6 @@ modules:
 76780000 combase.dll                       6.2.22621.5413      C:\Windows\System32
 76a20000 wintypes.dll                      6.2.22621.5262      C:\Windows\System32
 76af0000 SHLWAPI.dll                       6.2.22621.5413      C:\Windows\System32
-76cd0000 psapi.dll                         6.2.22621.1         C:\Windows\System32
 76ce0000 USER32.dll                        6.2.22621.5413      C:\Windows\System32
 76e90000 gdi32full.dll                     6.2.22621.5413      C:\Windows\System32
 76f80000 RPCRT4.dll                        6.2.22621.5413      C:\Windows\System32
@@ -1948,7 +640,6 @@ processes:
 0960 dwm.exe                         1
 09bc svchost.exe                     0
 0a7c svchost.exe                     0
-0a84 svchost.exe                     0
 0b5c svchost.exe                     0
 0bb8 svchost.exe                     0
 0bd4 svchost.exe                     0
@@ -2049,7 +740,6 @@ processes:
 3214 UserOOBEBroker.exe              1 normal       C:\Windows\System32\oobe
 3328 svchost.exe                     0
 33b8 LocationNotificationWindows.exe 1 below normal C:\Windows\System32
-3028 PhoneExperienceHost.exe         1 normal       C:\Program Files\WindowsApps\Microsoft.YourPhone_1.25042.80.0_x64__8wekyb3d8bbwe
 30c8 OneDrive.exe                    1 normal       C:\Program Files\Microsoft OneDrive
 1138 svchost.exe                     0
 08b4 YandexDisk2.exe                 1 normal       C:\Users\waw55\AppData\Roaming\Yandex\YandexDisk2\3.2.43.5089
@@ -2063,7 +753,6 @@ processes:
 3914 DiskO.exe                       1 normal       C:\Users\waw55\AppData\Local\Mail.Ru\Disk-O\vcurrent
 392c kvpncgui.exe                    1 normal       C:\Program Files (x86)\Kerio\VPN Client
 3950 RuntimeBroker.exe               1 normal       C:\Windows\System32
-307c 1cv8c.exe                       1 normal       C:\Program Files\1cv8\8.3.25.1374\bin
 2a8c msedgewebview2.exe              1 normal       C:\Program Files (x86)\Microsoft\EdgeWebView\Application\136.0.3240.92
 36e4 msedgewebview2.exe              1 normal       C:\Program Files (x86)\Microsoft\EdgeWebView\Application\136.0.3240.92
 3b1c msedgewebview2.exe              1 normal       C:\Program Files (x86)\Microsoft\EdgeWebView\Application\136.0.3240.92
@@ -2079,21 +768,15 @@ processes:
 3788 chrome.exe                      1 idle         C:\Program Files\Google\Chrome\Application
 369c chrome.exe                      1 idle         C:\Program Files\Google\Chrome\Application
 2608 chrome.exe                      1 normal       C:\Program Files\Google\Chrome\Application
-245c chrome.exe                      1 idle         C:\Program Files\Google\Chrome\Application
-1a78 chrome.exe                      1 idle         C:\Program Files\Google\Chrome\Application
 1f50 chrome.exe                      1 idle         C:\Program Files\Google\Chrome\Application
 31f4 svchost.exe                     0
 2bf8 chrome.exe                      1 idle         C:\Program Files\Google\Chrome\Application
 0cec chrome.exe                      1 idle         C:\Program Files\Google\Chrome\Application
 3c9c chrome.exe                      1 idle         C:\Program Files\Google\Chrome\Application
-3d9c chrome.exe                      1 idle         C:\Program Files\Google\Chrome\Application
-3df8 chrome.exe                      1 normal       C:\Program Files\Google\Chrome\Application
-3e04 msedgewebview2.exe              1 normal       C:\Program Files (x86)\Microsoft\EdgeWebView\Application\136.0.3240.92
 3698 svchost.exe                     0
 0208 svchost.exe                     0
 18d0 SecurityHealthService.exe       0
 3dd4 chrome.exe                      1 idle         C:\Program Files\Google\Chrome\Application
-32e8 chrome.exe                      1 idle         C:\Program Files\Google\Chrome\Application
 11f4 chrome.exe                      1 normal       C:\Program Files\Google\Chrome\Application
 1bb0 chrome.exe                      1 normal       C:\Program Files\Google\Chrome\Application
 1ab4 FileCoAuth.exe                  1 normal       C:\Program Files\Microsoft OneDrive\25.091.0512.0001
@@ -2105,50 +788,49 @@ processes:
 38d0 svchost.exe                     1 normal       C:\Windows\System32
 3c70 svchost.exe                     0
 2620 svchost.exe                     0
-3508 chrome.exe                      1 idle         C:\Program Files\Google\Chrome\Application
 279c chrome.exe                      1 idle         C:\Program Files\Google\Chrome\Application
-1a8c chrome.exe                      1 idle         C:\Program Files\Google\Chrome\Application
-42c0 GitHubDesktop.exe               1 normal       C:\Users\waw55\AppData\Local\GitHubDesktop\app-3.4.19
-278c GitHubDesktop.exe               1 above normal C:\Users\waw55\AppData\Local\GitHubDesktop\app-3.4.19
-2644 GitHubDesktop.exe               1 normal       C:\Users\waw55\AppData\Local\GitHubDesktop\app-3.4.19
-1608 GitHubDesktop.exe               1 idle         C:\Users\waw55\AppData\Local\GitHubDesktop\app-3.4.19
-2728 GitHubDesktop.exe               1 normal       C:\Users\waw55\AppData\Local\GitHubDesktop\app-3.4.19
 0c88 DataExchangeHost.exe            1 above normal C:\Windows\System32
 3f38 svchost.exe                     0
-0e6c chrome.exe                      1 idle         C:\Program Files\Google\Chrome\Application
-22b4 chrome.exe                      1 idle         C:\Program Files\Google\Chrome\Application
-1954 chrome.exe                      1 idle         C:\Program Files\Google\Chrome\Application
 1a54 OUTLOOK.EXE                     1 normal       C:\Program Files\Microsoft Office\root\Office16
-1d30 svchost.exe                     0
 21ec ai.exe                          1 normal       C:\Program Files\Microsoft Office\root\vfs\ProgramFilesCommonX64\Microsoft Shared\Office16
 4100 svchost.exe                     0
-2454 pacjsworker.exe                 0
-15a4 pacjsworker.exe                 0
-3b88 chrome.exe                      1 idle         C:\Program Files\Google\Chrome\Application
-3878 audiodg.exe                     0
 25fc RuntimeBroker.exe               1 normal       C:\Windows\System32
-06a0 WinSCP.exe                      1 normal       C:\Users\waw55\AppData\Local\Programs\WinSCP
-3150 PawnStudio.exe                  1 normal       C:\Users\waw55\Documents\GitHub\Masks-Show\addons\amxmodx\scripting\pstudio-0.8.3
 24e8 steam.exe                       1 normal       C:\Program Files (x86)\Steam
 24b0 steamwebhelper.exe              1 normal       C:\Program Files (x86)\Steam\bin\cef\cef.win7x64
 3088 steamwebhelper.exe              1 normal       C:\Program Files (x86)\Steam\bin\cef\cef.win7x64
 3fb8 steamwebhelper.exe              1 above normal C:\Program Files (x86)\Steam\bin\cef\cef.win7x64
 3ca4 steamservice.exe                0
 37f4 steamwebhelper.exe              1 normal       C:\Program Files (x86)\Steam\bin\cef\cef.win7x64
-2128 steamwebhelper.exe              1 normal       C:\Program Files (x86)\Steam\bin\cef\cef.win7x64
 2104 steamwebhelper.exe              1 normal       C:\Program Files (x86)\Steam\bin\cef\cef.win7x64
 192c steamwebhelper.exe              1 normal       C:\Program Files (x86)\Steam\bin\cef\cef.win7x64
 1c14 steamwebhelper.exe              1 idle         C:\Program Files (x86)\Steam\bin\cef\cef.win7x64
-05d0 hl.exe                          1 normal       C:\Program Files (x86)\Steam\steamapps\common\Half-Life
-41f0 GameOverlayUI.exe               1 normal       C:\Program Files (x86)\Steam
-284c chrome.exe                      1 idle         C:\Program Files\Google\Chrome\Application
-2950 chrome.exe                      1 idle         C:\Program Files\Google\Chrome\Application
-4304 chrome.exe                      1 idle         C:\Program Files\Google\Chrome\Application
-226c chrome.exe                      1 idle         C:\Program Files\Google\Chrome\Application
-35a8 chrome.exe                      1 idle         C:\Program Files\Google\Chrome\Application
-3750 chrome.exe                      1 idle         C:\Program Files\Google\Chrome\Application
-1418 WmiPrvSE.exe                    0
-27d4 chrome.exe                      1 idle         C:\Program Files\Google\Chrome\Application
+3b10 PhoneExperienceHost.exe         1 normal       C:\Program Files\WindowsApps\Microsoft.YourPhone_1.25051.48.0_x64__8wekyb3d8bbwe
+22ac pacjsworker.exe                 0
+2f50 pacjsworker.exe                 0
+4fbc chrome.exe                      1 normal       C:\Program Files\Google\Chrome\Application
+1910 steamwebhelper.exe              1 normal       C:\Program Files (x86)\Steam\bin\cef\cef.win7x64
+23fc msedgewebview2.exe              1 normal       C:\Program Files (x86)\Microsoft\EdgeWebView\Application\136.0.3240.92
+488c LockApp.exe                     1 normal       C:\Windows\SystemApps\Microsoft.LockApp_cw5n1h2txyewy
+0a00 RuntimeBroker.exe               1 normal       C:\Windows\System32
+0cd0 chrome.exe                      1 idle         C:\Program Files\Google\Chrome\Application
+1438 chrome.exe                      1 idle         C:\Program Files\Google\Chrome\Application
+3c34 chrome.exe                      1 idle         C:\Program Files\Google\Chrome\Application
+4478 chrome.exe                      1 idle         C:\Program Files\Google\Chrome\Application
+1d48 chrome.exe                      1 idle         C:\Program Files\Google\Chrome\Application
+3cf4 pacjsworker.exe                 0
+42e8 pacjsworker.exe                 0
+4f40 1cv8c.exe                       1 normal       C:\Program Files\1cv8\8.3.25.1374\bin
+17f8 svchost.exe                     0
+2100 svchost.exe                     0
+0b9c smartscreen.exe                 1 normal       C:\Windows\System32
+4b3c chrome.exe                      1 idle         C:\Program Files\Google\Chrome\Application
+4124 chrome.exe                      1 idle         C:\Program Files\Google\Chrome\Application
+4694 chrome.exe                      1 idle         C:\Program Files\Google\Chrome\Application
+2ec4 audiodg.exe                     0
+2938 chrome.exe                      1 idle         C:\Program Files\Google\Chrome\Application
+2bbc SearchProtocolHost.exe          0
+18ec WmiPrvSE.exe                    0
+4768 PawnStudio.exe                  1 normal       C:\Users\waw55\Documents\GitHub\Masks-Show\addons\amxmodx\scripting\pstudio-0.8.3
 
 hardware:
 + {1ed2bbf9-11f0-4084-b21f-ad83a8e6dcdc}
@@ -2322,37 +1004,37 @@ hardware:
   - Встроенное ПО устройства
 
 cpu registers:
-eax = 0e972374
-ebx = 14d3c3dc
+eax = 027f1ed0
+ebx = 098bd970
 ecx = 00000000
 edx = 0046e1b5
-esi = 0503f478
-edi = 14d3ffff
+esi = 0d9fcb34
+edi = 098bffff
 eip = 0046e1b5
 esp = 0019ec34
 ebp = 0019eca0
 
 stack dump:
 0019ec34  b5 e1 46 00 de fa ed 0e - 01 00 00 00 07 00 00 00  ..F.............
-0019ec44  48 ec 19 00 b5 e1 46 00 - 74 23 97 0e dc c3 d3 14  H.....F.t#......
-0019ec54  78 f4 03 05 ff ff d3 14 - a0 ec 19 00 64 ec 19 00  x...........d...
+0019ec44  48 ec 19 00 b5 e1 46 00 - d0 1e 7f 02 70 d9 8b 09  H.....F.....p...
+0019ec54  34 cb 9f 0d ff ff 8b 09 - a0 ec 19 00 64 ec 19 00  4...........d...
 0019ec64  b0 ec 19 00 78 44 40 00 - a0 ec 19 00 4c 83 46 00  ....xD@.....L.F.
-0019ec74  dc c3 d3 14 01 00 00 00 - 00 00 00 00 00 00 00 00  ................
-0019ec84  00 00 00 00 00 00 00 00 - f4 f4 03 05 0b 85 46 00  ..............F.
-0019ec94  70 f5 03 05 0b d7 69 0e - 22 40 40 00 c8 ec 19 00  p.....i."@@.....
-0019eca4  ed e0 46 00 00 00 00 00 - ff ff d3 14 d4 ec 19 00  ..F.............
-0019ecb4  b7 45 40 00 c8 ec 19 00 - dc c3 d3 14 ec 91 7d 02  .E@...........}.
-0019ecc4  94 d7 69 0e e8 ec 19 00 - c7 48 6f 00 ff ff 00 00  ..i......Ho.....
+0019ec74  70 d9 8b 09 01 00 00 00 - 00 00 00 00 00 00 00 00  p...............
+0019ec84  00 00 00 00 00 00 00 00 - 9c c9 52 0f 0b 85 46 00  ..........R...F.
+0019ec94  64 dc 8b 09 0b de 7d 02 - 22 40 40 00 c8 ec 19 00  d.....}."@@.....
+0019eca4  ed e0 46 00 00 00 00 00 - ff ff 8b 09 d4 ec 19 00  ..F.............
+0019ecb4  b7 45 40 00 c8 ec 19 00 - 70 d9 8b 09 ec 91 71 02  .E@.....p.....q.
+0019ecc4  8c de 7d 02 e8 ec 19 00 - c7 48 6f 00 ff ff 00 00  ..}......Ho.....
 0019ecd4  f0 ec 19 00 78 44 40 00 - e8 ec 19 00 4c 83 46 00  ....xD@.....L.F.
 0019ece4  00 00 00 00 20 ed 19 00 - 05 43 6e 00 b4 ee 19 00  .........Cn.....
 0019ecf4  78 44 40 00 20 ed 19 00 - 10 00 00 00 2c c8 4d 00  xD@.........,.M.
-0019ed04  ec 91 7d 02 00 00 00 00 - 00 00 00 00 00 00 00 00  ..}.............
+0019ed04  ec 91 71 02 00 00 00 00 - 00 00 00 00 00 00 00 00  ..q.............
 0019ed14  00 00 00 00 00 00 00 00 - 30 ed 19 00 64 ee 19 00  ........0...d...
-0019ed24  49 c8 4d 00 ec 91 7d 02 - 8e fe 4d 00 01 f1 4d 00  I.M...}...M...M.
-0019ed34  ec 91 7d 02 e4 ee 19 00 - 11 f1 4d 00 cf 3d 4c 00  ..}.......M..=L.
-0019ed44  10 00 00 00 e4 ee 19 00 - ec 91 7d 02 01 00 00 00  ..........}.....
-0019ed54  8d b1 80 54 10 28 4d 01 - 40 9d 5f 77 d0 07 00 02  ...T.(M.@._w....
-0019ed64  c0 9c 5f 77 10 28 4d 01 - d0 07 00 02 00 00 00 00  .._w.(M.........
+0019ed24  49 c8 4d 00 ec 91 71 02 - 8e fe 4d 00 01 f1 4d 00  I.M...q...M...M.
+0019ed34  ec 91 71 02 e4 ee 19 00 - 11 f1 4d 00 cf 3d 4c 00  ..q.......M..=L.
+0019ed44  10 00 00 00 e4 ee 19 00 - ec 91 71 02 b4 ed 19 00  ..........q.....
+0019ed54  00 3e d0 76 84 0b a2 04 - 00 00 00 00 20 00 00 00  .>.v............
+0019ed64  16 0f 26 00 01 00 00 02 - 00 10 2f 00 01 00 00 00  ..&......./.....
 
 disassembling:
 [...]
@@ -2367,5 +1049,661 @@ disassembling:
 006f48ca 532   xor     eax, eax
 006f48cc       push    ebp
 006f48cd       push    $6f48fc                ; System.@HandleFinally
+[...]
+
+date/time         : 2025-06-04, 16:20:27, 698ms
+computer name     : DEKOTECH_URAL
+user name         : waw55
+registered owner  : waw555@live.ru
+operating system  : Windows NT New x64 build 9200
+system language   : Russian
+system up time    : 4 hours 52 minutes
+program up time   : 25 seconds
+processors        : 12x 13th Gen Intel(R) Core(TM) i5-1335U
+physical memory   : 6956/16069 MB (free/total)
+free disk space   : (C:) 296,92 GB
+display mode      : 1536x864, 32 bit
+process id        : $82c
+allocated memory  : 95,11 MB
+executable        : PawnStudio.exe
+exec. date/time   : 2025-06-04 11:53
+version           : 0.8.3.0
+compiled with     : Delphi 7
+madExcept version : 3.0e
+callstack crc     : $0b0c84d0, $0b35fab7, $ad3991bf
+exception number  : 1
+exception class   : EAccessViolation
+exception message : Zugriffsverletzung bei Adresse 006E0CF4 in Modul 'PawnStudio.exe'. Lesen von Adresse 00000048.
+
+main thread ($3d84):
+006e0cf4 +0d4 PawnStudio.exe UnitfrmMain 1440 +19 TfrmMain.mnuPreferencesClick
+004eb755 +095 PawnStudio.exe TB2Item     1499 +22 TTBCustomItem.Click
+0052dd61 +015 PawnStudio.exe SpTBXItem   4179  +2 TSpTBXCustomItem.Click
+004eb647 +0b3 PawnStudio.exe TB2Item     1449 +27 TTBCustomItem.ClickWndProc
+004752dc +014 PawnStudio.exe Classes              StdWndProc
+76d7a1db +00b USER32.dll                          DispatchMessageA
+004e35a3 +083 PawnStudio.exe Forms                TApplication.ProcessMessage
+004e35da +00a PawnStudio.exe Forms                TApplication.HandleMessage
+004e37fa +096 PawnStudio.exe Forms                TApplication.Run
+006f8257 +1c7 PawnStudio.exe PawnStudio   101 +30 initialization
+76167ba7 +017 KERNEL32.DLL                        BaseThreadInitThunk
+
+thread $4358:
+775d8c7c +0c ntdll.dll     NtWaitForWorkViaWorkerFactory
+76167ba7 +17 KERNEL32.DLL  BaseThreadInitThunk
+
+thread $23ac:
+775d8c7c +0c ntdll.dll     NtWaitForWorkViaWorkerFactory
+76167ba7 +17 KERNEL32.DLL  BaseThreadInitThunk
+
+thread $25a4:
+775d8c7c +0c ntdll.dll     NtWaitForWorkViaWorkerFactory
+76167ba7 +17 KERNEL32.DLL  BaseThreadInitThunk
+
+thread $2d28: <priority:-1>
+775d718c +0c ntdll.dll                                NtDelayExecution
+775f1354 +e4 ntdll.dll                                RtlDelayExecution
+773d91b9 +49 KERNELBASE.dll                           SleepEx
+773d915a +0a KERNELBASE.dll                           Sleep
+006cf88d +d1 PawnStudio.exe UnitCSResultSaver 931 +17 TQueueParser.Execute
+00473d70 +34 PawnStudio.exe Classes                   ThreadProc
+00404b6c +28 PawnStudio.exe System                    ThreadWrapper
+76167ba7 +17 KERNEL32.DLL                             BaseThreadInitThunk
+
+thread $4740:
+775d8c7c +0c ntdll.dll     NtWaitForWorkViaWorkerFactory
+76167ba7 +17 KERNEL32.DLL  BaseThreadInitThunk
+
+thread $71c:
+775d8c7c +0c ntdll.dll     NtWaitForWorkViaWorkerFactory
+76167ba7 +17 KERNEL32.DLL  BaseThreadInitThunk
+
+thread $3ce8:
+775d73fc +00c ntdll.dll                NtWaitForMultipleObjects
+773f82b9 +189 KERNELBASE.dll           WaitForMultipleObjectsEx
+0044ed21 +00d PawnStudio.exe madExcept CallThreadProcSafe
+0044ed8b +037 PawnStudio.exe madExcept ThreadExceptFrame
+76167ba7 +017 KERNEL32.DLL             BaseThreadInitThunk
+>> created by main thread ($3d84) at:
+767fa1be +000 combase.dll
+
+thread $4edc:
+775d8c7c +0c ntdll.dll     NtWaitForWorkViaWorkerFactory
+76167ba7 +17 KERNEL32.DLL  BaseThreadInitThunk
+
+thread $3964:
+775d8c7c +0c ntdll.dll     NtWaitForWorkViaWorkerFactory
+76167ba7 +17 KERNEL32.DLL  BaseThreadInitThunk
+
+thread $45fc:
+775d73fc +00c ntdll.dll                 NtWaitForMultipleObjects
+773f82b9 +189 KERNELBASE.dll            WaitForMultipleObjectsEx
+773f8113 +013 KERNELBASE.dll            WaitForMultipleObjects
+005dc862 +056 PawnStudio.exe ShellCtrls TShellChangeThread.Execute
+00473d70 +034 PawnStudio.exe Classes    ThreadProc
+00404b6c +028 PawnStudio.exe System     ThreadWrapper
+76167ba7 +017 KERNEL32.DLL              BaseThreadInitThunk
+
+thread $4334:
+75135cfc +0c win32u.dll    NtUserMsgWaitForMultipleObjectsEx
+76d02e6c +4c USER32.dll    MsgWaitForMultipleObjectsEx
+76167ba7 +17 KERNEL32.DLL  BaseThreadInitThunk
+
+thread $4c9c:
+751310fc +0c win32u.dll               NtUserGetMessage
+76d6b9dc +ec USER32.dll               GetMessageA
+750c857c +8c msvcrt.dll               _endthreadex
+0044ed21 +0d PawnStudio.exe madExcept CallThreadProcSafe
+0044ed8b +37 PawnStudio.exe madExcept ThreadExceptFrame
+76167ba7 +17 KERNEL32.DLL             BaseThreadInitThunk
+>> created by main thread ($3d84) at:
+750c845f +7f msvcrt.dll               _beginthreadex
+
+modules:
+00400000 PawnStudio.exe                  0.8.3.0             C:\Users\waw55\Documents\GitHub\Masks-Show\addons\amxmodx\scripting\pstudio-0.8.3
+10000000 scilexer.dll                    1.7.4.0             C:\Users\waw55\Documents\GitHub\Masks-Show\addons\amxmodx\scripting\pstudio-0.8.3
+64410000 twinapi.appcore.dll             6.2.22621.5413      C:\Windows\system32
+6aa00000 wkscli.dll                      6.2.22621.4249      C:\Windows\System32
+6aad0000 winspool.drv                    6.2.22621.5262      C:\Windows\SYSTEM32
+6edd0000 WMVCore.DLL                     12.0.22621.3527     C:\Windows\system32
+6efa0000 CoreUIComponents.dll            6.2.22621.5262      C:\Windows\SYSTEM32
+6f240000 CoreMessaging.dll               6.2.22621.5413      C:\Windows\SYSTEM32
+6f310000 textinputframework.dll          6.2.22621.5413      C:\Windows\SYSTEM32
+6f540000 WMASF.DLL                       12.0.22621.1        C:\Windows\system32
+6f590000 audiodev.dll                    6.2.22621.1         C:\Windows\system32
+6f5e0000 wpdshext.dll                    6.2.22621.5262      C:\Windows\system32
+6f730000 PortableDeviceApi.dll           6.2.22621.4974      C:\Windows\System32
+6f8c0000 msscript.ocx                    1.0.10240.16384     C:\Windows\System32
+6f8e0000 PlayToDevice.dll                6.2.22621.1         C:\Windows\System32
+6f930000 dlnashext.dll                   6.2.22621.5262      C:\Windows\System32
+6f980000 MMDevApi.dll                    6.2.22621.5262      C:\Windows\System32
+6faa0000 thumbcache.dll                  6.2.22621.5262      C:\Windows\System32
+6fb00000 icm32.dll                       6.2.22621.4455      C:\Windows\SYSTEM32
+6fb40000 mscms.dll                       6.2.22621.5262      C:\Windows\SYSTEM32
+6fbe0000 gdiplus.dll                     6.2.22621.5413      C:\Windows\WinSxS\x86_microsoft.windows.gdiplus_6595b64144ccf1df_1.1.22621.5413_none_9fa5cf1de296476c
+6fd60000 YandexDisk3ShellExt-1511.dll    3.2.43.1511         C:\Users\waw55\AppData\Roaming\Yandex\YandexDisk2\3.2.43.5089\wow64
+6fe50000 StructuredQuery.dll             7.0.22621.5262      C:\Windows\System32
+6fee0000 Windows.System.Launcher.dll     6.2.22621.5413      C:\Windows\System32
+6ffd0000 uxtheme.dll                     6.2.22621.5413      C:\Windows\system32
+70060000 msvcp110_win.dll                6.2.22621.1         C:\Windows\System32
+700d0000 Windows.Storage.Search.dll      6.2.22621.5413      C:\Windows\system32
+701e0000 DevDispItemProvider.dll         6.2.22621.2506      C:\Windows\System32
+70200000 davclnt.dll                     6.2.22621.1         C:\Windows\System32
+70220000 ntlanman.dll                    6.2.22621.4249      C:\Windows\System32
+70240000 tiptsf.dll                      6.2.22621.5413      C:\Program Files (x86)\Common Files\microsoft shared\ink
+702c0000 WindowsCodecs.dll               6.2.22621.5262      C:\Windows\SYSTEM32
+70440000 WINSTA.dll                      6.2.22621.5413      C:\Windows\System32
+704a0000 USERENV.dll                     6.2.22621.3527      C:\Windows\SYSTEM32
+704e0000 TextShaping.dll                 6.2.22621.5413      C:\Windows\SYSTEM32
+70580000 dataexchange.dll                6.2.22621.5262      C:\Windows\system32
+70780000 apphelp.dll                     6.2.22621.5413      C:\Windows\SYSTEM32
+73350000 p9np.dll                        6.2.22621.5262      C:\Windows\System32
+73380000 NetworkExplorer.dll             6.2.22621.3527      C:\Windows\system32
+733a0000 comctl32.dll                    6.10.22621.5413     C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.5413_none_6ebadc388803cd9e
+735d0000 version.dll                     6.2.22621.1         C:\Windows\SYSTEM32
+73680000 cscapi.dll                      6.2.22621.1         C:\Windows\SYSTEM32
+73690000 windows.staterepositorycore.dll 6.2.22621.5262      C:\Windows\SYSTEM32
+736b0000 olepro32.dll                    6.2.22621.3235      C:\Windows\SYSTEM32
+73810000 MPR.dll                         6.2.22621.1         C:\Windows\SYSTEM32
+73850000 MSASN1.dll                      6.2.22621.2506      C:\Windows\SYSTEM32
+73870000 USP10.dll                       6.2.22621.1         C:\Windows\SYSTEM32
+73890000 RICHED20.DLL                    5.31.23.1231        C:\Windows\SYSTEM32
+73bf0000 netutils.dll                    6.2.22621.2506      C:\Windows\System32
+73e20000 drprov.dll                      6.2.22621.1         C:\Windows\System32
+73e30000 msls31.dll                      3.10.349.0          C:\Windows\SYSTEM32
+73e60000 msimg32.dll                     6.2.22621.2506      C:\Windows\SYSTEM32
+73e70000 wsock32.dll                     6.2.22621.1         C:\Windows\SYSTEM32
+73e80000 Windows.FileExplorer.Common.dll 6.2.22621.5413      C:\Windows\System32
+73f20000 propsys.dll                     7.0.22621.5413      C:\Windows\system32
+740c0000 profapi.dll                     6.2.22621.5262      C:\Windows\SYSTEM32
+74120000 kernel.appcore.dll              6.2.22621.3958      C:\Windows\SYSTEM32
+74140000 DEVOBJ.dll                      6.2.22621.2506      C:\Windows\System32
+74170000 CRYPTBASE.DLL                   6.2.22621.4746      C:\Windows\SYSTEM32
+74180000 windows.storage.dll             6.2.22621.5413      C:\Windows\SYSTEM32
+74a30000 SSPICLI.DLL                     6.2.22621.5413      C:\Windows\SYSTEM32
+74a60000 Secur32.dll                     6.2.22621.1         C:\Windows\SYSTEM32
+74b10000 winmm.dll                       6.2.22621.5262      C:\Windows\SYSTEM32
+74f90000 CFGMGR32.dll                    6.2.22621.2506      C:\Windows\SYSTEM32
+75060000 msvcrt.dll                      7.0.22621.2506      C:\Windows\System32
+75130000 win32u.dll                      6.2.22621.5185      C:\Windows\System32
+75220000 imm32.dll                       6.2.22621.5185      C:\Windows\System32
+75250000 SHELL32.dll                     6.2.22621.5413      C:\Windows\System32
+75930000 oleaut32.dll                    6.2.22621.5262      C:\Windows\System32
+759d0000 sechost.dll                     6.2.22621.5413      C:\Windows\System32
+75a60000 ws2_32.DLL                      6.2.22621.4746      C:\Windows\System32
+75ac0000 msvcp_win.dll                   6.2.22621.3374      C:\Windows\System32
+75b40000 ucrtbase.dll                    6.2.22621.3593      C:\Windows\System32
+75c60000 advapi32.dll                    6.2.22621.5413      C:\Windows\System32
+75d40000 shcore.dll                      6.2.22621.5413      C:\Windows\System32
+75e20000 MSCTF.dll                       6.2.22621.5413      C:\Windows\System32
+75f30000 ole32.dll                       6.2.22621.5413      C:\Windows\System32
+76090000 comdlg32.dll                    6.2.22621.5413      C:\Windows\System32
+76150000 KERNEL32.DLL                    6.2.22621.5413      C:\Windows\System32
+76240000 WINTRUST.dll                    6.2.22621.5413      C:\Windows\System32
+762b0000 SETUPAPI.dll                    6.2.22621.2506      C:\Windows\System32
+766f0000 bcryptPrimitives.dll            6.2.22621.4317      C:\Windows\System32
+76760000 bcrypt.dll                      6.2.22621.4746      C:\Windows\System32
+76780000 combase.dll                     6.2.22621.5413      C:\Windows\System32
+76a20000 wintypes.dll                    6.2.22621.5262      C:\Windows\System32
+76af0000 SHLWAPI.dll                     6.2.22621.5413      C:\Windows\System32
+76ce0000 USER32.dll                      6.2.22621.5413      C:\Windows\System32
+76e90000 gdi32full.dll                   6.2.22621.5413      C:\Windows\System32
+76f80000 RPCRT4.dll                      6.2.22621.5413      C:\Windows\System32
+77040000 CRYPT32.dll                     6.2.22621.5262      C:\Windows\System32
+771f0000 GDI32.dll                       6.2.22621.5185      C:\Windows\System32
+77220000 clbcatq.dll                     2001.12.10941.16384 C:\Windows\System32
+772b0000 KERNELBASE.dll                  6.2.22621.5413      C:\Windows\System32
+77560000 ntdll.dll                       6.2.22621.5413      C:\Windows\SYSTEM32
+
+processes:
+0000 Idle                            0
+0004 System                          0
+008c Secure System                   0
+00b8 Registry                        0
+0274 smss.exe                        0
+03d4 csrss.exe                       0
+02c0 wininit.exe                     0
+022c csrss.exe                       1
+0434 services.exe                    0
+0448 LsaIso.exe                      0
+0458 lsass.exe                       0
+04d8 svchost.exe                     0
+04f4 fontdrvhost.exe                 0
+0520 WUDFHost.exe                    0
+0564 svchost.exe                     0
+0594 svchost.exe                     0
+05c0 WUDFHost.exe                    0
+05f4 WUDFHost.exe                    0
+0640 winlogon.exe                    1
+0674 fontdrvhost.exe                 1
+06c4 svchost.exe                     0
+06cc svchost.exe                     0
+06d8 svchost.exe                     0
+06e4 svchost.exe                     0
+06f8 svchost.exe                     0
+0700 svchost.exe                     0
+076c svchost.exe                     0
+0498 svchost.exe                     0
+02e0 svchost.exe                     0
+0464 svchost.exe                     0
+0758 svchost.exe                     0
+0838 IntelCpHDCPSvc.exe              0
+0840 svchost.exe                     0
+084c svchost.exe                     0
+0878 svchost.exe                     0
+0890 svchost.exe                     0
+08cc svchost.exe                     0
+0960 dwm.exe                         1
+09bc svchost.exe                     0
+0a7c svchost.exe                     0
+0b5c svchost.exe                     0
+0bb8 svchost.exe                     0
+0bd4 svchost.exe                     0
+0bfc svchost.exe                     0
+0918 svchost.exe                     0
+0990 svchost.exe                     0
+09d4 svchost.exe                     0
+0c44 Memory Compression              0
+0c78 svchost.exe                     0
+0cc8 WUDFHost.exe                    0
+0ce4 svchost.exe                     0
+0cf8 svchost.exe                     0
+0d68 svchost.exe                     0
+0e58 svchost.exe                     0
+0e74 svchost.exe                     0
+0eb8 svchost.exe                     0
+0ed8 svchost.exe                     0
+0ef0 svchost.exe                     0
+0f28 spoolsv.exe                     0
+0f4c svchost.exe                     0
+0fc0 svchost.exe                     0
+1048 OneApp.IGCC.WinService.exe      0
+1050 ipfsvc.exe                      0
+1058 svchost.exe                     0
+1060 AdskLicensingService.exe        0
+1070 WavesAudioService.exe           0
+1078 IntelAudioService.exe           0
+1080 svchost.exe                     0
+1090 jhi_service.exe                 0
+1098 RtkBtManServ.exe                0
+10a0 RtkAudUService64.exe            0
+10a8 KDService.exe                   0
+10b4 svchost.exe                     0
+10bc ss_conn_service.exe             0
+10c4 kvpncsvc.exe                    0
+10cc ipf_uf.exe                      0
+10d4 ss_conn_service2.exe            0
+10dc FNPLicensingService64.exe       0
+10e4 WavesSysSvc64.exe               0
+10ec MsMpEng.exe                     0
+1110 svchost.exe                     0
+1118 OfficeClickToRun.exe            0
+10f4 svchost.exe                     0
+1120 svchost.exe                     0
+1128 wireguard.exe                   0
+1130 MpDefenderCoreService.exe       0
+114c svchost.exe                     0
+1170 WMIRegistrationService.exe      0
+11ac svchost.exe                     0
+12a8 svchost.exe                     0
+1308 svchost.exe                     0
+167c lmgrd.exe                       0
+1728 conhost.exe                     0
+173c lmgrd.exe                       0
+1960 adskflex.exe                    0
+19e4 AggregatorHost.exe              0
+1a7c svchost.exe                     0
+1580 unsecapp.exe                    0
+1afc WmiPrvSE.exe                    0
+13d0 RtkAudUService64.exe            1
+1d5c svchost.exe                     0
+1fd4 svchost.exe                     0
+1b08 svchost.exe                     0
+1744 svchost.exe                     0
+1eec svchost.exe                     0
+0d8c svchost.exe                     0
+1e3c svchost.exe                     0
+2098 NisSrv.exe                      0
+20d4 svchost.exe                     0
+2318 svchost.exe                     0
+1e9c ipf_helper.exe                  1 normal       C:\Windows\System32\DriverStore\FileRepository\ipf_cpu.inf_amd64_c493e10bcfd25250
+20b8 wireguard.exe                   1
+2178 sihost.exe                      1 normal       C:\Windows\System32
+1e4c svchost.exe                     1 normal       C:\Windows\System32
+1670 svchost.exe                     1 normal       C:\Windows\System32
+21d0 svchost.exe                     1 normal       C:\Windows\System32
+220c svchost.exe                     1 normal       C:\Windows\System32
+1a44 svchost.exe                     0
+1a5c taskhostw.exe                   1 normal       C:\Windows\System32
+2548 svchost.exe                     0
+26a0 svchost.exe                     0
+275c explorer.exe                    1 normal       C:\Windows
+2404 svchost.exe                     0
+2734 svchost.exe                     0
+0d98 svchost.exe                     0
+2640 SearchIndexer.exe               0
+2624 svchost.exe                     1 normal       C:\Windows\System32
+2814 dllhost.exe                     1 normal       C:\Windows\System32
+2994 svchost.exe                     1 normal       C:\Windows\System32
+2ad4 SearchHost.exe                  1 normal       C:\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy
+2aec StartMenuExperienceHost.exe     1 normal       C:\Windows\SystemApps\Microsoft.Windows.StartMenuExperienceHost_cw5n1h2txyewy
+2b44 RuntimeBroker.exe               1 normal       C:\Windows\System32
+2b60 Widgets.exe                     1 normal       C:\Program Files\WindowsApps\MicrosoftWindows.Client.WebExperience_525.13901.0.0_x64__cw5n1h2txyewy\Dashboard
+2b74 RuntimeBroker.exe               1 normal       C:\Windows\System32
+24cc WidgetService.exe               1 normal       C:\Program Files\WindowsApps\Microsoft.WidgetsPlatformRuntime_1.6.9.0_x64__8wekyb3d8bbwe\WidgetService
+14ec svchost.exe                     1 normal       C:\Windows\System32
+3020 ctfmon.exe                      1
+3214 UserOOBEBroker.exe              1 normal       C:\Windows\System32\oobe
+3328 svchost.exe                     0
+33b8 LocationNotificationWindows.exe 1 below normal C:\Windows\System32
+30c8 OneDrive.exe                    1 normal       C:\Program Files\Microsoft OneDrive
+1138 svchost.exe                     0
+08b4 YandexDisk2.exe                 1 normal       C:\Users\waw55\AppData\Roaming\Yandex\YandexDisk2\3.2.43.5089
+36ec TextInputHost.exe               1 high         C:\Windows\SystemApps\MicrosoftWindows.Client.CBS_cw5n1h2txyewy
+3558 Telegram.exe                    1 normal       C:\Program Files\WindowsApps\TelegramMessengerLLP.TelegramDesktop_5.14.2.0_x64__t4vj0pshhgkwm
+3598 FileSyncHelper.exe              0
+0c08 ApplicationFrameHost.exe        1 normal       C:\Windows\System32
+3638 WhatsApp.exe                    1 normal       C:\Program Files\WindowsApps\5319275A.WhatsAppDesktop_2.2518.3.0_x64__cv1g1gvanyjgm
+2810 RuntimeBroker.exe               1 normal       C:\Windows\System32
+381c CrossDeviceService.exe          1 normal       C:\Program Files\WindowsApps\MicrosoftWindows.CrossDevice_1.25042.38.0_x64__cw5n1h2txyewy
+3914 DiskO.exe                       1 normal       C:\Users\waw55\AppData\Local\Mail.Ru\Disk-O\vcurrent
+392c kvpncgui.exe                    1 normal       C:\Program Files (x86)\Kerio\VPN Client
+3950 RuntimeBroker.exe               1 normal       C:\Windows\System32
+2a8c msedgewebview2.exe              1 normal       C:\Program Files (x86)\Microsoft\EdgeWebView\Application\136.0.3240.92
+36e4 msedgewebview2.exe              1 normal       C:\Program Files (x86)\Microsoft\EdgeWebView\Application\136.0.3240.92
+3b1c msedgewebview2.exe              1 normal       C:\Program Files (x86)\Microsoft\EdgeWebView\Application\136.0.3240.92
+3ad4 msedgewebview2.exe              1 above normal C:\Program Files (x86)\Microsoft\EdgeWebView\Application\136.0.3240.92
+39cc msedgewebview2.exe              1 normal       C:\Program Files (x86)\Microsoft\EdgeWebView\Application\136.0.3240.92
+2824 msedgewebview2.exe              1 idle         C:\Program Files (x86)\Microsoft\EdgeWebView\Application\136.0.3240.92
+33d0 chrome.exe                      1 normal       C:\Program Files\Google\Chrome\Application
+077c chrome.exe                      1 normal       C:\Program Files\Google\Chrome\Application
+1178 chrome.exe                      1 above normal C:\Program Files\Google\Chrome\Application
+16dc chrome.exe                      1 normal       C:\Program Files\Google\Chrome\Application
+11bc chrome.exe                      1 normal       C:\Program Files\Google\Chrome\Application
+3518 chrome.exe                      1 normal       C:\Program Files\Google\Chrome\Application
+3788 chrome.exe                      1 idle         C:\Program Files\Google\Chrome\Application
+369c chrome.exe                      1 idle         C:\Program Files\Google\Chrome\Application
+2608 chrome.exe                      1 normal       C:\Program Files\Google\Chrome\Application
+1f50 chrome.exe                      1 idle         C:\Program Files\Google\Chrome\Application
+31f4 svchost.exe                     0
+2bf8 chrome.exe                      1 idle         C:\Program Files\Google\Chrome\Application
+0cec chrome.exe                      1 idle         C:\Program Files\Google\Chrome\Application
+3c9c chrome.exe                      1 idle         C:\Program Files\Google\Chrome\Application
+3698 svchost.exe                     0
+0208 svchost.exe                     0
+18d0 SecurityHealthService.exe       0
+3dd4 chrome.exe                      1 idle         C:\Program Files\Google\Chrome\Application
+11f4 chrome.exe                      1 normal       C:\Program Files\Google\Chrome\Application
+1bb0 chrome.exe                      1 normal       C:\Program Files\Google\Chrome\Application
+1ab4 FileCoAuth.exe                  1 normal       C:\Program Files\Microsoft OneDrive\25.091.0512.0001
+14bc ShellExperienceHost.exe         1 normal       C:\Windows\SystemApps\ShellExperienceHost_cw5n1h2txyewy
+19c4 RuntimeBroker.exe               1 normal       C:\Windows\System32
+2cc8 svchost.exe                     1 normal       C:\Windows\System32
+1034 SystemSettings.exe              1 normal       C:\Windows\ImmersiveControlPanel
+3a3c svchost.exe                     0
+38d0 svchost.exe                     1 normal       C:\Windows\System32
+3c70 svchost.exe                     0
+2620 svchost.exe                     0
+279c chrome.exe                      1 idle         C:\Program Files\Google\Chrome\Application
+0c88 DataExchangeHost.exe            1 above normal C:\Windows\System32
+3f38 svchost.exe                     0
+1a54 OUTLOOK.EXE                     1 normal       C:\Program Files\Microsoft Office\root\Office16
+21ec ai.exe                          1 normal       C:\Program Files\Microsoft Office\root\vfs\ProgramFilesCommonX64\Microsoft Shared\Office16
+4100 svchost.exe                     0
+25fc RuntimeBroker.exe               1 normal       C:\Windows\System32
+24e8 steam.exe                       1 normal       C:\Program Files (x86)\Steam
+24b0 steamwebhelper.exe              1 normal       C:\Program Files (x86)\Steam\bin\cef\cef.win7x64
+3088 steamwebhelper.exe              1 normal       C:\Program Files (x86)\Steam\bin\cef\cef.win7x64
+3fb8 steamwebhelper.exe              1 above normal C:\Program Files (x86)\Steam\bin\cef\cef.win7x64
+3ca4 steamservice.exe                0
+37f4 steamwebhelper.exe              1 normal       C:\Program Files (x86)\Steam\bin\cef\cef.win7x64
+2104 steamwebhelper.exe              1 normal       C:\Program Files (x86)\Steam\bin\cef\cef.win7x64
+192c steamwebhelper.exe              1 normal       C:\Program Files (x86)\Steam\bin\cef\cef.win7x64
+1c14 steamwebhelper.exe              1 idle         C:\Program Files (x86)\Steam\bin\cef\cef.win7x64
+3b10 PhoneExperienceHost.exe         1 normal       C:\Program Files\WindowsApps\Microsoft.YourPhone_1.25051.48.0_x64__8wekyb3d8bbwe
+22ac pacjsworker.exe                 0
+2f50 pacjsworker.exe                 0
+4fbc chrome.exe                      1 normal       C:\Program Files\Google\Chrome\Application
+1910 steamwebhelper.exe              1 normal       C:\Program Files (x86)\Steam\bin\cef\cef.win7x64
+23fc msedgewebview2.exe              1 normal       C:\Program Files (x86)\Microsoft\EdgeWebView\Application\136.0.3240.92
+488c LockApp.exe                     1 normal       C:\Windows\SystemApps\Microsoft.LockApp_cw5n1h2txyewy
+0a00 RuntimeBroker.exe               1 normal       C:\Windows\System32
+0cd0 chrome.exe                      1 idle         C:\Program Files\Google\Chrome\Application
+1438 chrome.exe                      1 normal       C:\Program Files\Google\Chrome\Application
+3c34 chrome.exe                      1 idle         C:\Program Files\Google\Chrome\Application
+4478 chrome.exe                      1 idle         C:\Program Files\Google\Chrome\Application
+1d48 chrome.exe                      1 idle         C:\Program Files\Google\Chrome\Application
+3cf4 pacjsworker.exe                 0
+42e8 pacjsworker.exe                 0
+4f40 1cv8c.exe                       1 normal       C:\Program Files\1cv8\8.3.25.1374\bin
+17f8 svchost.exe                     0
+2100 svchost.exe                     0
+0b9c smartscreen.exe                 1 normal       C:\Windows\System32
+4b3c chrome.exe                      1 idle         C:\Program Files\Google\Chrome\Application
+4124 chrome.exe                      1 idle         C:\Program Files\Google\Chrome\Application
+4694 chrome.exe                      1 idle         C:\Program Files\Google\Chrome\Application
+2ec4 audiodg.exe                     0
+2938 chrome.exe                      1 idle         C:\Program Files\Google\Chrome\Application
+2bbc SearchProtocolHost.exe          0
+18ec WmiPrvSE.exe                    0
+082c PawnStudio.exe                  1 normal       C:\Users\waw55\Documents\GitHub\Masks-Show\addons\amxmodx\scripting\pstudio-0.8.3
+
+hardware:
++ {1ed2bbf9-11f0-4084-b21f-ad83a8e6dcdc}
+  - Adobe PDF
+  - Kyocera ECOSYS M3645dn KX
+  - Microsoft Print to PDF
+  - Корневая очередь печати
++ {36fc9e60-c465-11cf-8056-444553540000}
+  - Корневой USB-концентратор (USB 3.0)
+  - Расширяемый хост-контроллер Intel(R) USB 3.10 — 1.20 (Майкрософт)
++ {4d36e966-e325-11ce-bfc1-08002be10318}
+  - Dell Inc. Vostro 15 3530
+  - Компьютер с ACPI на базе x64
++ {4d36e967-e325-11ce-bfc1-08002be10318}
+  - SKHynix_HFS512GEJ4X112N
++ {4d36e968-e325-11ce-bfc1-08002be10318}
+  - Intel(R) Iris(R) Xe Graphics (driver 32.0.101.6464)
++ {4d36e96a-e325-11ce-bfc1-08002be10318}
+  - Стандартный контроллер SATA AHCI
++ {4d36e96b-e325-11ce-bfc1-08002be10318}
+  - Клавиатура HID
+  - Стандартная клавиатура PS/2
++ {4d36e96c-e325-11ce-bfc1-08002be10318}
+  - Realtek(R) Audio (driver 6.0.9514.1)
+  - Технология Intel® Smart Sound для аудио Bluetooth® (driver 10.29.0.11192)
+  - Технология Intel® Smart Sound для аудио USB (driver 10.29.0.11192)
++ {4d36e96e-e325-11ce-bfc1-08002be10318}
+  - Integrated Monitor
++ {4d36e96f-e325-11ce-bfc1-08002be10318}
+  - HID-совместимая мышь
+  - HID-совместимая мышь
++ {4d36e972-e325-11ce-bfc1-08002be10318}
+  - Bluetooth Device (Personal Area Network)
+  - Kerio Virtual Network Adapter (driver 9.3.6.5716)
+  - Realtek 8821CE Wireless LAN 802.11ac PCI-E NIC (driver 2024.10.143.0)
+  - Realtek PCIe GbE Family Controller (driver 1168.10.720.2022)
++ {4d36e97b-e325-11ce-bfc1-08002be10318}
+  - Контроллер дискового пространства (Майкрософт)
+  - Стандартный контроллер NVM Express
++ {4d36e97d-e325-11ce-bfc1-08002be10318}
+  - ACPI Wake Alarm
+  - CMOS системы и часы реального времени
+  - Intel(R) GNA Scoring Accelerator module (driver 3.0.0.1457)
+  - Intel(R) Innovation Platform Framework Extensible Framework (driver 2.2.10203.4)
+  - Intel(R) Innovation Platform Framework Generic Participant (driver 2.2.10203.4)
+  - Intel(R) Innovation Platform Framework Generic Participant (driver 2.2.10203.4)
+  - Intel(R) Innovation Platform Framework Manager (driver 2.2.10203.4)
+  - Intel(R) Innovation Platform Framework Processor Participant (driver 2.2.10203.4)
+  - Intel(R) Integrated Sensor Solution
+  - Intel(R) LPC Controller - 519D (driver 10.1.36.7)
+  - Intel(R) Management Engine Interface #1 (driver 2433.6.3.0)
+  - Intel(R) PCI Express Root Port #10 - 51B1 (driver 10.1.36.7)
+  - Intel(R) PCI Express Root Port #5 - 51BC (driver 10.1.36.7)
+  - Intel(R) PCI Express Root Port #9 - 51B0 (driver 10.1.36.7)
+  - Intel(R) Serial IO GPIO Host Controller - INTC1055 (driver 30.100.2417.30)
+  - Intel(R) Serial IO I2C Host Controller - 51E8 (driver 30.100.2417.30)
+  - Intel(R) Serial IO I2C Host Controller - 51E9 (driver 30.100.2417.30)
+  - Intel(R) Shared SRAM - 51EF (driver 10.1.36.7)
+  - Intel(R) SMBus - 51A3 (driver 10.1.36.7)
+  - Intel(R) SPI (flash) Controller - 51A4 (driver 10.1.36.7)
+  - Intel® Smart Sound Technology BUS (driver 10.29.0.11192)
+  - Intel® Smart Sound Technology — OED (driver 10.29.0.11192)
+  - ISS Dynamic Bus Enumerator (driver 3.1.0.4596)
+  - Microsoft ACPI-совместимая система
+  - Microsoft UEFI-совместимая система
+  - PCI Express Root Complex
+  - UMBus перечислитель корневой шины
+  - Агрегатор процессора ACPI
+  - Базовый видеодрайвер (Майкрософт)
+  - Базовый драйвер отрисовки (Майкрософт)
+  - Встроенный контроллер Microsoft, соответствующий стандарту ACPI
+  - Высокоточный таймер событий
+  - Диспетчер томов
+  - Драйвер Microsoft System Management BIOS
+  - Драйвер вынесения решения по оплате
+  - Драйвер инфраструктуры виртуализации Microsoft Hyper-V
+  - Драйвер технологии мониторинга платформы Intel(R) (driver 10.0.22621.5262)
+  - Интерфейс управления для ACPI Microsoft Windows
+  - Интерфейс управления для ACPI Microsoft Windows
+  - Интерфейс управления для ACPI Microsoft Windows
+  - Интерфейс управления для ACPI Microsoft Windows
+  - Интерфейс управления для ACPI Microsoft Windows
+  - Интерфейс управления для ACPI Microsoft Windows
+  - Интерфейс управления для ACPI Microsoft Windows
+  - Интерфейс управления для ACPI Microsoft Windows
+  - Интерфейс управления для ACPI Microsoft Windows
+  - Крышка ACPI
+  - Перечислитель виртуальных дисков (Майкрософт)
+  - Перечислитель виртуальных сетевых адаптеров NDIS
+  - Перечислитель композитной шины
+  - Перечислитель программных устройств Plug and Play
+  - Подключаемый модуль управления питанием Intel(R)
+  - Программируемый контроллер прерываний
+  - Ресурсы системной платы
+  - Ресурсы системной платы
+  - Ресурсы системной платы
+  - Ресурсы системной платы
+  - Ресурсы системной платы
+  - Ресурсы системной платы
+  - Ресурсы системной платы
+  - Системный таймер
+  - Служба низкоуровневой оболочки Microsoft
+  - Стандартный главный мост PCI — ЦП
+  - Шина перенаправителя устройств удаленных рабочих столов
++ {50127dc3-0f36-415e-a6cc-4cb3be910b65}
+  - 13th Gen Intel(R) Core(TM) i5-1335U
+  - 13th Gen Intel(R) Core(TM) i5-1335U
+  - 13th Gen Intel(R) Core(TM) i5-1335U
+  - 13th Gen Intel(R) Core(TM) i5-1335U
+  - 13th Gen Intel(R) Core(TM) i5-1335U
+  - 13th Gen Intel(R) Core(TM) i5-1335U
+  - 13th Gen Intel(R) Core(TM) i5-1335U
+  - 13th Gen Intel(R) Core(TM) i5-1335U
+  - 13th Gen Intel(R) Core(TM) i5-1335U
+  - 13th Gen Intel(R) Core(TM) i5-1335U
+  - 13th Gen Intel(R) Core(TM) i5-1335U
+  - 13th Gen Intel(R) Core(TM) i5-1335U
++ {5175d334-c371-4806-b3ba-71fd53c9258d}
+  - Набор датчиков HID (версия 2)
++ {5989fce8-9cd0-467d-8a6a-5419e31529d4}
+  - Realtek Audio Effects Component (driver 13.0.6000.1505)
+  - Waves Audio Effects Component (driver 12.2.0.16827)
++ {5c4c3332-344d-483c-8739-259e934c9cc8}
+  - Intel(R) Dynamic Application Loader Host Interface (driver 1.46.2024.221)
+  - Intel(R) Dynamic Tuning Technology Device Extension Component (driver 9.0.11703.48565)
+  - Intel(R) Graphics Command Center (driver 32.0.101.6464)
+  - Intel(R) iCLS Client (driver 1.74.210.0)
+  - Intel(R) Management Engine WMI Provider (driver 2428.6.4.0)
+  - Realtek Asio Component (driver 1.0.13.1)
+  - Realtek Audio Universal Service (driver 1.0.818.0)
++ {62f9c741-b25a-46ce-b54c-9bccce08b6f2}
+  - Bluetooth
+  - Microsoft Device Association Root Enumerator
+  - Microsoft Radio Device Enumeration Bus
+  - Microsoft RRAS Root Enumerator
+  - Беспроводная сеть
+  - Программный синтезатор звуковой таблицы Microsoft
++ {72631e54-78a4-11d0-bcf7-00aa00b7b32a}
+  - Адаптер переменного тока (Майкрософт)
+  - Батарея с ACPI-совместимым управлением (Майкрософт)
++ {745a17a0-74d3-11d0-b6fe-00a0c90f57da}
+  - HID PCI Minidriver for ISS (driver 3.1.0.4596)
+  - HID-совместимая сенсорная панель
+  - HID-совместимое устройство управления
+  - HID-совместимое устройство управления
+  - HID-совместимое устройство, определенное поставщиком
+  - HID-совместимый системный контроллер
+  - Intel(R) HID Event Filter (driver 2.2.2.12)
+  - Microsoft Input Configuration Device
+  - Устройство HID на шине I2C
+  - Устройство HID, совместимое с GATT Bluetooth с низким энергопотреблением
+  - Устройство контроля переносных устройств
+  - Устройство контроля переоборудованных переносных устройств
++ {c166523c-fe0c-4a94-a586-f1a80cfbbf3e}
+  - Колонки (Realtek(R) Audio)
+  - Микрофон (Realtek(R) Audio)
++ {d94ee5d8-d189-4994-83d2-f68d7d41b0e6}
+  - Доверенный платформенный модуль 2.0
++ {e0cbf06c-cd8b-4647-bb8a-263b43f0f974}
+  - Bluetooth Device (RFCOMM Protocol TDI)
+  - HP 2.4G wireless and BT Mouse
+  - Microsoft Bluetooth Enumerator
+  - Realtek Bluetooth Adapter (driver 1.1072.2312.2502)
+  - Перечислитель Bluetooth LE (Майкрософт)
+  - Служба сведений об устройствах
+  - Универсальная служба атрибутов Bluetooth с низким энергопотреблением
+  - Универсальный профиль атрибутов
+  - Универсальный профиль доступа
++ {f2e7dd72-6468-4e36-b6f1-6488f42c1b52}
+  - System Firmware 1.18.0 (driver 0.1.18.0)
+  - Встроенное ПО устройства
+
+cpu registers:
+eax = 00000000
+ebx = 00f691f8
+ecx = 00f9893c
+edx = 00000000
+esi = 00f78e08
+edi = 00f98428
+eip = 006e0cf4
+esp = 0019fcd0
+ebp = 0019fd10
+
+stack dump:
+0019fcd0  d8 ac 7f 09 00 00 00 00 - 08 8e f7 00 58 b7 4e 00  ............X.N.
+0019fce0  18 fd 19 00 08 8e f7 00 - 66 dd 52 00 ff ff ff ff  ........f.R.....
+0019fcf0  4a b6 4e 00 3c fe 19 00 - 98 42 40 00 10 fd 19 00  J.N.<....B@.....
+0019fd00  00 05 00 00 06 0e 05 00 - c6 08 c5 09 08 8e f7 00  ................
+0019fd10  28 fd 19 00 de 52 47 00 - 00 05 00 00 00 00 00 00  (....RG.........
+0019fd20  00 00 00 00 00 00 00 00 - 54 fd 19 00 0f 3a d1 76  ........T....:.v
+0019fd30  06 0e 05 00 00 05 00 00 - 00 00 00 00 00 00 00 00  ................
+0019fd40  06 0e 05 00 cd ab ba dc - c6 08 c5 09 00 05 00 00  ................
+0019fd50  06 0e 05 00 4c fe 19 00 - 86 43 d0 76 c6 08 c5 09  ....L....C.v....
+0019fd60  06 0e 05 00 00 05 00 00 - 00 00 00 00 00 00 00 00  ................
+0019fd70  1e 9d b2 c4 f0 fe 19 00 - 40 59 4d 01 01 00 00 00  ........@YM.....
+0019fd80  e2 9e b2 c4 24 00 00 00 - 01 00 00 00 00 00 00 00  ....$...........
+0019fd90  00 00 00 00 30 00 00 00 - ff ff ff ff ff ff ff ff  ....0...........
+0019fda0  3a 40 d0 76 00 00 00 00 - aa 42 73 b2 7c 6e 5d 77  :@.v.....Bs.|n]w
+0019fdb0  24 ed d0 76 d0 fd 19 00 - 18 00 00 00 00 00 00 00  $..v............
+0019fdc0  00 00 00 00 f0 fe 19 00 - 01 00 00 00 00 00 00 00  ................
+0019fdd0  00 00 00 00 00 00 00 00 - 38 00 00 00 f0 fe 19 00  ........8.......
+0019fde0  10 60 00 80 00 00 00 00 - 00 00 00 00 00 00 00 00  .`..............
+0019fdf0  00 00 00 00 00 00 00 00 - 00 00 00 00 48 13 a7 00  ............H...
+0019fe00  00 00 00 00 00 00 03 00 - 01 00 00 00 00 00 00 00  ................
+
+disassembling:
+[...]
+006e0ce5        mov     eax, [eax+$c]
+006e0ce8        call    -$274f39 ($46bdb4)     ; Classes.TCollection.Clear
+006e0ce8
+006e0ced 1440   mov     eax, [$708bf0]
+006e0cf2        mov     eax, [eax]
+006e0cf4      > mov     ecx, [eax+$48]
+006e0cf7        mov     dl, 1
+006e0cf9        mov     eax, [$468690]
+006e0cfe        call    -$27280b ($46e4f8)     ; Classes.TStringStream.Create
+006e0cfe
+006e0d03        mov     esi, eax
 [...]
 

@@ -20,6 +20,8 @@ public plugin_init() {
 }
 
 public Fill_trie() {
+	TrieSetString(g_tReplaceInfoMsg, "#Hint_press_buy_to_purchase",			"Нажмите клавишу КУПИТЬ, чтобы приобрести товары.");
+	TrieSetString(g_tReplaceInfoMsg, "#Cstrike_TitlesTXT_Hint_press_buy_to_purchase",			"Нажмите клавишу КУПИТЬ, чтобы приобрести товары.");
 	TrieSetString(g_tReplaceInfoMsg, "#Game_Commencing",					"Игра началась");
 	TrieSetString(g_tReplaceInfoMsg, "#Game_will_restart_in",				"Рестарт игры произойдет через %s секунд");
 	TrieSetString(g_tReplaceInfoMsg, "#CTs_Win",							"Контр-Террористы победили");
