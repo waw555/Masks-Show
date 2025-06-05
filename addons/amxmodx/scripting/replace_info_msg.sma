@@ -52,9 +52,20 @@ public Fill_trie() {
 	TrieSetString(g_tReplaceInfoMsg, "#Game_bomb_drop",						"%s выбросил бомбу");
 	TrieSetString(g_tReplaceInfoMsg, "#Bomb_Planted",						"Бомба установлена");
 	TrieSetString(g_tReplaceInfoMsg, "#Bomb_Defused",						"Бомба обезврежена");
-	TrieSetString(g_tReplaceInfoMsg, "#Cant_buy",							"%s секунд уже истекли.^rПокупка арсенала запрещена");
+	TrieSetString(g_tReplaceInfoMsg, "#Cant_buy",							"%s секунд уже истекли.^rПокупка запрещена");
 	TrieSetString(g_tReplaceInfoMsg, "#Name_change_at_respawn",				"Ваше имя будет изменено после следующего возрождения");
 	TrieSetString(g_tReplaceInfoMsg, "#Auto_Team_Balance_Next_Round",		"Автоматический баланс команды наступит в следующем раунде");
+	TrieSetString(g_tReplaceInfoMsg, "#Spec_Map",							"Обзор карты");
+	TrieSetString(g_tReplaceInfoMsg, "#Spec_Mode1",							"Режим фиксированной камеры за спиной");
+	TrieSetString(g_tReplaceInfoMsg, "#Spec_Mode2",							"Режим свободной камеры за спиной");
+	TrieSetString(g_tReplaceInfoMsg, "#Spec_Mode3",							"Свободный обзор");
+	TrieSetString(g_tReplaceInfoMsg, "#Spec_Mode4",							"Режим камеры от первого лица");
+	TrieSetString(g_tReplaceInfoMsg, "#Spec_Mode5",							"Свободный обзор карты");
+	TrieSetString(g_tReplaceInfoMsg, "#Spec_Mode6",							"Фиксированный обзор карты");
+	TrieSetString(g_tReplaceInfoMsg, "#Spec_NoTarget",						"Нет подходящих целей. Невозможно переключиться в режим динамичной камеры.");
+	TrieSetString(g_tReplaceInfoMsg, "#Spec_Help_Title",					"Режим наблюдателя");
+	TrieSetString(g_tReplaceInfoMsg, "#Spec_Duck",							"Нажмите ПРИГНУТЬСЯ для входа в меню наблюдения");
+	
 }
 
 public MessageSayText() {
