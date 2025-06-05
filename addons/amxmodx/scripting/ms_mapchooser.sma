@@ -2,7 +2,7 @@
 #include <amxmisc>
 
 #define PLUGIN "Nextmap Chooser"
-#define VERSION "1.0.0/03.06.2025"
+#define VERSION "1.0.0/05.06.2025"
 #define AUTHOR "AMXX Dev Team"
 
 #define MAX_MAPS 128
@@ -12,13 +12,13 @@
 #define MENU_KEYS (1<<0 | 1<<1 | 1<<2 | 1<<3 | 1<<4 | 1<<5 | 1<<6 | 1<<7 | 1<<8 | 1<<9)
 #define MENU_SLOTS 8 								//	Количество слотов под карты
 //Название карты и статус
-new MAPS_NAME[MAX_MAPS][MAX_MAPS]					//	Название всех карт
-new NOMINATION_MAPS_NAME[MAX_MAPS][MAX_MAPS]		//	Карты для номинированя
-new LAST_MAPS_NAME[MAX_MAPS][MAX_MAPS]				//	Последние карты
+new MAPS_NAME[MAX_MAPS][MAX_MAPS];					//	Название всех карт
+new NOMINATION_MAPS_NAME[MAX_MAPS][MAX_MAPS];		//	Карты для номинированя
+new LAST_MAPS_NAME[MAX_MAPS][MAX_MAPS];				//	Последние карты
 new NEXT_MAP_NAME[MAX_MAPS]; 						// 	Переменная хранит в себе название следующей карты.
 //Файлы
-new g_s_MapFile[128] 								//	Файл с картами
-new g_s_LastMapFile[128] 							//	Файл с последними картами
+new g_s_MapFile[128]; 								//	Файл с картами
+new g_s_LastMapFile[128]; 							//	Файл с последними картами
 //Счетчик
 new g_i_MapCounter 									//	Счетчик карт
 new g_i_LastMapCounter 								//	Счетчик последних карт
@@ -42,53 +42,52 @@ new Float: g_f_MapTimer 							//	Счетчик минут
 new g_szLogFile[64]; 								// 	Файл логов
 
 public plugin_init() {
-	register_plugin(PLUGIN, VERSION, AUTHOR)
+	register_plugin(PLUGIN, VERSION, AUTHOR);
 	//Регистрируем команды
-	register_dictionary("ms_mapchooser.txt"); // Регистрируем словарь
-	register_dictionary("ms_global.txt"); // Регистрируем словарь
-	register_saycmd("votemap", "Cmd_Vote_Map", -1, ""); //Комманда вызова меню для смены карты
-	register_saycmd("rtv", "Cmd_Vote_Map", -1, ""); //Комманда вызова меню для смены карты
-	register_saycmd("nominate", "Cmd_Vote_Map", -1, ""); //Комманда вызова меню для смены карты
-	register_saycmd("rockthevote", "Cmd_Vote_Map", -1, ""); //Комманда вызова меню для смены карты
-	register_saycmd("nextmap", "Cmd_Vote_Map", -1, ""); //Комманда вызова меню для смены карты
-	register_saycmd("map", "Cmd_Vote_Map", -1, ""); //Комманда вызова меню для смены карты
-	register_saycmd("maps", "Cmd_Vote_Map", -1, ""); //Комманда вызова меню для смены карты
-	register_saycmd("currentmap", "Cmd_Vote_Map", -1, ""); //Комманда вызова меню для смены карты
-	register_saycmd("nom", "Cmd_Vote_Map", -1, ""); //Комманда вызова меню для смены карты
+	register_dictionary("ms_mapchooser.txt"); 										//	Регистрируем словарь
+	register_dictionary("ms_global.txt"); 											//	Регистрируем словарь
+	g_i_pcvar_LastMaps = register_cvar ( "ms_lastmaps","7" );						//	Регистрируем cvar ms_lastmaps
+	g_i_pcvar_TimeOutNominate = register_cvar ( "ms_timeout_nominate","3" );		//	Регистрируем cvar ms_timeout_nominate
+	register_saycmd("votemap", "Cmd_Vote_Map", -1, ""); 							//	Комманда вызова меню для смены карты
+	register_saycmd("rtv", "Cmd_Vote_Map", -1, ""); 								//	Комманда вызова меню для смены карты
+	register_saycmd("nominate", "Cmd_Vote_Map", -1, ""); 							//	Комманда вызова меню для номинации карты
+	register_saycmd("rockthevote", "Cmd_Vote_Map", -1, ""); 						//	Комманда вызова меню для смены карты
+	register_saycmd("nextmap", "Cmd_Vote_Map", -1, ""); 							//	Комманда для отображения следующей карты
+	register_saycmd("map", "Cmd_Vote_Map", -1, ""); 								//	Комманда для отображения текущей карты
+	register_saycmd("maps", "Cmd_Vote_Map", -1, ""); 								//	Комманда для отображения всех карты из файла ms_maps.ini
+	register_saycmd("currentmap", "Cmd_Vote_Map", -1, ""); 							//	Комманда для отображения текущей карты
+	register_saycmd("nom", "Cmd_Vote_Map", -1, ""); 								//	Комманда вызова меню для номинации карты
 	
-	register_logevent("Event_Round_Start", 2, "0=World triggered", "1=Round_Start"); // Событие Начало раунда
-	register_event("SendAudio", "Event_Round_End", "a", "2&%!MRAD_terwin", "2&%!MRAD_ctwin", "2&%!MRAD_rounddraw"); //Событие Конец Раунда
-	register_event ( "TextMsg","event_restart_game","a", "2=#Game_Commencing","2=#Game_will_restart_in" )
+	register_logevent("Event_Round_Start", 2, "0=World triggered", "1=Round_Start"); //	Событие Начало раунда
+	register_event("SendAudio", "Event_Round_End", "a", "2&%!MRAD_terwin", "2&%!MRAD_ctwin", "2&%!MRAD_rounddraw");	//	Событие Конец Раунда
+	register_event ( "TextMsg","event_restart_game","a", "2=#Game_Commencing","2=#Game_will_restart_in" );
 	
-	register_menu("Vote Map Menu", MENU_KEYS, "Maps_Menu_Command")//Создаем меню
+	register_menu("Vote Map Menu", MENU_KEYS, "Maps_Menu_Command");					//	Создаем меню
 	
-	g_i_MessageIDSayText = get_user_msgid("SayText"); //Функция цветного чата
+	g_i_MessageIDSayText = get_user_msgid("SayText");								//	Функция цветного чата
+
 	
-	g_i_pcvar_LastMaps = register_cvar ( "ms_lastmaps","7" )
-	g_i_pcvar_TimeOutNominate = register_cvar ( "ms_timeout_nominate","10" )
+	new szLogInfo[] = "amx_logdir";													//	Записываем в переменную путь к папке с логами
+	get_localinfo(szLogInfo, g_szLogFile, charsmax(g_szLogFile));					//	Проверяем на наличие файлов
+	add(g_szLogFile, charsmax(g_szLogFile), "/ms_mapchooser");						//	Добавляем файл в папку ms_mapchooser
 	
-	new szLogInfo[] = "amx_logdir"; // Записываем в переменную путь к папке с логами
-	get_localinfo(szLogInfo, g_szLogFile, charsmax(g_szLogFile)); //Проверяем на наличие файлов
-	add(g_szLogFile, charsmax(g_szLogFile), "/ms_votemap");// Добавляем файл в папку votemap
+	if(!dir_exists(g_szLogFile))													//	Проверяем если папка ms_mapchooser не существует, до создаем ее
+		mkdir(g_szLogFile);															//	Создаем папку ms_mapchooser
 	
-	if(!dir_exists(g_szLogFile)) // проверяем если папка votemap не существует, до создаем ее
-		mkdir(g_szLogFile); // создаем папку votemap
-	
-	new szTime[32]; //Массив времени
-	get_time("%d-%m-%Y", szTime, charsmax(szTime)); //Получаем время
-	format(g_szLogFile, charsmax(g_szLogFile), "%s/%s.log", g_szLogFile, szTime); //Создаем файл с логами и добавляем текущее время в название файла 
+	new szTime[32];																	//	Массив времени
+	get_time("%d-%m-%Y", szTime, charsmax(szTime));									//	Получаем время
+	format(g_szLogFile, charsmax(g_szLogFile), "%s/%s.log", g_szLogFile, szTime);	//	Создаем файл с логами и добавляем текущее время в название файла 
 	//Создаем путь к файлу с картами
-	new s_TempConfigDir[64]; //Создаем переменную для путей к файлам со списком карт
-	get_configsdir(s_TempConfigDir, 63); // Получаем дирректорию с настройками
-	format(g_s_MapFile, 63, "%s/ms_config/ms_maps.ini", s_TempConfigDir);// Получаем путь к файлу с картами
-	format(g_s_LastMapFile, 63, "%s/ms_config/ms_lastmaps.ini", s_TempConfigDir);// Получаем путь к файлу с последними картами
-	// Add your code here...
-	Load_Maps()
+	new s_TempConfigDir[64];														//	Создаем переменную для путей к файлам со списком карт
+	get_configsdir(s_TempConfigDir, 63);											//	Получаем дирректорию с настройками
+	format(g_s_MapFile, 63, "%s/ms_config/ms_maps.ini", s_TempConfigDir);			//	Получаем путь к файлу с картами
+	format(g_s_LastMapFile, 63, "%s/ms_config/ms_lastmaps.ini", s_TempConfigDir);	//	Получаем путь к файлу с последними картами
+	Load_Maps();
 }
 
 public plugin_cfg()
 {
-	server_cmd("mp_timelimit 0"); //Меняем время карты на 0
+	server_cmd("mp_timelimit 0");													//	Меняем время карты на 0
 	
 }
 
@@ -96,7 +95,7 @@ public Cmd_Vote_Map(id)
 {	
 	if(g_b_votemap) // Проверяем Если голосование разрешено
 	{
-		new s_timer = check_disable_nominate()
+		new s_timer = check_disable_nominate();
 		if ( s_timer )
 		{
 			client_printc(id, "\g%L \d%L \t%d:%d \d%L",id, "MS_ATTENTION", id, "VOTEMAP_BEFORE_CHANGINGS_MAPS", s_timer / 60, s_timer % 60, id, "VOTEMAP_MIN" );
@@ -116,15 +115,15 @@ public Vote_Map_Menu(id, i_Pos)
 	if (i_Pos < 0)
 		return
 	
-	client_cmd(id, "spk sound/events/tutor_msg.wav")
-	new s_Menu[MENU_SIZE + 1] //Размер меню
-	new i_CurrPos = 0 //Текущая позиция в списке меню
-	new i_Start = i_Pos * MENU_SLOTS
-	new i_Keys
-	new i_Len
+	client_cmd(id, "spk sound/events/tutor_msg.wav");
+	new s_Menu[MENU_SIZE + 1]; //Размер меню
+	new i_CurrPos = 0; //Текущая позиция в списке меню
+	new i_Start = i_Pos * MENU_SLOTS;
+	new i_Keys;
+	new i_Len;
 	//new s_Color[] = "\w"
 	
-	get_players(g_i_Players, g_i_Num, "h");
+	get_players(g_i_Players, g_i_Num, "сh");
 	
 	i_Len = formatex(s_Menu, MENU_SIZE, "\r%L^n\y%s^n^n\w%L^n^n",id,"VOTEMAP_CURRENT", LAST_MAPS_NAME[0], id, "VOTEMAP_MENU")
 	
@@ -327,7 +326,7 @@ public CheckVotes(id, voter)
 		new s_Name[32];
 		get_user_name(voter, s_Name, charsmax(s_Name));
 		new i_Players[32], i_PlayersNum
-		get_players(i_Players, i_PlayersNum, "c")
+		get_players(i_Players, i_PlayersNum, "ch")
 		new i
 	
 		for (i = 0; i < i_PlayersNum; i++)
@@ -520,7 +519,7 @@ public client_disconnected(id)
 {
 	if(g_i_VotedPlayers[id])// Если игрок учавствовал в голосовании продолжаем
 	{
-		get_players(g_i_Players, g_i_Num, "h"); //Получаем количество игроков без HLTV
+		get_players(g_i_Players, g_i_Num, "ch"); //Получаем количество игроков без HLTV
 		
 		for(new i = 0 ; i < g_i_Num ; i++) // Ищем за что голосовал игрок
 		{
@@ -539,7 +538,7 @@ public client_authorized(id)
 {
 	if(g_i_VotedPlayers[id])// Если игрок учавствовал в голосовании продолжаем
 	{
-		get_players(g_i_Players, g_i_Num, "h"); //Получаем количество игроков без HLTV
+		get_players(g_i_Players, g_i_Num, "ch"); //Получаем количество игроков без HLTV
 		
 		for(new i = 0 ; i < g_i_Num ; i++) // Ищем за что голосовал игрок
 		{
@@ -576,7 +575,7 @@ public change_level_message (){
 	g_b_changemap_full = true;
 	
 	new i_Players[32], i_PlayersNum
-	get_players(i_Players, i_PlayersNum, "c")
+	get_players(i_Players, i_PlayersNum, "ch")
 	new i
 	
 	for (i = 0; i < i_PlayersNum; i++)
