@@ -281,19 +281,19 @@ public Maps_Menu_Command(id, key) {
 public CurrentMap(id)
 {
 	client_cmd(id, "spk sound/events/tutor_msg.wav");
-	client_printc(id, "\g%L \d%L \g%s", id, "MS_ATTENTION", id, "VOTEMAP_CURRENT", CURRENT_MAP_NAME);
+	client_printc(id, "\d%L \g%s",id, "VOTEMAP_CURRENT", CURRENT_MAP_NAME);
 
 }
 
 //Выводим текущую карту в чат
 public NextMap(id)
 {
-	if(equali(NEXT_MAP_NAME, "")){
+	if(!NEXT_MAP_NAME[]){
 		client_cmd(id, "spk sound/events/friend_died.wav");
-		client_printc(id, "\g%L \t%L", id, "MS_ATTENTION",id, "VOTEMAP_NO_NEXT_MAP");
+		client_printc(id, "\d%L",id, "VOTEMAP_NO_NEXT_MAP");
 	}else{
 		client_cmd(id, "spk sound/events/tutor_msg.wav");
-		client_printc(id, "\g%L \d%L \g%s", id, "MS_ATTENTION", id, "VOTEMAP_NEXT_MAP", NEXT_MAP_NAME);
+		client_printc(id, "\d%L \g%s",id, "VOTEMAP_NEXT_MAP", NEXT_MAP_NAME);
 	}
 
 }

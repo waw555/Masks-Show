@@ -53,10 +53,10 @@ public plugin_init() {
 	register_saycmd("rtv", "Cmd_Vote_Map", -1, ""); 								//	Комманда вызова меню для смены карты
 	register_saycmd("nominate", "Cmd_Vote_Map", -1, ""); 							//	Комманда вызова меню для номинации карты
 	register_saycmd("rockthevote", "Cmd_Vote_Map", -1, ""); 						//	Комманда вызова меню для смены карты
-	register_saycmd("nextmap", "NextMap", -1, ""); 							//	Комманда для отображения следующей карты
-	register_saycmd("map", "CurrentMap", -1, ""); 									//	Комманда для отображения текущей карты
+	register_saycmd("nextmap", "Cmd_Vote_Map", -1, ""); 							//	Комманда для отображения следующей карты
+	register_saycmd("map", "Cmd_Vote_Map", -1, ""); 								//	Комманда для отображения текущей карты
 	register_saycmd("maps", "Cmd_Vote_Map", -1, ""); 								//	Комманда для отображения всех карты из файла ms_maps.ini
-	register_saycmd("currentmap", "CurrentMap", -1, ""); 							//	Комманда для отображения текущей карты
+	register_saycmd("currentmap", "Cmd_Vote_Map", -1, ""); 							//	Комманда для отображения текущей карты
 	register_saycmd("nom", "Cmd_Vote_Map", -1, ""); 								//	Комманда вызова меню для номинации карты
 	
 	register_logevent("Event_Round_Start", 2, "0=World triggered", "1=Round_Start"); //	Событие Начало раунда
@@ -280,21 +280,8 @@ public Maps_Menu_Command(id, key) {
 //Выводим текущую карту в чат
 public CurrentMap(id)
 {
-	client_cmd(id, "spk sound/events/tutor_msg.wav");
-	client_printc(id, "\g%L \d%L \g%s", id, "MS_ATTENTION", id, "VOTEMAP_CURRENT", CURRENT_MAP_NAME);
-
-}
-
-//Выводим текущую карту в чат
-public NextMap(id)
-{
-	if(equali(NEXT_MAP_NAME, "")){
-		client_cmd(id, "spk sound/events/friend_died.wav");
-		client_printc(id, "\g%L \t%L", id, "MS_ATTENTION",id, "VOTEMAP_NO_NEXT_MAP");
-	}else{
-		client_cmd(id, "spk sound/events/tutor_msg.wav");
-		client_printc(id, "\g%L \d%L \g%s", id, "MS_ATTENTION", id, "VOTEMAP_NEXT_MAP", NEXT_MAP_NAME);
-	}
+	
+	client_printc(id, "\t%L \g%s",id, "MS_CURRENT_MAP", CURRENT_MAP_NAME);
 
 }
 
