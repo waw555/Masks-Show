@@ -68,22 +68,20 @@ public plugin_init() {
 
 	
 	new szLogInfo[] = "amx_logdir";													//	Записываем в переменную путь к папке с логами
-	get_localinfo(szLogInfo, g_szLogDir, charsmax(g_szLogDir));						//	Проверяем на наличие файлов
+	get_localinfo(szLogInfo, g_szLogDir, charsmax(g_szLogDir));					//	Проверяем на наличие файлов
 	add(g_szLogDir, charsmax(g_szLogDir), "/ms_mapchooser");						//	Добавляем файл в папку ms_mapchooser
 	
-	if(!dir_exists(g_szLogDir))														//	Проверяем если папка ms_mapchooser не существует, до создаем ее
+	if(!dir_exists(g_szLogDir))													//	Проверяем если папка ms_mapchooser не существует, до создаем ее
 		mkdir(g_szLogDir);															//	Создаем папку ms_mapchooser
 	
 	new szTime[32];																	//	Массив времени
 	get_time("%d-%m-%Y", szTime, charsmax(szTime));									//	Получаем время
-	format(g_szLogDir, charsmax(g_szLogDir), "%s/%s.log", g_szLogDir, szTime);		//	Создаем файл с логами и добавляем текущее время в название файла 
+	format(g_szLogDir, charsmax(g_szLogDir), "%s/%s.log", g_szLogDir, szTime);	//	Создаем файл с логами и добавляем текущее время в название файла 
 	//Создаем путь к файлу с картами
 	new s_TempConfigDir[64];														//	Создаем переменную для путей к файлам со списком карт
 	get_configsdir(s_TempConfigDir, 63);											//	Получаем дирректорию с настройками
 	format(g_s_MapFile, 63, "%s/ms_config/ms_maps.ini", s_TempConfigDir);			//	Получаем путь к файлу с картами
 	format(g_s_LastMapFile, 63, "%s/ms_config/ms_lastmaps.ini", s_TempConfigDir);	//	Получаем путь к файлу с последними картами
-	
-	log_to_file (g_szLogDir, "Плагин Nextmap Chooser %s запущен", VERSION)
 	Load_Maps();
 }
 

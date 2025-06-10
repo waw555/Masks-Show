@@ -40,6 +40,7 @@ new bool:g_b_votemap = true; 						// 	Переменная указывает �
 new Float: g_f_MapTimer 							//	Счетчик минут
 
 new g_szLogDir[64]; 								// 	Папка с логами
+new g_szLogFile[64]; 								// 	Файл логов
 
 public plugin_init() {
 	register_plugin(PLUGIN, VERSION, AUTHOR);
@@ -68,22 +69,20 @@ public plugin_init() {
 
 	
 	new szLogInfo[] = "amx_logdir";													//	Записываем в переменную путь к папке с логами
-	get_localinfo(szLogInfo, g_szLogDir, charsmax(g_szLogDir));						//	Проверяем на наличие файлов
+	get_localinfo(szLogInfo, g_szLogDir, charsmax(g_szLogDir));					//	Проверяем на наличие файлов
 	add(g_szLogDir, charsmax(g_szLogDir), "/ms_mapchooser");						//	Добавляем файл в папку ms_mapchooser
 	
-	if(!dir_exists(g_szLogDir))														//	Проверяем если папка ms_mapchooser не существует, до создаем ее
+	if(!dir_exists(g_szLogDir))													//	Проверяем если папка ms_mapchooser не существует, до создаем ее
 		mkdir(g_szLogDir);															//	Создаем папку ms_mapchooser
 	
 	new szTime[32];																	//	Массив времени
 	get_time("%d-%m-%Y", szTime, charsmax(szTime));									//	Получаем время
-	format(g_szLogDir, charsmax(g_szLogDir), "%s/%s.log", g_szLogDir, szTime);		//	Создаем файл с логами и добавляем текущее время в название файла 
+	format(g_szLogDir, charsmax(g_szLogDir), "%s/%s.log", g_szLogDir, szTime);	//	Создаем файл с логами и добавляем текущее время в название файла 
 	//Создаем путь к файлу с картами
 	new s_TempConfigDir[64];														//	Создаем переменную для путей к файлам со списком карт
 	get_configsdir(s_TempConfigDir, 63);											//	Получаем дирректорию с настройками
 	format(g_s_MapFile, 63, "%s/ms_config/ms_maps.ini", s_TempConfigDir);			//	Получаем путь к файлу с картами
 	format(g_s_LastMapFile, 63, "%s/ms_config/ms_lastmaps.ini", s_TempConfigDir);	//	Получаем путь к файлу с последними картами
-	
-	log_to_file (g_szLogDir, "Плагин Nextmap Chooser %s запущен", VERSION)
 	Load_Maps();
 }
 
@@ -198,7 +197,7 @@ public Maps_Menu_Command(id, key) {
 
 			if(g_i_VotedPlayers[id] & (1 << i_MapsNum))
 			{
-				log_to_file (g_szLogDir, "2. g_i_VotedPlayers[id] = %d, i_MapsNum = %d", g_i_VotedPlayers[id], i_MapsNum )
+				log_amx ("2. g_i_VotedPlayers[id] = %d, i_MapsNum = %d", g_i_VotedPlayers[id], i_MapsNum )
 
 				Vote_Map_Menu(id, g_i_MenuPosition[id]);
 				client_cmd(id, "spk sound/events/friend_died.wav");
@@ -212,7 +211,7 @@ public Maps_Menu_Command(id, key) {
 			client_cmd(id, "spk sound/events/tutor_msg.wav");				
 			g_i_Votes[i_MapsNum]++;
 			g_i_VotedPlayers[id] |= (1 << i_MapsNum);
-			log_to_file (g_szLogDir, "3. g_i_VotedPlayers[id] = %d, i_MapsNum = %d", g_i_VotedPlayers[id], i_MapsNum )
+			log_amx ("3. g_i_VotedPlayers[id] = %d, i_MapsNum = %d", g_i_VotedPlayers[id], i_MapsNum )
 
 			
 			new s_Name[1][32];
@@ -369,7 +368,7 @@ Load_Maps()
 			}
 		}
 	} else {
-		log_to_file (g_szLogDir, "Файл %s не найден. Плагин создаст файл автоматически.", g_s_LastMapFile)
+		log_amx ( "Файл %s не найден. Плагин создаст файл автоматически.", g_s_LastMapFile)
 	}
 	
 	new b_FileOpen = fopen(g_s_MapFile, "r") // Открываем файл с картами
@@ -404,12 +403,12 @@ Load_Maps()
 	
 	if ( !delete_file ( g_s_LastMapFile) )
 	{
-		log_to_file (g_szLogDir, "Невозможно удалить файл %s", g_s_LastMapFile )
+		log_amx ( "Невозможно удалить файл %s", g_s_LastMapFile )
 	}
 
 	if ( !write_file ( g_s_LastMapFile, "; Данный файл создается и изменяется автоматически, не изменяйте его!" ) )
 	{
-		log_to_file (g_szLogDir, "Невозможна запись в файл %s", g_s_LastMapFile )
+		log_amx ("Невозможна запись в файл %s", g_s_LastMapFile )
 	
 		return 0
 	}
