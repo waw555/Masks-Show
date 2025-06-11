@@ -2,7 +2,7 @@
 #include <amxmisc>
 
 #define PLUGIN "Nextmap Chooser"
-#define VERSION "1.0.0/05.06.2025"
+#define VERSION "1.0.0/11.06.2025"
 #define AUTHOR "AMXX Dev Team"
 
 #define MAX_MAPS 128
@@ -38,12 +38,13 @@ new bool:g_b_changemap = false; 					// 	Переменная указывает
 new bool:g_b_changemap_full = false; 				// 	Переменная указывает, разрешено ли менять карту
 new bool:g_b_votemap = true; 						// 	Переменная указывает разрешено ли голосовать
 //Время игры на карте
-new Float: g_f_MapTimer 							//	Счетчик минут
+new Float: g_f_MapTimer 							//	Время игры на карте
 
 new g_szLogDir[64]; 								// 	Папка с логами
 
 public plugin_init() {
 	register_plugin(PLUGIN, VERSION, AUTHOR);
+	log_to_file (g_szLogDir, "Плагин Nextmap Chooser %s запущен", VERSION);
 	//Регистрируем команды
 	register_dictionary("ms_mapchooser.txt"); 										//	Регистрируем словарь
 	register_dictionary("ms_global.txt"); 											//	Регистрируем словарь
@@ -66,28 +67,26 @@ public plugin_init() {
 	register_menu("Vote Map Menu", MENU_KEYS, "Maps_Menu_Command");					//	Создаем меню
 	
 	g_i_MessageIDSayText = get_user_msgid("SayText");								//	Функция цветного чата
-
 	
 	new szLogInfo[] = "amx_logdir";													//	Записываем в переменную путь к папке с логами
-	get_localinfo(szLogInfo, g_szLogDir, charsmax(g_szLogDir));						//	Проверяем на наличие файлов
-	add(g_szLogDir, charsmax(g_szLogDir), "/ms_mapchooser");						//	Добавляем файл в папку ms_mapchooser
+	get_localinfo(szLogInfo, g_szLogDir, charsmax(g_szLogDir));						//	Получаем путь к папке с логами
+	add(g_szLogDir, charsmax(g_szLogDir), "/ms_mapchooser");						//	Добавляем в путь папку с логами для плагина
 	
-	if(!dir_exists(g_szLogDir))														//	Проверяем если папка ms_mapchooser не существует, до создаем ее
+	if(!dir_exists(g_szLogDir))														//	Проверяем если папка ms_mapchooser не существует, то создаем ее
 		mkdir(g_szLogDir);															//	Создаем папку ms_mapchooser
 	
-	new szTime[32];																	//	Массив времени
-	get_time("%d-%m-%Y", szTime, charsmax(szTime));									//	Получаем время
-	format(g_szLogDir, charsmax(g_szLogDir), "%s/%s.log", g_szLogDir, szTime);		//	Создаем файл с логами и добавляем текущее время в название файла 
+	new szTime[32];																	//	Массив для текущей даты
+	get_time("%d-%m-%Y", szTime, charsmax(szTime));									//	Получаем текущую дату
+	format(g_szLogDir, charsmax(g_szLogDir), "%s/%s.log", g_szLogDir, szTime);		//	Создаем файл с логами и добавляем текущую дату в название файла 
 	//Создаем путь к файлу с картами
 	new s_TempConfigDir[64];														//	Создаем переменную для путей к файлам со списком карт
-	get_configsdir(s_TempConfigDir, 63);											//	Получаем дирректорию с настройками
+	get_configsdir(s_TempConfigDir, 63);											//	Получаем путь к папке с настройками
 	format(g_s_MapFile, 63, "%s/ms_config/ms_maps.ini", s_TempConfigDir);			//	Получаем путь к файлу с картами
 	format(g_s_LastMapFile, 63, "%s/ms_config/ms_lastmaps.ini", s_TempConfigDir);	//	Получаем путь к файлу с последними картами
 	
-	get_mapname(CURRENT_MAP_NAME, MAX_MAPS);
+	get_mapname(CURRENT_MAP_NAME, MAX_MAPS);										//	Получаем название текущей карты
 	
-	log_to_file (g_szLogDir, "Плагин Nextmap Chooser %s запущен", VERSION);
-	Load_Maps();
+	Load_Maps();																	//	Загружаем список карт и последние сыгранные карты
 }
 
 public plugin_cfg()
@@ -100,11 +99,17 @@ public Cmd_Vote_Map(id)
 {	
 	if(g_b_votemap) // Проверяем Если голосование разрешено
 	{
-		new s_timer = check_disable_nominate();
-		if ( s_timer )
+		new s_timer = check_disable_nominate();										//	Время прошедшее с начала старта карты или сервера в секундах
+		if ( s_timer )																//	Если время не равно нулю
 		{
-			client_printc(id, "\g%L \d%L \t%d:%d \d%L",id, "MS_ATTENTION", id, "VOTEMAP_BEFORE_CHANGINGS_MAPS", s_timer / 60, s_timer % 60, id, "VOTEMAP_MIN" );
-			client_cmd(id, "spk sound/events/friend_died.wav");
+			if ( s_timer >= 60 ){	
+				client_printc(id, "\g%L \d%L \t%d:%d \d%L",id, "MS_ATTENTION", id, "VOTEMAP_BEFORE_CHANGINGS_MAPS", s_timer / 60, s_timer % 60, id, "VOTEMAP_MIN" );
+				client_cmd(id, "spk sound/events/friend_died.wav");
+			} else {
+				client_printc(id, "\g%L \d%L \t%d \d%L",id, "MS_ATTENTION", id, "VOTEMAP_BEFORE_CHANGINGS_MAPS", s_timer % 60, id, "VOTEMAP_SEC" );
+				client_cmd(id, "spk sound/events/friend_died.wav");
+			}
+				
 		}else{
 			Vote_Map_Menu(id, g_i_MenuPosition[id] = 0); // Показываем меню с картами
 		}
@@ -514,9 +519,9 @@ stock client_printc(id, const text[], any:...)
 	new szMsg[191], iPlayers[32], iCount = 1;
 	vformat(szMsg, charsmax(szMsg), text, 3);
 	
-	replace_all(szMsg, charsmax(szMsg), "\g","^x04");
-	replace_all(szMsg, charsmax(szMsg), "\d","^x01");
-	replace_all(szMsg, charsmax(szMsg), "\t","^x03");
+	replace_all(szMsg, charsmax(szMsg), "\g","^x04");										//	Зеленый цвет
+	replace_all(szMsg, charsmax(szMsg), "\d","^x01");										//	Цвет по умолчанию
+	replace_all(szMsg, charsmax(szMsg), "\t","^x03");										//	Цвет команды
 	
 	if(id)
 		iPlayers[0] = id;
@@ -614,22 +619,24 @@ public change_level_message (){
 	}
 }
 
+//	Проверка на прошедшее время игры
 public check_disable_nominate ( )
 {
-	new s_timer = floatround ( get_gametime() - g_f_MapTimer )
+	new s_timer = floatround ( get_gametime() - g_f_MapTimer )										// В переменную s_timer записываем время прошедшее с начала запуска карты
 
-	if ( floatround ( get_pcvar_float ( g_i_pcvar_TimeOutNominate ) * 60.0 ) > s_timer )
-		return floatround ( get_pcvar_float ( g_i_pcvar_TimeOutNominate ) * 60.0 ) - s_timer
+	if ( floatround ( get_pcvar_float ( g_i_pcvar_TimeOutNominate ) * 60.0 ) > s_timer )			//	Если время игры на сервере меньше чем в кваре ms_timeout_nominate
+		return floatround ( get_pcvar_float ( g_i_pcvar_TimeOutNominate ) * 60.0 ) - s_timer		//	То возвращаем оставшееся время до того как будет разрешено голосование
 
 	return 0
 }
 
+// Событие загрузки сервера или начало игры после смены карты.
 public event_restart_game ( )
 {
-	g_f_MapTimer = get_gametime()
+	g_f_MapTimer = get_gametime()									//	Записываем в переменную g_f_MapTimer текущее игровое время
 	return PLUGIN_CONTINUE
 }
-
+//	Загрузка и кеширование дополнительных файлов
 public plugin_precache()
 {
 	precache_sound("events/friend_died.wav");

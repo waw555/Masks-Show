@@ -61,8 +61,7 @@ public Fill_trie() {
 	TrieSetString(g_tReplaceInfoMsg, "#Spec_Mode5",							"Свободный обзор карты");
 	TrieSetString(g_tReplaceInfoMsg, "#Spec_Mode6",							"Фиксированный обзор карты");
 	TrieSetString(g_tReplaceInfoMsg, "#Spec_NoTarget",						"Нет подходящих целей. Невозможно переключиться в режим динамичной камеры.");
-	TrieSetString(g_tReplaceInfoMsg, "#Spec_Help_Title",					"Режим наблюдателя");
-	TrieSetString(g_tReplaceInfoMsg, "#Spec_Duck",							"Нажмите ПРИГНУТЬСЯ для входа в меню наблюдения");
+	TrieSetString(g_tReplaceInfoMsg, "#Only_1_Team_Change",					"Только 1 раз можно сменить команду");
 	
 }
 

@@ -1,6 +1,7 @@
 [ru]
 VOTEMAP_BEFORE_CHANGINGS_MAPS = До смены карты осталось
 VOTEMAP_MIN = мин.
+VOTEMAP_SEC = сек.
 VOTEMAP_VOTING_IS_COMPLETED = Голосование завершено.
 VOTEMAP_NEXT_MAP = Следующая карта
 VOTEMAP_NO_NEXT_MAP = Следующую карту еще не выбирали
@@ -15,6 +16,7 @@ VOTEMAP_LAST_ROUND = Последний раунд!
 [en]
 VOTEMAP_BEFORE_CHANGINGS_MAPS = До смены карты осталось
 VOTEMAP_MIN = мин.
+VOTEMAP_SEC = сек.
 VOTEMAP_VOTING_IS_COMPLETED = Голосование завершено.
 VOTEMAP_NEXT_MAP = Следующая карта
 VOTEMAP_NO_NEXT_MAP = Следующую карту еще не выбирали
