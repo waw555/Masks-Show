@@ -44,7 +44,6 @@ new g_szLogDir[64]; 								// 	Папка с логами
 
 public plugin_init() {
 	register_plugin(PLUGIN, VERSION, AUTHOR);
-	log_to_file (g_szLogDir, "Плагин Nextmap Chooser %s запущен", VERSION);
 	//Регистрируем команды
 	register_dictionary("ms_mapchooser.txt"); 										//	Регистрируем словарь
 	register_dictionary("ms_global.txt"); 											//	Регистрируем словарь
@@ -85,6 +84,8 @@ public plugin_init() {
 	format(g_s_LastMapFile, 63, "%s/ms_config/ms_lastmaps.ini", s_TempConfigDir);	//	Получаем путь к файлу с последними картами
 	
 	get_mapname(CURRENT_MAP_NAME, MAX_MAPS);										//	Получаем название текущей карты
+	
+	log_to_file (g_szLogDir, "Плагин Nextmap Chooser %s запущен", VERSION);
 	
 	Load_Maps();																	//	Загружаем список карт и последние сыгранные карты
 }
@@ -135,7 +136,7 @@ public Vote_Map_Menu(id, i_Pos)
 	
 	get_players(g_i_Players, g_i_Num, "сh");
 	
-	i_Len = formatex(s_Menu, MENU_SIZE, "\r%L^n\y%s^n^n\w%L^n^n",id,"VOTEMAP_CURRENT", LAST_MAPS_NAME[0], id, "VOTEMAP_MENU")
+	i_Len = formatex(s_Menu, MENU_SIZE, "\r%L^n\y%s^n^n\w%L^n^n",id,"VOTEMAP_CURRENT", CURRENT_MAP_NAME, id, "VOTEMAP_MENU")
 	
 	if(i_Start >= g_i_NominateMapCounter)
 	{

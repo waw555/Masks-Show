@@ -64,6 +64,14 @@ public Fill_trie() {
 	TrieSetString(g_tReplaceInfoMsg, "#Only_1_Team_Change",					"Только 1 раз можно сменить команду");
 	TrieSetString(g_tReplaceInfoMsg, "#Got_defuser",						"Вы подобрали комплект разминирования!");
 	TrieSetString(g_tReplaceInfoMsg, "#Go_go_go",							"ВПЕРЕД ВПЕРЕД ВПЕРЕД!");
+	////// cstrike_english.txt line 655 - Titles.txt strings
+	TrieSetString(g_tReplaceInfoMsg, "#Accept_All_Messages",				"Теперь принимаются все текстовые сообщения");
+	TrieSetString(g_tReplaceInfoMsg, "#Accept_Radio",						"Теперь принимаются все радио сообщения");
+	TrieSetString(g_tReplaceInfoMsg, "#Affirmative",						"Подтверждаю");
+	////TrieSetString(g_tReplaceInfoMsg, "#Alias_Not_Avail",					"%s недоступен для покупки вашей командой");
+	TrieSetString(g_tReplaceInfoMsg, "#Hostages_Rescued",					"Все заложники спасены!");
+	
+	
 	
 }
 
