@@ -62,6 +62,8 @@ public Fill_trie() {
 	TrieSetString(g_tReplaceInfoMsg, "#Spec_Mode6",							"Фиксированный обзор карты");
 	TrieSetString(g_tReplaceInfoMsg, "#Spec_NoTarget",						"Нет подходящих целей. Невозможно переключиться в режим динамичной камеры.");
 	TrieSetString(g_tReplaceInfoMsg, "#Only_1_Team_Change",					"Только 1 раз можно сменить команду");
+	TrieSetString(g_tReplaceInfoMsg, "#Got_defuser",						"Вы подобрали комплект разминирования!");
+	TrieSetString(g_tReplaceInfoMsg, "#Go_go_go",							"ВПЕРЕД ВПЕРЕД ВПЕРЕД!");
 	
 }
 
