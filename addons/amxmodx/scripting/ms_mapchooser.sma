@@ -102,7 +102,7 @@ public Cmd_Vote_Map(id)
 		new s_timer = check_disable_nominate();										//	Время прошедшее с начала старта карты или сервера в секундах
 		if ( s_timer )																//	Если время не равно нулю
 		{
-			if ( s_timer >= 60 ){	
+			if ( s_timer >= 60 ){
 				client_printc(id, "\g%L \d%L \t%d:%d \d%L",id, "MS_ATTENTION", id, "VOTEMAP_BEFORE_CHANGINGS_MAPS", s_timer / 60, s_timer % 60, id, "VOTEMAP_MIN" );
 				client_cmd(id, "spk sound/events/friend_died.wav");
 			} else {
