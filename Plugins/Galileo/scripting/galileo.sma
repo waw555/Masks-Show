@@ -113,7 +113,7 @@ new const PLUGIN_VERSION[] = "v5.9.1-926";
  * Common strings sizes used around the plugin.
  */
 #define MAX_LONG_STRING              256
-#define MAX_COLOR_MESSAGE            190
+#define MAX_COLOR_MESSAGE            256
 #define MAX_SHORT_STRING             64
 #define MAX_BIG_BOSS_STRING          512
 #define MAX_NOMINATION_TRIE_KEY_SIZE 48
