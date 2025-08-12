@@ -1,40 +1,44 @@
 [ru]
-GAL_CANCEL_FAIL_INPROGRESS = !t Отмена !g не удалась; голосование !y уже в процессе.
-GAL_CANCEL_FAIL_SOMEONEELSE = Отмена не удалась; '!g %s !y' номинирована !g %s !y.
-GAL_CANCEL_FAIL_VOTEOVER = Отмена !t не удалась; !y результат голосования !g уже !t определен !y.
 
-GAL_CANCEL_FAIL_WASNOTYOU = Вы не номинировали !g %s!y.
+GAL_CANCEL_FAIL_INPROGRESS = Отмена нельзя; !g голосование уже запущено !y
+
+GAL_CANCEL_FAIL_SOMEONEELSE = Отменить нельзя;!g %s !y номинирована !g %s !y
+
+GAL_CANCEL_FAIL_VOTEOVER = Отменить нельзя; !g результат голосования уже определен !y
+
+GAL_CANCEL_FAIL_WASNOTYOU = Вы не номинировали !g %s!y
 
 GAL_CANCEL_SUCCESS = Следующие карты больше не номинированы:!g %s!y
 
-GAL_CHANGE_NEXTROUND = Смена карты произойдет после этого раунда.
+GAL_CHANGE_NEXTROUND = Смена карты произойдет после этого раунда
 
 GAL_CHANGE_TIMEEXPIRED1 = Время истекло
 
-GAL_CHANGE_TIMEEXPIRED2 = !g Лимит времени истек!y.
+GAL_CHANGE_TIMEEXPIRED2 = !g Лимит времени истек!y
 
-GAL_CHANGE_MAINTENANCE = Сервер !t не может !y изменить карту !g в режиме обслуживания !y. Используйте 'gal_command_maintenance' для отключения режима обслуживания.
-GAL_CHANGE_MAINTENANCE_STATE = Режим обслуживания сервера '!t %L !y'. Используйте '!g gal_command_maintenance !y' для отключения режима обслуживания.
+GAL_CHANGE_MAINTENANCE = Сервер !t не может!y сменить карту в режиме отладки. Используйте !g gal_maintenance_mode!y для отключения
+
+GAL_CHANGE_MAINTENANCE_STATE = Режим отладки !t %L!y. Используйте !g gal_maintenance_mode!y для отключения
 
 GAL_CHANGE_MAINTENANCE_ON = Включен
 
 GAL_CHANGE_MAINTENANCE_OFF = Отключен
 
-GAL_CHOICE_EXTEND = Вы решили продолжить на текущей карте.
+GAL_CHOICE_EXTEND = Вы решили продолжить на текущей карте
 
-GAL_CHOICE_EXTEND_ALL = !t %s !y решил продолжить на текущей карте.
+GAL_CHOICE_EXTEND_ALL = !t %s !y решил продолжить на текущей карте
 
-GAL_CHOICE_MAP = Вы выбрали!g %s!y.
+GAL_CHOICE_MAP = Вы выбрали!g %s!y
 
-GAL_CHOICE_MAP_ALL = !t %s !y выбрал !g %s!y.
+GAL_CHOICE_MAP_ALL = !t %s !y выбрал !g %s!y
 
-GAL_CHOICE_NONE = Вы решили не принимать участия в текущем голосовании!y.
+GAL_CHOICE_NONE = Вы решили не принимать участия в текущем голосовании!y
 
-GAL_CHOICE_NONE_ALL = !t %s !y решил не принимать участие в текущем голосовании.
+GAL_CHOICE_NONE_ALL = !t %s !y решил не принимать участие в текущем голосовании
 
-GAL_CHOICE_STAY = Вы решили остаться на текущей карте.
+GAL_CHOICE_STAY = Вы решили остаться на текущей карте
 
-GAL_CHOICE_STAY_ALL = !t %s !y решил остаться на текущей карте.
+GAL_CHOICE_STAY_ALL = !t %s !y решил остаться на текущей карте
 
 GAL_CHOOSE = Выберите следующую карту
 
@@ -48,56 +52,94 @@ GAL_CMD_CREATEFILE_USAGE1 = Используйте: gal_createmapfile <filename>
 
 GAL_CMD_CREATEFILE_USAGE2 = Файл будет создан в ./amxmodx/configs/galileo
 
-GAL_CMD_NOMS = * Используйте !g noms !y вместо !g nominations!y, если так удобнее.
+GAL_CMD_NOMS = Можно использовать !g noms !y вместо !g nominations !y
 
-GAL_CMD_RTV = * Используйте !g rtv !y вместо !g rockthevote!y, если вам так удобнее.
+GAL_CMD_RTV = Можно использовать !g rtv !y вместо !g rockthevote!y
 
-GAL_CREATIONFAILED = Не удалось создать '%s'.
-GAL_CREATIONSUCCESS = Успешно создано '%s' (%i карт).
-GAL_DISABLED = Эта команда отключена.
-GAL_FILLER_NOTFOUND = Не удалось открыть '%s' для загрузки карт, используемых в голосовании.
-GAL_FILLER_BLOCKED = Настройки!g Min-Players !y / !g White-List !y заблокировали возможность голосования по следующим совподающим картам:
-GAL_GRP_FAIL_NOCOUNTS = Не удалось найти ни одной группы в '%s' для процесса заполнения голосов.
-GAL_GRP_FAIL_TOOMANY = Более 8 групп карт обнаружено в '%s'.
-GAL_GRP_FAIL_TOOMANY_2 = Только первые 8 будут загружены.
-GAL_LISTMAPS_MORE = Используйте '%s %i' или '%s *' для получения информации
+GAL_CREATIONFAILED = Не удалось создать %s
+
+GAL_CREATIONSUCCESS = Успешно создано %s (%i карт)
+
+GAL_DISABLED = Эта команда отключена
+
+GAL_FILLER_NOTFOUND = Не удалось открыть %s для загрузки карт, используемых в голосовании
+
+GAL_FILLER_BLOCKED = Настройки !g Min-Players !y / !g White-List !y заблокировали возможность голосования по следующим совпадающим картам:
+
+GAL_GRP_FAIL_NOCOUNTS = Не удалось найти ни одной группы в %s для процесса заполнения голосов
+
+GAL_GRP_FAIL_TOOMANY = Более 8 групп карт обнаружено в %s
+
+GAL_GRP_FAIL_TOOMANY_2 = Только первые 8 карт будут загружены
+
+GAL_LISTMAPS_MORE = Используйте %s %i или %s * для получения информации
+
 GAL_LISTMAPS_SHOWING = Карты %i - %i из %i
-GAL_LISTMAPS_TITLE = Номинируемые карты
-GAL_MAPS_FILEMISSING = Не удалось открыть '%s'.
-GAL_MAPS_FOLDERMISSING = Не удалось найти папку 'maps'.
+
+GAL_LISTMAPS_TITLE = Номинирование карт
+
+GAL_MAPS_FILEMISSING = Не удалось открыть %s
+
+GAL_MAPS_FOLDERMISSING = Не удалось найти папку maps
+
 GAL_MAP_RECENTMAP = Предыдущая карта
+
 GAL_MAP_RECENTMAPS = Предыдущие карты
-GAL_MATCHING = Соответствие: %s!y.
+
+GAL_MATCHING = Соответствие: %s!y
 GAL_MATCH_CURRENTMAP = (текущая)
+
 GAL_MATCH_NOMINATED = (номинирована)
+
 GAL_MATCH_TOORECENT = (недавняя)
+
 GAL_MATCH_WHITELIST = (временно заблокирована)
-GAL_NEXTMAP1 = Следующая карта '%s'.
-GAL_NEXTMAP2 = Следующая карта '!g %s !y'.
+
+GAL_NEXTMAP1 = Следующая карта %s
+
+GAL_NEXTMAP2 = Следующая карта !g %s !y
+
 GAL_NEXTMAP_UNKNOWN = !t [ !y еще !g не проголосовали !t]
 GAL_NEXTMAP_VOTING = !t [ !y голосование !g в процессе !t]
+
 GAL_NOMINATEDBY = (номинирована %s)
+
 GAL_NOMINATIONS = Номинированные карты
-GAL_NOMS_NOTFOUND = Не удалось открыть '%s' для загрузки карт, которые могут быть номинированы.
-GAL_NOM_FAIL_ALREADY = Номинация !t не удалась; !t вы уже номинировали !g %s !y.
-GAL_NOM_FAIL_CURRENTMAP = Номинация !t не удалась; '!g %s !y' - текущая карта.
-GAL_NOM_FAIL_INPROGRESS = Номинация не удалась; !g голосование уже идет !y.
-GAL_NOM_FAIL_NOMATCHES = Номинация не удалась; !g не найдено кат похожих на '!y %s !g'.
-GAL_NOM_FAIL_SOMEONEELSE = Номинация не удалась; '!g %s !y' уже номинирована !g %s !y.
-GAL_NOM_FAIL_SOMEONEELSE_HLP = Вы можете использовать, '!g nominations !y' или '!g noms !y', чтобы увидеть список !t текущих номинаций!y.
-GAL_NOM_FAIL_TOOMANY = Номинация не удалась;!g Вы уже !y номинировали !g %i !y карт (!g %s !y).
-GAL_NOM_FAIL_TOOMANY_HLP = Чтобы номинировать !t другую карту !g Вам необходимо отменить одну из !y текущих номинаций !y.
-GAL_NOM_FAIL_TOORECENT = Номинация не удалась; '!g %s !y' была сыграна недавно.
-GAL_NOM_FAIL_TOORECENT_HLP = Вы можете ввыести, '!g recentmaps !y', чтобы увидеть список !t недавно сыгранных карт!y.
-GAL_NOM_FAIL_VOTEOVER = Номинация !t не удалась; !y результат голосования !g уже определен !y.
-GAL_NOM_FAIL_WHITELIST = Номинация не удалась; '!g %s !y' временно заблокирована !t на несколько часов !y.
 
-GAL_NOM_GOOD_HLP = Чтобы отменить свою номинацию, введите !g название карты !y или !g cancel название карты !y.
+GAL_NOMS_NOTFOUND = Не удалось открыть %s для загрузки карт, которые могут быть номинированы
 
-GAL_NOM_MATCHES = Найдено более одной карты !g %s!y.
+GAL_NOM_FAIL_ALREADY = Номинация не удалась; вы уже номинировали !g %s !y
 
-GAL_NOM_MATCHES_MAX = !g Поиск карт может занять до %d секунд, !t так как найдено более %d совпадений !y.
-GAL_NOM_SUCCESS = !g %s !y только что номинировал '!g %s !y'.
+GAL_NOM_FAIL_CURRENTMAP = Номинация не удалась; !g %s !y - текущая карта
+
+GAL_NOM_FAIL_INPROGRESS = Номинация не удалась; голосование уже запущено
+
+GAL_NOM_FAIL_NOMATCHES = Номинация не удалась; не найдено карт похожих на !g %s !y
+
+GAL_NOM_FAIL_SOMEONEELSE = Номинация не удалась; !g %s !y уже номинирована !g %s !y
+
+GAL_NOM_FAIL_SOMEONEELSE_HLP = Вы можете использовать, !g nominations !y или !g noms !y, чтобы увидеть список текущих номинаций
+
+GAL_NOM_FAIL_TOOMANY = Номинация не удалась; Вы уже номинировали !g %i !y карт (!g %s !y)
+
+GAL_NOM_FAIL_TOOMANY_HLP = Чтобы номинировать другую карту, Вам необходимо отменить одну из текущих номинаций
+
+GAL_NOM_FAIL_TOORECENT = Номинация не удалась; !g %s !y была сыграна недавно
+
+GAL_NOM_FAIL_TOORECENT_HLP = Вы можете ввести, !g recentmaps !y, чтобы увидеть список недавно сыгранных карт
+
+GAL_NOM_FAIL_VOTEOVER = Номинация не удалась; результат голосования уже определен
+
+GAL_NOM_FAIL_WHITELIST = Номинация не удалась; !g %s !y временно заблокирована
+
+GAL_NOM_GOOD_HLP = Чтобы отменить свою номинацию, введите !g название карты !y или !g cancel название карты !y
+
+GAL_NOM_MATCHES = Найдено более одной карты !g %s!y
+
+GAL_NOM_MATCHES_MAX = Поиск карт может занять до !g %d !y секунд, так как найдено более !g %d !y совпадений
+
+GAL_NOM_SUCCESS = !t %s !y только что номинировал !g %s !y
+
 GAL_NOM_CANCEL_OPTION = Отменить все Ваши номинации
 GAL_OPTION_EXTEND = Продлить '%s' %i минут
 GAL_OPTION_EXTEND_ROUND = Продлить '%s' %i раунд
@@ -112,56 +154,90 @@ GAL_OPTION_STAY = Остаться здесь
 GAL_OPTION_STAY_MAP = Остаться здесь на %s
 GAL_OPTION_CANCEL_VOTE = Отменить мой голос
 GAL_OPTION_CANCEL_PARTIALLY = Установить следующую карту только на %s
-GAL_PREFIXES_NOTFOUND = Не удалось открыть '%s' для загрузки преффиксов карт.
-GAL_PREFIXES_TOOMANY = Более %i преффиксов карт обнаружено в '%s'.
+GAL_PREFIXES_NOTFOUND = Не удалось открыть '%s' для загрузки преффиксов карт
+GAL_PREFIXES_TOOMANY = Более %i преффиксов карт обнаружено в '%s'
+
 GAL_RESULT = Результат голосования
-GAL_RESULT_TIED1 = !g %i карты !y разделили первое место. !t Две из них были выбраны случайны образом.
-GAL_RESULT_TIED2 = В !g голосовании !y карта занявшая, !t первое место %i !y, и случайная карта занявшая второе место.
-GAL_ROCK_ENOUGH = Проголосовало !t недостаточно игроков !y поэтому сейчас начнется голосование за следующую карту.
-GAL_ROCK_FAIL_ALREADY = Вы уже !t проголосовали !y.
-GAL_ROCK_FAIL_INPROGRESS = Голосование !t в процессе !y.
-GAL_ROCK_FAIL_PENDINGVOTE = Голосование !t уже запланировано и состоится менее чем через !g 2 минуты !y.
-GAL_ROCK_FAIL_TOOSOON = Вам необходимо подождать !t %i минут !y прежде чем Вы сможете '!g запустить голосование !y'.
-GAL_ROCK_FAIL_TOOSOON_ROUNDS = Вам необходимо подождать !t %i раундов !y прежде чем Вы сможете '!g запустить голосование !y'.
-GAL_ROCK_FAIL_TOOSOON_FRAGS = Вам необходимо подождать !t %i фрагов !y прежде чем Вы сможете '!g запустить голосование !y'.
-GAL_ROCK_FAIL_VOTEOVER = Результат !g голосования !t уже определен.
-GAL_ROCK_WAIT_ADMIN = Вы не можете '!g голосовать !y' когда администратор !g  на сервере !y.
-GAL_ROCK_WAIT_SPECTATOR = Вы не можете '!g голосовать !y' находясь в наблюдателях !y.
-GAL_ROCK_NEEDMORE = !g %i !t больше игроков должны запустить '!y голосование !t' чтобы начать.
-GAL_ROCK_SUCCESS = Вы !t завершили голосование !y.
-GAL_RUNOFF_REQUIRED = !t Требуется повторное голосование !y так как лучшая карта !g не получила более %d%% !t голосов.
+
+GAL_RESULT_TIED1 = !g %i карты !y разделили первое место. !t Две из них были выбраны случайны образом
+GAL_RESULT_TIED2 = В !g голосовании !y карта занявшая, !t первое место %i !y, и случайная карта занявшая второе место
+GAL_ROCK_ENOUGH = Проголосовало недостаточно игроков поэтому сейчас начнется голосование за следующую карту
+
+GAL_ROCK_FAIL_ALREADY = !gВы уже проголосовали !y
+
+GAL_ROCK_FAIL_INPROGRESS = !gГолосование уже идет !y
+
+GAL_ROCK_FAIL_PENDINGVOTE = Голосование уже запланировано и состоится менее чем через !g 2 !y минуты
+
+GAL_ROCK_FAIL_TOOSOON = Вам необходимо подождать !t %i минут !y прежде чем Вы сможете '!g запустить голосование !y'
+GAL_ROCK_FAIL_TOOSOON_ROUNDS = Вам необходимо подождать !t %i раундов !y прежде чем Вы сможете '!g запустить голосование !y'
+GAL_ROCK_FAIL_TOOSOON_FRAGS = Вам необходимо подождать !t %i фрагов !y прежде чем Вы сможете '!g запустить голосование !y'
+GAL_ROCK_FAIL_VOTEOVER = Результат голосования уже определен
+GAL_ROCK_WAIT_ADMIN = Вы не можете '!g голосовать !y' когда администратор !g  на сервере !y
+GAL_ROCK_WAIT_SPECTATOR = Вы не можете '!g голосовать !y' находясь в наблюдателях !y
+GAL_ROCK_NEEDMORE = !g %i !t больше игроков должны запустить '!y голосование !t' чтобы начать
+GAL_ROCK_SUCCESS = Вы завершили голосование 
+GAL_RUNOFF_REQUIRED = !t Требуется повторное голосование !y так как лучшая карта !g не получила более %d%% !t голосов
 GAL_RUNOFF_REQUIRED_TOP = Лучший вариант не получил достаточного количества голосов
-GAL_STANDARD_NOTFOUND = Ошибка открытия '%s' для загрузки стандартных карт.
-GAL_STANDARD_TOOMANY = Определено %i стандартных карт для игры '%s'.
-GAL_STANDARD_UNKNOWNMOD = Не установлен стандарт карт  для игры ' '.
-GAL_TIMELEFT = Осталось секунд
-GAL_VOTE_COUNTDOWN = Следующее голосование начнется через %i
-GAL_VOTE_EARLY = Предварительное голосование начнется в течении !g 2 минут !y в связи с !t перезагрузкой сервера !y.
-GAL_VOTE_ENDED = Голосование закончилось
-GAL_VOTE_INPROGRESS = Голосование !g уже !y идет.
-GAL_VOTE_NOMAPS = Создание голосования !t не удалось; карты не найдены.
-GAL_VOTE_WEIGHTED = Ваш голос имеет вес. Он учитывается как !g %i !y.
+GAL_STANDARD_NOTFOUND = Ошибка открытия '%s' для загрузки стандартных карт
+GAL_STANDARD_TOOMANY = Определено %i стандартных карт для игры '%s'
+GAL_STANDARD_UNKNOWNMOD = Не установлен стандарт карт  для игры ' '
+
+GAL_TIMELEFT = Осталось
+
+GAL_VOTE_COUNTDOWN = Голосование начнется через !g %i
+
+GAL_VOTE_COUNTDOWN_CONSOLE = Голосование начнется через %i
+
+GAL_VOTE_COUNTDOWN_HUD = Голосование начнется через %i
+
+GAL_VOTE_EARLY = Предварительное голосование начнется в течении !g 2 !y минут в связи с перезагрузкой сервера
+
+GAL_VOTE_ENDED = Голосование завершено
+
+GAL_VOTE_INPROGRESS = Голосование !g уже !y идет
+GAL_VOTE_NOMAPS = Создание голосования !t не удалось; карты не найдены
+GAL_VOTE_WEIGHTED = Ваш голос имеет вес. Он учитывается как !g %i !y
 GAL_VOTE_START = Начать голосование
 GAL_VOTE_GO_TO_PAGE = Перейти на страницу меню
-GAL_WINNER_EXTEND1 = Текущая карта будет продлена на %i минуту.
-GAL_WINNER_EXTEND2 = Текущая карта будет продлена на !t %i минут !y.
-GAL_WINNER_EXTEND_ROUND1 = Текущая карта будет продлена на %i раундов.
-GAL_WINNER_EXTEND_ROUND2 = Текущая карта !t будет продлена на !g %i раундов !y.
-GAL_WINNER_EXTEND_FRAGS1 = Текущая карта будет продлена на %i фрагов.
-GAL_WINNER_EXTEND_FRAGS2 = Текущая карта !t будет продлена на !g %i фрагов !y.
+
+GAL_WINNER_EXTEND1 = Текущая карта будет продлена на %i минуту
+
+GAL_WINNER_EXTEND2 = Текущая карта будет продлена на !g %i !y минут
+
+GAL_WINNER_EXTEND_ROUND1 = Текущая карта будет продлена на %i раундов
+
+GAL_WINNER_EXTEND_ROUND2 = Текущая карта будет продлена на !g %i !y раундов
+
+GAL_WINNER_EXTEND_FRAGS1 = Текущая карта будет продлена на %i фрагов
+
+GAL_WINNER_EXTEND_FRAGS2 = Текущая карта будет продлена на !g %i !y фрагов
+
 GAL_WINNER_NO_ONE_VOTED = Никто не голосовал
-GAL_WINNER_RANDOM1 = Следующей картой, случайным образом выбрана '%s'.
-GAL_WINNER_RANDOM2 = Следующей картой, случайным образом выбрана '!g%s!y'.
-GAL_WINNER_ORDERED1 = Следующей картой была выбрана '%s'.
-GAL_WINNER_ORDERED2 = Следующей картой была выбрана '!g%s!y'.
+
+GAL_WINNER_RANDOM1 = Следующей картой, случайным образом выбрана %s
+
+GAL_WINNER_RANDOM2 = Следующей картой, случайным образом выбрана !g %s !y
+
+GAL_WINNER_ORDERED1 = Следующей картой была выбрана %s
+
+GAL_WINNER_ORDERED2 = Следующей картой была выбрана !g %s !y
+
 GAL_WINNER_STAY1 = Мы остаемся здесь
-GAL_WINNER_STAY2 = Мы !g остаемся здесь !y.
-GAL_WINNER_TIED = Победивший вариант !g был выбран !t случаным образом из !g %i !t лучших вариантов.
-DMAP_NEXTMAP_VOTE_REMAINING1 = Голосование по выбору следующей карты произойдет через %d секунд
-DMAP_NEXTMAP_VOTE_REMAINING2 = Голосование по выбору !g следующей карты !y произойдет через !g %d секунд
+
+GAL_WINNER_STAY2 = Мы остаемся здесь
+
+GAL_WINNER_TIED = Победивший вариант был выбран случаным образом из !g %i !y лучших вариантов
+
+DMAP_NEXTMAP_VOTE_REMAINING1 = Голосование за следующую карту начнется через %d секунд
+
+DMAP_NEXTMAP_VOTE_REMAINING2 = Голосование за следующую карту начнется через !g %d !y секунд
+
 DMAP_MAP_CHANGING_IN1 = Карта поменяется на %s через %d секунд
-DMAP_MAP_CHANGING_IN2 = Карта поменяется на !g %s !y через !t %d секунд
-DMAP_MAP_EXTENDED1 = В связи с результатом голосования
+
+DMAP_MAP_CHANGING_IN2 = Карта поменяется на !g %s !y через !g %d секунд
+
+DMAP_MAP_EXTENDED1 = Голосование завершено
 
 [en]
 GAL_CANCEL_FAIL_INPROGRESS = !tCancellation!g failed; vote is!y already in progress.
