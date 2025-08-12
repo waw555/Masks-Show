@@ -12963,7 +12963,7 @@ stock printNominationList( mapsList[], isFlushed=false )
     }
     else if( !isFlushed )
     {
-        color_chat( 0, "%L: ^4%L", LANG_PLAYER, "GAL_NOMINATIONS", LANG_PLAYER, "NONE" );
+        color_chat( 0, "%L: ^4%L", LANG_PLAYER, "GAL_NOMINATIONS", LANG_PLAYER, "NO" );
     }
 }
 

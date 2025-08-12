@@ -2,31 +2,56 @@
 GAL_CANCEL_FAIL_INPROGRESS = !t Отмена !g не удалась; голосование !y уже в процессе.
 GAL_CANCEL_FAIL_SOMEONEELSE = Отмена не удалась; '!g %s !y' номинирована !g %s !y.
 GAL_CANCEL_FAIL_VOTEOVER = Отмена !t не удалась; !y результат голосования !g уже !t определен !y.
-GAL_CANCEL_FAIL_WASNOTYOU = Отмена не удалась; !g Вы ранее !y не номинировали ' !g %s !y '.
-GAL_CANCEL_SUCCESS = Следующие карты !g более !y не номинированы:!g %s
+
+GAL_CANCEL_FAIL_WASNOTYOU = Вы не номинировали !g %s!y.
+
+GAL_CANCEL_SUCCESS = Следующие карты больше не номинированы:!g %s!y
+
 GAL_CHANGE_NEXTROUND = Смена карты произойдет после этого раунда.
+
 GAL_CHANGE_TIMEEXPIRED1 = Время истекло
-GAL_CHANGE_TIMEEXPIRED2 = Лимит !g времени !t истек!y.
+
+GAL_CHANGE_TIMEEXPIRED2 = !g Лимит времени истек!y.
+
 GAL_CHANGE_MAINTENANCE = Сервер !t не может !y изменить карту !g в режиме обслуживания !y. Используйте 'gal_command_maintenance' для отключения режима обслуживания.
 GAL_CHANGE_MAINTENANCE_STATE = Режим обслуживания сервера '!t %L !y'. Используйте '!g gal_command_maintenance !y' для отключения режима обслуживания.
+
 GAL_CHANGE_MAINTENANCE_ON = Включен
+
 GAL_CHANGE_MAINTENANCE_OFF = Отключен
-GAL_CHOICE_EXTEND = Вы решили !g продолжить !t на текущей карте.
-GAL_CHOICE_EXTEND_ALL = !g %s !y решил !t продолжить !y на текущей карте.
-GAL_CHOICE_MAP = Вы выбрали '!g %s !y'.
-GAL_CHOICE_MAP_ALL = !t %s !y выбрал '!g %s !y'.
-GAL_CHOICE_NONE = Вы решили !t не принимать участия !g в текущем голосовании !y.
-GAL_CHOICE_NONE_ALL = !g%s!t решил не принимать участие !y в текущем голосовании.
-GAL_CHOICE_STAY = Вы решили !t остаться !g на текущей карте !y.
-GAL_CHOICE_STAY_ALL = !t %s !y решил остаться !g на текущей карте !y.
+
+GAL_CHOICE_EXTEND = Вы решили продолжить на текущей карте.
+
+GAL_CHOICE_EXTEND_ALL = !t %s !y решил продолжить на текущей карте.
+
+GAL_CHOICE_MAP = Вы выбрали!g %s!y.
+
+GAL_CHOICE_MAP_ALL = !t %s !y выбрал !g %s!y.
+
+GAL_CHOICE_NONE = Вы решили не принимать участия в текущем голосовании!y.
+
+GAL_CHOICE_NONE_ALL = !t %s !y решил не принимать участие в текущем голосовании.
+
+GAL_CHOICE_STAY = Вы решили остаться на текущей карте.
+
+GAL_CHOICE_STAY_ALL = !t %s !y решил остаться на текущей карте.
+
 GAL_CHOOSE = Выберите следующую карту
+
 GAL_CHOOSE_QUESTION = Хотите проголосовать за следующую карту?
+
 GAL_CHOOSE_QUESTION_YES = Да
+
 GAL_CHOOSE_QUESTION_NO = Нет
+
 GAL_CMD_CREATEFILE_USAGE1 = Используйте: gal_createmapfile <filename>
+
 GAL_CMD_CREATEFILE_USAGE2 = Файл будет создан в ./amxmodx/configs/galileo
-GAL_CMD_NOMS = * Используйте '!g noms !y' вместо '!g nominations !y', если вам !t удобнее !y так.
-GAL_CMD_RTV = * Используйте '!g rtv !y' вместо '!g rockthevote !y', если вам !t удобнее !y так.
+
+GAL_CMD_NOMS = * Используйте !g noms !y вместо !g nominations!y, если так удобнее.
+
+GAL_CMD_RTV = * Используйте !g rtv !y вместо !g rockthevote!y, если вам так удобнее.
+
 GAL_CREATIONFAILED = Не удалось создать '%s'.
 GAL_CREATIONSUCCESS = Успешно создано '%s' (%i карт).
 GAL_DISABLED = Эта команда отключена.
@@ -52,7 +77,7 @@ GAL_NEXTMAP2 = Следующая карта '!g %s !y'.
 GAL_NEXTMAP_UNKNOWN = !t [ !y еще !g не проголосовали !t]
 GAL_NEXTMAP_VOTING = !t [ !y голосование !g в процессе !t]
 GAL_NOMINATEDBY = (номинирована %s)
-GAL_NOMINATIONS = НОМИНАЦИИ
+GAL_NOMINATIONS = Номинированные карты
 GAL_NOMS_NOTFOUND = Не удалось открыть '%s' для загрузки карт, которые могут быть номинированы.
 GAL_NOM_FAIL_ALREADY = Номинация !t не удалась; !t вы уже номинировали !g %s !y.
 GAL_NOM_FAIL_CURRENTMAP = Номинация !t не удалась; '!g %s !y' - текущая карта.
@@ -66,8 +91,11 @@ GAL_NOM_FAIL_TOORECENT = Номинация не удалась; '!g %s !y' бы
 GAL_NOM_FAIL_TOORECENT_HLP = Вы можете ввыести, '!g recentmaps !y', чтобы увидеть список !t недавно сыгранных карт!y.
 GAL_NOM_FAIL_VOTEOVER = Номинация !t не удалась; !y результат голосования !g уже определен !y.
 GAL_NOM_FAIL_WHITELIST = Номинация не удалась; '!g %s !y' временно заблокирована !t на несколько часов !y.
-GAL_NOM_GOOD_HLP = Чтобы отменить !g свою номинацию!t введите '!y <mapname> !t' или '!y cancel <mapname> !t'.
-GAL_NOM_MATCHES = !g Найдено более одной карты '!t %s !g'. !y Выберите правильную.
+
+GAL_NOM_GOOD_HLP = Чтобы отменить свою номинацию, введите !g название карты !y или !g cancel название карты !y.
+
+GAL_NOM_MATCHES = Найдено более одной карты !g %s!y.
+
 GAL_NOM_MATCHES_MAX = !g Поиск карт может занять до %d секунд, !t так как найдено более %d совпадений !y.
 GAL_NOM_SUCCESS = !g %s !y только что номинировал '!g %s !y'.
 GAL_NOM_CANCEL_OPTION = Отменить все Ваши номинации
