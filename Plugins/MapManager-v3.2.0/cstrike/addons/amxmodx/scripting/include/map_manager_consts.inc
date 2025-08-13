@@ -3,7 +3,7 @@
 #endif
 #define _map_manager_consts_included
 
-#define VERSION_HASH "-0cb10a4"
+#define VERSION_HASH ""
 
 const MAPNAME_LENGTH = 32;
 
@@ -106,3 +106,8 @@ enum {
 enum MCustomItem {
     Invalid_Custom_Item = -1
 };
+
+enum MCI_Type {
+    mci_before,
+    mci_after
+}

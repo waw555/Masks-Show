@@ -9,7 +9,7 @@
 #endif
 
 #define PLUGIN "Map Manager: Scheduler"
-#define VERSION "0.2.1"
+#define VERSION "0.2.4"
 #define AUTHOR "Mistrick"
 
 #pragma semicolon 1
@@ -36,6 +36,10 @@ enum {
     CHANGE_AFTER_VOTE,
     CHANGE_NEXT_ROUND,
     CHANGE_MAP_END
+};
+
+enum Forwards {
+    MAP_EXTENDED
 };
 
 enum Cvars {
@@ -65,6 +69,7 @@ enum Cvars {
 };
 
 new g_pCvars[Cvars];
+new g_hForwards[Forwards];
 
 new bool:g_bVoteInNewRound;
 new g_iTeamScore[2];
@@ -113,8 +118,9 @@ public plugin_init()
     g_pCvars[FRAGLIMIT] = get_cvar_pointer("mp_fraglimit");
     g_pCvars[FRAGSLEFT] = get_cvar_pointer("mp_fragsleft");
 
-
     g_pCvars[NEXTMAP] = register_cvar("amx_nextmap", "", FCVAR_SERVER|FCVAR_EXTDLL|FCVAR_SPONLY);
+
+    g_hForwards[MAP_EXTENDED] = CreateMultiForward("mapm_scheduler_map_extended", ET_IGNORE, FP_CELL, FP_CELL);
 
     register_concmd("mapm_start_vote", "concmd_startvote", ADMIN_MAP);
     register_concmd("mapm_stop_vote", "concmd_stopvote", ADMIN_MAP);
@@ -146,6 +152,7 @@ public plugin_natives()
     register_native("map_scheduler_get_ignore_check", "native_get_ignore_check");
     register_native("map_scheduler_set_ignore_check", "native_set_ignore_check");
     register_native("map_scheduler_start_vote", "native_start_vote");
+    register_native("map_scheduler_stop_vote", "native_stop_vote");
     register_native("map_scheduler_extend_map", "native_extend_map");
     register_native("is_vote_will_in_next_round", "native_vote_will_in_next_round");
     register_native("get_last_round_state", "native_get_last_round_state");
@@ -189,11 +196,22 @@ public native_start_vote(plugin, params)
 
     return 1;
 }
+public native_stop_vote(plugin, params)
+{
+    if(!is_vote_started()) {
+        return 0;
+    }
+
+    stop_vote();
+
+    return 1;
+}
 public native_extend_map(plugin, params)
 {
     enum { arg_count = 1 };
     new count = get_param(arg_count);
     g_iExtendedNum += count;
+    // TODO: rounds support?
     set_float(TIMELIMIT, get_float(TIMELIMIT) + float(get_num(EXTENDED_TIME)) * float(count));
     return 1;
 }
@@ -257,6 +275,10 @@ public concmd_startvote(id, level, cid)
 }
 public concmd_stopvote(id, level, cid)
 {
+    if(!is_vote_started()) {
+        return PLUGIN_HANDLED;
+    }
+
     if(!cmd_access(id, level, cid, 1)) {
         return PLUGIN_HANDLED;
     }
@@ -264,6 +286,12 @@ public concmd_stopvote(id, level, cid)
     new name[32]; get_user_name(id, name, charsmax(name));
     log_amx("%s stopped vote", id ? name : "Server");
     
+    stop_vote();
+
+    return PLUGIN_HANDLED;
+}
+stop_vote()
+{
     mapm_stop_vote();
 
     if(mapm_get_vote_type() == VOTE_BY_SCHEDULER_SECOND) {
@@ -277,8 +305,6 @@ public concmd_stopvote(id, level, cid)
             set_float(TIMELIMIT, g_fOldTimeLimit);
         }
     }
-
-    return PLUGIN_HANDLED;
 }
 public clcmd_votemap()
 {
@@ -371,7 +397,7 @@ public event_newround()
             client_print_color(0, print_team_default, "%s^1 %L", g_sPrefix, LANG_PLAYER, "MAPM_FINAL_ROUND");
         } else {
             new nextmap[MAPNAME_LENGTH]; get_string(NEXTMAP, nextmap, charsmax(nextmap));
-            client_print_color(0, print_team_default, "%s^1 %L^3 %s^1.", g_sPrefix, LANG_PLAYER, "MAPM_NEXTMAP", nextmap);
+            client_print_color(0, print_team_default, "%s^1 %L %s^1.", g_sPrefix, LANG_PLAYER, "MAPM_NEXTMAP", nextmap);
             intermission();
         }
     }
@@ -425,7 +451,7 @@ public delayed_change()
 {
     new nextmap[MAPNAME_LENGTH]; get_string(NEXTMAP, nextmap, charsmax(nextmap));
     set_float(CHATTIME, get_float(CHATTIME) - 1.0);
-    server_cmd("changelevel %s", nextmap);
+    engine_changelevel(nextmap);
 }
 planning_vote(type)
 {
@@ -588,6 +614,10 @@ public mapm_vote_finished(const map[], type, total_votes)
         mapm_set_vote_finished(false);
 
         log_amx("[vote_finished]: map extended[%d].", g_iExtendedNum);
+
+        new ret;
+        ExecuteForward(g_hForwards[MAP_EXTENDED], ret, type, g_iExtendedNum);
+
         return 0;
     }
 
@@ -595,7 +625,7 @@ public mapm_vote_finished(const map[], type, total_votes)
     if(!total_votes) {
         client_print_color(0, print_team_default, "%s^1 %L %L", g_sPrefix, LANG_PLAYER, "MAPM_NOBODY_VOTE", LANG_PLAYER, "MAPM_NEXTMAP_BY_VOTE", map);
     } else {
-        client_print_color(0, print_team_default, "%s^1 %L^3 %s^1.", g_sPrefix, LANG_PLAYER, "MAPM_NEXTMAP", map);
+        client_print_color(0, print_team_default, "%s^1 %L %s^1.", g_sPrefix, LANG_PLAYER, "MAPM_NEXTMAP", map);
     }
 
     set_pcvar_string(g_pCvars[NEXTMAP], map);

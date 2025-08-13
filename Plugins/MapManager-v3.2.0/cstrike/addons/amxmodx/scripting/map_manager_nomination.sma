@@ -9,7 +9,7 @@
 #endif
 
 #define PLUGIN "Map Manager: Nomination"
-#define VERSION "0.3.5"
+#define VERSION "0.3.8"
 #define AUTHOR "Mistrick"
 
 #pragma semicolon 1
@@ -42,6 +42,7 @@ enum Cvars {
     RANDOM_SORT,
     REMOVE_MAPS,
     SHOW_LISTS,
+    RETURN_TO_LIST,
     FAST_NOMINATION
 };
 
@@ -59,6 +60,7 @@ new g_hCallbackDisabled;
 new g_iNomMaps[33];
 new g_iLastDenominate[33];
 new bool:g_bIgnoreVote = false;
+new bool:g_bReturnToList[33];
 
 new g_sPrefix[48];
 new g_szCurMap[32];
@@ -87,6 +89,7 @@ public plugin_init()
     g_pCvars[RANDOM_SORT] = register_cvar("mapm_nom_random_sort", "0"); // 0 - disable, 1 - enable
     g_pCvars[REMOVE_MAPS] = register_cvar("mapm_nom_remove_maps", "1"); // 0 - disable, 1 - enable
     g_pCvars[SHOW_LISTS] = register_cvar("mapm_nom_show_lists", "0"); // 0 - disable, 1 - enable
+    g_pCvars[RETURN_TO_LIST] = register_cvar("mapm_nom_return_to_list", "1"); // 0 - disable, 1 - enable
     g_pCvars[FAST_NOMINATION] = register_cvar("mapm_nom_fast_nomination", "1"); // 0 - disable, 1 - enable
 
     g_hForwards[CAN_BE_NOMINATED] = CreateMultiForward("mapm_can_be_nominated", ET_CONTINUE, FP_CELL, FP_STRING);
@@ -332,11 +335,10 @@ show_nomlist(id, Array: array, size)
     new menu = menu_create(text, "nomlist_handler");
     new map_info[MapStruct], item_name[MAPNAME_LENGTH + 16], map_index, nom_index, block_count;
     
-    for(new i, str_num[6]; i < size; i++) {
+    for(new i; i < size; i++) {
         map_index = ArrayGetCell(array, i);
         ArrayGetArray(g_aMapsList, map_index, map_info);
         
-        num_to_str(map_index, str_num, charsmax(str_num));
         nom_index = map_nominated(map_info[Map]);
         block_count = mapm_get_blocked_count(map_info[Map]);
 
@@ -398,8 +400,12 @@ public clcmd_mapslist(id)
     if(is_one_map_mode()) {
         return PLUGIN_HANDLED;
     }
+    if(!is_user_connected(id)) {
+        return PLUGIN_HANDLED;
+    }
 
     if(get_num(SHOW_LISTS) && mapm_advl_get_active_lists() > 1) {
+        g_bReturnToList[id] = false;
         show_lists_menu(id);
     } else {
         show_nomination_menu(id, g_aMapsList);
@@ -445,6 +451,9 @@ public lists_handler(id, menu, item)
     new list_name[32];
     mapm_advl_get_list_name(item, list_name, charsmax(list_name));
     new Array:maplist = mapm_advl_get_list_array(item);
+
+    g_bReturnToList[id] = true;
+
     show_nomination_menu(id, maplist, list_name);
 
     return PLUGIN_HANDLED;
@@ -522,6 +531,12 @@ public mapslist_handler(id, menu, item)
 {
     if(item == MENU_EXIT) {
         menu_destroy(menu);
+        
+        if(g_bReturnToList[id] && get_num(RETURN_TO_LIST)) {
+            g_bReturnToList[id] = false;
+            show_lists_menu(id);
+        }
+
         return PLUGIN_HANDLED;
     }
     
@@ -585,16 +600,33 @@ public mapm_prepare_votelist(type)
     }
     new nom_info[NomStruct];
     new max_items = mapm_get_votelist_size();
-    for(new i = mapm_get_count_maps_in_vote(), index; i < max_items && ArraySize(g_aNomList); i++) {
+    new Array:a = ArrayCreate(MAPNAME_LENGTH, 0);
+    for(new i = mapm_get_count_maps_in_vote(), result, index; i < max_items && ArraySize(g_aNomList); i++) {
         index = random_num(0, ArraySize(g_aNomList) - 1);
         ArrayGetArray(g_aNomList, index, nom_info);
         ArrayDeleteItem(g_aNomList, index);
         g_iNomMaps[nom_info[NomPlayer]]--;
 
-        if(mapm_push_map_to_votelist(nom_info[NomMap], PUSH_BY_NOMINATION) != PUSH_SUCCESS) {
+        result = mapm_push_map_to_votelist(nom_info[NomMap], PUSH_BY_NOMINATION);
+        if(result != PUSH_SUCCESS) {
             i--;
+            if(result == PUSH_BLOCKED) {
+                ArrayPushString(a, nom_info[NomMap]);
+            }
         }
     }
+
+    new size = ArraySize(a);
+    if(size) {
+        new removed_maps[192], map[MAPNAME_LENGTH], len;
+        for(new i; i < size; i++) {
+            ArrayGetString(a, i, map, charsmax(map));
+            len += formatex(removed_maps[len], charsmax(removed_maps) - len, "%s, ", map);
+        }
+        removed_maps[len - 2] = 0;
+        client_print_color(0, print_team_default, "%s ^1%L.", g_sPrefix, LANG_PLAYER, "MAPM_NOM_REMOVED_MAPS", removed_maps);
+    }
+    ArrayDestroy(a);
 }
 
 map_nominated(map[])

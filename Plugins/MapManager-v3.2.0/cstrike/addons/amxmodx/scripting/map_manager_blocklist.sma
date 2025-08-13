@@ -2,7 +2,7 @@
 #include <map_manager>
 
 #define PLUGIN "Map Manager: BlockList"
-#define VERSION "0.0.4"
+#define VERSION "0.0.6"
 #define AUTHOR "Mistrick"
 
 #pragma semicolon 1
@@ -74,6 +74,7 @@ public mapm_maplist_loaded(Array:mapslist)
 
     if(valid_maps <= 0) {
         TrieClear(g_tBlockedList);
+        log_amx("Blocklist cleared. More blocked maps than available.");
     }
     else if(valid_maps < votelist_size) {
         g_iMaxItems = valid_maps;
@@ -81,8 +82,8 @@ public mapm_maplist_loaded(Array:mapslist)
 }
 load_blocklist()
 {
-    new file_dir[128]; get_localinfo("amxx_datadir", file_dir, charsmax(file_dir));
-    new file_path[128]; formatex(file_path, charsmax(file_path), "%s/%s", file_dir, FILE_BLOCKED_MAPS);
+    new file_dir[256]; get_localinfo("amxx_datadir", file_dir, charsmax(file_dir));
+    new file_path[256]; formatex(file_path, charsmax(file_path), "%s/%s", file_dir, FILE_BLOCKED_MAPS);
 
     new block_value = get_num(BAN_LAST_MAPS);
 
@@ -92,7 +93,7 @@ load_blocklist()
     new f, temp;
 
     if(file_exists(file_path)) {
-        new temp_file_path[128]; formatex(temp_file_path, charsmax(temp_file_path), "%s/temp.ini", file_dir);
+        new temp_file_path[256]; formatex(temp_file_path, charsmax(temp_file_path), "%s/temp.ini", file_dir);
         f = fopen(file_path, "rt");
         temp = fopen(temp_file_path, "wt");
 
