@@ -114,7 +114,7 @@ new const PLUGIN_VERSION[] = "v5.9.1-926";
  */
 #define MAX_LONG_STRING              256
 #define MAX_COLOR_MESSAGE            256
-#define MAX_SHORT_STRING             64
+#define MAX_SHORT_STRING             128
 #define MAX_BIG_BOSS_STRING          512
 #define MAX_NOMINATION_TRIE_KEY_SIZE 48
 #define MAX_MAPNAME_LENGHT           64
@@ -7746,7 +7746,7 @@ public pendingVoteCountdown()
         if( !( get_pcvar_num( cvar_hudsHide ) & HUD_VOTE_VISUAL_COUNTDOWN ) )
         {
             set_hudmessage( 0, 222, 50, -1.0, 0.13, 0, 1.0, 0.94, 0.0, 0.0, -1 );
-            show_hudmessage( 0, "%L", LANG_PLAYER, "GAL_VOTE_COUNTDOWN", g_pendingVoteCountdown - 1 );
+            show_hudmessage( 0, "%L", LANG_PLAYER, "GAL_VOTE_COUNTDOWN_HUD", g_pendingVoteCountdown - 1 );
         }
 
         // audio countdown
@@ -11124,7 +11124,7 @@ public cmd_startVote( player_id, level, cid )
             LOG( 8, "( cmd_startVote ) g_isToChangeMapOnVotingEnd: %d, g_voteStatus: %d", g_isToChangeMapOnVotingEnd, g_voteStatus )
 
             waitTime = floatround( getVoteAnnouncementTime( get_pcvar_num( cvar_isToAskForEndOfTheMapVote ) ), floatround_ceil );
-            console_print( player_id, "%L", player_id, "GAL_VOTE_COUNTDOWN", waitTime );
+            console_print( player_id, "%L", player_id, "GAL_VOTE_COUNTDOWN_CONSOLE", waitTime );
 
             startTheVoting( true );
         }
@@ -12963,7 +12963,7 @@ stock printNominationList( mapsList[], isFlushed=false )
     }
     else if( !isFlushed )
     {
-        color_chat( 0, "%L: ^4%L", LANG_PLAYER, "GAL_NOMINATIONS", LANG_PLAYER, "NONE" );
+        color_chat( 0, "%L: ^4%L", LANG_PLAYER, "GAL_NOMINATIONS", LANG_PLAYER, "NO" );
     }
 }
 
