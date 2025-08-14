@@ -99,6 +99,6 @@ public announce(id) {
 			client_print(i, print_chat, "[AMXBans] %L", LANG_PLAYER, "FLAGGED_PLAYER",name,authid[id],reason[id])
 	}
 }
-public client_disconnect(id) {
+public client_disconnected(id) {
 	if(task_exists(id)) remove_task(id)
 }

@@ -70,7 +70,7 @@ public cmdAmxbans()
         if (admNum == 0)
         {
             server_print("No Admins loaded, nothing to dump");
-            return PLUGIN_HANDLED;
+            //return PLUGIN_HANDLED;
         }
         
         server_print("%d Admins were loaded, dumping list to %s", admNum, FILEdumpadmins);
@@ -92,7 +92,7 @@ public cmdAmxbans()
         fclose(file);
         
         server_print("Dump complete");
-        return PLUGIN_HANDLED;
+        //return PLUGIN_HANDLED;
     }
     else
     {

@@ -289,7 +289,7 @@ public client_putinserver(id)
 	return PLUGIN_CONTINUE
 }
 
-public client_disconnect(id)
+public client_disconnected(id)
 {
 	
 	g_being_banned[id]=false

@@ -701,7 +701,7 @@ public client_infochanged(id)
 	return PLUGIN_CONTINUE
 }
 
-public client_disconnect(id)
+public client_disconnected(id)
 {
 	if(g_isAdmin[id])
 	{

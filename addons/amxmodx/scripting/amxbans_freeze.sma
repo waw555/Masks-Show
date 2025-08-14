@@ -72,7 +72,7 @@ public amxbans_ban_motdopen(id) {
 public client_connect(id) {
 	g_frozen[id]=false
 }
-public client_disconnect(id) {
+public client_disconnected(id) {
 	g_frozen[id]=false
 }
 public handle_say(id) {
