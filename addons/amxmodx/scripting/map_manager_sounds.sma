@@ -1,9 +1,11 @@
+// 0.0.3.1 Попытка добавления звука ошибки и потдверждения
+
 #include <amxmodx>
 #include <map_manager>
 
 #define PLUGIN "Map Manager: Sounds"
-#define VERSION "0.0.3"
-#define AUTHOR "Mistrick"
+#define VERSION "0.0.3.1 16.08.2025"
+#define AUTHOR "Mistrick and WAW555"
 
 #pragma semicolon 1
 
@@ -13,6 +15,8 @@ enum Sections {
     UNUSED_SECTION,
     SOUND_VOTE_STARTED,
     SOUND_VOTE_FINISHED,
+	SOUND_VOTE_OK,
+	SOUND_VOTE_ERROR,
     SOUNDS_COUNTDOWN
 }
 enum ParserData {
@@ -22,6 +26,8 @@ new parser_info[ParserData];
 
 new g_sVoteStarted[128];
 new g_sVoteFinished[128];
+new g_sVoteOk[128];
+new g_sVoteError[128];
 new Trie:g_tCountdownSounds;
 
 public plugin_precache()
@@ -52,6 +58,10 @@ public ini_new_section(INIParser:handle, const section[], bool:invalid_tokens, b
         parser_info[SECTION] = SOUND_VOTE_STARTED;
     } else if(equal(section, "sound_vote_finished")) {
         parser_info[SECTION] = SOUND_VOTE_FINISHED;
+    } else if(equal(section, "sound_vote_ok")) {
+		parser_info[SECTION] = SOUND_VOTE_OK;
+    } else if(equal(section, "sound_vote_error")) {
+		parser_info[SECTION] = SOUND_VOTE_ERROR;
     } else if(equal(section, "sounds_countdown")) {
         parser_info[SECTION] = SOUNDS_COUNTDOWN;
     } else {
@@ -71,6 +81,16 @@ public ini_key_value(INIParser:handle, const key[], const value[], bool:invalid_
             copy(g_sVoteFinished, charsmax(g_sVoteFinished), key);
             remove_quotes(g_sVoteFinished);
             precache_generic(g_sVoteFinished);
+        }
+		case SOUND_VOTE_OK: {
+            copy(g_sVoteOk, charsmax(g_sVoteOk), key);
+            remove_quotes(g_sVoteOk);
+            precache_generic(g_sVoteOk);
+        }
+        case SOUND_VOTE_ERROR: {
+            copy(g_sVoteError, charsmax(g_sVoteError), key);
+            remove_quotes(g_sVoteError);
+            precache_generic(g_sVoteError);
         }
         case SOUNDS_COUNTDOWN: {
             new k[16];
@@ -109,11 +129,24 @@ public mapm_vote_finished(const map[], type, total_votes)
         play_sound(0, g_sVoteFinished);
     }
 }
+public mapm_vote_ok(type)
+{
+    if(g_sVoteOk[0]) {
+        play_sound(0, g_sVoteOk);
+    }
+}
+public mapm_vote_error(type)
+{
+    if(g_sVoteError[0]) {
+        play_sound(0, g_sVoteError);
+    }
+}
 play_sound(id, sound[])
 {
     new len = strlen(sound);
     if(equali(sound[len - 3], "wav")) {
-        send_audio(id, sound, PITCH_NORM);
+		client_cmd(id, "spk ^"%s^"", sound);
+        //send_audio(id, sound, PITCH_NORM);
     } else if(equali(sound[len - 3], "mp3")) {
         client_cmd(id, "mp3 play ^"%s^"", sound);
     }

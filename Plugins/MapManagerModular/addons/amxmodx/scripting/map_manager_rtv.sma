@@ -1,3 +1,4 @@
+// 0.1.5.1 Попытка добавления звука ошибки и потдверждения
 #include <amxmodx>
 #include <map_manager>
 #include <map_manager_scheduler>
@@ -7,7 +8,7 @@
 #endif
 
 #define PLUGIN "Map Manager: Rtv"
-#define VERSION "0.1.5"
+#define VERSION "0.1.5.1 16.08.2025"
 #define AUTHOR "Mistrick"
 
 #pragma semicolon 1
@@ -35,10 +36,18 @@ enum {
     MODE_PLAYERS
 };
 
+enum Forwards {
+    VOTE_OK,
+    VOTE_ERROR
+};
+
 new g_pCvars[Cvars];
 new g_iMapStartTime;
 new bool:g_bVoted[33];
 new g_iVotes;
+new ret;
+
+new g_hForwards[Forwards];
 
 new g_sPrefix[48];
 
@@ -55,6 +64,9 @@ public plugin_init()
     g_pCvars[DELAY] = register_cvar("mapm_rtv_delay", "0"); // minutes
     g_pCvars[ALLOW_EXTEND] = register_cvar("mapm_rtv_allow_extend", "0"); // 0 - disable, 1 - enable
     g_pCvars[IGNORE_SPECTATORS] = register_cvar("mapm_rtv_ignore_spectators", "0"); // 0 - disable, 1 - enable
+	
+    g_hForwards[VOTE_OK] = CreateMultiForward("mapm_vote_ok", ET_IGNORE, FP_CELL);
+    g_hForwards[VOTE_ERROR] = CreateMultiForward("mapm_vote_error", ET_IGNORE, FP_CELL);
 
     register_clcmd("say rtv", "clcmd_rtv");
     register_clcmd("say /rtv", "clcmd_rtv");
@@ -79,14 +91,17 @@ public clcmd_rtv(id)
 {
     if(is_vote_started()) {
         client_print_color(id, print_team_default, "%s^1 %L", g_sPrefix, id, "MAPM_VOTE_ALREADY_STARTED");
+        ExecuteForward(g_hForwards[VOTE_ERROR],ret, id);
         return PLUGIN_HANDLED;
     }
     else if(is_vote_finished()) {
         client_print_color(id, print_team_default, "%s^1 %L %L %s^1.", g_sPrefix, id, "MAPM_VOTE_ALREADY_FINISHED", id, "MAPM_NEXTMAP", g_sNextMap);
+        ExecuteForward(g_hForwards[VOTE_ERROR],ret, id);
         return PLUGIN_HANDLED;
     }
     else if(is_vote_will_in_next_round()) {
         client_print_color(id, print_team_default, "%s^1 %L", g_sPrefix, id, "MAPM_VOTE_WILL_BEGIN");
+        ExecuteForward(g_hForwards[VOTE_OK],ret, id);
         return PLUGIN_HANDLED;
     }
 
@@ -97,6 +112,7 @@ public clcmd_rtv(id)
     new delay = get_num(DELAY) * 60 - (get_systime() - g_iMapStartTime);
     if(delay > 0) {
         client_print_color(id, print_team_default, "%s^1 %L", g_sPrefix, id, "MAPM_RTV_DELAY", delay / 60, delay % 60);
+        ExecuteForward(g_hForwards[VOTE_ERROR],ret, id);
         return PLUGIN_HANDLED;
     }
 
@@ -122,6 +138,7 @@ public clcmd_rtv(id)
         client_print_color(0, print_team_default, "%s^3 %L.", g_sPrefix, LANG_PLAYER, "MAPM_RTV_VOTED", name, need_votes);
     } else {
         client_print_color(id, print_team_default, "%s^1 %L.", g_sPrefix, id, "MAPM_RTV_ALREADY_VOTED", need_votes);
+        ExecuteForward(g_hForwards[VOTE_ERROR],ret, id);
     }
 
     return PLUGIN_HANDLED;

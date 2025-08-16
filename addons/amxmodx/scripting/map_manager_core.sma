@@ -1,3 +1,5 @@
+// 3.3.1.1 Попытка добавления звука ошибки и потдверждения
+
 #include <amxmodx>
 #include <map_manager_consts>
 #include <map_manager_stocks>
@@ -7,8 +9,8 @@
 #endif
 
 #define PLUGIN "Map Manager: Core"
-#define VERSION "3.3.1"
-#define AUTHOR "Mistrick"
+#define VERSION "3.3.1.1 16.08.2025"
+#define AUTHOR "Mistrick and WAW555"
 
 #pragma semicolon 1
 
@@ -36,6 +38,8 @@ enum Forwards {
     PREPARE_VOTELIST,
     VOTE_STARTED,
     VOTE_CANCELED,
+    VOTE_OK,
+    VOTE_ERROR,
     ANALYSIS_OF_RESULTS,
     VOTE_FINISHED,
     COUNTDOWN,
@@ -139,6 +143,8 @@ public plugin_init()
     g_hForwards[PREPARE_VOTELIST] = CreateMultiForward("mapm_prepare_votelist", ET_CONTINUE, FP_CELL);
     g_hForwards[VOTE_STARTED] = CreateMultiForward("mapm_vote_started", ET_IGNORE, FP_CELL);
     g_hForwards[VOTE_CANCELED] = CreateMultiForward("mapm_vote_canceled", ET_IGNORE, FP_CELL);
+    g_hForwards[VOTE_OK] = CreateMultiForward("mapm_vote_ok", ET_IGNORE, FP_CELL);
+    g_hForwards[VOTE_ERROR] = CreateMultiForward("mapm_vote_error", ET_IGNORE, FP_CELL);
     g_hForwards[ANALYSIS_OF_RESULTS] = CreateMultiForward("mapm_analysis_of_results", ET_CONTINUE, FP_CELL, FP_CELL);
     g_hForwards[VOTE_FINISHED] = CreateMultiForward("mapm_vote_finished", ET_IGNORE, FP_STRING, FP_CELL, FP_CELL);
     g_hForwards[CAN_BE_IN_VOTELIST] = CreateMultiForward("mapm_can_be_in_votelist", ET_CONTINUE, FP_STRING, FP_CELL, FP_CELL);
