@@ -49,10 +49,13 @@ enum Cvars {
 new g_pCvars[Cvars];
 
 enum Forwards {
-    CAN_BE_NOMINATED
+    CAN_BE_NOMINATED,
+    VOTE_OK,
+    VOTE_ERROR
 };
 
 new g_hForwards[Forwards];
+new ret;
 
 new Array:g_aNomList;
 new Array:g_aMapsList;
@@ -93,6 +96,8 @@ public plugin_init()
     g_pCvars[FAST_NOMINATION] = register_cvar("mapm_nom_fast_nomination", "1"); // 0 - disable, 1 - enable
 
     g_hForwards[CAN_BE_NOMINATED] = CreateMultiForward("mapm_can_be_nominated", ET_CONTINUE, FP_CELL, FP_STRING);
+    g_hForwards[VOTE_OK] = CreateMultiForward("mapm_vote_ok", ET_IGNORE, FP_CELL);
+    g_hForwards[VOTE_ERROR] = CreateMultiForward("mapm_vote_error", ET_IGNORE, FP_CELL);
 
     register_clcmd("say", "clcmd_say");
     register_clcmd("say_team", "clcmd_say");
@@ -407,9 +412,13 @@ public clcmd_mapslist(id)
     if(get_num(SHOW_LISTS) && mapm_advl_get_active_lists() > 1) {
         g_bReturnToList[id] = false;
         show_lists_menu(id);
+        ExecuteForward(g_hForwards[VOTE_OK],ret, id);
     } else {
         show_nomination_menu(id, g_aMapsList);
+        ExecuteForward(g_hForwards[VOTE_OK],ret, id);
     }
+	
+	
 
     return PLUGIN_CONTINUE;
 }
@@ -567,10 +576,12 @@ public clcmd_nominated_maps(id)
 
     if(!size) {
         client_print_color(id, print_team_default, "%s ^1%L", g_sPrefix, id, "MAPM_NOM_NOMINATED_NOTHING");
+        ExecuteForward(g_hForwards[VOTE_ERROR],ret, id);
         return PLUGIN_HANDLED;
     }
 
     client_print_color(id, print_team_default, "%s ^1%L", g_sPrefix, id, "MAPM_NOM_NOMINATED_LIST");
+    ExecuteForward(g_hForwards[VOTE_OK],ret, id);
 
     new nom_info[NomStruct];
     new nominated_list[192], len, map_len;

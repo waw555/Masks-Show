@@ -45,9 +45,9 @@ new g_pCvars[Cvars];
 new g_iMapStartTime;
 new bool:g_bVoted[33];
 new g_iVotes;
-new ret;
 
 new g_hForwards[Forwards];
+new ret;
 
 new g_sPrefix[48];
 
