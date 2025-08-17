@@ -3,3 +3,7 @@ pstudio-0.8.3/configs/Configuration.prof
 pstudio-0.8.3/configs/Configuration.prof
 *.prof
 *.prof
+ServerConfig.cfg
+game_init.cfg
+addons/amxmodx/configs/users.ini
+addons/amxmodx/configs/users.ini

@@ -279,6 +279,7 @@ nominate_map(id, map[])
 {
     if(mapm_get_blocked_count(map)) {
         client_print_color(id, print_team_default, "%s^1 %L", g_sPrefix, id, "MAPM_NOM_NOT_AVAILABLE_MAP");
+        ExecuteForward(g_hForwards[VOTE_ERROR],ret, id);
         return NOMINATION_FAIL;
     }
 
@@ -290,12 +291,14 @@ nominate_map(id, map[])
         ArrayGetArray(g_aNomList, nom_index, nom_info);
         if(id != nom_info[NomPlayer]) {
             client_print_color(id, print_team_default, "%s^1 %L", g_sPrefix, id, "MAPM_NOM_ALREADY_NOM");
+            ExecuteForward(g_hForwards[VOTE_ERROR],ret, id);
             return NOMINATION_FAIL;
         }
 
         new systime = get_systime();
         if(g_iLastDenominate[id] + get_num(DENOMINATE_TIME) >= systime) {
             client_print_color(id, print_team_default, "%s^1 %L", g_sPrefix, id, "MAPM_NOM_SPAM");
+            ExecuteForward(g_hForwards[VOTE_ERROR],ret, id);
             return NOMINATION_FAIL;
         }
 
@@ -304,21 +307,24 @@ nominate_map(id, map[])
         ArrayDeleteItem(g_aNomList, nom_index);
         
         client_print_color(0, id, "%s^3 %L", g_sPrefix, LANG_PLAYER, "MAPM_NOM_REMOVE_NOM", name, map);
+        ExecuteForward(g_hForwards[VOTE_OK],ret, id);
         return NOMINATION_REMOVED;
     }
 
     if(get_num(TYPE) == TYPE_FIXED && ArraySize(g_aNomList) >= get_num(MAPS_IN_VOTE)) {
         client_print_color(id, print_team_default, "%s^1 %L", g_sPrefix, id, "MAPM_NOM_CANT_NOM2");
+        ExecuteForward(g_hForwards[VOTE_ERROR],ret, id);
         return NOMINATION_FAIL;
     }
 
     if(g_iNomMaps[id] >= get_num(MAPS_PER_PLAYER)) {
         client_print_color(id, print_team_default, "%s^1 %L", g_sPrefix, id, "MAPM_NOM_CANT_NOM");
+        ExecuteForward(g_hForwards[VOTE_ERROR],ret, id);
         return NOMINATION_FAIL;
     }
 
-    new ret;
-    ExecuteForward(g_hForwards[CAN_BE_NOMINATED], ret, id, map);
+    new ret2;
+    ExecuteForward(g_hForwards[CAN_BE_NOMINATED], ret2, id, map);
 
     if(ret == NOMINATION_BLOCKED) {
         return NOMINATION_FAIL;
@@ -331,6 +337,7 @@ nominate_map(id, map[])
     g_iNomMaps[id]++;
     
     client_print_color(0, id, "%s^3 %L", g_sPrefix, LANG_PLAYER, "MAPM_NOM_MAP", name, map);
+    ExecuteForward(g_hForwards[VOTE_OK],ret, id);
     
     return NOMINATION_SUCCESS;
 }

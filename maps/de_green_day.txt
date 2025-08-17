@@ -1,0 +1,15 @@
+Green Day - Defusion
+by SAZONISCHE (Vacheslav) (support@mmcs.pro)
+Texture builds by Macman 
+Improvements and design changes by [OPG]^A6PeK
+
+Counter-Terrorists: need to prevent an explosion of military facility with arms and ammunition. 
+And set a mission to prevent an explosion in the market.
+
+Terrorists: set a mission to blow up ammunition depots and market.
+
+Other Notes: There are 2 bomb sites in this 
+mission.
+
+
+
