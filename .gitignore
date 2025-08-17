@@ -8,3 +8,4 @@ game_init.cfg
 addons/amxmodx/configs/users.ini
 addons/amxmodx/configs/users.ini
 Amxbans/amxbans_setup.sql
+addons/amxmodx/configs/sql.cfg
