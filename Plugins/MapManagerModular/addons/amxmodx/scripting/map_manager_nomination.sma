@@ -326,7 +326,7 @@ nominate_map(id, map[])
     new ret2;
     ExecuteForward(g_hForwards[CAN_BE_NOMINATED], ret2, id, map);
 
-    if(ret == NOMINATION_BLOCKED) {
+    if(ret2 == NOMINATION_BLOCKED) {
         return NOMINATION_FAIL;
     }
     

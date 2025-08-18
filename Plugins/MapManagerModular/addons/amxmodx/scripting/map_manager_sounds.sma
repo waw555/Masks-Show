@@ -145,8 +145,8 @@ play_sound(id, sound[])
 {
     new len = strlen(sound);
     if(equali(sound[len - 3], "wav")) {
-		client_cmd(id, "spk ^"%s^"", sound);
-        //send_audio(id, sound, PITCH_NORM);
+		//client_cmd(id, "spk ^"%s^"", sound);
+        send_audio(id, sound, PITCH_NORM);
     } else if(equali(sound[len - 3], "mp3")) {
         client_cmd(id, "mp3 play ^"%s^"", sound);
     }
