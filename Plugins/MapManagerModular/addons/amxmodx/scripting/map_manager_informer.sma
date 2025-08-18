@@ -1,3 +1,4 @@
+// 0.0.5.1 Добавлены звуки ошибки и потдверждения
 #include <amxmodx>
 #include <map_manager>
 #include <map_manager_scheduler>
@@ -7,7 +8,7 @@
 #endif
 
 #define PLUGIN "Map Manager: Informer"
-#define VERSION "0.0.5"
+#define VERSION "0.0.5.1 - 18.08.2025"
 #define AUTHOR "Mistrick"
 
 #pragma semicolon 1
@@ -21,6 +22,14 @@ enum Cvars {
     NEXTMAP,
     EXTENDED_TYPE
 };
+
+enum Forwards {
+    VOTE_OK,
+    VOTE_ERROR
+};
+
+new g_hForwards[Forwards];
+new ret;
 
 new g_pCvars[Cvars];
 
@@ -36,6 +45,9 @@ public plugin_init()
     register_clcmd("say thetime", "clcmd_thetime");
     register_clcmd("say nextmap", "clcmd_nextmap");
     register_clcmd("say currentmap", "clcmd_currentmap");
+	
+    g_hForwards[VOTE_OK] = CreateMultiForward("mapm_vote_ok", ET_IGNORE, FP_CELL);
+    g_hForwards[VOTE_ERROR] = CreateMultiForward("mapm_vote_error", ET_IGNORE, FP_CELL);
 
     register_event("TeamScore", "event_teamscore", "a");
 
@@ -60,6 +72,7 @@ public clcmd_timeleft(id)
 {
     if(is_vote_finished()) {
         client_print_color(0, print_team_default, "%s^1 %L", g_sPrefix, LANG_PLAYER, "MAPM_CHANGELEVEL_NEXTROUND");
+        ExecuteForward(g_hForwards[VOTE_OK],ret, id);
         return;
     }
     
@@ -82,15 +95,19 @@ public clcmd_timeleft(id)
             len += formatex(text[len], charsmax(text) - len, "%d %L", left_rounds, LANG_PLAYER, "MAPM_ROUNDS");
         }
         client_print_color(0, print_team_default, "%s^1 %s.", g_sPrefix, text);
+        ExecuteForward(g_hForwards[VOTE_OK],ret, id);
     } else {
         if (get_num(TIMELIMIT)) {
             new a = get_timeleft();
             client_print_color(0, id, "%s^1 %L:^3 %d:%02d", g_sPrefix, LANG_PLAYER, "MAPM_TIME_TO_END", (a / 60), (a % 60));
+            ExecuteForward(g_hForwards[VOTE_OK],ret, id);
         } else {
             if(is_vote_will_in_next_round()) {
                 client_print_color(0, print_team_default, "%s^1 %L", g_sPrefix, LANG_PLAYER, "MAPM_VOTE_IN_NEXTROUND");
+                ExecuteForward(g_hForwards[VOTE_OK],ret, id);
             } else {
                 client_print_color(0, print_team_default, "%s^1 %L", g_sPrefix, LANG_PLAYER, "MAPM_NO_TIMELIMIT");
+                ExecuteForward(g_hForwards[VOTE_OK],ret, id);
             }
         }
     }
@@ -99,17 +116,21 @@ public clcmd_thetime(id)
 {
     new curtime[64]; get_time("%Y/%m/%d - %H:%M:%S", curtime, charsmax(curtime));
     client_print_color(0, print_team_default, "%s^3 %L", g_sPrefix, LANG_PLAYER, "MAPM_THETIME", curtime);
+    ExecuteForward(g_hForwards[VOTE_OK],ret, id);
 }
 public clcmd_nextmap(id)
 {
     if(is_vote_finished()) {
         new map[MAPNAME_LENGTH]; get_pcvar_string(g_pCvars[NEXTMAP], map, charsmax(map));
         client_print_color(0, id, "%s^1 %L %s^1.", g_sPrefix, LANG_PLAYER, "MAPM_NEXTMAP", map);
+        ExecuteForward(g_hForwards[VOTE_OK],ret, id);
     } else {
         client_print_color(0, id, "%s^1 %L %L^1.", g_sPrefix, LANG_PLAYER, "MAPM_NEXTMAP", LANG_PLAYER, "MAPM_NOT_SELECTED");
+        ExecuteForward(g_hForwards[VOTE_ERROR],ret, id);
     }
 }
 public clcmd_currentmap(id)
 {
     client_print_color(0, id, "%s^1 %L", g_sPrefix, LANG_PLAYER, "MAPM_CURRENT_MAP", g_sCurMap);
+    ExecuteForward(g_hForwards[VOTE_OK],ret, id);
 }
