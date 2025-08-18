@@ -114,7 +114,7 @@ public clcmd_timeleft(id)
 }
 public clcmd_thetime(id)
 {
-    new curtime[64]; get_time("%Y/%m/%d - %H:%M:%S", curtime, charsmax(curtime));
+    new curtime[64]; get_time("%d.%m.%Y - %H:%M:%S", curtime, charsmax(curtime));
     client_print_color(0, print_team_default, "%s^3 %L", g_sPrefix, LANG_PLAYER, "MAPM_THETIME", curtime);
     ExecuteForward(g_hForwards[VOTE_OK],ret, id);
 }
