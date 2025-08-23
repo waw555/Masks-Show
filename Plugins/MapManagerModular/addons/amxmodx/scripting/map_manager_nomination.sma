@@ -377,6 +377,7 @@ show_nomlist(id, Array: array, size)
     menu_setprop(menu, MPROP_NEXTNAME, text);
     formatex(text, charsmax(text), "%L", id, "MAPM_MENU_EXIT");
     menu_setprop(menu, MPROP_EXITNAME, text);
+    menu_setprop(menu, MPROP_PAGE_CALLBACK, "menu_page_more_back");
     
     menu_display(id, menu);
 }
@@ -384,15 +385,16 @@ public nomlist_handler(id, menu, item)
 {
     if(item == MENU_EXIT) {
         menu_destroy(menu);
+        ExecuteForward(g_hForwards[VOTE_OK],ret, id);
         return PLUGIN_HANDLED;
     }
-    
+	
     new item_info[8], item_name[MAPNAME_LENGTH + 16], access, callback;
     menu_item_getinfo(menu, item, access, item_info, charsmax(item_info), item_name, charsmax(item_name), callback);
 
     trim_bracket(item_name);
     new nominated = nominate_map(id, item_name);
-    
+	
     if(nominated == NOMINATION_REMOVED || get_num(DONT_CLOSE_MENU)) {
         if(nominated == NOMINATION_SUCCESS) {
             format(item_name, charsmax(item_name), "%s[\y*\w]", item_name);
@@ -424,8 +426,6 @@ public clcmd_mapslist(id)
         show_nomination_menu(id, g_aMapsList);
         ExecuteForward(g_hForwards[VOTE_OK],ret, id);
     }
-	
-	
 
     return PLUGIN_CONTINUE;
 }
@@ -447,6 +447,7 @@ show_lists_menu(id)
     menu_setprop(menu, MPROP_NEXTNAME, text);
     formatex(text, charsmax(text), "%L", id, "MAPM_MENU_EXIT");
     menu_setprop(menu, MPROP_EXITNAME, text);
+    menu_setprop(menu, MPROP_PAGE_CALLBACK, "menu_page_more_back");
     
     menu_display(id, menu);
 }
@@ -454,6 +455,7 @@ public lists_handler(id, menu, item)
 {
     if(item == MENU_EXIT) {
         menu_destroy(menu);
+        ExecuteForward(g_hForwards[VOTE_OK],ret, id);
         return PLUGIN_HANDLED;
     }
 
@@ -471,7 +473,6 @@ public lists_handler(id, menu, item)
     g_bReturnToList[id] = true;
 
     show_nomination_menu(id, maplist, list_name);
-
     return PLUGIN_HANDLED;
 }
 show_nomination_menu(id, Array:maplist, custom_title[] = "")
@@ -531,6 +532,7 @@ show_nomination_menu(id, Array:maplist, custom_title[] = "")
     menu_setprop(menu, MPROP_NEXTNAME, text);
     formatex(text, charsmax(text), "%L", id, "MAPM_MENU_EXIT");
     menu_setprop(menu, MPROP_EXITNAME, text);
+    menu_setprop(menu, MPROP_PAGE_CALLBACK, "menu_page_more_back");
     
     menu_display(id, menu);
 }
@@ -543,16 +545,27 @@ bool:in_array(Array:array, index)
     }
     return false;
 }
+
+public menu_page_more_back(id, status, menu){
+    if(status == MENU_BACK) {
+		ExecuteForward(g_hForwards[VOTE_OK],ret, id);
+	}
+	
+    if(status == MENU_MORE) {
+		ExecuteForward(g_hForwards[VOTE_OK],ret, id);
+	}
+}
+
 public mapslist_handler(id, menu, item)
 {
     if(item == MENU_EXIT) {
         menu_destroy(menu);
-        
         if(g_bReturnToList[id] && get_num(RETURN_TO_LIST)) {
             g_bReturnToList[id] = false;
             show_lists_menu(id);
+            ExecuteForward(g_hForwards[VOTE_OK],ret, id);
         }
-
+        ExecuteForward(g_hForwards[VOTE_OK],ret, id);
         return PLUGIN_HANDLED;
     }
     
@@ -561,7 +574,7 @@ public mapslist_handler(id, menu, item)
     
     trim_bracket(item_name);
     new nominated = nominate_map(id, item_name);
-    
+	
     if(g_iNomMaps[id] < get_num(MAPS_PER_PLAYER) || get_num(DONT_CLOSE_MENU)) {
         if(nominated == NOMINATION_SUCCESS) {
             format(item_name, charsmax(item_name), "%s[\y*\w]", item_name);
@@ -607,6 +620,7 @@ public clcmd_nominated_maps(id)
 
     nominated_list[len - 2] = 0;
     client_print_color(id, print_team_default, "%s ^1%s.", g_sPrefix, nominated_list);
+    ExecuteForward(g_hForwards[VOTE_OK],ret, id);
 
     return PLUGIN_HANDLED;
 }
