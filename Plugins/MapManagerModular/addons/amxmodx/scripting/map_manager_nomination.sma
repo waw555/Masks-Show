@@ -1,3 +1,5 @@
+// 0.3.8.1 Добавлены звуки перехода по меню и перевод для меню со списком карт
+
 #include <amxmodx>
 #include <map_manager>
 #include <map_manager_blocklist>
@@ -9,7 +11,7 @@
 #endif
 
 #define PLUGIN "Map Manager: Nomination"
-#define VERSION "0.3.8"
+#define VERSION "0.3.8.1 - 24.08.2025"
 #define AUTHOR "Mistrick"
 
 #pragma semicolon 1
@@ -268,6 +270,7 @@ public clcmd_say(id)
             nominate_map(id, map_info[Map]);
         } else if(array_size > 1) {
             show_nomlist(id, nominate_list, array_size);
+            ExecuteForward(g_hForwards[VOTE_OK],ret, id);
         }
         
         ArrayDestroy(nominate_list);
