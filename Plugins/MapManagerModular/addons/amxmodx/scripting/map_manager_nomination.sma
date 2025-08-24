@@ -267,8 +267,42 @@ public clcmd_say(id)
         if(array_size == 1) {
             map_index = ArrayGetCell(nominate_list, 0);
             new map_info[MapStruct]; ArrayGetArray(g_aMapsList, map_index, map_info);
+			
+            if(is_vote_started()) {
+				client_print_color(id, print_team_default, "%s^1 %L", g_sPrefix, id, "MAPM_VOTE_ALREADY_STARTED");
+				ExecuteForward(g_hForwards[VOTE_ERROR],ret, id);
+				return PLUGIN_HANDLED;
+			}
+			else if(is_vote_finished()) {
+				client_print_color(id, print_team_default, "%s^1 %L", g_sPrefix, id, "MAPM_VOTE_ALREADY_FINISHED");
+				ExecuteForward(g_hForwards[VOTE_ERROR],ret, id);
+				return PLUGIN_HANDLED;
+			}
+			else if(is_vote_will_in_next_round()) {
+				client_print_color(id, print_team_default, "%s^1 %L", g_sPrefix, id, "MAPM_VOTE_WILL_BEGIN");
+				ExecuteForward(g_hForwards[VOTE_OK],ret, id);
+				return PLUGIN_HANDLED;
+			}
+			
             nominate_map(id, map_info[Map]);
         } else if(array_size > 1) {
+			
+            if(is_vote_started()) {
+				client_print_color(id, print_team_default, "%s^1 %L", g_sPrefix, id, "MAPM_VOTE_ALREADY_STARTED");
+				ExecuteForward(g_hForwards[VOTE_ERROR],ret, id);
+				return PLUGIN_HANDLED;
+			}
+			else if(is_vote_finished()) {
+				client_print_color(id, print_team_default, "%s^1 %L", g_sPrefix, id, "MAPM_VOTE_ALREADY_FINISHED");
+				ExecuteForward(g_hForwards[VOTE_ERROR],ret, id);
+				return PLUGIN_HANDLED;
+			}
+			else if(is_vote_will_in_next_round()) {
+				client_print_color(id, print_team_default, "%s^1 %L", g_sPrefix, id, "MAPM_VOTE_WILL_BEGIN");
+				ExecuteForward(g_hForwards[VOTE_OK],ret, id);
+				return PLUGIN_HANDLED;
+			}
+			
             show_nomlist(id, nominate_list, array_size);
             ExecuteForward(g_hForwards[VOTE_OK],ret, id);
         }
@@ -418,6 +452,22 @@ public clcmd_mapslist(id)
         return PLUGIN_HANDLED;
     }
     if(!is_user_connected(id)) {
+        return PLUGIN_HANDLED;
+    }
+	
+    if(is_vote_started()) {
+        client_print_color(id, print_team_default, "%s^1 %L", g_sPrefix, id, "MAPM_VOTE_ALREADY_STARTED");
+        ExecuteForward(g_hForwards[VOTE_ERROR],ret, id);
+        return PLUGIN_HANDLED;
+    }
+    else if(is_vote_finished()) {
+        client_print_color(id, print_team_default, "%s^1 %L", g_sPrefix, id, "MAPM_VOTE_ALREADY_FINISHED");
+        ExecuteForward(g_hForwards[VOTE_ERROR],ret, id);
+        return PLUGIN_HANDLED;
+    }
+    else if(is_vote_will_in_next_round()) {
+        client_print_color(id, print_team_default, "%s^1 %L", g_sPrefix, id, "MAPM_VOTE_WILL_BEGIN");
+        ExecuteForward(g_hForwards[VOTE_OK],ret, id);
         return PLUGIN_HANDLED;
     }
 
