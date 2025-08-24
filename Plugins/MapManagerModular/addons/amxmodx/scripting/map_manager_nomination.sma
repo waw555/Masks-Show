@@ -432,8 +432,9 @@ public clcmd_mapslist(id)
 show_lists_menu(id)
 {
     new text[64];
-    // TODO: add ML
-    new menu = menu_create("Maps lists:", "lists_handler");
+    formatex(text, charsmax(text), "%L", LANG_PLAYER, "MAPM_MENU_MAPS_LISTS");
+
+    new menu = menu_create(text, "lists_handler");
 
     new list[32], size = mapm_advl_get_active_lists();
     for(new i; i < size; i++) {
@@ -473,6 +474,7 @@ public lists_handler(id, menu, item)
     g_bReturnToList[id] = true;
 
     show_nomination_menu(id, maplist, list_name);
+    ExecuteForward(g_hForwards[VOTE_OK],ret, id);
     return PLUGIN_HANDLED;
 }
 show_nomination_menu(id, Array:maplist, custom_title[] = "")
@@ -563,7 +565,6 @@ public mapslist_handler(id, menu, item)
         if(g_bReturnToList[id] && get_num(RETURN_TO_LIST)) {
             g_bReturnToList[id] = false;
             show_lists_menu(id);
-            ExecuteForward(g_hForwards[VOTE_OK],ret, id);
         }
         ExecuteForward(g_hForwards[VOTE_OK],ret, id);
         return PLUGIN_HANDLED;
@@ -601,7 +602,6 @@ public clcmd_nominated_maps(id)
     }
 
     client_print_color(id, print_team_default, "%s ^1%L", g_sPrefix, id, "MAPM_NOM_NOMINATED_LIST");
-    ExecuteForward(g_hForwards[VOTE_OK],ret, id);
 
     new nom_info[NomStruct];
     new nominated_list[192], len, map_len;
